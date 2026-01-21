@@ -1,4 +1,4 @@
-{
+﻿{
   "projects": [
     {
       "id": "baker-mckenzie",
@@ -6,25 +6,25 @@
       "client": "Baker & McKenzie Global Services Manila",
       "category": "events",
       "description": "Virtual event assets including opening billboards, logo reveals, and RTO videos for Baker & McKenzie's year-end corporate event.",
-      "thumbnail": "/portfolio/Events/Baker & Mckenzie Global Services Manila/Virtual Event Assets/Opening Billboard_Baker Mckenzie Year-End Event_V3.mp4",
+      "thumbnail": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Baker_Mckenzie_Year-End_Event_V3.mp4",
       "assets": [
         {
-          "src": "/portfolio/Events/Baker & Mckenzie Global Services Manila/Virtual Event Assets/Opening Billboard_Baker Mckenzie Year-End Event_V3.mp4",
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Baker_Mckenzie_Year-End_Event_V3.mp4",
           "type": "video",
           "title": "Opening Billboard V3"
         },
         {
-          "src": "/portfolio/Events/Baker & Mckenzie Global Services Manila/Virtual Event Assets/Opening Billboard Reminders_Baker Mckenzie Year-End Event_V2.mp4",
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Reminders_Baker_Mckenzie_Year-End_Event_V2.mp4",
           "type": "video",
           "title": "Opening Billboard Reminders"
         },
         {
-          "src": "/portfolio/Events/Baker & Mckenzie Global Services Manila/Virtual Event Assets/CLT RTO Video_Baker Mckenzie Year-End Event_V2.mp4",
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/CLT_RTO_Video_Baker_Mckenzie_Year-End_Event_V2.mp4",
           "type": "video",
           "title": "CLT RTO Video"
         },
         {
-          "src": "/portfolio/Events/Baker & Mckenzie Global Services Manila/Virtual Event Assets/Stinger Logo Reveal_Baker Mckenzie Year-End Event.mp4",
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Stinger_Logo_Reveal_Baker_Mckenzie_Year-End_Event.mp4",
           "type": "video",
           "title": "Stinger Logo Reveal"
         }
@@ -38,50 +38,50 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Complete event coverage including reels, announcements, and recap videos for Monza Barcade's racing-themed bar events.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/1 - MONZA_Monza Mckinley Hill_Event Announcement_Reel.mp4",
+      "thumbnail": "/portfolio/fnb/monza/Events/1_-_MONZA_Monza_Mckinley_Hill_Event_Announcement_Reel.mp4",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/1 - MONZA_Monza Mckinley Hill_Event Announcement_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/1_-_MONZA_Monza_Mckinley_Hill_Event_Announcement_Reel.mp4",
           "type": "video",
           "title": "McKinley Hill Event Announcement"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/4 - MONZA_British GP Live Viewing Highlights_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/4_-_MONZA_British_GP_Live_Viewing_Highlights_Reel.mp4",
           "type": "video",
           "title": "British GP Highlights"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/5 - MONZA_Monza Mckinley Hill_Adding Fun_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/5_-_MONZA_Monza_Mckinley_Hill_Adding_Fun_Reel.mp4",
           "type": "video",
           "title": "Adding Fun Reel"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/6 - MONZA_Monza Mckinley Hill_Recap_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/6_-_MONZA_Monza_Mckinley_Hill_Recap_Reel.mp4",
           "type": "video",
           "title": "McKinley Hill Recap"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/7 - MONZA_Hungarian GP Live Viewing Highlights_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/7_-_MONZA_Hungarian_GP_Live_Viewing_Highlights_Reel.mp4",
           "type": "video",
           "title": "Hungarian GP Highlights"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/7-8 - MONZA_Estancia Roadshow_Event Teaser_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/7-8_-_MONZA_Estancia_Roadshow_Event_Teaser_Reel.mp4",
           "type": "video",
           "title": "Estancia Roadshow Teaser"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/9 - MONZA_ Featuring Cocktails_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/9_-_MONZA__Featuring_Cocktails_Reel.mp4",
           "type": "video",
           "title": "Cocktails Feature"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/14 - MONZA_Monza Eastwood_Day 1 Post doc Slideshow_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/14_-_MONZA_Monza_Eastwood_Day_1_Post_doc_Slideshow_Reel.mp4",
           "type": "video",
           "title": "Eastwood Day 1 Slideshow"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/15 - MONZA_Monza Eastwood_Recap_Reel.mp4",
+          "src": "/portfolio/fnb/monza/Events/15_-_MONZA_Monza_Eastwood_Recap_Reel.mp4",
           "type": "video",
           "title": "Eastwood Recap"
         }
@@ -95,25 +95,25 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Carousel graphics showcasing the driving trial mechanics for Monza Barcade's McKinley Hill event.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Driving Trial Mechanics/3 - MONZA_Monza Mckinley Hill_Driving Trial_Graphic Design_P1.jpg",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P1.jpg",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Driving Trial Mechanics/3 - MONZA_Monza Mckinley Hill_Driving Trial_Graphic Design_P1.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P1.jpg",
           "type": "image",
           "title": "Driving Trial Page 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Driving Trial Mechanics/3 - MONZA_Monza Mckinley Hill_Driving Trial_Graphic Design_P2.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P2.jpg",
           "type": "image",
           "title": "Driving Trial Page 2"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Driving Trial Mechanics/3 - MONZA_Monza Mckinley Hill_Driving Trial_Graphic Design_P3.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P3.jpg",
           "type": "image",
           "title": "Driving Trial Page 3"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Driving Trial Mechanics/3 - MONZA_Monza Mckinley Hill_Driving Trial_Graphic Design_P4.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P4.jpg",
           "type": "image",
           "title": "Driving Trial Page 4"
         }
@@ -127,25 +127,25 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Event carousel graphics for Monza Eastwood location.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Monza Eastwood Event/8 - P1_MONZA_Monza Eastwood_Event Carousel_Graphic Design.png",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P1_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Monza Eastwood Event/8 - P1_MONZA_Monza Eastwood_Event Carousel_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P1_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
           "type": "image",
           "title": "Eastwood Event Page 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Monza Eastwood Event/8 - P2_MONZA_Monza Eastwood_Event Carousel_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P2_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
           "type": "image",
           "title": "Eastwood Event Page 2"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Monza Eastwood Event/8 - P3_MONZA_Monza Eastwood_Event Carousel_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P3_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
           "type": "image",
           "title": "Eastwood Event Page 3"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Monza Eastwood Event/8 - P4_MONZA_Monza Eastwood_Event Carousel_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P4_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
           "type": "image",
           "title": "Eastwood Event Page 4"
         }
@@ -159,35 +159,35 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Winners announcement carousel for Monza Mapua event.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P1_MONZA_Monza Mapua_Winners_Graphic Design.png",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P1_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P1_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P1_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P2_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P2_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 2"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P3_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P3_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 3"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P4_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P4_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 4"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P5_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P5_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 5"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel - Winners Mapua/3 - P6_MONZA_Monza Mapua_Winners_Graphic Design.png",
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P6_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
           "type": "image",
           "title": "Winners Page 6"
         }
@@ -201,25 +201,25 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Event carousel for the Estancia Roadshow event.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel Estancia Roadshow/9 - P1_MONZA_Estancia Roadshow_Event Carousel_Graphic Design.jpg",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P1_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel Estancia Roadshow/9 - P1_MONZA_Estancia Roadshow_Event Carousel_Graphic Design.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P1_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
           "type": "image",
           "title": "Estancia Roadshow Page 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel Estancia Roadshow/9 - P2_MONZA_Estancia Roadshow_Event Carousel_Graphic Design.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P2_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
           "type": "image",
           "title": "Estancia Roadshow Page 2"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel Estancia Roadshow/9 - P3_MONZA_Estancia Roadshow_Event Carousel_Graphic Design.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P3_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
           "type": "image",
           "title": "Estancia Roadshow Page 3"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Carousel Estancia Roadshow/9 - P4_MONZA_Estancia Roadshow_Event Carousel_Graphic Design.jpg",
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P4_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
           "type": "image",
           "title": "Estancia Roadshow Page 4"
         }
@@ -233,25 +233,25 @@
       "client": "Monza Barcade",
       "category": "fnb",
       "description": "Promotional graphics for Ladies Night, Legends Night, and Formula 1 Grand Prix events.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Graphic Design/12 - MONZA_Ladies Night.png",
+      "thumbnail": "/portfolio/fnb/monza/Events/Graphic-Design/12_-_MONZA_Ladies_Night.png",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Graphic Design/12 - MONZA_Ladies Night.png",
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/12_-_MONZA_Ladies_Night.png",
           "type": "image",
           "title": "Ladies Night"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Graphic Design/13 - MONZA_Legends Night v2.png",
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/13_-_MONZA_Legends_Night_v2.png",
           "type": "image",
           "title": "Legends Night"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Graphic Design/2 - MONZA_Dutch GP.png",
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/2_-_MONZA_Dutch_GP.png",
           "type": "image",
           "title": "Dutch GP"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/Monza Barcade/Events/Graphic Design/3 - MONZA_British GP Podium Winners.png",
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/3_-_MONZA_British_GP_Podium_Winners.png",
           "type": "image",
           "title": "British GP Podium Winners"
         }
@@ -265,20 +265,20 @@
       "client": "MSME",
       "category": "fnb",
       "description": "Complete branding, graphic design, and photography for MSME food business.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/MSME/Branding, Graphic Design & Photography/274477883_112539261359770_2611542943264539624_n.jpg",
+      "thumbnail": "/portfolio/fnb/msme/branding/274477883_112539261359770_2611542943264539624_n.jpg",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Branding, Graphic Design & Photography/274477883_112539261359770_2611542943264539624_n.jpg",
+          "src": "/portfolio/fnb/msme/branding/274477883_112539261359770_2611542943264539624_n.jpg",
           "type": "image",
           "title": "Branding Photo"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Branding, Graphic Design & Photography/5.png",
+          "src": "/portfolio/fnb/msme/branding/5.png",
           "type": "image",
           "title": "Graphic Design 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Branding, Graphic Design & Photography/6.png",
+          "src": "/portfolio/fnb/msme/branding/6.png",
           "type": "image",
           "title": "Graphic Design 2"
         }
@@ -292,25 +292,25 @@
       "client": "MSME",
       "category": "fnb",
       "description": "Social media carousel content for MSME.",
-      "thumbnail": "/portfolio/F&B (Restaurant)/MSME/Carousel/Carousel 1/FP_IG Carousel 1.png",
+      "thumbnail": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_IG_Carousel_1.png",
       "assets": [
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Carousel/Carousel 1/FP_IG Carousel 1.png",
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_IG_Carousel_1.png",
           "type": "image",
           "title": "Instagram Carousel 1"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Carousel/Carousel 1/FP_FB Carousel 2.png",
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_2.png",
           "type": "image",
           "title": "Facebook Carousel 2"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Carousel/Carousel 1/FP_FB Carousel 3.png",
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_3.png",
           "type": "image",
           "title": "Facebook Carousel 3"
         },
         {
-          "src": "/portfolio/F&B (Restaurant)/MSME/Carousel/Carousel 1/FP_FB Carousel 4.png",
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_4.png",
           "type": "image",
           "title": "Facebook Carousel 4"
         }
@@ -324,40 +324,40 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Promotional video ads for Xendurance Deep Sleep supplement with 20% off campaign.",
-      "thumbnail": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_ 20_ Off LAST 1.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
       "assets": [
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_ 20_ Off LAST 1.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_ 20_ Off LAST 2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_2.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 2"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_ 20_ Off LAST 3.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_3.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 3"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_ 20_ Off Star 3.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_Star_3.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Star 3"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_20_ Off Start 1.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_1.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_20_ Off Start 2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_2.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 2"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Deep Sleep Promo/220809_Deep Sleep_20_ Off Start 4.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_4.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 4"
         }
@@ -371,55 +371,55 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Video ads for various Xendurance supplement packs including Performance, Victory, Weight Management, and Wellness.",
-      "thumbnail": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Performance Pack.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack.mp4",
       "assets": [
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Performance Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack.mp4",
           "type": "video",
           "title": "Performance Pack"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Performance Pack_LAST DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Performance Pack - Last Day"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Victory Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Victory_Pack.mp4",
           "type": "video",
           "title": "Victory Pack"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Victory Pack_LAST DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Victory_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Victory Pack - Last Day"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Weight Management Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Weight_Management_Pack.mp4",
           "type": "video",
           "title": "Weight Management Pack"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Weight Management Pack_LAST DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Weight_Management_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Weight Management Pack - Last Day"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Wellness Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Wellness_Pack.mp4",
           "type": "video",
           "title": "Wellness Pack"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/Wellness Pack_LAST DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/Wellness_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Wellness Pack - Last Day"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/220820_Pack Promo Start.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/220820_Pack_Promo_Start.mp4",
           "type": "video",
           "title": "Pack Promo Start"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Pack Promo/220820_Pack Promo Last Day.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/packs/220820_Pack_Promo_Last_Day.mp4",
           "type": "video",
           "title": "Pack Promo Last Day"
         }
@@ -433,20 +433,20 @@
       "client": "Xendurance",
       "category": "health",
       "description": "25% off promotional videos for Probiotic + Prebiotic supplement.",
-      "thumbnail": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Probiotic + Prebiotic Promo/220827_Probiotic + Prebiotic_ 25_ Off.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
       "assets": [
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Probiotic + Prebiotic Promo/220827_Probiotic + Prebiotic_ 25_ Off.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
           "type": "video",
           "title": "Probiotic 25% Off"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Probiotic + Prebiotic Promo/220827_Probiotic + Prebiotic_LAST DAY 25_ Off.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off.mp4",
           "type": "video",
           "title": "Probiotic Last Day 25% Off"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Ads/Probiotic + Prebiotic Promo/220827_Probiotic + Prebiotic_LAST DAY 25_ Off 2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off_2.mp4",
           "type": "video",
           "title": "Probiotic Last Day 25% Off V2"
         }
@@ -460,60 +460,60 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Inspirational lifestyle content and monthly sizzle reels showcasing fitness and athletic performance.",
-      "thumbnail": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250523_May Sizzle 1_9x16.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/lifestyle/250523_May_Sizzle_1_9x16.mp4",
       "assets": [
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250523_May Sizzle 1_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250523_May_Sizzle_1_9x16.mp4",
           "type": "video",
           "title": "May Sizzle 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250528_May Sizzle 2_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250528_May_Sizzle_2_9x16.mp4",
           "type": "video",
           "title": "May Sizzle 2"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250804_August Sizzle 1_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250804_August_Sizzle_1_9x16.mp4",
           "type": "video",
           "title": "August Sizzle 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250822_August Mashup 3_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250822_August_Mashup_3_9x16.mp4",
           "type": "video",
           "title": "August Mashup 3"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250905_September Sizzle 1_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250905_September_Sizzle_1_9x16.mp4",
           "type": "video",
           "title": "September Sizzle 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250906_September Sizzle 2_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250906_September_Sizzle_2_9x16.mp4",
           "type": "video",
           "title": "September Sizzle 2"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250913_September Sizzle 5_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250913_September_Sizzle_5_9x16.mp4",
           "type": "video",
           "title": "September Sizzle 5"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250917_September Sizzle 6_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250917_September_Sizzle_6_9x16.mp4",
           "type": "video",
           "title": "September Sizzle 6"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/250918_September Sizzle 7_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250918_September_Sizzle_7_9x16.mp4",
           "type": "video",
           "title": "September Sizzle 7"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/251015_October Sizzle 1_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/251015_October_Sizzle_1_9x16.mp4",
           "type": "video",
           "title": "October Sizzle 1"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Lifestyle Inspirational Content/251121_November Sizzle 7.mp4",
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/251121_November_Sizzle_7.mp4",
           "type": "video",
           "title": "November Sizzle 7"
         }
@@ -527,55 +527,55 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Athlete testimonials and HYROX event coverage featuring professional athletes and fitness enthusiasts.",
-      "thumbnail": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/240513_Danielle Brandon Ad_9x16.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Testimonials/240513_Danielle_Brandon_Ad_9x16.mp4",
       "assets": [
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/240513_Danielle Brandon Ad_9x16.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/240513_Danielle_Brandon_Ad_9x16.mp4",
           "type": "video",
           "title": "Danielle Brandon Testimonial"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/220817_Testimonial Mashup Fat and Weight Loss_IG REEL.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/220817_Testimonial_Mashup_Fat_and_Weight_Loss_IG_REEL.mp4",
           "type": "video",
           "title": "Weight Loss Testimonials"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/250329_Hyrox Houston Cindy & Nicki.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250329_Hyrox_Houston_Cindy_&_Nicki.mp4",
           "type": "video",
           "title": "HYROX Houston - Cindy & Nicki"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/250611_Hyrox NYC Pavelchak x Crowley.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250611_Hyrox_NYC_Pavelchak_x_Crowley.mp4",
           "type": "video",
           "title": "HYROX NYC - Pavelchak & Crowley"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/250613_Hyrox NYC Rodriguez x Porter.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250613_Hyrox_NYC_Rodriguez_x_Porter.mp4",
           "type": "video",
           "title": "HYROX NYC - Rodriguez & Porter"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/250614_Hyrox NYC Williams x Swartzendruber.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250614_Hyrox_NYC_Williams_x_Swartzendruber.mp4",
           "type": "video",
           "title": "HYROX NYC - Williams & Swartzendruber"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/250620_Hyrox NYC Palmer.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250620_Hyrox_NYC_Palmer.mp4",
           "type": "video",
           "title": "HYROX NYC - Palmer"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/251003_HYROX BOSTON Matt & Breezy.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251003_HYROX_BOSTON_Matt_&_Breezy.mp4",
           "type": "video",
           "title": "HYROX Boston - Matt & Breezy"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/251004_HYROX BOSTON Crystal & Brian.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251004_HYROX_BOSTON_Crystal_&_Brian.mp4",
           "type": "video",
           "title": "HYROX Boston - Crystal & Brian"
         },
         {
-          "src": "/portfolio/Health & Fitness/Xendurance Samples/Testimonials/251008_HYROX BOSTON Bobby & Sharon.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251008_HYROX_BOSTON_Bobby_&_Sharon.mp4",
           "type": "video",
           "title": "HYROX Boston - Bobby & Sharon"
         }
@@ -589,15 +589,15 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Branding and graphic design materials for Sunlife Grepa Financial insurance company.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/19 - SLGFI240002.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/19_-_SLGFI240002.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/19 - SLGFI240002.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/19_-_SLGFI240002.png",
           "type": "image",
           "title": "SLGFI Branding 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/21 - SLGFI240002.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/21_-_SLGFI240002.png",
           "type": "image",
           "title": "SLGFI Branding 2"
         }
@@ -611,25 +611,25 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 1/5 - P1_SLGHC BRANDING & CONTENT_110423_FINAL.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P1_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 1/5 - P1_SLGHC BRANDING & CONTENT_110423_FINAL.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P1_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
           "type": "image",
           "title": "Carousel 1 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 1/5 - P2_SLGHC BRANDING & CONTENT_110423_FINAL.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P2_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
           "type": "image",
           "title": "Carousel 1 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 1/5 - P3_SLGHC BRANDING & CONTENT_110423_FINAL.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P3_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
           "type": "image",
           "title": "Carousel 1 - Page 3"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 1/5 - P4_SLGHC BRANDING & CONTENT_110423_FINAL.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P4_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
           "type": "image",
           "title": "Carousel 1 - Page 4"
         }
@@ -643,20 +643,20 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 2/11 - P1_SLGHC BRANDING & CONTENT_111323_Rev4.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P1_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 2/11 - P1_SLGHC BRANDING & CONTENT_111323_Rev4.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P1_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
           "type": "image",
           "title": "Carousel 2 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 2/11 - P2_SLGHC BRANDING & CONTENT_111323_Rev4.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P2_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
           "type": "image",
           "title": "Carousel 2 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 2/11 - P3_SLGHC BRANDING & CONTENT_111323_Rev4.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P3_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
           "type": "image",
           "title": "Carousel 2 - Page 3"
         }
@@ -670,25 +670,25 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 3/16 - P1_SLGHC BRANDING & CONTENT_112023_Rev3.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P1_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 3/16 - P1_SLGHC BRANDING & CONTENT_112023_Rev3.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P1_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
           "type": "image",
           "title": "Carousel 3 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 3/16 - P2_SLGHC BRANDING & CONTENT_112023_Rev3.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P2_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
           "type": "image",
           "title": "Carousel 3 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 3/16 - P3_SLGHC BRANDING & CONTENT_112023_Rev3.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P3_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
           "type": "image",
           "title": "Carousel 3 - Page 3"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 3/16 - P4_SLGHC BRANDING & CONTENT_112023_Rev3.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P4_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
           "type": "image",
           "title": "Carousel 3 - Page 4"
         }
@@ -702,25 +702,25 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Thanksgiving-themed carousel content.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 4/19 - P1_SLGHC BRANDING & CONTENT_112423_Rev1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P1_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 4/19 - P1_SLGHC BRANDING & CONTENT_112423_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P1_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
           "type": "image",
           "title": "Carousel 4 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 4/19 - P2_SLGHC BRANDING & CONTENT_112423_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P2_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
           "type": "image",
           "title": "Carousel 4 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 4/19 - P3_SLGHC BRANDING & CONTENT_112423_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P3_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
           "type": "image",
           "title": "Carousel 4 - Page 3"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 4/19 - P4_SLGHC BRANDING & CONTENT_112423_SLGHC BRANDING & CONTENT_112423_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P4_SLGHC_BRANDING_&_CONTENT_112423_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
           "type": "image",
           "title": "Carousel 4 - Page 4"
         }
@@ -734,15 +734,15 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 5/21 - P1_SLGHC BRANDING & CONTENT_112723_Rev1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P1_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 5/21 - P1_SLGHC BRANDING & CONTENT_112723_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P1_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
           "type": "image",
           "title": "Carousel 5 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 5/21 - P4_SLGHC BRANDING & CONTENT_112723_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P4_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
           "type": "image",
           "title": "Carousel 5 - Page 4"
         }
@@ -756,30 +756,30 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "December healthcare awareness carousel.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P1_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P1_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P1_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P1_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
           "type": "image",
           "title": "Carousel 6 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P2_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P2_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
           "type": "image",
           "title": "Carousel 6 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P3_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P3_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
           "type": "image",
           "title": "Carousel 6 - Page 3"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P4_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P4_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
           "type": "image",
           "title": "Carousel 6 - Page 4"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 6/27 - P5_SLGHC BRANDING & CONTENT_120623_Rev1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P5_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
           "type": "image",
           "title": "Carousel 6 - Page 5"
         }
@@ -793,20 +793,20 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Financial services carousel content.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 7/6 - SLGFI240002_P1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 7/6 - SLGFI240002_P1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P1.png",
           "type": "image",
           "title": "Carousel 7 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 7/6 - SLGFI240002_P2.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P2.png",
           "type": "image",
           "title": "Carousel 7 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 7/6 - SLGFI240002_P5.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P5.png",
           "type": "image",
           "title": "Carousel 7 - Page 5"
         }
@@ -820,15 +820,15 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Financial services carousel content.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 8/13 - SLGFI240002_P1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 8/13 - SLGFI240002_P1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P1.png",
           "type": "image",
           "title": "Carousel 8 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 8/13 - SLGFI240002_P2.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P2.png",
           "type": "image",
           "title": "Carousel 8 - Page 2"
         }
@@ -842,30 +842,30 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Financial services carousel content.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P1.png",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P1.png",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P1.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P1.png",
           "type": "image",
           "title": "Carousel 9 - Page 1"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P2.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P2.png",
           "type": "image",
           "title": "Carousel 9 - Page 2"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P3.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P3.png",
           "type": "image",
           "title": "Carousel 9 - Page 3"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P4.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P4.png",
           "type": "image",
           "title": "Carousel 9 - Page 4"
         },
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Graphic Design/Carousel 9/14 - SLGFI240002_P5.png",
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P5.png",
           "type": "image",
           "title": "Carousel 9 - Page 5"
         }
@@ -879,10 +879,10 @@
       "client": "Sunlife Grepa Financial Inc",
       "category": "insurance",
       "description": "Educational video content about accident insurance coverage.",
-      "thumbnail": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Video Content/9 - SLGHC BRANDING & CONTENT_Let_s Talk Accidents_111023.mp4",
+      "thumbnail": "/portfolio/Insurance/sunlife/videos/9_-_SLGHC_BRANDING_&_CONTENT_Let_s_Talk_Accidents_111023.mp4",
       "assets": [
         {
-          "src": "/portfolio/Insurance/Sunlife Grepa Financial Inc/Video Content/9 - SLGHC BRANDING & CONTENT_Let_s Talk Accidents_111023.mp4",
+          "src": "/portfolio/Insurance/sunlife/videos/9_-_SLGHC_BRANDING_&_CONTENT_Let_s_Talk_Accidents_111023.mp4",
           "type": "video",
           "title": "Let's Talk Accidents"
         }
@@ -896,90 +896,90 @@
       "client": "Twin Oaks Real Estate",
       "category": "realestate",
       "description": "Professional real estate photography including interior, exterior, and twilight shots for property listings.",
-      "thumbnail": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/1.jpg",
+      "thumbnail": "/portfolio/real-estate/twin-oaks/photos/1.jpg",
       "assets": [
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/1.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/1.jpg",
           "type": "image",
           "title": "Property Photo 1"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/2.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/2.jpg",
           "type": "image",
           "title": "Property Photo 2"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/3.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/3.jpg",
           "type": "image",
           "title": "Property Photo 3"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/4.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/4.jpg",
           "type": "image",
           "title": "Property Photo 4"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/5.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/5.jpg",
           "type": "image",
           "title": "Property Photo 5"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/6.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/6.jpg",
           "type": "image",
           "title": "Property Photo 6"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/7.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/7.jpg",
           "type": "image",
           "title": "Property Photo 7"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/8.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/8.jpg",
           "type": "image",
           "title": "Property Photo 8"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/9.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/9.jpg",
           "type": "image",
           "title": "Property Photo 9"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/10.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/10.jpg",
           "type": "image",
           "title": "Property Photo 10"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/11.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/11.jpg",
           "type": "image",
           "title": "Property Photo 11"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/12.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/12.jpg",
           "type": "image",
           "title": "Property Photo 12"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/13.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/13.jpg",
           "type": "image",
           "title": "Property Photo 13"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/14.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/14.jpg",
           "type": "image",
           "title": "Property Photo 14"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/15.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/15.jpg",
           "type": "image",
           "title": "Property Photo 15"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/220714_Ryan_TwilightEdit1_KT.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/220714_Ryan_TwilightEdit1_KT.jpg",
           "type": "image",
           "title": "Twilight Edit 1"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Photo Edits/220714_Ryan_TwilightEdit2_KT.jpg",
+          "src": "/portfolio/real-estate/twin-oaks/photos/220714_Ryan_TwilightEdit2_KT.jpg",
           "type": "image",
           "title": "Twilight Edit 2"
         }
@@ -993,15 +993,15 @@
       "client": "Twin Oaks Real Estate",
       "category": "realestate",
       "description": "Professional real estate video tours including listing videos and Instagram reels.",
-      "thumbnail": "/portfolio/Real Estate/Twin Oaks Real Estate/Video Edits/220714_Ryan_ListingVideo_KT.mp4",
+      "thumbnail": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_ListingVideo_KT.mp4",
       "assets": [
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Video Edits/220714_Ryan_ListingVideo_KT.mp4",
+          "src": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_ListingVideo_KT.mp4",
           "type": "video",
           "title": "Property Listing Video"
         },
         {
-          "src": "/portfolio/Real Estate/Twin Oaks Real Estate/Video Edits/220714_Ryan_IGReel_KT.mp4",
+          "src": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_IGReel_KT.mp4",
           "type": "video",
           "title": "Instagram Reel"
         }
@@ -1035,3 +1035,4 @@
     "Real Estate Marketing"
   ]
 }
+
