@@ -324,40 +324,40 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Promotional video ads for Xendurance Deep Sleep supplement with 20% off campaign.",
-      "thumbnail": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
       "assets": [
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 1"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_2.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 2"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_3.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_3.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Last Day 3"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep__20__Off_Star_3.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_Star_3.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Star 3"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_1.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_1.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 1"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_2.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 2"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_4.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_4.mp4",
           "type": "video",
           "title": "Deep Sleep 20% Off - Start 4"
         }
@@ -371,55 +371,55 @@
       "client": "Xendurance",
       "category": "health",
       "description": "Video ads for various Xendurance supplement packs including Performance, Victory, Weight Management, and Wellness.",
-      "thumbnail": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack.mp4",
       "assets": [
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack.mp4",
           "type": "video",
           "title": "Performance Pack"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Performance_Pack_LAST_DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Performance Pack - Last Day"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Victory_Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack.mp4",
           "type": "video",
           "title": "Victory Pack"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Victory_Pack_LAST_DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Victory Pack - Last Day"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Weight_Management_Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack.mp4",
           "type": "video",
           "title": "Weight Management Pack"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Weight_Management_Pack_LAST_DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Weight Management Pack - Last Day"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Wellness_Pack.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack.mp4",
           "type": "video",
           "title": "Wellness Pack"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/Wellness_Pack_LAST_DAY.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack_LAST_DAY.mp4",
           "type": "video",
           "title": "Wellness Pack - Last Day"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/220820_Pack_Promo_Start.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Start.mp4",
           "type": "video",
           "title": "Pack Promo Start"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/packs/220820_Pack_Promo_Last_Day.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Last_Day.mp4",
           "type": "video",
           "title": "Pack Promo Last Day"
         }
@@ -433,20 +433,20 @@
       "client": "Xendurance",
       "category": "health",
       "description": "25% off promotional videos for Probiotic + Prebiotic supplement.",
-      "thumbnail": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
       "assets": [
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
           "type": "video",
           "title": "Probiotic 25% Off"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off.mp4",
           "type": "video",
           "title": "Probiotic Last Day 25% Off"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off_2.mp4",
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off_2.mp4",
           "type": "video",
           "title": "Probiotic Last Day 25% Off V2"
         }
@@ -1035,4 +1035,5 @@
     "Real Estate Marketing"
   ]
 }
+
 
