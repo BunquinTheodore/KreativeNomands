@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+@layer base {
+  :root {
+    --font-inter: 'Inter', system-ui, sans-serif;
+    --font-poppins: 'Poppins', system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-dark-950 text-gray-300 font-sans;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-dark-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-dark-500;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-primary-500/30 text-white;
+  }
+
+  /* Focus visible */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-dark-900;
+  }
+}
+
+/* Component styles */
+@layer components {
+  /* Container utility */
+  .section-padding {
+    @apply py-20 sm:py-28 lg:py-32;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-dark-900/80 backdrop-blur-md border border-white/10;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600;
+  }
+
+  /* Button base styles */
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-medium;
+    @apply transition-all duration-200 transform hover:scale-105;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-900;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 hover:bg-primary-600 text-white;
+    @apply shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30;
+    @apply focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white/5 hover:bg-white/10 text-white;
+    @apply border border-white/10 hover:border-white/20;
+    @apply focus:ring-white/50;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-white/5 text-gray-300 hover:text-white;
+    @apply focus:ring-white/50;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for better typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Aspect ratio utilities */
+  .aspect-4-3 {
+    aspect-ratio: 4/3;
+  }
+
+  .aspect-16-9 {
+    aspect-ratio: 16/9;
+  }
+
+  .aspect-3-4 {
+    aspect-ratio: 3/4;
+  }
+}
+
+/* Animation for smooth scroll indicator */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2s ease-in-out infinite;
+}
+
+/* Modal open body lock */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Video player custom styles */
+video::-webkit-media-controls-panel {
+  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+}
+
+/* Image loading placeholder */
+.img-loading {
+  @apply bg-dark-800 animate-pulse;
+}
