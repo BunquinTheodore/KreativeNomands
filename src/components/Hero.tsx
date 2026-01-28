@@ -1,10 +1,13 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowDown, Play } from 'lucide-react';
+import { ArrowDown, Play, Sparkles, Compass } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/lib/theme-context';
 
 export default function Hero() {
+  const { theme } = useTheme();
+  
   const handleScrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
@@ -29,88 +32,153 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Background */}
+      {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-950 via-dark-900 to-dark-950" />
+        {/* Gradient Overlay with brand colors */}
+        <div className={cn(
+          'absolute inset-0',
+          theme === 'dark' 
+            ? 'bg-gradient-to-br from-dark-950 via-primary-950/50 to-dark-950'
+            : 'bg-gradient-to-br from-gray-50 via-primary-50/50 to-white'
+        )} />
         
-        {/* Animated Background Elements */}
+        {/* Animated Background Elements with brand colors */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
-            className="absolute -top-1/4 -right-1/4 w-1/2 h-1/2 rounded-full bg-primary-500/10 blur-3xl"
+            className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] rounded-full bg-primary-500/10 blur-[120px]"
             animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
+              scale: [1, 1.3, 1],
+              opacity: [0.2, 0.4, 0.2],
+              rotate: [0, 180, 360],
             }}
             transition={{
-              duration: 8,
+              duration: 20,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-1/4 -left-1/4 w-[700px] h-[700px] rounded-full bg-secondary-500/10 blur-[100px]"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.2, 0.4, 0.2],
+            }}
+            transition={{
+              duration: 15,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
           />
           <motion.div
-            className="absolute -bottom-1/4 -left-1/4 w-1/2 h-1/2 rounded-full bg-secondary-500/10 blur-3xl"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-accent-400/5 blur-[80px]"
             animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.3, 0.5, 0.3],
+              scale: [1, 1.5, 1],
+              opacity: [0.1, 0.3, 0.1],
             }}
             transition={{
-              duration: 10,
+              duration: 12,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
           />
         </div>
 
-        {/* Grid Pattern */}
+        {/* Enhanced Grid Pattern */}
         <div 
           className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-            backgroundSize: '50px 50px',
+            backgroundImage: `linear-gradient(rgba(61, 90, 90, 0.3) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(61, 90, 90, 0.3) 1px, transparent 1px)`,
+            backgroundSize: '80px 80px',
           }}
         />
+
+        {/* Floating Particles */}
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 rounded-full bg-primary-400/30"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${30 + (i % 3) * 20}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.3, 0.6, 0.3],
+            }}
+            transition={{
+              duration: 4 + i,
+              repeat: Infinity,
+              delay: i * 0.5,
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
       </div>
 
       {/* Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline */}
+          {/* Tagline with enhanced animation */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
           >
-            <span className="inline-block px-4 py-1.5 mb-6 text-sm font-medium text-primary-400 bg-primary-500/10 rounded-full border border-primary-500/20">
+            <motion.span 
+              className="inline-flex items-center gap-2 px-5 py-2 mb-6 text-sm font-medium text-primary-400 bg-primary-500/10 rounded-full border border-primary-500/20 backdrop-blur-sm"
+              whileHover={{ scale: 1.05, borderColor: 'rgba(61, 90, 90, 0.4)' }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <motion.span
+                animate={{ rotate: [0, 15, -15, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <Compass className="w-4 h-4" />
+              </motion.span>
               Your Creative Virtual Assistant
-            </span>
+            </motion.span>
           </motion.div>
 
-          {/* Main Heading */}
+          {/* Main Heading with enhanced gradient */}
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-display-xl lg:text-display-2xl font-display font-bold text-white mb-6"
+            className={cn(
+              'text-4xl sm:text-5xl md:text-display-xl lg:text-display-2xl font-display font-bold mb-6',
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            )}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
             We Are{' '}
-            <span className="relative">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">
+            <span className="relative inline-block">
+              <motion.span 
+                className="relative z-10 gradient-text"
+                animate={{
+                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+                }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
+                style={{
+                  backgroundSize: '200% 200%',
+                }}
+              >
                 Kreativ Nomads
-              </span>
+              </motion.span>
               <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-3 bg-primary-500/30 -skew-x-3"
-                initial={{ scaleX: 0 }}
+                className="absolute -bottom-2 left-0 right-0 h-3 bg-primary-500/30 -skew-x-3 rounded"
+                initial={{ scaleX: 0, originX: 0 }}
                 animate={{ scaleX: 1 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.8, delay: 0.9, ease: [0.6, 0.01, 0.05, 0.95] }}
               />
             </span>
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
-            className="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed"
+            className={cn(
+              'text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed',
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            )}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -119,77 +187,103 @@ export default function Hero() {
             creative solutions to address your marketing and communication challenges.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons with enhanced styling */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
           >
-            <a
+            <motion.a
               href="#contact"
               className={cn(
-                'inline-flex items-center px-8 py-4 rounded-full',
+                'inline-flex items-center gap-2 px-8 py-4 rounded-full',
                 'bg-primary-500 hover:bg-primary-600 text-white font-semibold',
-                'transform hover:scale-105 transition-all duration-200',
-                'shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30',
-                'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 focus:ring-offset-dark-900'
+                'transition-all duration-300',
+                'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
+                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-white'
               )}
+              style={{ boxShadow: '0 15px 40px rgba(61, 90, 90, 0.35)' }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(61, 90, 90, 0.45)' }}
+              whileTap={{ scale: 0.98 }}
             >
+              <Sparkles className="w-5 h-5" />
               Inquire Today
-            </a>
+            </motion.a>
             
-            <button
+            <motion.button
               onClick={handleScrollToPortfolio}
               className={cn(
-                'inline-flex items-center gap-2 px-8 py-4 rounded-full',
-                'bg-white/5 hover:bg-white/10 text-white font-semibold',
-                'border border-white/10 hover:border-white/20',
-                'transform hover:scale-105 transition-all duration-200',
-                'focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-dark-900'
+                'inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold',
+                'border transition-all duration-300 backdrop-blur-sm',
+                'focus:outline-none focus:ring-2 focus:ring-offset-2',
+                theme === 'dark'
+                  ? 'bg-white/5 hover:bg-white/10 text-white border-primary-500/30 hover:border-primary-500/50 focus:ring-white/50 focus:ring-offset-dark-900'
+                  : 'bg-primary-500/5 hover:bg-primary-500/10 text-primary-700 border-primary-500/30 hover:border-primary-500/50 focus:ring-primary-500/50 focus:ring-offset-white'
               )}
+              whileHover={{ scale: 1.05, y: -3 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Play size={18} className="text-primary-400" />
               View Our Work
-            </button>
+            </motion.button>
           </motion.div>
 
-          {/* Trust Indicators */}
+          {/* Trust Indicators with enhanced animation */}
           <motion.div
-            className="mt-16 pt-10 border-t border-white/10"
+            className={cn(
+              'mt-16 pt-10 border-t',
+              theme === 'dark' ? 'border-primary-500/10' : 'border-primary-500/15'
+            )}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1 }}
           >
-            <p className="text-sm text-gray-500 mb-6">Trusted by brands across industries</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 opacity-60">
-              {['Real Estate', 'F&B', 'Insurance', 'Health & Fitness', 'Events'].map((industry) => (
-                <span
+            <motion.p 
+              className={cn(
+                'text-sm mb-6',
+                theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
+              )}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              Trusted by brands across industries
+            </motion.p>
+            <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
+              {['Real Estate', 'F&B', 'Insurance', 'Health & Fitness', 'Events', 'IT Services'].map((industry, index) => (
+                <motion.span
                   key={industry}
-                  className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                  className="text-sm font-medium text-gray-500 hover:text-primary-400 transition-colors cursor-default"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 0.7, y: 0 }}
+                  whileHover={{ opacity: 1, scale: 1.1 }}
+                  transition={{ delay: 1.3 + index * 0.1 }}
                 >
                   {industry}
-                </span>
+                </motion.span>
               ))}
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Enhanced Scroll Indicator */}
       <motion.button
         onClick={handleScrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-white/50 hover:text-white transition-colors"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-primary-400/60 hover:text-primary-400 transition-colors"
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
+        transition={{ duration: 0.6, delay: 1.5 }}
         aria-label="Scroll to learn more"
       >
         <motion.div
+          className="flex flex-col items-center gap-2"
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <ArrowDown size={24} />
+          <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
+          <ArrowDown size={20} />
         </motion.div>
       </motion.button>
     </section>

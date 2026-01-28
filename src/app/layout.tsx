@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/lib/theme-context';
 
 // Font configuration
 const inter = Inter({
@@ -100,9 +101,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="min-h-screen bg-dark-950 font-sans antialiased">
-        {children}
+    <html lang="en" className={`${inter.variable} ${poppins.variable} dark`} suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased bg-dark-950 dark:bg-dark-950 light:bg-gray-50 transition-colors duration-300">
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

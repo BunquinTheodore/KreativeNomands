@@ -1008,6 +1008,114 @@
       ],
       "services": ["Video Production", "Real Estate Marketing", "Social Media Content"],
       "featured": true
+    },
+    {
+      "id": "it-services-web-development",
+      "title": "Modern Web Development",
+      "client": "IT Services",
+      "category": "it",
+      "description": "Full-stack web development solutions including responsive websites, web applications, and e-commerce platforms built with modern technologies.",
+      "thumbnail": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+      "assets": [
+        {
+          "src": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
+          "type": "image",
+          "title": "Web Development Code"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80",
+          "type": "image",
+          "title": "Responsive Design"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
+          "type": "image",
+          "title": "Modern Development Setup"
+        }
+      ],
+      "services": ["Web Development", "UI/UX Design", "Full-Stack Development"],
+      "featured": true
+    },
+    {
+      "id": "it-services-mobile-apps",
+      "title": "Mobile App Development",
+      "client": "IT Services",
+      "category": "it",
+      "description": "Native and cross-platform mobile application development for iOS and Android, delivering seamless user experiences.",
+      "thumbnail": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+      "assets": [
+        {
+          "src": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80",
+          "type": "image",
+          "title": "Mobile App Interface"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=80",
+          "type": "image",
+          "title": "App Development Process"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1200&q=80",
+          "type": "image",
+          "title": "Cross-Platform Solutions"
+        }
+      ],
+      "services": ["Mobile Development", "iOS Development", "Android Development"],
+      "featured": true
+    },
+    {
+      "id": "it-services-cloud-solutions",
+      "title": "Cloud Infrastructure & DevOps",
+      "client": "IT Services",
+      "category": "it",
+      "description": "Scalable cloud solutions and DevOps practices to optimize your infrastructure, improve deployment cycles, and ensure system reliability.",
+      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+      "assets": [
+        {
+          "src": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+          "type": "image",
+          "title": "Cloud Infrastructure"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+          "type": "image",
+          "title": "Server Management"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
+          "type": "image",
+          "title": "DevOps Pipeline"
+        }
+      ],
+      "services": ["Cloud Computing", "DevOps", "Infrastructure Management"],
+      "featured": true
+    },
+    {
+      "id": "it-services-cybersecurity",
+      "title": "Cybersecurity Solutions",
+      "client": "IT Services",
+      "category": "it",
+      "description": "Comprehensive cybersecurity services including security audits, penetration testing, and implementation of security best practices.",
+      "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+      "assets": [
+        {
+          "src": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+          "type": "image",
+          "title": "Cybersecurity Protection"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&q=80",
+          "type": "image",
+          "title": "Security Analysis"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80",
+          "type": "image",
+          "title": "Network Security"
+        }
+      ],
+      "services": ["Security Audit", "Penetration Testing", "Security Consulting"],
+      "featured": true
     }
   ],
   "categories": [
@@ -1016,7 +1124,8 @@
     { "id": "fnb", "label": "F&B / Restaurant" },
     { "id": "health", "label": "Health & Fitness" },
     { "id": "insurance", "label": "Insurance" },
-    { "id": "realestate", "label": "Real Estate" }
+    { "id": "realestate", "label": "Real Estate" },
+    { "id": "it", "label": "IT Services" }
   ],
   "services": [
     "Video Production",

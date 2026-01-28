@@ -2,11 +2,12 @@
 
 import { useState, useMemo, useRef, forwardRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, Image as ImageIcon, X, ChevronLeft, ChevronRight, Film, ImageOff } from 'lucide-react';
+import { Play, Image as ImageIcon, X, ChevronLeft, ChevronRight, Film, ImageOff, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { getAssetType } from '@/lib/utils';
-import { SlideUp } from '@/lib/animations';
+import { SlideUp, StaggerContainer, StaggerItem, scaleIn, staggerContainer } from '@/lib/animations';
+import { useTheme } from '@/lib/theme-context';
 import type { Project, PortfolioAsset } from '@/types';
 import portfolioData from '@/data/portfolio.json';
 
@@ -62,23 +63,41 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.9 }}
           transition={{ type: 'spring', damping: 25 }}
-          className="relative w-full max-w-5xl bg-dark-900 rounded-2xl overflow-hidden shadow-2xl"
+          className={cn(
+            "relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl",
+            theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+          )}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
+          <div className={cn(
+            "flex items-center justify-between p-4 sm:p-6 border-b",
+            theme === 'dark' ? 'border-white/10' : 'border-gray-200'
+          )}>
             <div>
-              <h3 className="text-xl font-display font-semibold text-white">
+              <h3 className={cn(
+                "text-xl font-display font-semibold",
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              )}>
                 {project.title}
               </h3>
-              <p className="text-sm text-gray-400">{project.client}</p>
+              <p className={cn(
+                "text-sm",
+                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+              )}>{project.client}</p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-full hover:bg-white/10 transition-colors"
+              className={cn(
+                "p-2 rounded-full transition-colors",
+                theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-gray-100'
+              )}
               aria-label="Close modal"
             >
-              <X className="w-6 h-6 text-gray-400" />
+              <X className={cn(
+                "w-6 h-6",
+                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+              )} />
             </button>
           </div>
 
@@ -208,11 +227,12 @@ interface ProjectCardProps {
 }
 
 // ProjectCard as a motion component to fix Framer Motion ref warning
-const ProjectCard = motion(
+const ProjectCard = motion.create(
   forwardRef<HTMLElement, ProjectCardProps>(function ProjectCardInner(
     { project, onClick },
     ref
   ) {
+    const { theme } = useTheme();
     const videoRef = useRef<HTMLVideoElement>(null);
     const [mediaError, setMediaError] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -248,9 +268,16 @@ const ProjectCard = motion(
       <article
         ref={ref as React.Ref<HTMLElement>}
         className={cn(
-          'group relative rounded-2xl overflow-hidden bg-dark-800',
-          'cursor-pointer transform hover:scale-[1.02] transition-transform duration-300'
+          'group relative rounded-2xl overflow-hidden transform transition-all duration-500 cursor-pointer border',
+          theme === 'dark'
+            ? 'bg-dark-800 border-primary-500/0 hover:border-primary-500/30'
+            : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-2xl'
         )}
+        style={{ 
+          boxShadow: isHovered 
+            ? (theme === 'dark' ? '0 25px 50px rgba(61, 90, 90, 0.2)' : '0 25px 50px rgba(61, 90, 90, 0.15)')
+            : '0 0 0 rgba(61, 90, 90, 0)' 
+        }}
         onClick={onClick}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -326,11 +353,20 @@ const ProjectCard = motion(
 
         {/* Content */}
         <div className="p-5">
-          <h3 className="text-lg font-display font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors">
+          <h3 className={cn(
+            "text-lg font-display font-semibold mb-1 group-hover:text-primary-400 transition-colors",
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          )}>
             {project.title}
           </h3>
-          <p className="text-sm text-gray-400 mb-2">{project.client}</p>
-          <p className="text-xs text-gray-500 line-clamp-2">{project.description}</p>
+          <p className={cn(
+            "text-sm mb-2",
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          )}>{project.client}</p>
+          <p className={cn(
+            "text-xs line-clamp-2",
+            theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
+          )}>{project.description}</p>
         </div>
       </article>
     );
@@ -340,6 +376,7 @@ const ProjectCard = motion(
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const { theme } = useTheme();
 
   const categories = data.categories;
   const projects = data.projects;
@@ -355,50 +392,127 @@ export default function Portfolio() {
   return (
     <section
       id="portfolio"
-      className="relative py-20 sm:py-28 lg:py-32 bg-dark-950"
+      className={cn(
+        'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
+        theme === 'dark' ? 'bg-dark-950' : 'bg-gray-50'
+      )}
       aria-labelledby="portfolio-heading"
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+      {/* Enhanced Background Decorations */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary-500/5 blur-[100px]"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-secondary-500/5 blur-[100px]"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Decorative grid pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(61, 90, 90, 0.5) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(61, 90, 90, 0.5) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px',
+          }}
+        />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
+        {/* Section Header with enhanced animation */}
         <SlideUp className="text-center mb-12 sm:mb-16">
-          <span className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-primary-400 bg-primary-500/10 rounded-full border border-primary-500/20">
-            Our Work
-          </span>
-          <h2
-            id="portfolio-heading"
-            className="text-3xl sm:text-4xl lg:text-display-md font-display font-bold text-white mb-6"
+          <motion.span 
+            className={cn(
+              'inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-sm font-medium rounded-full border',
+              theme === 'dark'
+                ? 'text-primary-400 bg-primary-500/10 border-primary-500/20'
+                : 'text-primary-600 bg-primary-500/10 border-primary-500/25'
+            )}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
-            Featured Work
-          </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <Sparkles className="w-4 h-4" />
+            Our Work
+          </motion.span>
+          <motion.h2
+            id="portfolio-heading"
+            className={cn(
+              'text-3xl sm:text-4xl lg:text-display-md font-display font-bold mb-6',
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            )}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            Featured{' '}
+            <span className="gradient-text">Work</span>
+          </motion.h2>
+          <motion.p 
+            className={cn(
+              'text-lg max-w-2xl mx-auto',
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            )}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             Our Kreativ Nomads have collaborated with corporations and local MSMEs,
             crafting content solutions to meet their unique needs.
-          </p>
+          </motion.p>
         </SlideUp>
 
-        {/* Filter Bar */}
-        <SlideUp className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-          {categories.map((category) => (
-            <button
+        {/* Filter Bar with enhanced animations */}
+        <motion.div 
+          className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          {categories.map((category, index) => (
+            <motion.button
               key={category.id}
               onClick={() => setActiveFilter(category.id)}
               className={cn(
-                'px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200',
+                'px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border',
                 activeFilter === category.id
-                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
-                  : 'bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700'
+                  ? 'bg-primary-500 text-white shadow-lg border-primary-500'
+                  : theme === 'dark'
+                    ? 'bg-dark-800 text-gray-400 hover:text-white hover:bg-dark-700 border-primary-500/10 hover:border-primary-500/30'
+                    : 'bg-white text-gray-700 hover:text-gray-900 hover:bg-gray-50 border-gray-300 hover:border-primary-400'
               )}
+              style={activeFilter === category.id ? { boxShadow: '0 10px 30px rgba(61, 90, 90, 0.3)' } : {}}
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
               aria-pressed={activeFilter === category.id}
             >
               {category.label}
-            </button>
+            </motion.button>
           ))}
-        </SlideUp>
+        </motion.div>
 
-        {/* Projects Grid */}
+        {/* Projects Grid with enhanced stagger */}
         <motion.div
           layout
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
         >
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((project, index) => (
@@ -407,10 +521,16 @@ export default function Portfolio() {
                 project={project}
                 onClick={() => setSelectedProject(project)}
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: -20 }}
+                transition={{ 
+                  duration: 0.4, 
+                  delay: index * 0.05,
+                  type: 'spring',
+                  stiffness: 200,
+                  damping: 20
+                }}
               />
             ))}
           </AnimatePresence>
@@ -418,9 +538,16 @@ export default function Portfolio() {
 
         {/* Empty State */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16">
-            <p className="text-gray-400">No projects found for this category.</p>
-          </div>
+          <motion.div 
+            className="text-center py-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className={cn(
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            )}>No projects found for this category.</p>
+          </motion.div>
         )}
 
         {/* Project Modal */}
