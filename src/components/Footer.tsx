@@ -48,10 +48,10 @@ export default function Footer() {
   return (
     <footer 
       className={cn(
-        'border-t',
+        'border-t backdrop-blur-sm',
         theme === 'dark' 
-          ? 'bg-dark-950 border-primary-500/10' 
-          : 'bg-gray-50 border-primary-500/15'
+          ? 'bg-dark-950/90 border-primary-500/10' 
+          : 'bg-cream-400/90 border-cream-500/50'
       )} 
       role="contentinfo"
     >
@@ -106,8 +106,8 @@ export default function Footer() {
                     className={cn(
                       'w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300',
                       theme === 'dark'
-                        ? 'bg-dark-800 text-gray-400 hover:text-white hover:bg-primary-500 border-primary-500/10 hover:border-primary-500/50'
-                        : 'bg-gray-100 text-gray-600 hover:text-white hover:bg-primary-500 border-gray-300 hover:border-primary-500'
+                        ? 'bg-dark-800 text-gray-400 hover:text-white hover:bg-secondary-500 border-primary-500/10 hover:border-secondary-500/50'
+                        : 'bg-cream-300 text-gray-600 hover:text-white hover:bg-secondary-500 border-cream-400 hover:border-secondary-500'
                     )}
                     aria-label={social.label}
                     whileHover={{ scale: 1.1, y: -3 }}
@@ -137,9 +137,9 @@ export default function Footer() {
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
-                      className="text-gray-400 hover:text-primary-400 text-sm transition-colors inline-flex items-center gap-1 group"
+                      className="text-gray-400 hover:text-secondary-400 text-sm transition-colors inline-flex items-center gap-1 group"
                     >
-                      <span className="w-0 group-hover:w-2 h-px bg-primary-500 transition-all duration-300" />
+                      <span className="w-0 group-hover:w-2 h-px bg-secondary-500 transition-all duration-300" />
                       {link.label}
                     </a>
                   </motion.li>
@@ -168,11 +168,11 @@ export default function Footer() {
                       className={cn(
                         "text-sm transition-colors inline-flex items-center gap-1 group",
                         theme === 'dark'
-                          ? 'text-gray-400 hover:text-primary-400'
-                          : 'text-gray-600 hover:text-primary-600'
+                          ? 'text-gray-400 hover:text-secondary-400'
+                          : 'text-gray-600 hover:text-secondary-600'
                       )}
                     >
-                      <span className="w-0 group-hover:w-2 h-px bg-primary-500 transition-all duration-300" />
+                      <span className="w-0 group-hover:w-2 h-px bg-secondary-500 transition-all duration-300" />
                       {link.label}
                     </a>
                   </motion.li>

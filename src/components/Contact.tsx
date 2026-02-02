@@ -83,7 +83,7 @@ export default function Contact() {
       id="contact"
       className={cn(
         'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
-        theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+        theme === 'dark' ? 'bg-dark-900/80 backdrop-blur-sm' : 'bg-cream-300/80 backdrop-blur-sm'
       )}
       aria-labelledby="contact-heading"
     >
@@ -169,9 +169,9 @@ export default function Contact() {
                       'flex items-start gap-4 p-5 rounded-2xl border transition-all duration-300 group',
                       theme === 'dark'
                         ? 'bg-dark-950/50 border-primary-500/10 hover:border-primary-500/30'
-                        : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-md'
+                        : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm hover:shadow-md'
                     )}
-                    whileHover={{ y: -5, boxShadow: theme === 'dark' ? '0 15px 30px rgba(61, 90, 90, 0.15)' : '0 15px 30px rgba(61, 90, 90, 0.1)' }}
+                    whileHover={{ y: -5, boxShadow: theme === 'dark' ? '0 15px 30px rgba(61, 90, 90, 0.15)' : '0 15px 30px rgba(245, 158, 11, 0.1)' }}
                   >
                     <motion.div 
                       className={cn(
@@ -254,7 +254,7 @@ export default function Contact() {
                 "p-6 sm:p-8 rounded-3xl border",
                 theme === 'dark'
                   ? 'bg-dark-950/50 border-white/5'
-                  : 'bg-white border-gray-200 shadow-lg'
+                  : 'bg-cream-100 border-cream-400 shadow-lg'
               )}
             >
               <div className="grid sm:grid-cols-2 gap-5 mb-5">
@@ -279,10 +279,10 @@ export default function Contact() {
                     placeholder="John Doe"
                     className={cn(
                       'w-full px-4 py-3 rounded-xl border transition-all duration-200',
-                      'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
+                      'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                       theme === 'dark'
                         ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
-                        : 'bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400'
+                        : 'bg-cream-50 border-cream-400 text-gray-900 placeholder:text-gray-400'
                     )}
                   />
                 </div>
@@ -308,10 +308,10 @@ export default function Contact() {
                     placeholder="john@company.com"
                     className={cn(
                       'w-full px-4 py-3 rounded-xl border transition-all duration-200',
-                      'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
+                      'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                       theme === 'dark'
                         ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
-                        : 'bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400'
+                        : 'bg-cream-50 border-cream-400 text-gray-900 placeholder:text-gray-400'
                     )}
                   />
                 </div>
@@ -337,10 +337,10 @@ export default function Contact() {
                   placeholder="Your Company Name"
                   className={cn(
                     'w-full px-4 py-3 rounded-xl border transition-all duration-200',
-                    'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
+                    'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                     theme === 'dark'
                       ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
-                      : 'bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400'
+                      : 'bg-cream-50 border-cream-400 text-gray-900 placeholder:text-gray-400'
                   )}
                 />
               </div>
@@ -366,10 +366,10 @@ export default function Contact() {
                   placeholder="Describe your creative needs, goals, and timeline..."
                   className={cn(
                     'w-full px-4 py-3 rounded-xl border resize-none transition-all duration-200',
-                    'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
+                    'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                     theme === 'dark'
                       ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
-                      : 'bg-gray-50 border-gray-300 text-gray-900 placeholder:text-gray-400'
+                      : 'bg-cream-50 border-cream-400 text-gray-900 placeholder:text-gray-400'
                   )}
                 />
               </div>
@@ -403,12 +403,12 @@ export default function Contact() {
                 disabled={!isFormValid || status.type === 'loading'}
                 className={cn(
                   'w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full',
-                  'bg-primary-500 hover:bg-primary-600 text-white font-semibold',
+                  'bg-secondary-500 hover:bg-secondary-600 text-white font-semibold',
                   'transform hover:scale-[1.02] transition-all duration-200',
-                  'shadow-lg shadow-primary-500/25',
+                  'shadow-lg shadow-secondary-500/25',
                   'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100',
-                  'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                  theme === 'dark' ? 'focus:ring-offset-dark-950' : 'focus:ring-offset-white'
+                  'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
+                  theme === 'dark' ? 'focus:ring-offset-dark-950' : 'focus:ring-offset-cream-500'
                 )}
               >
                 {status.type === 'loading' ? (

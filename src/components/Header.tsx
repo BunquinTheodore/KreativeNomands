@@ -137,13 +137,13 @@ export default function Header() {
               onClick={(e) => handleNavClick(e, '#contact')}
               className={cn(
                 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
-                'bg-primary-500 hover:bg-primary-600 text-white font-medium text-sm',
+                'bg-secondary-500 hover:bg-secondary-600 text-white font-medium text-sm',
                 'transition-all duration-300',
-                'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-white'
+                'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
+                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-cream-500'
               )}
-              style={{ boxShadow: '0 8px 25px rgba(61, 90, 90, 0.3)' }}
-              whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 30px rgba(61, 90, 90, 0.4)' }}
+              style={{ boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)' }}
+              whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 30px rgba(245, 158, 11, 0.4)' }}
               whileTap={{ scale: 0.98 }}
             >
               <Sparkles className="w-4 h-4" />
@@ -222,10 +222,10 @@ export default function Header() {
                     onClick={(e) => handleNavClick(e, '#contact')}
                     className={cn(
                       'flex items-center justify-center gap-2 w-full text-center px-4 py-3 rounded-full',
-                      'bg-primary-500 hover:bg-primary-600 text-white font-medium',
+                      'bg-secondary-500 hover:bg-secondary-600 text-white font-medium',
                       'transition-colors duration-300'
                     )}
-                    style={{ boxShadow: '0 8px 25px rgba(61, 90, 90, 0.3)' }}
+                    style={{ boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)' }}
                   >
                     <Sparkles className="w-4 h-4" />
                     Inquire Today

@@ -10,45 +10,60 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand Colors - Kreativ Nomads palette (Based on logo: Dark Teal/Forest Green)
+        // Brand Colors - Kreativ Nomads palette
         primary: {
-          50: '#f0fdf9',
-          100: '#ccfbec',
-          200: '#9af5da',
-          300: '#5fe9c5',
-          400: '#2dd4ab',
-          500: '#3d5a5a', // Main brand color from logo
-          600: '#355050',
+          50: '#f0f5f5',
+          100: '#d9e5e5',
+          200: '#b3cbcb',
+          300: '#8db1b1',
+          400: '#5a8585',
+          500: '#3d5a5a', // Main dark green from logo
+          600: '#354f4f',
           700: '#2d4545',
           800: '#263a3a',
           900: '#1f2f2f',
           950: '#141f1f',
         },
+        // Orange/Amber accent color
         secondary: {
-          50: '#f4f9f8',
-          100: '#daf0eb',
-          200: '#b5e0d8',
-          300: '#88c9be',
-          400: '#5daba0',
-          500: '#428f86',
-          600: '#34736c',
-          700: '#2d5d58',
-          800: '#284b48',
-          900: '#253f3d',
-          950: '#122524',
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b', // Main orange/amber
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
+        },
+        // Cream/beige for light backgrounds
+        cream: {
+          50: '#fefdfb',
+          100: '#fdf9f0',
+          200: '#fbf5e6',
+          300: '#f8f0d8',
+          400: '#f5eaca',
+          500: '#f5f0dc', // Main cream color
+          600: '#e6d9b8',
+          700: '#d4c394',
+          800: '#b8a370',
+          900: '#9c8456',
+          950: '#6b5a3a',
         },
         accent: {
-          50: '#f6f7f6',
-          100: '#e3e5e3',
-          200: '#c6cbc6',
-          300: '#a1a9a1',
-          400: '#7c857c',
-          500: '#626a62',
-          600: '#4d544d',
-          700: '#404540',
-          800: '#363936',
-          900: '#2f322f',
-          950: '#1a1c1a',
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+          950: '#451a03',
         },
         dark: {
           50: '#f6f7f6',
@@ -59,9 +74,9 @@ const config: Config = {
           500: '#626a62',
           600: '#4d544d',
           700: '#404540',
-          800: '#2a2d2a',
-          900: '#1a1c1a',
-          950: '#0f100f',
+          800: '#1a1a1a',
+          900: '#121212',
+          950: '#0a0a0a', // True black
         },
       },
       fontFamily: {
@@ -95,6 +110,16 @@ const config: Config = {
         'spin-slow': 'spin 8s linear infinite',
         'wiggle': 'wiggle 1s ease-in-out infinite',
         'gradient-shift': 'gradientShift 8s ease infinite',
+        // Animated background animations
+        'float-slow': 'floatSlow 30s ease-in-out infinite',
+        'float-slow-reverse': 'floatSlowReverse 35s ease-in-out infinite',
+        'float-medium': 'floatMedium 25s ease-in-out infinite',
+        'float-medium-reverse': 'floatMediumReverse 28s ease-in-out infinite',
+        'float-fast': 'floatFast 20s ease-in-out infinite',
+        'float-fast-reverse': 'floatFastReverse 22s ease-in-out infinite',
+        'particle': 'particle 30s linear infinite',
+        'wave': 'wave 15s ease-in-out infinite',
+        'grain': 'grain 8s steps(10) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -141,6 +166,61 @@ const config: Config = {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
+        },
+        // Animated background keyframes
+        floatSlow: {
+          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%': { transform: 'translate(50px, 30px) rotate(5deg)' },
+          '50%': { transform: 'translate(20px, 60px) rotate(-5deg)' },
+          '75%': { transform: 'translate(-30px, 40px) rotate(3deg)' },
+        },
+        floatSlowReverse: {
+          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
+          '25%': { transform: 'translate(-40px, 50px) rotate(-5deg)' },
+          '50%': { transform: 'translate(-60px, 20px) rotate(5deg)' },
+          '75%': { transform: 'translate(-20px, -30px) rotate(-3deg)' },
+        },
+        floatMedium: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(40px, -40px) scale(1.05)' },
+          '66%': { transform: 'translate(-30px, 30px) scale(0.95)' },
+        },
+        floatMediumReverse: {
+          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+          '33%': { transform: 'translate(-50px, 40px) scale(0.95)' },
+          '66%': { transform: 'translate(30px, -50px) scale(1.05)' },
+        },
+        floatFast: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(30px, -30px)' },
+        },
+        floatFastReverse: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '50%': { transform: 'translate(-30px, 30px)' },
+        },
+        particle: {
+          '0%': { transform: 'translateY(100vh) rotate(0deg)', opacity: '0' },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': { transform: 'translateY(-100vh) rotate(720deg)', opacity: '0' },
+        },
+        wave: {
+          '0%, 100%': { transform: 'translateX(0) translateY(0)' },
+          '25%': { transform: 'translateX(-20px) translateY(-10px)' },
+          '50%': { transform: 'translateX(0) translateY(-20px)' },
+          '75%': { transform: 'translateX(20px) translateY(-10px)' },
+        },
+        grain: {
+          '0%, 100%': { transform: 'translate(0, 0)' },
+          '10%': { transform: 'translate(-5%, -10%)' },
+          '20%': { transform: 'translate(-15%, 5%)' },
+          '30%': { transform: 'translate(7%, -25%)' },
+          '40%': { transform: 'translate(-5%, 25%)' },
+          '50%': { transform: 'translate(-15%, 10%)' },
+          '60%': { transform: 'translate(15%, 0%)' },
+          '70%': { transform: 'translate(0%, 15%)' },
+          '80%': { transform: 'translate(3%, 35%)' },
+          '90%': { transform: 'translate(-10%, 10%)' },
         },
       },
       backgroundImage: {

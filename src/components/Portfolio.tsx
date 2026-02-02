@@ -32,6 +32,7 @@ interface ProjectModalProps {
 
 function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { theme } = useTheme();
 
   const currentAsset = project.assets[currentIndex];
   const assetType = getAssetType(currentAsset.src, currentAsset.type);
@@ -65,14 +66,14 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
           transition={{ type: 'spring', damping: 25 }}
           className={cn(
             "relative w-full max-w-5xl rounded-2xl overflow-hidden shadow-2xl",
-            theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+            theme === 'dark' ? 'bg-dark-900' : 'bg-cream-100'
           )}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
           <div className={cn(
             "flex items-center justify-between p-4 sm:p-6 border-b",
-            theme === 'dark' ? 'border-white/10' : 'border-gray-200'
+            theme === 'dark' ? 'border-white/10' : 'border-cream-400'
           )}>
             <div>
               <h3 className={cn(
@@ -90,7 +91,7 @@ function ProjectModal({ project, isOpen, onClose }: ProjectModalProps) {
               onClick={onClose}
               className={cn(
                 "p-2 rounded-full transition-colors",
-                theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-gray-100'
+                theme === 'dark' ? 'hover:bg-white/10' : 'hover:bg-cream-300'
               )}
               aria-label="Close modal"
             >
@@ -271,7 +272,7 @@ const ProjectCard = motion.create(
           'group relative rounded-2xl overflow-hidden transform transition-all duration-500 cursor-pointer border',
           theme === 'dark'
             ? 'bg-dark-800 border-primary-500/0 hover:border-primary-500/30'
-            : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-2xl'
+            : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm hover:shadow-2xl'
         )}
         style={{ 
           boxShadow: isHovered 
@@ -394,7 +395,7 @@ export default function Portfolio() {
       id="portfolio"
       className={cn(
         'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
-        theme === 'dark' ? 'bg-dark-950' : 'bg-gray-50'
+        theme === 'dark' ? 'bg-dark-950/80 backdrop-blur-sm' : 'bg-cream-400/60 backdrop-blur-sm'
       )}
       aria-labelledby="portfolio-heading"
     >

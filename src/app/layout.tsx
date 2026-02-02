@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/lib/theme-context';
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 // Font configuration
 const inter = Inter({
@@ -102,8 +103,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} dark`} suppressHydrationWarning>
-      <body className="min-h-screen font-sans antialiased bg-dark-950 dark:bg-dark-950 light:bg-gray-50 transition-colors duration-300">
+      <body className="min-h-screen font-sans antialiased transition-colors duration-300">
         <ThemeProvider>
+          <AnimatedBackground />
           {children}
         </ThemeProvider>
       </body>

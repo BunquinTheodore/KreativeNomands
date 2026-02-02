@@ -44,7 +44,7 @@ export default function About() {
       id="about"
       className={cn(
         'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
-        theme === 'dark' ? 'bg-dark-950' : 'bg-gray-50'
+        theme === 'dark' ? 'bg-dark-950/80 backdrop-blur-sm' : 'bg-cream-400/60 backdrop-blur-sm'
       )}
       aria-labelledby="about-heading"
     >
@@ -264,11 +264,11 @@ export default function About() {
                   "text-center p-6 rounded-2xl border transition-all duration-300",
                   theme === 'dark'
                     ? 'bg-dark-900/30 border-primary-500/10 hover:border-primary-500/30'
-                    : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm'
+                    : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm'
                 )}
                 whileHover={{ 
                   y: -5, 
-                  boxShadow: theme === 'dark' ? '0 15px 30px rgba(61, 90, 90, 0.15)' : '0 15px 30px rgba(61, 90, 90, 0.1)'
+                  boxShadow: theme === 'dark' ? '0 15px 30px rgba(61, 90, 90, 0.15)' : '0 15px 30px rgba(245, 158, 11, 0.1)'
                 }}
               >
                 <motion.div 
@@ -311,11 +311,11 @@ export default function About() {
                   'h-full p-6 rounded-2xl border transition-all duration-300 group',
                   theme === 'dark'
                     ? 'bg-dark-900/50 border-primary-500/10 hover:border-primary-500/30'
-                    : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm'
+                    : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm'
                 )}
                 whileHover={{ 
                   y: -8, 
-                  boxShadow: theme === 'dark' ? '0 20px 40px rgba(61, 90, 90, 0.15)' : '0 20px 40px rgba(61, 90, 90, 0.1)'
+                  boxShadow: theme === 'dark' ? '0 20px 40px rgba(61, 90, 90, 0.15)' : '0 20px 40px rgba(245, 158, 11, 0.1)'
                 }}
                 transition={{ type: 'spring', stiffness: 300 }}
               >

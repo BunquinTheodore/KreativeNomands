@@ -34,12 +34,12 @@ export default function Hero() {
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
-        {/* Gradient Overlay with brand colors */}
+        {/* Gradient Overlay with brand colors - semi-transparent */}
         <div className={cn(
-          'absolute inset-0',
+          'absolute inset-0 backdrop-blur-[2px]',
           theme === 'dark' 
-            ? 'bg-gradient-to-br from-dark-950 via-primary-950/50 to-dark-950'
-            : 'bg-gradient-to-br from-gray-50 via-primary-50/50 to-white'
+            ? 'bg-gradient-to-br from-dark-950/90 via-primary-950/40 to-dark-950/90'
+            : 'bg-gradient-to-br from-gray-50/90 via-primary-50/40 to-white/90'
         )} />
         
         {/* Animated Background Elements with brand colors */}
@@ -198,13 +198,13 @@ export default function Hero() {
               href="#contact"
               className={cn(
                 'inline-flex items-center gap-2 px-8 py-4 rounded-full',
-                'bg-primary-500 hover:bg-primary-600 text-white font-semibold',
+                'bg-secondary-500 hover:bg-secondary-600 text-white font-semibold',
                 'transition-all duration-300',
-                'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-white'
+                'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
+                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-cream-500'
               )}
-              style={{ boxShadow: '0 15px 40px rgba(61, 90, 90, 0.35)' }}
-              whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(61, 90, 90, 0.45)' }}
+              style={{ boxShadow: '0 15px 40px rgba(245, 158, 11, 0.35)' }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(245, 158, 11, 0.45)' }}
               whileTap={{ scale: 0.98 }}
             >
               <Sparkles className="w-5 h-5" />

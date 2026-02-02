@@ -92,7 +92,7 @@ export default function Services() {
       id="services"
       className={cn(
         'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
-        theme === 'dark' ? 'bg-dark-900' : 'bg-white'
+        theme === 'dark' ? 'bg-dark-900/80 backdrop-blur-sm' : 'bg-cream-300/80 backdrop-blur-sm'
       )}
       aria-labelledby="services-heading"
     >
@@ -170,7 +170,7 @@ export default function Services() {
                   'h-full p-7 rounded-3xl border transition-all duration-500 group relative overflow-hidden',
                   theme === 'dark'
                     ? 'bg-dark-950/50 border-primary-500/10 hover:border-primary-500/40'
-                    : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-lg'
+                    : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm hover:shadow-lg'
                 )}
                 whileHover={{ 
                   y: -8, 
@@ -297,7 +297,7 @@ export default function Services() {
                     'relative p-6 rounded-2xl border transition-all duration-300 group',
                     theme === 'dark'
                       ? 'bg-dark-950/50 border-primary-500/10 hover:border-primary-500/30'
-                      : 'bg-white border-gray-200 hover:border-primary-300 shadow-sm hover:shadow-md'
+                      : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm hover:shadow-md'
                   )}
                 >
                   {/* Glow effect on hover */}
@@ -344,12 +344,12 @@ export default function Services() {
             href="#contact"
             className={cn(
               'inline-flex items-center gap-2 px-8 py-4 rounded-full',
-              'bg-primary-500 hover:bg-primary-600 text-white font-semibold',
+              'bg-secondary-500 hover:bg-secondary-600 text-white font-semibold',
               'transition-all duration-300',
               'group'
             )}
-            style={{ boxShadow: '0 15px 40px rgba(61, 90, 90, 0.35)' }}
-            whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(61, 90, 90, 0.45)' }}
+            style={{ boxShadow: '0 15px 40px rgba(245, 158, 11, 0.35)' }}
+            whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(245, 158, 11, 0.45)' }}
             whileTap={{ scale: 0.98 }}
           >
             Let&apos;s Get Started
