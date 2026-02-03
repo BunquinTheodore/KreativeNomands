@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Target, Lightbulb, Users, Compass, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { SlideUp, StaggerContainer, StaggerItem } from '@/lib/animations';
@@ -129,47 +130,16 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 200 }}
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-dark-800 border border-primary-500/10">
-                {/* Animated gradient background */}
-                <motion.div 
-                  className="absolute inset-0"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(61, 90, 90, 0.2) 0%, rgba(45, 69, 69, 0.2) 50%, rgba(66, 143, 134, 0.2) 100%)',
-                    backgroundSize: '200% 200%',
-                  }}
-                  animate={{
-                    backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                  }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+                {/* Social Media DP Logo */}
+                <Image
+                  src='/logos/Social-Media-DP-Green-BG.png'
+                  alt="Kreativ Nomads - Creative Agency"
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover"
+                  priority
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div 
-                    className="text-center p-8"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <motion.div 
-                      className="w-28 h-28 mx-auto mb-4 rounded-full flex items-center justify-center border-2 border-primary-500/30"
-                      style={{ background: 'linear-gradient(135deg, rgba(61, 90, 90, 0.3) 0%, rgba(45, 69, 69, 0.2) 100%)' }}
-                      animate={{
-                        boxShadow: [
-                          '0 0 20px rgba(61, 90, 90, 0.2)',
-                          '0 0 40px rgba(61, 90, 90, 0.4)',
-                          '0 0 20px rgba(61, 90, 90, 0.2)',
-                        ],
-                      }}
-                      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    >
-                      <span className="text-4xl font-display font-bold gradient-text">KN</span>
-                    </motion.div>
-                    <p className={cn(
-                      "text-sm",
-                      theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                    )}>Creative Agency</p>
-                  </motion.div>
-                </div>
               </div>
               
               {/* Enhanced decorative elements */}

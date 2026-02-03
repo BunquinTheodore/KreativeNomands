@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useTheme } from '@/lib/theme-context';
-import ThemeToggle from './ThemeToggle';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { label: 'Home', href: '#hero' },
@@ -65,39 +65,40 @@ export default function Header() {
           role="navigation"
           aria-label="Main navigation"
         >
-          {/* Logo with enhanced design */}
+          {/* Logo - using actual brand logos */}
           <Link
             href="/"
-            className="flex items-center gap-2 group"
+            className="flex items-center group flex-shrink-0"
             aria-label="Kreativ Nomads - Home"
           >
             <motion.div 
-              className="relative w-10 h-10 sm:w-12 sm:h-12"
-              whileHover={{ scale: 1.1 }}
+              className="relative"
+              whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              <div 
-                className="absolute inset-0 rounded-lg transform group-hover:scale-105 transition-all duration-300"
-                style={{ 
-                  background: 'linear-gradient(135deg, #3d5a5a 0%, #2d4545 100%)',
-                  boxShadow: isScrolled ? '0 4px 20px rgba(61, 90, 90, 0.3)' : 'none'
-                }}
-              />
-              <span className="absolute inset-0 flex items-center justify-center text-white font-display font-bold text-lg sm:text-xl">
-                KN
-              </span>
+              {/* Mobile: North Star Icon */}
+              <div className="sm:hidden relative w-12 h-12">
+                <Image
+                  src='/logos/North-Star-Icon-Black_Kreativ-Nomads.png'
+                  alt="Kreativ Nomads"
+                  fill
+                  sizes="48px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              {/* Desktop: One Line Logo */}
+              <div className="hidden sm:block relative h-10 w-[220px]">
+                <Image
+                  src='/logos/One-Line-Logo_Black.png'
+                  alt="Kreativ Nomads"
+                  fill
+                  sizes="220px"
+                  className="object-contain object-left"
+                  priority
+                />
+              </div>
             </motion.div>
-            <div className="hidden sm:block">
-              <span className={cn(
-                'block font-display font-semibold text-lg leading-tight',
-                theme === 'dark' ? 'text-white' : 'text-gray-900'
-              )}>
-                Kreativ
-              </span>
-              <span className="block text-primary-500 font-display text-sm leading-tight">
-                Nomads
-              </span>
-            </div>
           </Link>
 
           {/* Desktop Navigation with enhanced styling */}
@@ -129,9 +130,8 @@ export default function Header() {
             ))}
           </ul>
 
-          {/* CTA Button and Theme Toggle */}
+          {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
             <motion.a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
@@ -151,9 +151,8 @@ export default function Header() {
             </motion.a>
           </div>
 
-          {/* Mobile: Theme Toggle and Menu Button */}
+          {/* Mobile: Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <ThemeToggle />
             <motion.button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(

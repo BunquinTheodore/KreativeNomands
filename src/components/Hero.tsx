@@ -34,13 +34,19 @@ export default function Hero() {
     >
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0">
-        {/* Gradient Overlay with brand colors - semi-transparent */}
-        <div className={cn(
-          'absolute inset-0 backdrop-blur-[2px]',
-          theme === 'dark' 
-            ? 'bg-gradient-to-br from-dark-950/90 via-primary-950/40 to-dark-950/90'
-            : 'bg-gradient-to-br from-gray-50/90 via-primary-50/40 to-white/90'
-        )} />
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/landing-page-background.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Subtle dark overlay for text readability */}
+        <div className="absolute inset-0 bg-black/20" />
         
         {/* Animated Background Elements with brand colors */}
         <div className="absolute inset-0 overflow-hidden">
@@ -126,7 +132,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
           >
             <motion.span 
-              className="inline-flex items-center gap-2 px-5 py-2 mb-6 text-sm font-medium text-primary-400 bg-primary-500/10 rounded-full border border-primary-500/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-5 py-2 mb-6 text-sm font-medium text-white bg-primary-500/20 rounded-full border border-white/30 backdrop-blur-sm"
               whileHover={{ scale: 1.05, borderColor: 'rgba(61, 90, 90, 0.4)' }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
@@ -142,10 +148,7 @@ export default function Hero() {
 
           {/* Main Heading with enhanced gradient */}
           <motion.h1
-            className={cn(
-              'text-4xl sm:text-5xl md:text-display-xl lg:text-display-2xl font-display font-bold mb-6',
-              theme === 'dark' ? 'text-white' : 'text-gray-900'
-            )}
+            className="text-4xl sm:text-5xl md:text-display-xl lg:text-display-2xl font-display font-bold mb-6 text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -175,10 +178,7 @@ export default function Hero() {
 
           {/* Subheading */}
           <motion.p
-            className={cn(
-              'text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed',
-              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-            )}
+            className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed text-white/90"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
@@ -240,10 +240,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 1 }}
           >
             <motion.p 
-              className={cn(
-                'text-sm mb-6',
-                theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
-              )}
+              className="text-sm mb-6 text-white/70"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
@@ -254,7 +251,7 @@ export default function Hero() {
               {['Real Estate', 'F&B', 'Insurance', 'Health & Fitness', 'Events', 'IT Services'].map((industry, index) => (
                 <motion.span
                   key={industry}
-                  className="text-sm font-medium text-gray-500 hover:text-primary-400 transition-colors cursor-default"
+                  className="text-sm font-medium text-white/60 hover:text-white transition-colors cursor-default"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 0.7, y: 0 }}
                   whileHover={{ opacity: 1, scale: 1.1 }}
