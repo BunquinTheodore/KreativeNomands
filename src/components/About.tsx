@@ -154,10 +154,10 @@ export default function About() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch mb-12">
           {/* Left: Image */}
           <motion.div 
-            className="order-2 lg:order-1"
+            className="lg:order-1"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -181,7 +181,7 @@ export default function About() {
           </motion.div>
 
           {/* Right: Vision, Mission & Stats */}
-          <div className="order-1 lg:order-2 flex flex-col space-y-4">
+          <div className="lg:order-2 flex flex-col space-y-4">
             <motion.div
               initial="hidden"
               whileInView="visible"

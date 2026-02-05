@@ -220,23 +220,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </motion.div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        <button
-          onClick={handleScrollToAbout}
-          className="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors"
-          aria-label="Scroll to about section"
-        >
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <ArrowDown className="w-5 h-5 animate-bounce" />
-        </button>
-      </motion.div>
     </section>
   );
 }
