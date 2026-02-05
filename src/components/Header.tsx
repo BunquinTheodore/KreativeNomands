@@ -47,10 +47,10 @@ export default function Header() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
           ? cn(
-              'py-3 backdrop-blur-lg shadow-lg border-b',
+              'py-3 shadow-lg border-b',
               theme === 'dark' 
                 ? 'bg-dark-900/95 border-primary-500/10' 
                 : 'bg-white/95 border-primary-500/15'
@@ -71,15 +71,11 @@ export default function Header() {
             className="flex items-center group flex-shrink-0"
             aria-label="Kreativ Nomads - Home"
           >
-            <motion.div 
-              className="relative"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
+            <div className="relative">
               {/* Mobile: North Star Icon */}
-              <div className="sm:hidden relative w-12 h-12">
+              <div className="sm:hidden relative w-12 h-12 drop-shadow-lg">
                 <Image
-                  src='/logos/North-Star-Icon-Black_Kreativ-Nomads.png'
+                  src='/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png'
                   alt="Kreativ Nomads"
                   fill
                   sizes="48px"
@@ -88,33 +84,28 @@ export default function Header() {
                 />
               </div>
               {/* Desktop: One Line Logo */}
-              <div className="hidden sm:block relative h-10 w-[220px]">
+              <div className="hidden sm:block relative h-14 w-[280px] drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
                 <Image
-                  src='/logos/One-Line-Logo_Black.png'
+                  src='/logos/One-Line-Logo_Yellow.png'
                   alt="Kreativ Nomads"
                   fill
-                  sizes="220px"
+                  sizes="280px"
                   className="object-contain object-left"
                   priority
                 />
               </div>
-            </motion.div>
+            </div>
           </Link>
 
-          {/* Desktop Navigation with enhanced styling */}
+          {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-1 lg:gap-2">
-            {navLinks.map((link, index) => (
-              <motion.li 
-                key={link.href}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
+            {navLinks.map((link) => (
+              <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
                   className={cn(
-                    'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300',
+                    'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
                     theme === 'dark' 
                       ? 'text-gray-300 hover:text-white hover:bg-primary-500/10' 
                       : 'text-gray-600 hover:text-primary-700 hover:bg-primary-500/10',
@@ -124,36 +115,34 @@ export default function Header() {
                   )}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400 group-hover:w-1/2 transition-all duration-300 rounded-full" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400 group-hover:w-1/2 transition-all duration-200 rounded-full" />
                 </a>
-              </motion.li>
+              </li>
             ))}
           </ul>
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-3">
-            <motion.a
+            <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
               className={cn(
                 'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
                 'bg-secondary-500 hover:bg-secondary-600 text-white font-medium text-sm',
-                'transition-all duration-300',
+                'transition-all duration-200 hover:-translate-y-0.5',
                 'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
+                'shadow-lg hover:shadow-xl',
                 theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-cream-500'
               )}
-              style={{ boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)' }}
-              whileHover={{ scale: 1.05, y: -2, boxShadow: '0 12px 30px rgba(245, 158, 11, 0.4)' }}
-              whileTap={{ scale: 0.98 }}
             >
               <Sparkles className="w-4 h-4" />
               Inquire Today
-            </motion.a>
+            </a>
           </div>
 
           {/* Mobile: Menu Button */}
           <div className="md:hidden flex items-center gap-2">
-            <motion.button
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={cn(
                 'p-2 rounded-lg',
@@ -163,24 +152,23 @@ export default function Header() {
               )}
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMobileMenuOpen}
-              whileTap={{ scale: 0.95 }}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
+            </button>
           </div>
         </nav>
       </div>
 
-      {/* Mobile Menu with enhanced styling */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.2 }}
             className={cn(
-              'md:hidden backdrop-blur-lg border-t',
+              'md:hidden border-t',
               theme === 'dark' 
                 ? 'bg-dark-900/98 border-primary-500/10' 
                 : 'bg-white/98 border-primary-500/15'
@@ -188,13 +176,8 @@ export default function Header() {
           >
             <nav className="container mx-auto px-4 py-4">
               <ul className="flex flex-col gap-1">
-                {navLinks.map((link, index) => (
-                  <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
+                {navLinks.map((link) => (
+                  <li key={link.href}>
                     <a
                       href={link.href}
                       onClick={(e) => handleNavClick(e, link.href)}
@@ -203,33 +186,27 @@ export default function Header() {
                         theme === 'dark'
                           ? 'text-gray-300 hover:text-white hover:bg-primary-500/15'
                           : 'text-gray-600 hover:text-primary-700 hover:bg-primary-500/10',
-                        'transition-colors duration-300'
+                        'transition-colors duration-200'
                       )}
                     >
                       {link.label}
                     </a>
-                  </motion.li>
+                  </li>
                 ))}
-                <motion.li
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.05 }}
-                  className="mt-3 pt-3 border-t border-primary-500/10"
-                >
+                <li className="mt-3 pt-3 border-t border-primary-500/10">
                   <a
                     href="#contact"
                     onClick={(e) => handleNavClick(e, '#contact')}
                     className={cn(
                       'flex items-center justify-center gap-2 w-full text-center px-4 py-3 rounded-full',
                       'bg-secondary-500 hover:bg-secondary-600 text-white font-medium',
-                      'transition-colors duration-300'
+                      'transition-colors duration-200 shadow-lg'
                     )}
-                    style={{ boxShadow: '0 8px 25px rgba(245, 158, 11, 0.3)' }}
                   >
                     <Sparkles className="w-4 h-4" />
                     Inquire Today
                   </a>
-                </motion.li>
+                </li>
               </ul>
             </nav>
           </motion.div>

@@ -1,11 +1,11 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Calendar, Utensils, Heart, Shield, Building2, Monitor, Sparkles } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { SlideUp, StaggerContainer, StaggerItem } from '@/lib/animations';
 import { useTheme } from '@/lib/theme-context';
 import portfolioData from '@/data/portfolio.json';
 import type { Project } from '@/types';
@@ -17,78 +17,97 @@ const data = portfolioData as {
   services: string[];
 };
 
-// Category data with icons and styling
+// Category data with icons and styling - Using brand colors
 const categories = [
   {
     id: 'events',
     label: 'Events',
     description: 'Corporate events, virtual gatherings, and live experiences',
     icon: Calendar,
-    color: 'from-purple-500 to-indigo-600',
-    bgColor: 'bg-purple-500/10',
-    textColor: 'text-purple-600',
-    borderColor: 'border-purple-500/20',
-    hoverBg: 'hover:bg-purple-500/20'
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-500/10',
+    textColor: 'text-primary-600',
+    borderColor: 'border-primary-500/20',
+    hoverBg: 'hover:bg-primary-500/20'
   },
   {
     id: 'fnb',
     label: 'Food & Beverage',
     description: 'Restaurant branding and promotional content',
     icon: Utensils,
-    color: 'from-orange-500 to-red-500',
-    bgColor: 'bg-orange-500/10',
-    textColor: 'text-orange-600',
-    borderColor: 'border-orange-500/20',
-    hoverBg: 'hover:bg-orange-500/20'
+    color: 'from-secondary-500 to-secondary-600',
+    bgColor: 'bg-secondary-500/10',
+    textColor: 'text-secondary-600',
+    borderColor: 'border-secondary-500/20',
+    hoverBg: 'hover:bg-secondary-500/20'
   },
   {
     id: 'health',
     label: 'Health & Fitness',
     description: 'Wellness brands and fitness campaigns',
     icon: Heart,
-    color: 'from-green-500 to-emerald-600',
-    bgColor: 'bg-green-500/10',
-    textColor: 'text-green-600',
-    borderColor: 'border-green-500/20',
-    hoverBg: 'hover:bg-green-500/20'
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-500/10',
+    textColor: 'text-primary-600',
+    borderColor: 'border-primary-500/20',
+    hoverBg: 'hover:bg-primary-500/20'
   },
   {
     id: 'insurance',
     label: 'Insurance',
     description: 'Financial services branding and educational content',
     icon: Shield,
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-500/10',
-    textColor: 'text-blue-600',
-    borderColor: 'border-blue-500/20',
-    hoverBg: 'hover:bg-blue-500/20'
+    color: 'from-secondary-500 to-secondary-600',
+    bgColor: 'bg-secondary-500/10',
+    textColor: 'text-secondary-600',
+    borderColor: 'border-secondary-500/20',
+    hoverBg: 'hover:bg-secondary-500/20'
   },
   {
     id: 'realestate',
     label: 'Real Estate',
     description: 'Property marketing and virtual tours',
     icon: Building2,
-    color: 'from-amber-500 to-yellow-500',
-    bgColor: 'bg-amber-500/10',
-    textColor: 'text-amber-600',
-    borderColor: 'border-amber-500/20',
-    hoverBg: 'hover:bg-amber-500/20'
+    color: 'from-primary-500 to-primary-600',
+    bgColor: 'bg-primary-500/10',
+    textColor: 'text-primary-600',
+    borderColor: 'border-primary-500/20',
+    hoverBg: 'hover:bg-primary-500/20'
   },
   {
     id: 'it',
     label: 'IT Services',
     description: 'Technology solutions and digital marketing',
     icon: Monitor,
-    color: 'from-slate-500 to-gray-600',
-    bgColor: 'bg-slate-500/10',
-    textColor: 'text-slate-600',
-    borderColor: 'border-slate-500/20',
-    hoverBg: 'hover:bg-slate-500/20'
+    color: 'from-secondary-500 to-secondary-600',
+    bgColor: 'bg-secondary-500/10',
+    textColor: 'text-secondary-600',
+    borderColor: 'border-secondary-500/20',
+    hoverBg: 'hover:bg-secondary-500/20'
   }
 ];
 
+// Simple fade animation
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 export default function Portfolio() {
   const { theme } = useTheme();
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Parallax transforms
+  const bgLogo1Y = useTransform(scrollYProgress, [0, 1], ['60px', '-100px']);
+  const bgLogo2Y = useTransform(scrollYProgress, [0, 1], ['100px', '-80px']);
+  const bgLogo3Y = useTransform(scrollYProgress, [0, 1], ['30px', '-120px']);
+  const bgLogo4Y = useTransform(scrollYProgress, [0, 1], ['80px', '-60px']);
 
   // Count projects per category
   const getProjectCount = (categoryId: string) => {
@@ -104,62 +123,120 @@ export default function Portfolio() {
 
   return (
     <section
+      ref={sectionRef}
       id="portfolio"
-      className="relative py-24 sm:py-32 bg-cream-300/80 backdrop-blur-sm overflow-hidden"
+      className="relative py-24 sm:py-32 bg-cream-300/80 overflow-hidden"
       aria-label="Portfolio categories"
     >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-50">
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(61, 90, 90, 0.08) 1px, transparent 0)`,
-            backgroundSize: '40px 40px',
-          }}
+      {/* Parallax Background Elements */}
+      <motion.div
+        className="absolute top-[8%] right-[10%] w-32 h-32 opacity-[0.05] pointer-events-none"
+        style={{ y: bgLogo1Y }}
+      >
+        <Image
+          src="/logos/North-Star-Icon-Green_Kreativ-Nomads.png"
+          alt=""
+          fill
+          sizes="128px"
+          className="object-contain"
         />
-      </div>
+      </motion.div>
+      
+      <motion.div
+        className="absolute top-[25%] left-[5%] w-24 h-24 opacity-[0.04] pointer-events-none"
+        style={{ y: bgLogo2Y }}
+      >
+        <Image
+          src="/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png"
+          alt=""
+          fill
+          sizes="96px"
+          className="object-contain"
+        />
+      </motion.div>
+      
+      <motion.div
+        className="absolute bottom-[20%] right-[8%] w-40 h-40 opacity-[0.03] pointer-events-none"
+        style={{ y: bgLogo3Y }}
+      >
+        <Image
+          src="/logos/One-Line-Logo_Green.png"
+          alt=""
+          fill
+          sizes="160px"
+          className="object-contain"
+        />
+      </motion.div>
+      
+      <motion.div
+        className="absolute bottom-[35%] left-[15%] w-28 h-28 opacity-[0.04] pointer-events-none"
+        style={{ y: bgLogo4Y }}
+      >
+        <Image
+          src="/logos/North-Star-Icon-Black_Kreativ-Nomads.png"
+          alt=""
+          fill
+          sizes="112px"
+          className="object-contain"
+        />
+      </motion.div>
+
+      {/* Simple Background Pattern */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(61, 90, 90, 0.08) 1px, transparent 0)`,
+          backgroundSize: '40px 40px',
+        }}
+      />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <SlideUp className="text-center mb-16">
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-primary-600 bg-primary-500/10 rounded-full border border-primary-500/20"
-            whileHover={{ scale: 1.05 }}
-          >
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 mb-6 text-sm font-medium text-primary-600 bg-primary-500/10 rounded-full border border-primary-500/20">
             <Sparkles className="w-4 h-4" />
             Our Work
-          </motion.div>
+          </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
             Explore Our <span className="gradient-text">Portfolio</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Select a category to view our complete collection of projects, videos, and creative assets.
           </p>
-        </SlideUp>
+        </motion.div>
 
         {/* Category Cards Grid */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {categories.map((category, index) => {
             const Icon = category.icon;
             const projectCount = getProjectCount(category.id);
             const assetCount = getAssetCount(category.id);
 
             return (
-              <StaggerItem key={category.id}>
+              <motion.div
+                key={category.id}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: index * 0.1 } }
+                }}
+              >
                 <Link href={`/portfolio/${category.id}`}>
-                  <motion.div
+                  <div
                     className={cn(
                       "relative group p-6 rounded-2xl border-2 transition-all duration-300 cursor-pointer",
-                      "bg-white/80 backdrop-blur-sm",
+                      "bg-white/80 hover:-translate-y-1 hover:shadow-lg",
                       category.borderColor,
                       category.hoverBg
                     )}
-                    whileHover={{ 
-                      scale: 1.02,
-                      y: -5,
-                      boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)'
-                    }}
-                    whileTap={{ scale: 0.98 }}
                   >
                     {/* Gradient Accent */}
                     <div className={cn(
@@ -198,41 +275,29 @@ export default function Portfolio() {
                       <span>View Portfolio</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
-
-                    {/* Hover Gradient Background */}
-                    <motion.div
-                      className={cn(
-                        "absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity bg-gradient-to-br",
-                        category.color
-                      )}
-                    />
-                  </motion.div>
+                  </div>
                 </Link>
-              </StaggerItem>
+              </motion.div>
             );
           })}
-        </StaggerContainer>
+        </div>
 
         {/* Bottom CTA */}
         <motion.div
           className="text-center mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          variants={fadeInUp}
         >
           <p className="text-gray-600 mb-4">
             Want to see something specific? Let us know what you're looking for.
           </p>
           <Link href="#contact">
-            <motion.span
-              className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-full transition-colors shadow-lg"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <span className="inline-flex items-center gap-2 px-6 py-3 bg-secondary-500 hover:bg-secondary-600 text-white font-medium rounded-full transition-all duration-300 hover:-translate-y-0.5 shadow-lg hover:shadow-xl">
               <Sparkles className="w-4 h-4" />
               Get in Touch
-            </motion.span>
+            </span>
           </Link>
         </motion.div>
       </div>

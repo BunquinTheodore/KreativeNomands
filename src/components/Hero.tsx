@@ -1,13 +1,31 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { ArrowDown, Play, Sparkles, Compass } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useTheme } from '@/lib/theme-context';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowDown, Sparkles, Compass } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Hero() {
-  const { theme } = useTheme();
+  const sectionRef = useRef<HTMLElement>(null);
   
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"]
+  });
+
+  // Transform values for parallax
+  const videoY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 0.6]);
+  const logoOpacity = useTransform(scrollYProgress, [0, 0.5], [0.1, 0]);
+  
+  // Floating logos parallax
+  const logo1Y = useTransform(scrollYProgress, [0, 1], ['0px', '-150px']);
+  const logo2Y = useTransform(scrollYProgress, [0, 1], ['0px', '-100px']);
+  const logo3Y = useTransform(scrollYProgress, [0, 1], ['0px', '-200px']);
+  const logo4Y = useTransform(scrollYProgress, [0, 1], ['0px', '-80px']);
+
   const handleScrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
@@ -28,151 +46,121 @@ export default function Hero() {
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       aria-label="Hero section"
     >
-      {/* Enhanced Background */}
+      {/* Background with Parallax */}
       <div className="absolute inset-0 z-0">
-        {/* Background Video */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+        {/* Background Video with parallax */}
+        <motion.div 
+          className="absolute inset-0 w-full h-[120%] -top-[10%]"
+          style={{ y: videoY }}
         >
-          <source src="/videos/landing-page-background.mp4" type="video/mp4" />
-        </video>
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/landing-page-background.mp4" type="video/mp4" />
+          </video>
+        </motion.div>
         
-        {/* Subtle dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black/20" />
-        
-        {/* Animated Background Elements with brand colors */}
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] rounded-full bg-primary-500/10 blur-[120px]"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-              rotate: [0, 180, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          />
-          <motion.div
-            className="absolute -bottom-1/4 -left-1/4 w-[700px] h-[700px] rounded-full bg-secondary-500/10 blur-[100px]"
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.2, 0.4, 0.2],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-accent-400/5 blur-[80px]"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.1, 0.3, 0.1],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-        </div>
-
-        {/* Enhanced Grid Pattern */}
-        <div 
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: `linear-gradient(rgba(61, 90, 90, 0.3) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(61, 90, 90, 0.3) 1px, transparent 1px)`,
-            backgroundSize: '80px 80px',
-          }}
+        {/* Dynamic overlay */}
+        <motion.div 
+          className="absolute inset-0 bg-black"
+          style={{ opacity: overlayOpacity }}
         />
-
-        {/* Floating Particles */}
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-primary-400/30"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              delay: i * 0.5,
-              ease: 'easeInOut',
-            }}
+        
+        {/* Floating Logo Elements with Parallax */}
+        <motion.div
+          className="absolute top-[15%] left-[5%] w-32 h-32 opacity-10"
+          style={{ y: logo1Y, opacity: logoOpacity }}
+        >
+          <Image
+            src="/logos/North-Star-Icon-White_Kreativ-Nomads.png"
+            alt=""
+            fill
+            sizes="128px"
+            className="object-contain"
           />
-        ))}
+        </motion.div>
+        
+        <motion.div
+          className="absolute top-[25%] right-[8%] w-24 h-24 opacity-10"
+          style={{ y: logo2Y, opacity: logoOpacity }}
+        >
+          <Image
+            src="/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png"
+            alt=""
+            fill
+            sizes="96px"
+            className="object-contain"
+          />
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-[30%] left-[10%] w-20 h-20 opacity-10"
+          style={{ y: logo3Y, opacity: logoOpacity }}
+        >
+          <Image
+            src="/logos/North-Star-Icon-Green_Kreativ-Nomads.png"
+            alt=""
+            fill
+            sizes="80px"
+            className="object-contain"
+          />
+        </motion.div>
+        
+        <motion.div
+          className="absolute bottom-[25%] right-[12%] w-28 h-28 opacity-10"
+          style={{ y: logo4Y, opacity: logoOpacity }}
+        >
+          <Image
+            src="/logos/North-Star-Icon-Ivory_Kreativ-Nomads.png"
+            alt=""
+            fill
+            sizes="112px"
+            className="object-contain"
+          />
+        </motion.div>
       </div>
 
-      {/* Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
+      {/* Content with Parallax */}
+      <motion.div 
+        className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20"
+        style={{ y: contentY }}
+      >
         <div className="max-w-4xl mx-auto text-center">
-          {/* Tagline with enhanced animation */}
+          {/* Tagline */}
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, type: 'spring', stiffness: 200 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
           >
-            <motion.span 
-              className="inline-flex items-center gap-2 px-5 py-2 mb-6 text-sm font-medium text-white bg-primary-500/20 rounded-full border border-white/30 backdrop-blur-sm"
-              whileHover={{ scale: 1.05, borderColor: 'rgba(61, 90, 90, 0.4)' }}
-              transition={{ type: 'spring', stiffness: 300 }}
-            >
-              <motion.span
-                animate={{ rotate: [0, 15, -15, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <Compass className="w-4 h-4" />
-              </motion.span>
+            <span className="inline-flex items-center gap-2 px-5 py-2 mb-6 text-sm font-medium text-white bg-primary-500/20 rounded-full border border-white/30">
+              <Compass className="w-4 h-4" />
               Your Creative Virtual Assistant
-            </motion.span>
+            </span>
           </motion.div>
 
-          {/* Main Heading with enhanced gradient */}
+          {/* Main Heading */}
           <motion.h1
             className="text-4xl sm:text-5xl md:text-display-xl lg:text-display-2xl font-display font-bold mb-6 text-white"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
           >
             We Are{' '}
             <span className="relative inline-block">
-              <motion.span 
-                className="relative z-10 gradient-text"
-                animate={{
-                  backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
-                style={{
-                  backgroundSize: '200% 200%',
-                }}
-              >
+              <span className="relative z-10 gradient-text">
                 Kreativ Nomads
-              </motion.span>
-              <motion.span
-                className="absolute -bottom-2 left-0 right-0 h-3 bg-primary-500/30 -skew-x-3 rounded"
-                initial={{ scaleX: 0, originX: 0 }}
-                animate={{ scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.9, ease: [0.6, 0.01, 0.05, 0.95] }}
-              />
+              </span>
+              <span className="absolute -bottom-2 left-0 right-0 h-3 bg-primary-500/30 -skew-x-3 rounded" />
             </span>
           </motion.h1>
 
@@ -181,108 +169,74 @@ export default function Hero() {
             className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed text-white/90"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
             A creative agency of experienced freelancers providing fresh and compelling 
             creative solutions to address your marketing and communication challenges.
           </motion.p>
 
-          {/* CTA Buttons with enhanced styling */}
+          {/* CTA Buttons */}
           <motion.div
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <motion.a
+            <a
               href="#contact"
-              className={cn(
-                'inline-flex items-center gap-2 px-8 py-4 rounded-full',
-                'bg-secondary-500 hover:bg-secondary-600 text-white font-semibold',
-                'transition-all duration-300',
-                'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
-                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-cream-500'
-              )}
-              style={{ boxShadow: '0 15px 40px rgba(245, 158, 11, 0.35)' }}
-              whileHover={{ scale: 1.05, y: -3, boxShadow: '0 20px 50px rgba(245, 158, 11, 0.45)' }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-secondary-500 hover:bg-secondary-600 text-white font-medium transition-colors shadow-lg hover:shadow-xl"
             >
               <Sparkles className="w-5 h-5" />
               Inquire Today
-            </motion.a>
-            
-            <motion.button
+            </a>
+            <button
               onClick={handleScrollToPortfolio}
-              className={cn(
-                'inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold',
-                'border transition-all duration-300 backdrop-blur-sm',
-                'focus:outline-none focus:ring-2 focus:ring-offset-2',
-                theme === 'dark'
-                  ? 'bg-white/5 hover:bg-white/10 text-white border-primary-500/30 hover:border-primary-500/50 focus:ring-white/50 focus:ring-offset-dark-900'
-                  : 'bg-primary-500/5 hover:bg-primary-500/10 text-primary-700 border-primary-500/30 hover:border-primary-500/50 focus:ring-primary-500/50 focus:ring-offset-white'
-              )}
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.98 }}
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/40 text-white font-medium hover:bg-white/10 transition-colors"
             >
-              <Play size={18} className="text-primary-400" />
-              View Our Work
-            </motion.button>
+              <span>View Our Work</span>
+            </button>
           </motion.div>
 
-          {/* Trust Indicators with enhanced animation */}
+          {/* Trust Indicators */}
           <motion.div
-            className={cn(
-              'mt-16 pt-10 border-t',
-              theme === 'dark' ? 'border-primary-500/10' : 'border-primary-500/15'
-            )}
+            className="mt-16 pt-10 border-t border-white/20"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
           >
-            <motion.p 
-              className="text-sm mb-6 text-white/70"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2 }}
-            >
+            <p className="text-sm mb-6 text-white/70">
               Trusted by brands across industries
-            </motion.p>
+            </p>
             <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
-              {['Real Estate', 'F&B', 'Insurance', 'Health & Fitness', 'Events', 'IT Services'].map((industry, index) => (
-                <motion.span
+              {['Real Estate', 'F&B', 'Insurance', 'Health & Fitness', 'Events', 'IT Services'].map((industry) => (
+                <span
                   key={industry}
                   className="text-sm font-medium text-white/60 hover:text-white transition-colors cursor-default"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 0.7, y: 0 }}
-                  whileHover={{ opacity: 1, scale: 1.1 }}
-                  transition={{ delay: 1.3 + index * 0.1 }}
                 >
                   {industry}
-                </motion.span>
+                </span>
               ))}
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Enhanced Scroll Indicator */}
-      <motion.button
-        onClick={handleScrollToAbout}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 text-primary-400/60 hover:text-primary-400 transition-colors"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 1.5 }}
-        aria-label="Scroll to learn more"
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
       >
-        <motion.div
-          className="flex flex-col items-center gap-2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        <button
+          onClick={handleScrollToAbout}
+          className="flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors"
+          aria-label="Scroll to about section"
         >
-          <span className="text-xs font-medium tracking-wider uppercase">Scroll</span>
-          <ArrowDown size={20} />
-        </motion.div>
-      </motion.button>
+          <span className="text-xs uppercase tracking-widest">Scroll</span>
+          <ArrowDown className="w-5 h-5 animate-bounce" />
+        </button>
+      </motion.div>
     </section>
   );
 }

@@ -1,11 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle, ArrowRight, Sparkles } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { SlideUp, StaggerContainer, StaggerItem } from '@/lib/animations';
 import { useTheme } from '@/lib/theme-context';
+import Image from 'next/image';
 
 const contactInfo = [
   {
@@ -40,6 +40,12 @@ interface FormStatus {
   message?: string;
 }
 
+// Simple fade animation
+const fadeInUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+};
+
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -48,6 +54,18 @@ export default function Contact() {
     message: '',
   });
   const [status, setStatus] = useState<FormStatus>({ type: 'idle' });
+  const sectionRef = useRef<HTMLElement>(null);
+  
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+
+  // Parallax transforms
+  const bgLogo1Y = useTransform(scrollYProgress, [0, 1], ['50px', '-80px']);
+  const bgLogo2Y = useTransform(scrollYProgress, [0, 1], ['80px', '-50px']);
+  const bgLogo3Y = useTransform(scrollYProgress, [0, 1], ['30px', '-100px']);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -58,8 +76,6 @@ export default function Contact() {
     e.preventDefault();
     setStatus({ type: 'loading' });
 
-    // Simulate form submission
-    // In production, replace with actual API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setStatus({
@@ -80,181 +96,204 @@ export default function Contact() {
 
   return (
     <section
+      ref={sectionRef}
       id="contact"
       className={cn(
         'relative py-20 sm:py-28 lg:py-32 overflow-hidden',
-        theme === 'dark' ? 'bg-dark-900/80 backdrop-blur-sm' : 'bg-cream-300/80 backdrop-blur-sm'
+        theme === 'dark' ? 'bg-dark-900/80' : 'bg-cream-300/80'
       )}
       aria-labelledby="contact-heading"
     >
-      {/* Enhanced Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div 
-          className="absolute bottom-0 left-0 right-0 h-px"
-          style={{ background: 'linear-gradient(90deg, transparent, rgba(61, 90, 90, 0.5), transparent)' }}
+      {/* Parallax Background Elements */}
+      <motion.div
+        className="absolute top-[15%] right-[8%] w-36 h-36 opacity-[0.04] pointer-events-none"
+        style={{ y: bgLogo1Y }}
+      >
+        <Image
+          src="/logos/North-Star-Icon-Green_Kreativ-Nomads.png"
+          alt=""
+          fill
+          sizes="144px"
+          className="object-contain"
         />
-        <motion.div 
-          className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[100px]"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+      </motion.div>
+      
+      <motion.div
+        className="absolute bottom-[25%] left-[5%] w-28 h-28 opacity-[0.04] pointer-events-none"
+        style={{ y: bgLogo2Y }}
+      >
+        <Image
+          src="/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png"
+          alt=""
+          fill
+          sizes="112px"
+          className="object-contain"
         />
-        <motion.div 
-          className="absolute bottom-1/4 left-0 w-[300px] h-[300px] bg-secondary-500/5 rounded-full blur-[80px]"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
+      </motion.div>
+      
+      <motion.div
+        className="absolute top-[40%] left-[45%] w-48 h-48 opacity-[0.025] pointer-events-none"
+        style={{ y: bgLogo3Y }}
+      >
+        <Image
+          src="/logos/Two-Line-Logo_Green.png"
+          alt=""
+          fill
+          sizes="192px"
+          className="object-contain"
         />
-      </div>
+      </motion.div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-        {/* Enhanced Section Header */}
-        <SlideUp className="text-center mb-16">
-          <motion.span 
+      {/* Simple gradient line */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div 
+          className="text-center mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          <span 
             className={cn(
               "inline-flex items-center gap-2 px-4 py-1.5 mb-4 text-sm font-medium rounded-full",
               theme === 'dark' 
                 ? 'text-primary-400 bg-primary-500/10 border border-primary-500/20'
                 : 'text-primary-600 bg-primary-50 border border-primary-200'
             )}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: 'spring', stiffness: 300 }}
           >
             <Sparkles className="w-4 h-4" />
             Contact Us
-          </motion.span>
-          <motion.h2
+          </span>
+          <h2
             id="contact-heading"
             className={cn(
               "text-3xl sm:text-4xl lg:text-display-md font-display font-bold mb-6",
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             )}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
           >
             Let&apos;s Get <span className="gradient-text">Started</span>
-          </motion.h2>
-          <motion.p 
+          </h2>
+          <p 
             className={cn(
               "text-lg max-w-2xl mx-auto",
               theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
             )}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
           >
             We&apos;re excited to know about your brand and creative needs. 
             Send us an email or fill out the form below.
-          </motion.p>
-        </SlideUp>
+          </p>
+        </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-12 lg:gap-16">
-          {/* Enhanced Contact Info */}
+          {/* Contact Info */}
           <div className="lg:col-span-2">
-            <StaggerContainer className="space-y-6">
+            <div className="space-y-6">
               {contactInfo.map((item, index) => (
-                <StaggerItem key={item.label}>
-                  <motion.a
-                    href={item.href}
-                    target={item.label === 'Location' ? '_blank' : undefined}
-                    rel={item.label === 'Location' ? 'noopener noreferrer' : undefined}
-                    className={cn(
-                      'flex items-start gap-4 p-5 rounded-2xl border transition-all duration-300 group',
-                      theme === 'dark'
-                        ? 'bg-dark-950/50 border-primary-500/10 hover:border-primary-500/30'
-                        : 'bg-cream-100 border-cream-400 hover:border-secondary-300 shadow-sm hover:shadow-md'
-                    )}
-                    whileHover={{ y: -5, boxShadow: theme === 'dark' ? '0 15px 30px rgba(61, 90, 90, 0.15)' : '0 15px 30px rgba(245, 158, 11, 0.1)' }}
-                  >
-                    <motion.div 
-                      className={cn(
-                        "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
-                        theme === 'dark'
-                          ? 'bg-primary-500/15 group-hover:bg-primary-500/25'
-                          : 'bg-primary-50 group-hover:bg-primary-100'
-                      )}
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <item.icon className={cn(
-                        "w-5 h-5",
-                        theme === 'dark' ? 'text-primary-400' : 'text-primary-600'
-                      )} />
-                    </motion.div>
-                    <div>
-                      <p className={cn(
-                        "text-sm mb-1",
-                        theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
-                      )}>{item.label}</p>
-                      <p className={cn(
-                        "font-medium group-hover:text-primary-400 transition-colors",
-                        theme === 'dark' ? 'text-white' : 'text-gray-900'
-                      )}>
-                        {item.value}
-                      </p>
-                    </div>
-                  </motion.a>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-
-            {/* Enhanced CTA Card */}
-            <SlideUp delay={0.3} className="mt-8">
-              <motion.div 
-                className={cn(
-                  "p-6 rounded-2xl border",
-                  theme === 'dark'
-                    ? 'border-primary-500/20'
-                    : 'border-primary-200 bg-gradient-to-br from-primary-50 to-white'
-                )}
-                style={theme === 'dark' ? { 
-                  background: 'linear-gradient(135deg, rgba(61, 90, 90, 0.2) 0%, rgba(45, 69, 69, 0.1) 100%)'
-                } : undefined}
-                whileHover={{ boxShadow: theme === 'dark' ? '0 20px 40px rgba(61, 90, 90, 0.15)' : '0 20px 40px rgba(61, 90, 90, 0.1)' }}
-              >
-                <h3 className={cn(
-                  "text-lg font-display font-semibold mb-2",
-                  theme === 'dark' ? 'text-white' : 'text-gray-900'
-                )}>
-                  Ready to elevate your brand?
-                </h3>
-                <p className={cn(
-                  "text-sm mb-4",
-                  theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                )}>
-                  Schedule a free consultation call to discuss your creative needs.
-                </p>
-                <a
-                  href="mailto:contact@kreativnomads.com.ph?subject=Consultation%20Request"
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  target={item.label === 'Location' ? '_blank' : undefined}
+                  rel={item.label === 'Location' ? 'noopener noreferrer' : undefined}
                   className={cn(
-                    'inline-flex items-center gap-2 text-sm font-medium',
-                    'hover:text-primary-300 transition-colors group',
-                    theme === 'dark' ? 'text-primary-400' : 'text-primary-600'
+                    'flex items-start gap-4 p-5 rounded-2xl border transition-colors duration-300 group',
+                    theme === 'dark'
+                      ? 'bg-dark-950/50 border-primary-500/10 hover:border-primary-500/30'
+                      : 'bg-cream-100 border-cream-400 hover:border-secondary-300'
                   )}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0, y: 20 },
+                    visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: index * 0.1 } }
+                  }}
                 >
-                  Book a Call
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-              </motion.div>
-            </SlideUp>
+                  <div 
+                    className={cn(
+                      "w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors",
+                      theme === 'dark'
+                        ? 'bg-primary-500/15 group-hover:bg-primary-500/25'
+                        : 'bg-primary-50 group-hover:bg-primary-100'
+                    )}
+                  >
+                    <item.icon className={cn(
+                      "w-5 h-5",
+                      theme === 'dark' ? 'text-primary-400' : 'text-primary-600'
+                    )} />
+                  </div>
+                  <div>
+                    <p className={cn(
+                      "text-sm mb-1",
+                      theme === 'dark' ? 'text-gray-500' : 'text-gray-500'
+                    )}>{item.label}</p>
+                    <p className={cn(
+                      "font-medium group-hover:text-primary-400 transition-colors",
+                      theme === 'dark' ? 'text-white' : 'text-gray-900'
+                    )}>
+                      {item.value}
+                    </p>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* CTA Card */}
+            <motion.div 
+              className={cn(
+                "mt-8 p-6 rounded-2xl border",
+                theme === 'dark'
+                  ? 'border-primary-500/20 bg-gradient-to-br from-primary-500/10 to-primary-500/5'
+                  : 'border-primary-200 bg-gradient-to-br from-primary-50 to-white'
+              )}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+            >
+              <h3 className={cn(
+                "text-lg font-display font-semibold mb-2",
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              )}>
+                Ready to elevate your brand?
+              </h3>
+              <p className={cn(
+                "text-sm mb-4",
+                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+              )}>
+                Schedule a free consultation call to discuss your creative needs.
+              </p>
+              <a
+                href="mailto:contact@kreativnomads.com.ph?subject=Consultation%20Request"
+                className={cn(
+                  'inline-flex items-center gap-2 text-sm font-medium',
+                  'hover:text-primary-300 transition-colors group',
+                  theme === 'dark' ? 'text-primary-400' : 'text-primary-600'
+                )}
+              >
+                Book a Call
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
-          <SlideUp delay={0.2} className="lg:col-span-3">
+          <motion.div 
+            className="lg:col-span-3"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
             <form
               onSubmit={handleSubmit}
               className={cn(
                 "p-6 sm:p-8 rounded-3xl border",
                 theme === 'dark'
                   ? 'bg-dark-950/50 border-white/5'
-                  : 'bg-cream-100 border-cream-400 shadow-lg'
+                  : 'bg-cream-100 border-cream-400'
               )}
             >
               <div className="grid sm:grid-cols-2 gap-5 mb-5">
@@ -278,7 +317,7 @@ export default function Contact() {
                     required
                     placeholder="John Doe"
                     className={cn(
-                      'w-full px-4 py-3 rounded-xl border transition-all duration-200',
+                      'w-full px-4 py-3 rounded-xl border transition-colors duration-200',
                       'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                       theme === 'dark'
                         ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
@@ -307,7 +346,7 @@ export default function Contact() {
                     required
                     placeholder="john@company.com"
                     className={cn(
-                      'w-full px-4 py-3 rounded-xl border transition-all duration-200',
+                      'w-full px-4 py-3 rounded-xl border transition-colors duration-200',
                       'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                       theme === 'dark'
                         ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
@@ -336,7 +375,7 @@ export default function Contact() {
                   onChange={handleChange}
                   placeholder="Your Company Name"
                   className={cn(
-                    'w-full px-4 py-3 rounded-xl border transition-all duration-200',
+                    'w-full px-4 py-3 rounded-xl border transition-colors duration-200',
                     'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                     theme === 'dark'
                       ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
@@ -365,7 +404,7 @@ export default function Contact() {
                   rows={5}
                   placeholder="Describe your creative needs, goals, and timeline..."
                   className={cn(
-                    'w-full px-4 py-3 rounded-xl border resize-none transition-all duration-200',
+                    'w-full px-4 py-3 rounded-xl border resize-none transition-colors duration-200',
                     'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:border-transparent',
                     theme === 'dark'
                       ? 'bg-dark-800 border-white/10 text-white placeholder:text-gray-500'
@@ -376,25 +415,17 @@ export default function Contact() {
 
               {/* Status Messages */}
               {status.type === 'success' && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-4 mb-6 rounded-xl bg-green-500/10 border border-green-500/20"
-                >
+                <div className="flex items-center gap-2 p-4 mb-6 rounded-xl bg-green-500/10 border border-green-500/20">
                   <CheckCircle className="w-5 h-5 text-green-400" />
                   <p className="text-green-400 text-sm">{status.message}</p>
-                </motion.div>
+                </div>
               )}
 
               {status.type === 'error' && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="flex items-center gap-2 p-4 mb-6 rounded-xl bg-red-500/10 border border-red-500/20"
-                >
+                <div className="flex items-center gap-2 p-4 mb-6 rounded-xl bg-red-500/10 border border-red-500/20">
                   <AlertCircle className="w-5 h-5 text-red-400" />
                   <p className="text-red-400 text-sm">{status.message}</p>
-                </motion.div>
+                </div>
               )}
 
               {/* Submit Button */}
@@ -404,20 +435,16 @@ export default function Contact() {
                 className={cn(
                   'w-full flex items-center justify-center gap-2 px-8 py-4 rounded-full',
                   'bg-secondary-500 hover:bg-secondary-600 text-white font-semibold',
-                  'transform hover:scale-[1.02] transition-all duration-200',
-                  'shadow-lg shadow-secondary-500/25',
-                  'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100',
+                  'transition-all duration-200 hover:-translate-y-0.5',
+                  'shadow-lg hover:shadow-xl',
+                  'disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0',
                   'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
                   theme === 'dark' ? 'focus:ring-offset-dark-950' : 'focus:ring-offset-cream-500'
                 )}
               >
                 {status.type === 'loading' ? (
                   <>
-                    <motion.div
-                      className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full"
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    />
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                     Sending...
                   </>
                 ) : (
@@ -428,7 +455,7 @@ export default function Contact() {
                 )}
               </button>
             </form>
-          </SlideUp>
+          </motion.div>
         </div>
       </div>
     </section>
