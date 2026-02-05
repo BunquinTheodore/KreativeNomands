@@ -65,38 +65,6 @@ export default function Header() {
           role="navigation"
           aria-label="Main navigation"
         >
-          {/* Logo - using actual brand logos */}
-          <Link
-            href="/"
-            className="flex items-center group flex-shrink-0"
-            aria-label="Kreativ Nomads - Home"
-          >
-            <div className="relative">
-              {/* Mobile: North Star Icon */}
-              <div className="sm:hidden relative w-12 h-12 drop-shadow-lg">
-                <Image
-                  src='/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png'
-                  alt="Kreativ Nomads"
-                  fill
-                  sizes="48px"
-                  className="object-contain"
-                  priority
-                />
-              </div>
-              {/* Desktop: One Line Logo */}
-              <div className="hidden sm:block relative h-14 w-[280px] drop-shadow-[0_4px_8px_rgba(0,0,0,0.3)]">
-                <Image
-                  src='/logos/One-Line-Logo_Yellow.png'
-                  alt="Kreativ Nomads"
-                  fill
-                  sizes="280px"
-                  className="object-contain object-left"
-                  priority
-                />
-              </div>
-            </div>
-          </Link>
-
           {/* Desktop Navigation */}
           <ul className="hidden md:flex items-center gap-1 lg:gap-2">
             {navLinks.map((link) => (

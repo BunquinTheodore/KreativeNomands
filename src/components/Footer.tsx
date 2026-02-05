@@ -61,17 +61,6 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
             {/* Brand Column */}
             <div className="lg:col-span-1">
-              <Link href="/" className="inline-block mb-4">
-                <div className="relative h-12 w-[160px]">
-                  <Image
-                    src='/logos/Two-Line-Logo_Black.png'
-                    alt="Kreativ Nomads"
-                    fill
-                    sizes="160px"
-                    className="object-contain object-left"
-                  />
-                </div>
-              </Link>
               <p className={cn(
                 "text-sm leading-relaxed mb-6 max-w-xs",
                 theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
