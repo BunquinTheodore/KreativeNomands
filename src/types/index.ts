@@ -16,6 +16,8 @@ export interface Project {
   assets: PortfolioAsset[];
   services: string[];
   featured: boolean;
+  repoUrl?: string;
+  liveUrl?: string;
 }
 
 export interface Category {

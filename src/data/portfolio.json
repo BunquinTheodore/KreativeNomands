@@ -1010,112 +1010,117 @@
       "featured": true
     },
     {
-      "id": "it-services-web-development",
-      "title": "Modern Web Development",
-      "client": "IT Services",
+      "id": "it-fredrinn",
+      "title": "Fredrinn — Gym Management SaaS Platform",
+      "client": "Kreative Nomads",
       "category": "it",
-      "description": "Full-stack web development solutions including responsive websites, web applications, and e-commerce platforms built with modern technologies.",
-      "thumbnail": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&q=80",
+      "description": "A gym-focused SaaS platform designed to support day-to-day business operations through a centralized web system.",
+      "thumbnail": "/portfolio/it/fredrinn.png",
       "assets": [
         {
-          "src": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80",
+          "src": "/portfolio/it/fredrinn.png",
           "type": "image",
-          "title": "Web Development Code"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=1200&q=80",
-          "type": "image",
-          "title": "Responsive Design"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80",
-          "type": "image",
-          "title": "Modern Development Setup"
+          "title": "Fredrinn Platform Preview"
         }
       ],
-      "services": ["Web Development", "UI/UX Design", "Full-Stack Development"],
-      "featured": true
+      "services": ["Web Development", "SaaS", "Full-Stack Development"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Fredrinn",
+      "liveUrl": "https://fredrinn.vercel.app"
     },
     {
-      "id": "it-services-mobile-apps",
-      "title": "Mobile App Development",
-      "client": "IT Services",
+      "id": "it-bluemoon",
+      "title": "Bluemoon Automation — Business Operations Management System",
+      "client": "Kreative Nomads",
       "category": "it",
-      "description": "Native and cross-platform mobile application development for iOS and Android, delivering seamless user experiences.",
-      "thumbnail": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+      "description": "A role-based operations platform that helps streamline internal workflows, task handling, and business visibility for teams.",
+      "thumbnail": "/portfolio/it/bluemoon.png",
       "assets": [
         {
-          "src": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80",
+          "src": "/portfolio/it/bluemoon.png",
           "type": "image",
-          "title": "Mobile App Interface"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=1200&q=80",
-          "type": "image",
-          "title": "App Development Process"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1526498460520-4c246339dccb?w=1200&q=80",
-          "type": "image",
-          "title": "Cross-Platform Solutions"
+          "title": "Bluemoon Automation Preview"
         }
       ],
-      "services": ["Mobile Development", "iOS Development", "Android Development"],
-      "featured": true
+      "services": ["Web Development", "Operations Management", "Full-Stack Development"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Bluemoon_Automation",
+      "liveUrl": "https://bluemoon-automation-jql2.vercel.app/"
     },
     {
-      "id": "it-services-cloud-solutions",
-      "title": "Cloud Infrastructure & DevOps",
-      "client": "IT Services",
+      "id": "it-alerto",
+      "title": "Alerto — Disaster Reporting and Weather Intelligence Platform",
+      "client": "Kreative Nomads",
       "category": "it",
-      "description": "Scalable cloud solutions and DevOps practices to optimize your infrastructure, improve deployment cycles, and ensure system reliability.",
-      "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
+      "description": "A web platform for community incident reporting and weather monitoring, built to support faster awareness and response.",
+      "thumbnail": "/portfolio/it/alerto.png",
       "assets": [
         {
-          "src": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80",
+          "src": "/portfolio/it/alerto.png",
           "type": "image",
-          "title": "Cloud Infrastructure"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
-          "type": "image",
-          "title": "Server Management"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&q=80",
-          "type": "image",
-          "title": "DevOps Pipeline"
+          "title": "Alerto Platform Preview"
         }
       ],
-      "services": ["Cloud Computing", "DevOps", "Infrastructure Management"],
-      "featured": true
+      "services": ["Web Development", "GIS Integration", "Full-Stack Development"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Alerto"
     },
     {
-      "id": "it-services-cybersecurity",
-      "title": "Cybersecurity Solutions",
-      "client": "IT Services",
+      "id": "it-adrido",
+      "title": "AdriDo — Professional Portfolio and Personal Website",
+      "client": "Kreative Nomads",
       "category": "it",
-      "description": "Comprehensive cybersecurity services including security audits, penetration testing, and implementation of security best practices.",
-      "thumbnail": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80",
+      "description": "A modern portfolio-style website focused on presenting personal branding, content, and key information in a clean layout.",
+      "thumbnail": "/portfolio/it/adrido.png",
       "assets": [
         {
-          "src": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=80",
+          "src": "/portfolio/it/adrido.png",
           "type": "image",
-          "title": "Cybersecurity Protection"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=1200&q=80",
-          "type": "image",
-          "title": "Security Analysis"
-        },
-        {
-          "src": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80",
-          "type": "image",
-          "title": "Network Security"
+          "title": "AdriDo Portfolio Preview"
         }
       ],
-      "services": ["Security Audit", "Penetration Testing", "Security Consulting"],
-      "featured": true
+      "services": ["Web Development", "UI/UX Design", "Portfolio Design"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/AdriDo",
+      "liveUrl": "https://adri-do.vercel.app"
+    },
+    {
+      "id": "it-socialmediamanager",
+      "title": "Social Media Manager Portfolio — Services and Packages Website",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A multi-page marketing website showcasing social media management services, packages, and supporting content pages.",
+      "thumbnail": "/portfolio/it/socialmediamanager.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/socialmediamanager.png",
+          "type": "image",
+          "title": "Social Media Manager Preview"
+        }
+      ],
+      "services": ["Web Development", "Marketing Website", "Front-End Development"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Social-Media-Manager-Portfolio",
+      "liveUrl": "https://bunquintheodore.github.io/Social-Media-Manager-Portfolio/"
+    },
+    {
+      "id": "it-agritrack",
+      "title": "Agri‑Track — Agriculture Tracking and Monitoring System",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A web-based tracking system for agricultural monitoring, organizing key data into a more accessible and structured workflow.",
+      "thumbnail": "/portfolio/it/agritrack.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/agritrack.png",
+          "type": "image",
+          "title": "Agri-Track System Preview"
+        }
+      ],
+      "services": ["Web Development", "Data Management", "Front-End Development"],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Group-5-Agri-Track",
+      "liveUrl": "https://daniel-b-v.github.io/Group-5-Agri-Track/main.html"
     }
   ],
   "categories": [

@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 import { getAssetType } from '@/lib/utils';
 import portfolioData from '@/data/portfolio.json';
 import type { Project, PortfolioAsset } from '@/types';
+import ITPortfolioGrid from '@/components/ITPortfolioGrid';
 
 // Category metadata
 const categoryMeta: Record<string, { title: string; description: string; color: string }> = {
@@ -39,7 +40,7 @@ const categoryMeta: Record<string, { title: string; description: string; color: 
   },
   it: {
     title: 'IT Services',
-    description: 'Technology solutions, software branding, and digital service marketing.',
+    description: 'End-to-end web projects — from SaaS platforms and business tools to portfolios and data systems.',
     color: 'from-slate-500 to-gray-600'
   }
 };
@@ -127,12 +128,17 @@ export default function CategoryPage() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            {projects.length} Projects • {allAssets.length} Assets
+            {categoryId === 'it'
+              ? `${projects.length} Projects`
+              : `${projects.length} Projects • ${allAssets.length} Assets`}
           </motion.div>
         </div>
       </section>
 
       {/* Projects Grid */}
+      {categoryId === 'it' ? (
+        <ITPortfolioGrid projects={projects} />
+      ) : (
       <section className="py-16">
         <div className="container mx-auto px-4">
           {projects.map((project, projectIndex) => (
@@ -228,6 +234,7 @@ export default function CategoryPage() {
           )}
         </div>
       </section>
+      )}
 
       {/* Back to Portfolio CTA */}
       <section className="py-12 bg-cream-200">
