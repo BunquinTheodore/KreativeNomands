@@ -4,12 +4,12 @@ import Marquee from '@/components/fx/Marquee';
 import DrawLine from '@/components/fx/DrawLine';
 import { getReelRows, type ReelItem } from './heroData';
 
-/** Mirrors `--fh` in hero.css at its tallest; used for next/image `sizes`. */
-const MAX_FRAME_HEIGHT_PX = 148;
+/** Mirrors `--fh` in hero.css: a frame is clamp(88px, 12svh, 148px) tall and `ratio` x that wide. */
+const FRAME_HEIGHT = 'clamp(88px, 12vh, 148px)';
 const BASE_PX = 400;
 
 function ReelFrame({ item, index }: { item: ReelItem; index: number }) {
-  const sizes = `${Math.ceil(item.ratio * MAX_FRAME_HEIGHT_PX)}px`;
+  const sizes = `calc(${FRAME_HEIGHT} * ${item.ratio.toFixed(3)})`;
   return (
     <Link
       href={`/portfolio/${item.categoryId}`}

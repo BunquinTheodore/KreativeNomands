@@ -5,6 +5,7 @@ import Services from '@/components/Services';
 import PortfolioCategories from '@/components/PortfolioCategories';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import './perf.css';
 
 export default function Home() {
   return (
