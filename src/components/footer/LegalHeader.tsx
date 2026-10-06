@@ -1,9 +1,8 @@
 'use client';
 
-import { useCallback, useRef } from 'react';
+import { useRef, type RefObject } from 'react';
 import FitLine from '@/components/fx/FitLine';
 import Reveal from '@/components/fx/Reveal';
-import { fitToWidth } from '@/lib/fit';
 
 interface LegalHeaderProps {
   eyebrow: string;
@@ -18,6 +17,7 @@ const TITLE_MAX_PX = 56;
 const TITLE_MIN_PX = 28;
 const SUBTITLE_MIN_PX = 11;
 const SUBTITLE_MAX_PX = 22;
+const SUBTITLE_HARD_MIN_PX = 8;
 
 /**
  * Page header for the legal routes: eyebrow, the single page <h1> and a subtitle
@@ -26,11 +26,11 @@ const SUBTITLE_MAX_PX = 22;
 export default function LegalHeader({ eyebrow, title, subtitle, id }: LegalHeaderProps) {
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
-  const matchSubtitle = useCallback((titleWidth: number) => {
-    const el = subtitleRef.current;
-    if (!el) return;
-    fitToWidth(el, titleWidth, { minPx: SUBTITLE_MIN_PX, maxPx: SUBTITLE_MAX_PX });
-  }, []);
+  const subtitleWrapRef: RefObject<HTMLElement> = {
+    get current() {
+      return subtitleRef.current?.parentElement ?? null;
+    },
+  };
 
   return (
     <header className="kn-section-header text-center">
@@ -39,7 +39,18 @@ export default function LegalHeader({ eyebrow, title, subtitle, id }: LegalHeade
       </Reveal>
       <Reveal delay={0.08} className="kn-section-header__title">
         <h1 id={id} className="font-display font-semibold leading-[1.08] tracking-tight text-cream-500">
-          <FitLine maxPx={TITLE_MAX_PX} minPx={TITLE_MIN_PX} fluid="9vw" onFit={matchSubtitle}>
+          <FitLine
+            maxPx={TITLE_MAX_PX}
+            minPx={TITLE_MIN_PX}
+            fluid="9vw"
+            match={{
+              ref: subtitleRef,
+              minPx: SUBTITLE_MIN_PX,
+              maxPx: SUBTITLE_MAX_PX,
+              hardMinPx: SUBTITLE_HARD_MIN_PX,
+              fitWithin: subtitleWrapRef,
+            }}
+          >
             {title}
           </FitLine>
         </h1>
