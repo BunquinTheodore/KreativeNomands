@@ -38,7 +38,7 @@ export default function PortfolioSection({ cards }: PortfolioSectionProps) {
           eyebrow="Our Work"
           title={
             <>
-              Explore Our <span className="kp-sweep">Portfolio</span>
+              Explore Our <span className="kp-sweep" suppressHydrationWarning>Portfolio</span>
             </>
           }
           subtitle="Pick a category and dive right in"

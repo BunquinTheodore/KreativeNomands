@@ -7,7 +7,7 @@ Fonts stay: **Inter** (`font-sans`) + **Poppins** (`font-display`). Palette stay
 Dark-only premium. Base `#0a1111`→`primary-950 #141f1f` depth, cream (`cream-500`) text, amber highlights, teal-green (`primary-300/400`) secondary light. Glass = `rgba(245,240,220,.06)` fill + `backdrop-blur(18px) saturate(140%)` + 1px `rgba(245,240,220,.14)` border + inner top highlight + a **continuously sweeping shine** (CSS keyframe, `::after` gradient, transform-only). Theme switching is deleted (`theme-context`, `ThemeToggle`, all `theme === 'dark'` ternaries).
 
 ## Global behaviours (all owned by CORE, available to every section)
-- Splash on every load/refresh (≈1.8s, CSS/SVG only, no sessionStorage gating) with the animated logo, then reveals the page.
+- Splash on every load/refresh (≈1.1s since the mobile-LCP pass: one tempo variable `--k` in fx.css scales the original 1.8s choreography; CSS/SVG only, no sessionStorage gating) with the animated logo, then reveals the page.
 - Custom cursor `public/cursor/pointer.svg` (amber-recoloured icons8 pointer) + soft trailing ring; fine pointers only; native cursor kept on touch.
 - SFX: WebAudio-synthesised (no audio files). Auto-delegated: scroll ticks (distance-throttled), `click` on `a,button,[role=button],[data-sfx]`, `hover` on `[data-sfx-hover]`/cards, section-enter whoosh. Opt-out `data-sfx="none"`. Starts after first user gesture (browser policy), persisted mute toggle in header.
 - Scroll lines: global vertical progress line (left edge desktop / top bar mobile) + `DrawLine` for per-section lines (vertical or horizontal/sideways).
@@ -63,3 +63,23 @@ Splash → **Hero** (headline, Three star, autoplaying reel rail drifting sidewa
 
 ## Performance budget (Lighthouse mobile ≥ 90)
 LCP element = hero headline (text) with poster fallback; no render-blocking; Three + SFX + cursor loaded after idle; only the in-view video plays (max 3 concurrent); `next/image` with correct `sizes`; no layout shift (explicit dimensions/aspect ratios); `will-change` only on animating layers; framer `LazyMotion` where practical; reduced-motion & Save-Data honoured.
+
+### How the mobile score is made (measured, Lighthouse 12, simulated Slow 4G / 4x CPU)
+Lighthouse's lab FCP/LCP are *simulated* from a fast local trace: every request that finished before the observed
+paint is replayed on a 1.6 Mbps / 150 ms-RTT link (6 connections per origin over HTTP/1.1, TCP slow start), so what
+counts is the bytes and the number of requests that load before the first paint, not how fast the work really is.
+Speed Index is 1.4 x the *observed* (real) Speed Index + 0.4 x a layout-based estimate, so the splash length
+counts almost twice. Hence the load-time rules (keep them when adding features):
+1. **Nothing but the hero hydrates before the first paint.** Below-the-fold sections are islands
+   (`*Island.tsx`): inline server HTML, JavaScript fetched after first contentful paint + idle
+   (`lib/after-paint.ts`). Page-route JS 23 kB -> 8 kB, RSC payload 103 kB -> 38 kB.
+2. **Decorative image rails mount after hydration** (`Marquee deferChildren`): 145 `<img>` tags (290 kB of a 532 kB
+   document) are no longer in the HTML. Document 44.7 kB -> 26 kB gzip, i.e. under TCP's second slow-start window.
+3. **No font file on the critical path.** Inter/Poppins are activated by an inline script after the first paint
+   (`lib/post-paint.ts`); the first frame uses metric-matched fallbacks (globals.css). The web manifest is added the same way.
+4. **Three.js is three dynamic imports** (stage, scene, three), only fetched when `canUseWebGL()` passes, so
+   PageSpeed/headless never downloads them.
+5. **Splash ~1.1 s** (`--k`), and `useReveal` never hides content that is already on screen once the splash is gone.
+6. Things that were tried and made it worse: merging the four CSS files into one (FCP +0.5 s), inlining the CSS
+   (FCP +0.6 s), hiding the page under the splash, removing the splash entirely (lab Speed Index 3.6 -> 4.6 s).
+Result on a warm local `next start` (mean of runs): mobile 85.7 -> 97, desktop 97 -> 98, A11y/BP/SEO stay 100.

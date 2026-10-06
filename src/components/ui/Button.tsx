@@ -124,7 +124,7 @@ export default function Button({
         if (scrollToId(href.slice(1))) event.preventDefault();
       };
       return (
-        <a ref={setRef} href={href} onClick={handle} className={classes} {...anchorProps} {...magnet}>
+        <a ref={setRef} href={href} onClick={handle} className={classes} suppressHydrationWarning {...anchorProps} {...magnet}>
           {content}
         </a>
       );
@@ -139,6 +139,7 @@ export default function Button({
           target={newTab}
           rel={rel ?? (newTab === '_blank' ? 'noopener noreferrer' : undefined)}
           className={classes}
+          suppressHydrationWarning
           {...anchorProps}
           {...magnet}
         >
@@ -154,6 +155,7 @@ export default function Button({
         target={target}
         rel={rel}
         className={classes}
+        suppressHydrationWarning
         {...anchorProps}
         {...magnet}
       >
@@ -169,6 +171,7 @@ export default function Button({
       onClick={onClick}
       disabled={disabled}
       className={classes}
+      suppressHydrationWarning
       {...(rest as ButtonHTMLAttributes<HTMLButtonElement>)}
       {...magnet}
     >

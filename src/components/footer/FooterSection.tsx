@@ -36,7 +36,7 @@ interface FooterSectionProps {
  */
 export default function FooterSection({ year }: FooterSectionProps) {
   return (
-    <footer className="kn-footer glass shine" role="contentinfo">
+    <footer className="kn-footer glass shine" role="contentinfo" suppressHydrationWarning>
       <div className="kn-footer__edge">
         <DrawLine axis="x" />
       </div>

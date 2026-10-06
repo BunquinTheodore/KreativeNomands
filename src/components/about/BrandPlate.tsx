@@ -49,7 +49,7 @@ export default function BrandPlate() {
         ))}
       </div>
 
-      <div className="glass-strong shine relative rounded-[1.75rem] p-3 sm:p-4" data-sfx-hover="">
+      <div className="glass-strong shine relative rounded-[1.75rem] p-3 sm:p-4" data-sfx-hover="" suppressHydrationWarning>
         <div className="relative aspect-square overflow-hidden rounded-[1.25rem] ring-1 ring-cream-500/10">
           <Image
             src="/logos/Social-Media-DP-Green-BG.png"

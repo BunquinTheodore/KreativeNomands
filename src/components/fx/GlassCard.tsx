@@ -118,6 +118,8 @@ export default function GlassCard({
     className: classes,
     style,
     'data-sfx-hover': '',
+    // ShineGate stamps `data-off` on off-screen glass before this card's island has hydrated.
+    suppressHydrationWarning: true,
     ...(interactive ? { onPointerMove, onPointerLeave } : {}),
   };
 

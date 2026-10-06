@@ -45,6 +45,7 @@ export default function BackToTop() {
       data-launching={launching ? 'true' : 'false'}
       data-sfx="none"
       onClick={onClick}
+      suppressHydrationWarning
     >
       <span className="kn-top__rocket" aria-hidden="true">
         <Rocket className="h-4 w-4" />

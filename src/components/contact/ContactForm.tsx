@@ -30,7 +30,7 @@ export default function ContactForm() {
   }, [done]);
 
   return (
-    <div className="glass-strong shine relative rounded-3xl p-6 sm:p-8" data-sfx-hover="">
+    <div className="glass-strong shine relative rounded-3xl p-6 sm:p-8" data-sfx-hover="" suppressHydrationWarning>
       {done ? (
         <SuccessPanel ref={successRef} onReset={form.reset} />
       ) : (
