@@ -73,6 +73,8 @@ const DEFAULT_CAMERA: CameraSpec = { fov: 50, near: 0.1, far: 200, position: [0,
 const MAX_FRAME_DT = 0.05
 const FPS_JITTER_TOLERANCE = 0.9
 const OFFSCREEN_MARGIN = '120px'
+/** A lost context that is not restored within this window falls back to the static view. */
+const CONTEXT_RESTORE_GRACE_MS = 3000
 
 function disposeMaterial(material: T.Material): void {
   for (const value of Object.values(material)) {
@@ -178,7 +180,7 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
     const rawDt = (now - last) / 1000
     if (minFrameDt > 0 && rawDt < minFrameDt * FPS_JITTER_TOLERANCE) return
     last = now
-    const dt = Math.min(rawDt, MAX_FRAME_DT)
+    const dt = Math.min(Math.max(rawDt, 0), MAX_FRAME_DT)
     elapsed += dt
     try {
       controller.update(dt, elapsed)
@@ -234,13 +236,21 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
   )
   visibilityObserver.observe(host)
 
+  let lostTimer: ReturnType<typeof setTimeout> | null = null
+  const clearLostTimer = (): void => {
+    if (lostTimer !== null) clearTimeout(lostTimer)
+    lostTimer = null
+  }
   const onContextLost = (event: Event): void => {
     event.preventDefault()
     contextLost = true
     sync()
+    clearLostTimer()
+    lostTimer = setTimeout(fail, CONTEXT_RESTORE_GRACE_MS)
   }
   const onContextRestored = (): void => {
     contextLost = false
+    clearLostTimer()
     sync()
   }
   canvas.addEventListener('webglcontextlost', onContextLost)
@@ -250,6 +260,7 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
 
   return () => {
     torn = true
+    clearLostTimer()
     sync()
     resizeObserver.disconnect()
     visibilityObserver.disconnect()

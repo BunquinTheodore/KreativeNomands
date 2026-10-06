@@ -48,7 +48,7 @@ export default function NorthStar3D({ className, height = 420 }: NorthStar3DProp
       aria-label={ARIA_LABEL}
       tabIndex={ready ? 0 : undefined}
       onKeyDown={ready ? onKeyDown : undefined}
-      className={`relative mx-auto w-full select-none overflow-visible rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-950 ${className ?? ''}`}
+      className={`relative mx-auto w-full select-none overflow-hidden rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-accent-400 focus-visible:ring-offset-2 focus-visible:ring-offset-primary-950 ${className ?? ''}`}
       style={{
         height: typeof height === 'number' ? `${height}px` : height,
         touchAction: 'pan-y',
