@@ -1,0 +1,89 @@
+/* Services section effects. Transform / opacity only; reduced motion is zeroed globally. */
+
+/* Crossfade between services: fade-out via data-phase, entrance via the keyed child. */
+.svc-swap {
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+
+.svc-swap[data-phase='out'] {
+  opacity: 0;
+  transform: translate3d(0, -10px, 0);
+}
+
+.svc-enter {
+  animation: svc-enter 0.55s var(--ease-out-expo) both;
+}
+
+.svc-bullet {
+  animation: svc-bullet 0.6s var(--ease-out-expo) calc(0.22s + var(--i, 0) * 0.09s) both;
+}
+
+@keyframes svc-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes svc-bullet {
+  from {
+    opacity: 0;
+    transform: translate3d(-16px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Process steps: dim until lit, then node + badge glow amber. */
+.svc-steps[data-armed='true'] .svc-step {
+  opacity: 0.45;
+  transition: opacity 0.7s ease;
+}
+
+.svc-steps[data-armed='true'] .svc-step[data-lit='true'] {
+  opacity: 1;
+}
+
+.svc-step__node,
+.svc-step__badge {
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease,
+    color 0.5s ease,
+    transform 0.5s var(--ease-out-expo);
+}
+
+.svc-step[data-lit='true'] .svc-step__node {
+  border-color: var(--amber);
+  background-color: var(--amber);
+  box-shadow:
+    0 0 0 5px rgba(245, 158, 11, 0.18),
+    0 0 18px rgba(245, 158, 11, 0.7);
+  transform: scale(1.15);
+}
+
+.svc-step[data-lit='true'] .svc-step__badge {
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fbbf24;
+  box-shadow: 0 0 24px -6px rgba(245, 158, 11, 0.5);
+}
+
+@media (min-width: 1024px) {
+  /* The whole row enters at once on desktop: stagger it left to right. */
+  .svc-steps[data-armed='true'] .svc-step,
+  .svc-step__node,
+  .svc-step__badge {
+    transition-delay: calc(var(--i, 0) * 0.18s);
+  }
+}
