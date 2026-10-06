@@ -20,6 +20,7 @@ interface SectionHeaderProps {
 const TITLE_MAX_PX = 64;
 const TITLE_MIN_PX = 22;
 const SUBTITLE_MIN_PX = 11;
+const SUBTITLE_HARD_MIN_PX = 8;
 const SUBTITLE_MAX_PX = 24;
 
 /**
@@ -39,7 +40,14 @@ export default function SectionHeader({
   const matchSubtitle = useCallback((titleWidth: number) => {
     const el = subtitleRef.current;
     if (!el) return;
-    fitToWidth(el, titleWidth, { minPx: SUBTITLE_MIN_PX, maxPx: SUBTITLE_MAX_PX });
+    const width = fitToWidth(el, titleWidth, { minPx: SUBTITLE_MIN_PX, maxPx: SUBTITLE_MAX_PX });
+    // At the readable floor a long subtitle can outgrow the column; shrink further than
+    // SUBTITLE_MIN_PX rather than clip it.
+    const available = el.parentElement?.clientWidth ?? 0;
+    if (available > 0 && width > available) {
+      const current = parseFloat(getComputedStyle(el).fontSize) || SUBTITLE_MIN_PX;
+      el.style.fontSize = `${Math.max(SUBTITLE_HARD_MIN_PX, Math.floor(current * (available / width) * 100) / 100)}px`;
+    }
   }, []);
 
   const centered = align === 'center';

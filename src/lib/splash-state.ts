@@ -28,5 +28,6 @@ export function markSplashExit(state: 'exit' | 'done'): void {
   const current = document.documentElement.dataset.splash;
   if (current === state || current === 'done') return;
   document.documentElement.dataset.splash = state;
-  if (state === 'exit') window.dispatchEvent(new Event(SPLASH_EXIT_EVENT));
+  // 'done' without a prior 'exit' (fallback path) must still release waiting reveals.
+  if (current !== 'exit') window.dispatchEvent(new Event(SPLASH_EXIT_EVENT));
 }

@@ -29,7 +29,8 @@ export default function Splash() {
         (a) =>
           a instanceof CSSAnimation &&
           EXIT_ANIMATIONS.has(a.animationName) &&
-          Number(a.currentTime ?? 0) > 0,
+          // currentTime counts the start delay, so compare against it.
+          Number(a.currentTime ?? 0) >= Number(a.effect?.getComputedTiming().delay ?? 0),
       );
     };
     if (exitStarted()) markSplashExit('exit');

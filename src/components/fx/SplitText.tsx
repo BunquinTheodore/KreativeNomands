@@ -115,7 +115,7 @@ export default function SplitText({
   useEffect(() => {
     if (variant !== 'scramble' || state !== 'in' || !ref.current) return undefined;
     return runScramble(ref.current);
-  }, [variant, state, ref]);
+  }, [variant, state, ref, text, by]);
 
   return (
     <Tag

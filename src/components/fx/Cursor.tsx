@@ -77,7 +77,7 @@ export default function Cursor() {
       if (event.pointerType !== 'mouse') return;
       target = { x: event.clientX, y: event.clientY };
       reveal();
-      root.dataset.visible = 'true';
+      if (root.dataset.visible !== 'true') root.dataset.visible = 'true';
       schedule();
     };
     const onOver = (event: PointerEvent) => {

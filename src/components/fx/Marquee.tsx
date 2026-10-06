@@ -99,6 +99,8 @@ export default function Marquee({
             ref={i === 0 ? groupRef : undefined}
             className="kn-marquee__group"
             aria-hidden={i === 0 ? undefined : true}
+            // Duplicates are decoration: keep them out of the tab order too.
+            {...(i === 0 ? {} : ({ inert: '' } as Record<string, string>))}
           >
             {children}
           </div>

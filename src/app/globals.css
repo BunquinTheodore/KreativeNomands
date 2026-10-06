@@ -42,7 +42,7 @@
 
   body {
     @apply font-sans;
-    background-color: var(--bg);
+    /* No body background: html paints --bg, and an opaque body would cover body::before. */
     color: var(--ink);
     overflow-x: clip;
     text-rendering: optimizeLegibility;

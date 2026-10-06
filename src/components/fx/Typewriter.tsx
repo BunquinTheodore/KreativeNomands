@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import useInView from '@/hooks/useInView';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import { cn } from '@/lib/utils';
@@ -27,17 +27,19 @@ export default function Typewriter({ phrases, className }: TypewriterProps) {
   const { ref, inView } = useInView<HTMLSpanElement>();
   const reduced = usePrefersReducedMotion();
   const key = phrases.join('\u0000');
+  // Progress survives pauses (scrolled off-screen) so resuming never jumps phrases.
+  const indexRef = useRef(0);
+  const lengthRef = useRef(first.length);
 
   useEffect(() => {
     const list = key ? key.split('\u0000') : [];
     if (!inView || list.length < 2) return undefined;
     let timer = 0;
-    let index = 0;
-    const current = () => list[index] ?? '';
+    const current = () => list[indexRef.current] ?? '';
 
     if (reduced) {
       const swap = () => {
-        index = (index + 1) % list.length;
+        indexRef.current = (indexRef.current + 1) % list.length;
         setText(current());
         timer = window.setTimeout(swap, REDUCED_SWAP_MS);
       };
@@ -47,6 +49,7 @@ export default function Typewriter({ phrases, className }: TypewriterProps) {
 
     const type = (length: number) => {
       const full = current();
+      lengthRef.current = length;
       setText(full.slice(0, length));
       if (length < full.length) {
         timer = window.setTimeout(() => type(length + 1), TYPE_MS);
@@ -55,16 +58,22 @@ export default function Typewriter({ phrases, className }: TypewriterProps) {
       }
     };
     const erase = (length: number) => {
+      lengthRef.current = length;
       setText(current().slice(0, length));
       if (length > 0) {
         timer = window.setTimeout(() => erase(length - 1), DELETE_MS);
       } else {
-        index = (index + 1) % list.length;
+        indexRef.current = (indexRef.current + 1) % list.length;
         timer = window.setTimeout(() => type(1), GAP_MS);
       }
     };
 
-    timer = window.setTimeout(() => erase(current().length), HOLD_MS);
+    // Resume from whatever is on screen: hold a full phrase, otherwise keep erasing.
+    const resumeLength = Math.min(lengthRef.current, current().length);
+    timer = window.setTimeout(
+      () => erase(resumeLength),
+      resumeLength === current().length ? HOLD_MS : DELETE_MS,
+    );
     return () => window.clearTimeout(timer);
   }, [key, inView, reduced]);
 
