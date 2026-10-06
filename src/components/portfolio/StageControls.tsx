@@ -46,7 +46,7 @@ function ToggleButton({ pressed, onClick, label, children }: ToggleButtonProps) 
       type="button"
       data-noswipe=""
       onClick={onClick}
-      aria-pressed={pressed}
+      data-pressed={pressed}
       aria-label={label}
       title={label}
       className="kp-ctl glass shine"
@@ -78,11 +78,9 @@ export function TopControls({
 }: TopControlsProps) {
   return (
     <>
-      <p
-        className="glass absolute left-3 top-3 z-10 rounded-full px-3.5 py-1.5 text-xs font-semibold tabular-nums tracking-wider text-cream-500 sm:left-4 sm:top-4 sm:text-sm"
-        aria-label={counterLabel}
-      >
-        {counter}
+      <p className="glass absolute left-3 top-3 z-10 rounded-full px-3.5 py-1.5 text-xs font-semibold tabular-nums tracking-wider text-cream-500 sm:left-4 sm:top-4 sm:text-sm">
+        <span aria-hidden="true">{counter}</span>
+        <span className="sr-only">{counterLabel}</span>
       </p>
       <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-4 sm:top-4">
         {slideshowAvailable ? (

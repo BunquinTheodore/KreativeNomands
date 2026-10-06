@@ -120,7 +120,6 @@ export default function VideoSlide({ asset, label, canPlay, progressRef }: Video
           <button
             type="button"
             aria-label={`${wantPlay ? 'Pause' : 'Play'} video: ${label}`}
-            aria-pressed={wantPlay}
             onClick={() => setIntent(!wantPlay)}
             className="group absolute inset-0 z-[1] flex items-center justify-center"
           >

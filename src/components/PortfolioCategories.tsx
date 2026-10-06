@@ -36,7 +36,7 @@ export default function PortfolioCategories() {
         />
 
         <Reveal delay={0.2} className="mx-auto mt-6 text-center">
-          <p className="measure mx-auto text-base leading-relaxed text-cream-500/70 text-pretty sm:text-lg">
+          <p className="measure mx-auto text-base leading-relaxed text-cream-500/70 text-balance sm:text-lg">
             Select a category to view our complete collection of projects, videos, and creative
             assets.
           </p>

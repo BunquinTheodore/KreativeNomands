@@ -135,7 +135,13 @@
   opacity: 0.35;
 }
 
-.kp-ctl[aria-pressed='true'] {
+/* Controls sit on arbitrary media: keep a dark glass base so they stay legible on bright frames. */
+.kp-stage .kp-ctl,
+.kp-stage > p.glass {
+  background-color: rgba(10, 17, 17, 0.55);
+}
+
+.kp-ctl[data-pressed='true'] {
   color: #0a1111;
   background: linear-gradient(135deg, #f59e0b, #fbbf24);
   border-color: transparent;

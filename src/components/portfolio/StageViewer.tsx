@@ -151,10 +151,11 @@ export default function StageViewer({
   const swiped = useRef(false);
 
   const onPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    // A touch swipe never produces a click, so clear the flag on every new press.
+    swiped.current = false;
     if (event.pointerType === 'mouse' && event.button !== 0) return;
     if ((event.target as HTMLElement).closest('[data-noswipe], a')) return;
     drag.current = { x: event.clientX, y: event.clientY };
-    swiped.current = false;
   };
   const onPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
     const start = drag.current;
