@@ -1,8 +1,8 @@
 'use client'
 
-import { useMemo, useRef, type KeyboardEvent } from 'react'
-import { createNorthStarFactory, type NorthStarHandle } from './northStarScene'
-import { useThreeStage } from './ThreeCanvas'
+import { useCallback, useRef, type KeyboardEvent } from 'react'
+import type { NorthStarHandle } from './northStarScene'
+import { useThreeStage, type SceneLoader } from './ThreeCanvas'
 
 export interface NorthStar3DProps {
   className?: string
@@ -35,8 +35,12 @@ const ARIA_LABEL = 'Interactive 3D Kreativ Nomads North Star. Drag to spin it, c
 export default function NorthStar3D({ className, height = 420 }: NorthStar3DProps) {
   const stageRef = useRef<HTMLDivElement>(null)
   const handleRef = useRef<NorthStarHandle | null>(null)
-  const factory = useMemo(() => createNorthStarFactory(handleRef), [])
-  const status = useThreeStage(stageRef, factory, STAGE_OPTIONS)
+  // The scene code is its own chunk: fetched together with three, and only when WebGL will really start.
+  const loadScene = useCallback<SceneLoader>(
+    () => import('./northStarScene').then((scene) => scene.createNorthStarFactory(handleRef)),
+    [],
+  )
+  const status = useThreeStage(stageRef, loadScene, STAGE_OPTIONS)
   const ready = status === 'ready'
 
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>): void => {

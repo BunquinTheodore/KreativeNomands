@@ -8,6 +8,7 @@ import Cursor from '@/components/fx/Cursor';
 import SfxProvider from '@/components/fx/SfxProvider';
 import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
 import ShineGate from '@/components/fx/ShineGate';
+import { buildFontSwapScript } from '@/lib/font-swap';
 
 // Font configuration
 const inter = Inter({
@@ -22,6 +23,11 @@ const poppins = Poppins({
   display: 'swap',
   variable: '--font-poppins',
 });
+
+// The variable classes activate the real fonts. They are NOT on <html> in the server markup: the
+// inline script below adds them after the first paint (see lib/font-swap.ts), so no font file is
+// on the critical path. Until then globals.css maps both variables to metric-matched fallbacks.
+const FONT_SWAP_SCRIPT = buildFontSwapScript(`${inter.variable} ${poppins.variable}`);
 
 const SITE_URL = 'https://kreativnomads.com.ph';
 
@@ -143,7 +149,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} dark`} suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body className="min-h-screen font-sans antialiased">
         {/* Experience layer: all render in the server HTML (Splash) or attach after idle. */}
         <Splash />
@@ -159,6 +165,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: organizationJsonLdString }}
         />
+        <script dangerouslySetInnerHTML={{ __html: FONT_SWAP_SCRIPT }} />
       </body>
     </html>
   );

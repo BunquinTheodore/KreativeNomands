@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useMemo, useRef, type KeyboardEvent } from 'react'
-import { createOrbitFactory, type OrbitItem, type OrbitState } from './orbitScene'
-import { useThreeStage } from './ThreeCanvas'
+import { useCallback, useEffect, useRef, type KeyboardEvent } from 'react'
+import type { OrbitItem, OrbitState } from './orbitScene'
+import { useThreeStage, type SceneLoader } from './ThreeCanvas'
 
 export interface OrbitSelector3DProps {
   items: { id: string; label: string }[]
@@ -104,8 +104,12 @@ export default function OrbitSelector3D({
     stateRef.current = { items, activeId, onSelect }
   })
 
-  const factory = useMemo(() => createOrbitFactory(stateRef, tooltipRef), [])
-  const status = useThreeStage(stageRef, factory, STAGE_OPTIONS)
+  // The scene code is its own chunk: fetched together with three, and only when WebGL will really start.
+  const loadScene = useCallback<SceneLoader>(
+    () => import('./orbitScene').then((scene) => scene.createOrbitFactory(stateRef, tooltipRef)),
+    [],
+  )
+  const status = useThreeStage(stageRef, loadScene, STAGE_OPTIONS)
 
   const ready = status === 'ready'
   const fallback = status === 'unavailable'

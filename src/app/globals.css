@@ -8,7 +8,36 @@
  * src/components/fx/fx.css.
  */
 
+/*
+ * Metric-matched system fallbacks (same override values next/font generates for Arial). They are what the
+ * first paint uses: the real Inter / Poppins are activated after the first paint by lib/font-swap.ts,
+ * which adds next/font's variable classes to <html>. `:where()` keeps these defaults at zero
+ * specificity so those classes always win once present.
+ */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+  size-adjust: 107.06%;
+}
+
+@font-face {
+  font-family: 'Poppins Fallback';
+  src: local('Arial');
+  ascent-override: 93.62%;
+  descent-override: 31.21%;
+  line-gap-override: 8.92%;
+  size-adjust: 112.16%;
+}
+
 @layer base {
+  :where(:root) {
+    --font-inter: 'Inter Fallback', system-ui, sans-serif;
+    --font-poppins: 'Poppins Fallback', system-ui, sans-serif;
+  }
+
   :root {
     color-scheme: dark;
 

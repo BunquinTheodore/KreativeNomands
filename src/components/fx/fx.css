@@ -49,6 +49,25 @@
   animation: kn-fade-in 0.5s ease 1.3s forwards;
 }
 
+/* Inside the splash the logo follows the splash tempo (--k, see .kn-splash). */
+.kn-splash .kn-logo__ink {
+  animation:
+    kn-draw calc(1.05s * var(--k)) var(--ease-out-expo) calc(var(--d, 0s) * var(--k)) forwards,
+    kn-fill calc(0.55s * var(--k)) ease calc((var(--d, 0s) + 0.75s) * var(--k)) forwards;
+}
+
+.kn-splash .kn-logo__ring {
+  animation: kn-draw calc(1.25s * var(--k)) var(--ease-out-expo) forwards;
+}
+
+.kn-splash .kn-logo__sheen {
+  animation: kn-sheen 3.8s ease-in-out calc(1.7s * var(--k)) infinite;
+}
+
+.kn-splash .kn-logo__spark {
+  animation: kn-fade-in calc(0.5s * var(--k)) ease calc(1.3s * var(--k)) forwards;
+}
+
 @keyframes kn-draw {
   to {
     stroke-dashoffset: 0;
@@ -86,6 +105,10 @@
 
 /* ---------------------------------------------------------------- splash */
 .kn-splash {
+  /* Tempo: 1 = the original 1.8 s intro. Every duration / delay below is scaled by it, so the
+   * choreography is unchanged but the page is revealed after ~1.1 s instead of 1.8 s (the exit
+   * starts at 1.8 s * --k). A shorter intro is what the "visually complete" metrics reward. */
+  --k: 0.62;
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -95,7 +118,7 @@
   overflow: hidden;
   background: #0a1111;
   will-change: transform;
-  animation: kn-splash-out 0.8s var(--ease-out-expo) 1.8s forwards;
+  animation: kn-splash-out calc(0.8s * var(--k)) var(--ease-out-expo) calc(1.8s * var(--k)) forwards;
 }
 
 .kn-splash__glow {
@@ -110,7 +133,7 @@
     transparent 68%
   );
   opacity: 0;
-  animation: kn-splash-glow 1.4s ease-out 0.1s forwards;
+  animation: kn-splash-glow calc(1.4s * var(--k)) ease-out calc(0.1s * var(--k)) forwards;
 }
 
 .kn-splash__inner {
@@ -120,7 +143,7 @@
   align-items: center;
   gap: 1.35rem;
   padding: 1rem;
-  animation: kn-splash-inner-out 0.45s ease 1.65s forwards;
+  animation: kn-splash-inner-out calc(0.45s * var(--k)) ease calc(1.65s * var(--k)) forwards;
 }
 
 .kn-splash__logo {
@@ -144,7 +167,8 @@
   display: inline-block;
   opacity: 0;
   transform: translate3d(0, 0.6em, 0);
-  animation: kn-splash-char 0.6s var(--ease-out-expo) calc(0.7s + var(--i, 0) * 0.045s) forwards;
+  animation: kn-splash-char calc(0.6s * var(--k)) var(--ease-out-expo)
+    calc((0.7s + var(--i, 0) * 0.045s) * var(--k)) forwards;
 }
 
 .kn-splash__bar {
@@ -162,7 +186,7 @@
   background: linear-gradient(90deg, #5a8585, #f59e0b);
   transform: scaleX(0);
   transform-origin: 0 50%;
-  animation: kn-splash-bar 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.1s forwards;
+  animation: kn-splash-bar calc(1.6s * var(--k)) cubic-bezier(0.65, 0, 0.35, 1) calc(0.1s * var(--k)) forwards;
 }
 
 @keyframes kn-splash-glow {

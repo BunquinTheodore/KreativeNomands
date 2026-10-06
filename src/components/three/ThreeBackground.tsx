@@ -2,8 +2,10 @@
 
 import { useRef } from 'react'
 import { CSS_NIGHT_SKY, CSS_STATIC_STARS } from './palette'
-import { createStarfield } from './starfield'
-import { useThreeStage } from './ThreeCanvas'
+import { useThreeStage, type SceneLoader } from './ThreeCanvas'
+
+/** The starfield scene is its own chunk: fetched together with three, and only when WebGL will really start. */
+const loadStarfield: SceneLoader = () => import('./starfield').then((scene) => scene.createStarfield)
 
 const STAGE_OPTIONS = {
   start: 'idle',
@@ -20,7 +22,7 @@ const STAGE_OPTIONS = {
  */
 export default function ThreeBackground() {
   const stageRef = useRef<HTMLDivElement>(null)
-  const status = useThreeStage(stageRef, createStarfield, STAGE_OPTIONS)
+  const status = useThreeStage(stageRef, loadStarfield, STAGE_OPTIONS)
   const showStaticStars = status !== 'ready'
 
   return (
