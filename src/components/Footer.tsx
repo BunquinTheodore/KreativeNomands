@@ -1,245 +1,115 @@
-'use client';
-
 import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
-import { cn } from '@/lib/utils';
-import { useTheme } from '@/lib/theme-context';
+import AnimatedLogo from '@/components/fx/AnimatedLogo';
+import DrawLine from '@/components/fx/DrawLine';
+import Marquee from '@/components/fx/Marquee';
+import { CONTACT_INFO } from '@/components/contact/data';
+import BackToTop from '@/components/footer/BackToTop';
+import FooterNav, { type FooterNavLink } from '@/components/footer/FooterNav';
+import SocialLinks from '@/components/footer/SocialLinks';
+import '@/components/footer/footer.css';
 
-const footerLinks = {
-  company: [
-    { label: 'About Us', href: '#about' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Contact', href: '#contact' },
-  ],
-  services: [
-    { label: 'Content Strategy', href: '#services' },
-    { label: 'Graphic Design', href: '#services' },
-    { label: 'Photo Post-Production', href: '#services' },
-    { label: 'Video Post-Production', href: '#services' },
-    { label: 'IT Services', href: '#services' },
-  ],
-};
-
-const socialLinks = [
-  { icon: Facebook, href: 'https://facebook.com/kreativnomads', label: 'Facebook' },
-  { icon: Instagram, href: 'https://instagram.com/kreativnomads', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com/company/kreativnomads', label: 'LinkedIn' },
+const COMPANY_LINKS: readonly FooterNavLink[] = [
+  { label: 'About Us', id: 'about' },
+  { label: 'Services', id: 'services' },
+  { label: 'Portfolio', id: 'portfolio' },
+  { label: 'Contact', id: 'contact' },
 ];
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
-  const { theme } = useTheme();
+const SERVICE_LINKS: readonly FooterNavLink[] = [
+  { label: 'Content Strategy', id: 'services' },
+  { label: 'Graphic Design', id: 'services' },
+  { label: 'Photo Post-Production', id: 'services' },
+  { label: 'Video Post-Production', id: 'services' },
+  { label: 'IT Services', id: 'services' },
+];
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.replace('#', '');
-      const element = document.getElementById(targetId);
-      if (element) {
-        const offset = 80;
-        const top = element.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }
-  };
+const RAIL_WORDS = ['Strategy', 'Design', 'Photo', 'Video', 'IT', 'Branding'] as const;
+
+/**
+ * Site footer (server component). Interactive leaves are tiny client
+ * components: FooterNav (smooth section scroll), BackToTop (rocket) and the
+ * fx primitives. A sideways DrawLine draws along the top edge as it enters.
+ */
+export default function Footer() {
+  const year = new Date().getFullYear();
 
   return (
-    <footer 
-      className={cn(
-        'border-t',
-        theme === 'dark' 
-          ? 'bg-dark-950/90 border-primary-500/10' 
-          : 'bg-cream-400/90 border-cream-500/50'
-      )} 
-      role="contentinfo"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer */}
-        <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-            {/* Brand Column */}
-            <div className="lg:col-span-1">
-              <p className={cn(
-                "text-sm leading-relaxed mb-6 max-w-xs",
-                theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-              )}>
-                Your creative virtual assistant, providing fresh and compelling creative 
-                solutions for your marketing challenges.
+    <footer className="kn-footer glass shine" role="contentinfo">
+      <div className="kn-footer__edge">
+        <DrawLine axis="x" />
+      </div>
+
+      <div className="container-x pt-14">
+        <div aria-hidden="true" className="select-none">
+          <Marquee speed={36} gap={36} pauseOnHover>
+            {RAIL_WORDS.map((word) => (
+              <span key={word} className="flex items-center gap-9">
+                <span className="kn-footer__outline">{word}</span>
+                <span className="kn-footer__star">&#10022;</span>
+              </span>
+            ))}
+          </Marquee>
+        </div>
+
+        <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_1fr_1fr_1.35fr] lg:gap-8">
+          <div>
+            <div className="flex items-center gap-3">
+              <AnimatedLogo size={52} loop />
+              <p className="font-display text-xl font-semibold tracking-tight text-cream-500">
+                Kreativ Nomads
               </p>
-              
-              {/* Social Links */}
-              <div className="flex items-center gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      'w-10 h-10 rounded-full flex items-center justify-center border transition-colors duration-200',
-                      theme === 'dark'
-                        ? 'bg-dark-800 text-gray-400 hover:text-white hover:bg-secondary-500 border-primary-500/10 hover:border-secondary-500/50'
-                        : 'bg-cream-300 text-gray-600 hover:text-white hover:bg-secondary-500 border-cream-400 hover:border-secondary-500'
-                    )}
-                    aria-label={social.label}
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </a>
-                ))}
-              </div>
             </div>
+            <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-[color:var(--ink-dim)]">
+              Your creative virtual assistant, providing fresh and compelling creative solutions for
+              your marketing challenges.
+            </p>
+            <div className="mt-6">
+              <SocialLinks />
+            </div>
+          </div>
 
-            {/* Company Links */}
-            <div>
-              <h3 className={cn(
-                "font-display font-semibold mb-4",
-                theme === 'dark' ? 'text-white' : 'text-gray-900'
-              )}>Company</h3>
+          <FooterNav heading="Company" links={COMPANY_LINKS} />
+          <FooterNav heading="Services" links={SERVICE_LINKS} />
+
+          <div>
+            <h2 className="mb-4 font-display text-base font-semibold text-cream-500">Contact</h2>
+            <address className="not-italic">
               <ul className="space-y-3">
-                {footerLinks.company.map((link) => (
-                  <li key={link.label}>
+                {CONTACT_INFO.map((item) => (
+                  <li key={item.id}>
                     <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={cn(
-                        "text-sm transition-colors inline-flex items-center gap-1 group",
-                        theme === 'dark'
-                          ? 'text-gray-400 hover:text-secondary-400'
-                          : 'text-gray-600 hover:text-secondary-600'
-                      )}
+                      href={item.href}
+                      className="group flex items-start gap-3 text-sm leading-snug text-[color:var(--ink-dim)] transition-colors hover:text-cream-500"
+                      {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                     >
-                      <span className="w-0 group-hover:w-2 h-px bg-secondary-500 transition-all duration-200" />
-                      {link.label}
+                      <item.icon
+                        className="mt-0.5 h-4 w-4 shrink-0 text-secondary-400 transition-transform duration-300 group-hover:scale-110"
+                        aria-hidden="true"
+                      />
+                      <span className="break-words">{item.value}</span>
                     </a>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Services Links */}
-            <div>
-              <h3 className={cn(
-                "font-display font-semibold mb-4",
-                theme === 'dark' ? 'text-white' : 'text-gray-900'
-              )}>Services</h3>
-              <ul className="space-y-3">
-                {footerLinks.services.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={cn(
-                        "text-sm transition-colors inline-flex items-center gap-1 group",
-                        theme === 'dark'
-                          ? 'text-gray-400 hover:text-secondary-400'
-                          : 'text-gray-600 hover:text-secondary-600'
-                      )}
-                    >
-                      <span className="w-0 group-hover:w-2 h-px bg-secondary-500 transition-all duration-200" />
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Info */}
-            <div>
-              <h3 className={cn(
-                "font-display font-semibold mb-4",
-                theme === 'dark' ? 'text-white' : 'text-gray-900'
-              )}>Contact</h3>
-              <ul className="space-y-4">
-                <li>
-                  <a
-                    href="mailto:contact@kreativnomads.com.ph"
-                    className={cn(
-                      "flex items-start gap-3 text-sm transition-colors group",
-                      theme === 'dark'
-                        ? 'text-gray-400 hover:text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    )}
-                  >
-                    <Mail className="w-4 h-4 mt-0.5 text-primary-400" />
-                    <span>contact@kreativnomads.com.ph</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="tel:+639173125071"
-                    className={cn(
-                      "flex items-start gap-3 text-sm transition-colors group",
-                      theme === 'dark'
-                        ? 'text-gray-400 hover:text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    )}
-                  >
-                    <Phone className="w-4 h-4 mt-0.5 text-primary-400" />
-                    <span>+63 917 312 5071</span>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://maps.google.com/?q=Discovery+Suites+Ortigas"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-start gap-3 text-sm transition-colors group",
-                      theme === 'dark'
-                        ? 'text-gray-400 hover:text-white'
-                        : 'text-gray-600 hover:text-gray-900'
-                    )}
-                  >
-                    <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary-400" />
-                    <span>2404 Discovery Suites, ADB Avenue, Ortigas Center, Pasig City</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
+            </address>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className={cn(
-          "py-6 border-t",
-          theme === 'dark' ? 'border-primary-500/10' : 'border-gray-200'
-        )}>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p 
-              className={cn(
-                "text-sm text-center sm:text-left",
-                theme === 'dark' ? 'text-gray-500' : 'text-gray-600'
-              )}
-            >
-              © {currentYear} <span className="text-primary-400">Kreativ Nomads</span>. All rights reserved.
-            </p>
-            <div className="flex items-center gap-6 text-sm">
-              <a 
-                href="#" 
-                className={cn(
-                  "transition-colors",
-                  theme === 'dark'
-                    ? 'text-gray-500 hover:text-primary-400'
-                    : 'text-gray-600 hover:text-primary-600'
-                )}
-              >
-                Privacy Policy
-              </a>
-              <a 
-                href="#" 
-                className={cn(
-                  "transition-colors",
-                  theme === 'dark'
-                    ? 'text-gray-500 hover:text-primary-400'
-                    : 'text-gray-600 hover:text-primary-600'
-                )}
-              >
-                Terms of Service
-              </a>
-            </div>
-          </div>
+        <div className="hairline" />
+
+        <div className="flex flex-col items-center gap-5 py-6 sm:flex-row sm:justify-between">
+          <p className="text-center text-sm text-[color:var(--ink-dim)] sm:text-left">
+            &copy; {year} <span className="text-secondary-400">Kreativ Nomads</span>. All rights reserved.
+          </p>
+          <nav aria-label="Legal" className="flex items-center gap-6 text-sm">
+            <Link href="/privacy" className="kn-flink">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="kn-flink">
+              Terms of Service
+            </Link>
+          </nav>
+          <BackToTop />
         </div>
       </div>
     </footer>

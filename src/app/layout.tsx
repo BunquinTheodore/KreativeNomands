@@ -22,6 +22,32 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+const SITE_URL = 'https://kreativnomads.com.ph';
+
+// Organization structured data (JSON-LD).
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Kreativ Nomads',
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon-512.png`,
+  email: 'contact@kreativnomads.com.ph',
+  telephone: '+63 917 312 5071',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2404 Discovery Suites, ADB Avenue, Ortigas Center',
+    addressLocality: 'Pasig City',
+    addressCountry: 'PH',
+  },
+  sameAs: [
+    'https://facebook.com/kreativnomads',
+    'https://instagram.com/kreativnomads',
+    'https://linkedin.com/company/kreativnomads',
+  ],
+};
+// "<" is escaped so the payload can never close the script tag.
+const organizationJsonLdString = JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c');
+
 // Metadata configuration
 export const metadata: Metadata = {
   title: {
@@ -29,7 +55,9 @@ export const metadata: Metadata = {
     template: '%s | Kreativ Nomads',
   },
   description:
-    'Kreativ Nomads is a creative agency of experienced freelancers providing content strategy, graphic design, and photo/video post-production services.',
+    'Philippines creative agency of experienced freelancers: content strategy, graphic design, and photo and video post-production.',
+  applicationName: 'Kreativ Nomads',
+  category: 'business',
   keywords: [
     'creative agency',
     'Philippines',
@@ -41,6 +69,11 @@ export const metadata: Metadata = {
     'freelance',
     'digital marketing',
     'social media',
+    'photo post-production',
+    'video post-production',
+    'IT services',
+    'Pasig',
+    'Ortigas',
   ],
   authors: [{ name: 'Kreativ Nomads' }],
   creator: 'Kreativ Nomads',
@@ -87,8 +120,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: [{ url: '/apple-touch-icon.png' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
   manifest: '/site.webmanifest',
 };
@@ -118,6 +153,10 @@ export default function RootLayout({
 
         {/* Content sits above the (future) canvas at z-0. */}
         <div className="relative z-10">{children}</div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: organizationJsonLdString }}
+        />
       </body>
     </html>
   );
