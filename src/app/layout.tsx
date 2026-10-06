@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/lib/theme-context';
-import AnimatedBackground from '@/components/AnimatedBackground';
+import '@/components/fx/fx.css';
+import Splash from '@/components/fx/Splash';
+import Cursor from '@/components/fx/Cursor';
+import SfxProvider from '@/components/fx/SfxProvider';
+import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
 
 // Font configuration
 const inter = Inter({
@@ -84,13 +87,14 @@ export const metadata: Metadata = {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
-    apple: [{ url: '/favicon.svg' }],
+    apple: [{ url: '/apple-touch-icon.png' }],
   },
   manifest: '/site.webmanifest',
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1a1a1a',
+  themeColor: '#0a1111',
+  colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -103,11 +107,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} dark`} suppressHydrationWarning>
-      <body className="min-h-screen font-sans antialiased transition-colors duration-300">
-        <ThemeProvider>
-          <AnimatedBackground />
-          {children}
-        </ThemeProvider>
+      <body className="min-h-screen font-sans antialiased">
+        {/* Experience layer: all render in the server HTML (Splash) or attach after idle. */}
+        <Splash />
+        <Cursor />
+        <SfxProvider />
+        <ScrollProgressLine />
+
+        {/*
+          INTEGRATOR: mount the Three.js background here, behind the content:
+            <div className="fixed inset-0 z-0" aria-hidden="true"><ThreeBackground /></div>
+          (import ThreeBackground from '@/components/three/ThreeBackground'; it is lazy
+          and renders its own fixed canvas, so the wrapper is optional.)
+        */}
+
+        {/* Content sits above the (future) canvas at z-0. */}
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );

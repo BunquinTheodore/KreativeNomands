@@ -1,53 +1,37 @@
 'use client';
 
-import { createContext, useContext, useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 
 type Theme = 'light' | 'dark';
 
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
-  setTheme: (theme: Theme) => void;
+  setTheme: (theme: 'light' | 'dark') => void;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const NOOP_THEME: ThemeContextType = {
+  theme: 'dark' as Theme,
+  toggleTheme() {
+    // Theme switching was removed: the site is dark-only.
+  },
+  setTheme() {
+    // Theme switching was removed: the site is dark-only.
+  },
+};
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme] = useState<Theme>('light');
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-    // Always use light theme
-    const root = document.documentElement;
-    root.classList.add('light');
-    root.classList.remove('dark');
-  }, []);
-
-  const toggleTheme = () => {
-    // No-op: theme toggle disabled
-  };
-
-  const setThemeFunc = () => {
-    // No-op: theme change disabled
-  };
-
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return null;
-  }
-
-  return (
-    <ThemeContext.Provider value={{ theme, toggleTheme, setTheme: setThemeFunc }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+/**
+ * @deprecated The site is dark-only. Kept as a pass-through so legacy imports
+ * compile until Wave 2 removes the remaining `useTheme()` callers. Renders
+ * children immediately (no blank first paint).
+ */
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  return <>{children}</>;
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
+/**
+ * @deprecated Always returns the dark theme; needs no provider. Remove usages.
+ */
+export function useTheme(): ThemeContextType {
+  return NOOP_THEME;
 }

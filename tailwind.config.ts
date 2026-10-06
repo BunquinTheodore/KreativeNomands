@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  // The site is dark-only; the class strategy is kept (unused) for compatibility.
   darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -97,136 +98,38 @@ const config: Config = {
         '22': '5.5rem',
         '30': '7.5rem',
       },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+      // Utility mirrors of the fx/ keyframes (fx.css defines the kn-* versions
+      // used internally). All transform/opacity-only.
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out forwards',
-        'slide-up': 'slideUp 0.6s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
-        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.4s ease-out forwards',
-        'bounce-gentle': 'bounceGentle 2s ease-in-out infinite',
-        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-        'float': 'float 6s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'spin-slow': 'spin 8s linear infinite',
-        'wiggle': 'wiggle 1s ease-in-out infinite',
-        'gradient-shift': 'gradientShift 8s ease infinite',
-        // Animated background animations
-        'float-slow': 'floatSlow 30s ease-in-out infinite',
-        'float-slow-reverse': 'floatSlowReverse 35s ease-in-out infinite',
-        'float-medium': 'floatMedium 25s ease-in-out infinite',
-        'float-medium-reverse': 'floatMediumReverse 28s ease-in-out infinite',
-        'float-fast': 'floatFast 20s ease-in-out infinite',
-        'float-fast-reverse': 'floatFastReverse 22s ease-in-out infinite',
-        'particle': 'particle 30s linear infinite',
-        'wave': 'wave 15s ease-in-out infinite',
-        'grain': 'grain 8s steps(10) infinite',
+        shine: 'shine 7s ease-in-out infinite',
+        marquee: 'marquee 40s linear infinite',
+        'marquee-reverse': 'marquee 40s linear infinite reverse',
+        orbit: 'orbit 14s linear infinite',
+        draw: 'draw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        shine: {
+          '0%': { transform: 'translate3d(0,0,0) skewX(-18deg)' },
+          '55%, 100%': { transform: 'translate3d(420%,0,0) skewX(-18deg)' },
         },
-        slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        marquee: {
+          '0%': { transform: 'translate3d(0,0,0)' },
+          '100%': { transform: 'translate3d(-50%,0,0)' },
         },
-        slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(20px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
+        orbit: {
+          to: { transform: 'rotate(360deg)' },
         },
-        slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-20px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        bounceGentle: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        pulseGlow: {
-          '0%, 100%': { opacity: '1', boxShadow: '0 0 20px rgba(61, 90, 90, 0.3)' },
-          '50%': { opacity: '0.8', boxShadow: '0 0 40px rgba(61, 90, 90, 0.6)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
-        shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-3deg)' },
-          '50%': { transform: 'rotate(3deg)' },
-        },
-        gradientShift: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
-        },
-        // Animated background keyframes
-        floatSlow: {
-          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-          '25%': { transform: 'translate(50px, 30px) rotate(5deg)' },
-          '50%': { transform: 'translate(20px, 60px) rotate(-5deg)' },
-          '75%': { transform: 'translate(-30px, 40px) rotate(3deg)' },
-        },
-        floatSlowReverse: {
-          '0%, 100%': { transform: 'translate(0, 0) rotate(0deg)' },
-          '25%': { transform: 'translate(-40px, 50px) rotate(-5deg)' },
-          '50%': { transform: 'translate(-60px, 20px) rotate(5deg)' },
-          '75%': { transform: 'translate(-20px, -30px) rotate(-3deg)' },
-        },
-        floatMedium: {
-          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '33%': { transform: 'translate(40px, -40px) scale(1.05)' },
-          '66%': { transform: 'translate(-30px, 30px) scale(0.95)' },
-        },
-        floatMediumReverse: {
-          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '33%': { transform: 'translate(-50px, 40px) scale(0.95)' },
-          '66%': { transform: 'translate(30px, -50px) scale(1.05)' },
-        },
-        floatFast: {
-          '0%, 100%': { transform: 'translate(0, 0)' },
-          '50%': { transform: 'translate(30px, -30px)' },
-        },
-        floatFastReverse: {
-          '0%, 100%': { transform: 'translate(0, 0)' },
-          '50%': { transform: 'translate(-30px, 30px)' },
-        },
-        particle: {
-          '0%': { transform: 'translateY(100vh) rotate(0deg)', opacity: '0' },
-          '10%': { opacity: '1' },
-          '90%': { opacity: '1' },
-          '100%': { transform: 'translateY(-100vh) rotate(720deg)', opacity: '0' },
-        },
-        wave: {
-          '0%, 100%': { transform: 'translateX(0) translateY(0)' },
-          '25%': { transform: 'translateX(-20px) translateY(-10px)' },
-          '50%': { transform: 'translateX(0) translateY(-20px)' },
-          '75%': { transform: 'translateX(20px) translateY(-10px)' },
-        },
-        grain: {
-          '0%, 100%': { transform: 'translate(0, 0)' },
-          '10%': { transform: 'translate(-5%, -10%)' },
-          '20%': { transform: 'translate(-15%, 5%)' },
-          '30%': { transform: 'translate(7%, -25%)' },
-          '40%': { transform: 'translate(-5%, 25%)' },
-          '50%': { transform: 'translate(-15%, 10%)' },
-          '60%': { transform: 'translate(15%, 0%)' },
-          '70%': { transform: 'translate(0%, 15%)' },
-          '80%': { transform: 'translate(3%, 35%)' },
-          '90%': { transform: 'translate(-10%, 10%)' },
+        draw: {
+          from: { strokeDashoffset: '1' },
+          to: { strokeDashoffset: '0' },
         },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'hero-pattern': 'linear-gradient(135deg, rgba(26,26,26,0.95) 0%, rgba(26,26,26,0.85) 100%)',
       },
     },
   },
