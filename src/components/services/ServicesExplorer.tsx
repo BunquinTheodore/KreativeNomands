@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import GlassCard from '@/components/fx/GlassCard';
 import OrbitSelector3D from '@/components/three/OrbitSelector3D';
+import { scrollToId } from '@/lib/scroll';
 import { SERVICES, type ServiceId } from './data';
 import ServiceDetail from './ServiceDetail';
 
@@ -10,7 +11,19 @@ const ORBIT_ITEMS = SERVICES.map(({ id, label }) => ({ id, label }));
 /** Length of the fade-out half of the crossfade, in ms. */
 const SWAP_OUT_MS = 180;
 
+/** Deep links look like `/#services-content-strategy` (the footer's Services column). */
+const SERVICE_HASH_PREFIX = 'services-';
+const SECTION_ID = 'services';
+
 const isServiceId = (id: string): id is ServiceId => SERVICES.some((service) => service.id === id);
+
+/** The service a location hash points at, or null when it is not a `#services-<id>` alias. */
+function serviceFromHash(hash: string): ServiceId | null {
+  const raw = hash.replace(/^#/, '');
+  if (!raw.startsWith(SERVICE_HASH_PREFIX)) return null;
+  const id = raw.slice(SERVICE_HASH_PREFIX.length);
+  return isServiceId(id) ? id : null;
+}
 
 /**
  * Orbit selector (3D, loaded lazily near the viewport) + glass detail panel.
@@ -36,17 +49,36 @@ export default function ServicesExplorer() {
     return () => window.clearTimeout(timer);
   }, [activeId, shownId]);
 
+  // Deep links (#services-<id>): select that service on load and on every later hashchange,
+  // then scroll to the section. The first apply skips the crossfade (nothing is on screen yet).
+  useEffect(() => {
+    const apply = (instant: boolean) => {
+      const id = serviceFromHash(window.location.hash);
+      if (!id) return;
+      setActiveId(id);
+      if (instant) setShownId(id);
+      scrollToId(SECTION_ID);
+    };
+    apply(true);
+    const onHashChange = () => apply(false);
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
   const select = useCallback((id: string) => {
     if (isServiceId(id)) setActiveId(id);
   }, []);
 
-  const step = useCallback(
-    (delta: number) => {
-      const current = SERVICES.findIndex((service) => service.id === activeId);
-      setActiveId(SERVICES[(current + delta + SERVICES.length) % SERVICES.length].id);
-    },
-    [activeId],
-  );
+  // Functional update: two quick Prev/Next presses compose instead of reading a stale activeId.
+  const step = useCallback((delta: number) => {
+    setActiveId((current) => {
+      const index = SERVICES.findIndex((service) => service.id === current);
+      return SERVICES[(index + delta + SERVICES.length) % SERVICES.length].id;
+    });
+  }, []);
+
+  const stepPrev = useCallback(() => step(-1), [step]);
+  const stepNext = useCallback(() => step(1), [step]);
 
   const activeIndex = SERVICES.findIndex((service) => service.id === activeId);
   const shownIndex = SERVICES.findIndex((service) => service.id === shownId);
@@ -80,8 +112,8 @@ export default function ServicesExplorer() {
           index={shownIndex}
           total={SERVICES.length}
           phase={phase}
-          onPrev={() => step(-1)}
-          onNext={() => step(1)}
+          onPrev={stepPrev}
+          onNext={stepNext}
         />
         <p className="sr-only" aria-live="polite" aria-atomic="true">
           {`Showing ${active.label}, ${activeIndex + 1} of ${SERVICES.length}`}

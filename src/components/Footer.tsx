@@ -16,11 +16,11 @@ const COMPANY_LINKS: readonly FooterNavLink[] = [
 ];
 
 const SERVICE_LINKS: readonly FooterNavLink[] = [
-  { label: 'Content Strategy', id: 'services' },
-  { label: 'Graphic Design', id: 'services' },
-  { label: 'Photo Post-Production', id: 'services' },
-  { label: 'Video Post-Production', id: 'services' },
-  { label: 'IT Services', id: 'services' },
+  { label: 'Content Strategy', id: 'services-content-strategy' },
+  { label: 'Graphic Design', id: 'services-graphic-design' },
+  { label: 'Photo Post-Production', id: 'services-post-production' },
+  { label: 'Video Post-Production', id: 'services-post-production' },
+  { label: 'IT Services', id: 'services-it-services' },
 ];
 
 const RAIL_WORDS = ['Strategy', 'Design', 'Photo', 'Video', 'IT', 'Branding'] as const;

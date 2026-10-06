@@ -34,10 +34,11 @@ export default function BrowserSlide({ project, asset, priority = false }: Brows
         src={asset.thumb ?? asset.src}
         alt=""
         aria-hidden="true"
-        fill
+        width={asset.width}
+        height={asset.height}
         sizes="240px"
         draggable={false}
-        className="scale-125 object-cover opacity-35 blur-2xl"
+        className="absolute inset-0 h-full w-full scale-125 object-cover opacity-35 blur-2xl"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-4 pb-4 pt-14 sm:gap-4 sm:px-8 sm:pb-5 sm:pt-5">
         <div className="kp-browser kp-browser--sized" style={style}>
