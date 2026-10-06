@@ -1,185 +1,155 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState, type MouseEvent } from 'react';
+import { Sparkles } from 'lucide-react';
+import AnimatedLogo from '@/components/fx/AnimatedLogo';
+import SoundToggle from '@/components/fx/SoundToggle';
+import Button from '@/components/ui/Button';
+import MobileSheet from '@/components/hero/MobileSheet';
+import { NAV_LINKS, SECTION_IDS } from '@/components/hero/navLinks';
+import useMenuA11y from '@/components/hero/useMenuA11y';
+import '@/components/hero/hero.css';
+import { scrollToId, useActiveSection } from '@/lib/scroll';
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/lib/theme-context';
-import Link from 'next/link';
-import Image from 'next/image';
 
-const navLinks = [
-  { label: 'Home', href: '#hero' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#portfolio' },
-  { label: 'Contact', href: '#contact' },
-];
+const SCROLLED_AT_PX = 24;
+const DESKTOP_QUERY = '(min-width: 1024px)';
+const SHEET_ID = 'site-menu';
 
+/**
+ * Fixed header. Transparent over the hero, frosted glass once scrolled.
+ * Desktop: logo + wordmark, nav with active-section underline, sound toggle and CTA.
+ * Mobile: burger opening a full-screen glass sheet (focus trap, Escape, scroll lock).
+ */
 export default function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { theme } = useTheme();
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const activeId = useActiveSection(SECTION_IDS);
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const userScrolled = useRef(false);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
+  useMenuA11y({ open: menuOpen, onClose: closeMenu, sheetRef, toggleRef });
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      setScrolled(window.scrollY > SCROLLED_AT_PX);
     };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      userScrolled.current = true;
+      if (!frame) frame = window.requestAnimationFrame(measure);
+    };
+    measure();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-    
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    
-    if (element) {
-      const offset = 80;
-      const top = element.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+  // Keep the URL hash in step with the section being read (never before the user scrolls).
+  useEffect(() => {
+    if (!userScrolled.current) return;
+    try {
+      const url = activeId === 'hero' ? window.location.pathname + window.location.search : `#${activeId}`;
+      window.history.replaceState(null, '', url);
+    } catch {
+      // Sandboxed contexts may forbid history updates; the highlight still works.
     }
-  };
+  }, [activeId]);
+
+  // The sheet is mobile-only: close it if the viewport grows past the breakpoint.
+  useEffect(() => {
+    const mql = window.matchMedia(DESKTOP_QUERY);
+    const onChange = () => {
+      if (mql.matches) setMenuOpen(false);
+    };
+    mql.addEventListener('change', onChange);
+    return () => mql.removeEventListener('change', onChange);
+  }, []);
+
+  const navigate = useCallback((event: MouseEvent<HTMLElement>, id: string) => {
+    event.preventDefault();
+    setMenuOpen(false);
+    // Release the scroll lock first: the effect cleanup runs after paint, scrolling needs it now.
+    document.documentElement.style.overflow = '';
+    scrollToId(id);
+  }, []);
+
+  const toggleMenu = () => setMenuOpen((open) => !open);
 
   return (
-    <header
-      className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
-        isScrolled
-          ? cn(
-              'py-3 shadow-lg border-b',
-              theme === 'dark' 
-                ? 'bg-dark-900/95 border-primary-500/10' 
-                : 'bg-white/95 border-primary-500/15'
-            )
-          : 'bg-transparent py-5'
-      )}
-      role="banner"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav
-          className="flex items-center justify-between"
-          role="navigation"
-          aria-label="Main navigation"
+    <header data-scrolled={scrolled} className="site-header fixed inset-x-0 top-0 z-50">
+      <div
+        className={cn(
+          'site-header__bar relative mx-auto flex items-center justify-between gap-3 px-4 sm:px-6',
+          scrolled
+            ? 'mt-2 h-14 w-[calc(100%-1.5rem)] max-w-6xl rounded-full'
+            : 'mt-3 h-16 w-full max-w-7xl',
+        )}
+      >
+        <span aria-hidden="true" className="site-header__glass glass-strong" />
+
+        <a
+          href="#hero"
+          onClick={(event) => navigate(event, 'hero')}
+          aria-label="Kreativ Nomads - back to top"
+          className="group relative z-[70] flex items-center gap-2.5 rounded-full py-1 pr-2"
         >
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-1 lg:gap-2">
-            {navLinks.map((link) => (
-              <li key={link.href}>
+          <AnimatedLogo size={38} loop className="flex-none" />
+          <span className="font-display text-base font-semibold tracking-tight text-cream-500 transition-colors group-hover:text-secondary-400 sm:text-lg">
+            Kreativ Nomads
+          </span>
+        </a>
+
+        <nav aria-label="Main navigation" className="hidden lg:block">
+          <ul className="flex items-center gap-1">
+            {NAV_LINKS.map((link) => (
+              <li key={link.id}>
                 <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={cn(
-                    'px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200',
-                    theme === 'dark' 
-                      ? 'text-gray-300 hover:text-white hover:bg-primary-500/10' 
-                      : 'text-gray-600 hover:text-primary-700 hover:bg-primary-500/10',
-                    'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2',
-                    theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-white',
-                    'relative group'
-                  )}
+                  href={`#${link.id}`}
+                  onClick={(event) => navigate(event, link.id)}
+                  aria-current={activeId === link.id ? 'location' : undefined}
+                  className="site-nav__link block rounded-full px-4 py-2.5 text-sm font-medium tracking-wide"
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400 group-hover:w-1/2 transition-all duration-200 rounded-full" />
                 </a>
               </li>
             ))}
           </ul>
-
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className={cn(
-                'inline-flex items-center gap-2 px-5 py-2.5 rounded-full',
-                'bg-secondary-500 hover:bg-secondary-600 text-white font-medium text-sm',
-                'transition-all duration-200 hover:-translate-y-0.5',
-                'focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2',
-                'shadow-lg hover:shadow-xl',
-                theme === 'dark' ? 'focus:ring-offset-dark-900' : 'focus:ring-offset-cream-500'
-              )}
-            >
-              <Sparkles className="w-4 h-4" />
-              Inquire Today
-            </a>
-          </div>
-
-          {/* Mobile: Menu Button */}
-          <div className="md:hidden flex items-center gap-2">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={cn(
-                'p-2 rounded-lg',
-                theme === 'dark' ? 'text-white hover:bg-primary-500/20' : 'text-gray-700 hover:bg-primary-500/10',
-                'transition-colors duration-200',
-                'focus:outline-none focus:ring-2 focus:ring-primary-500'
-              )}
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
         </nav>
+
+        <div className="relative z-[70] flex items-center gap-2 sm:gap-3">
+          <SoundToggle />
+          <Button
+            href="#contact"
+            onClick={(event) => navigate(event, 'contact')}
+            icon={<Sparkles className="h-4 w-4" aria-hidden="true" />}
+            className="hidden px-5 py-2.5 lg:inline-flex"
+          >
+            Inquire Today
+          </Button>
+          <button
+            ref={toggleRef}
+            type="button"
+            onClick={toggleMenu}
+            aria-expanded={menuOpen}
+            aria-controls={SHEET_ID}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            data-sfx={menuOpen ? 'close' : 'open'}
+            className="site-burger glass inline-flex h-10 w-10 flex-col items-center justify-center rounded-full text-cream-500 lg:hidden"
+          >
+            <span className="site-burger__bar" />
+            <span className="site-burger__bar" />
+            <span className="site-burger__bar" />
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className={cn(
-              'md:hidden border-t',
-              theme === 'dark' 
-                ? 'bg-dark-900/98 border-primary-500/10' 
-                : 'bg-white/98 border-primary-500/15'
-            )}
-          >
-            <nav className="container mx-auto px-4 py-4">
-              <ul className="flex flex-col gap-1">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    <a
-                      href={link.href}
-                      onClick={(e) => handleNavClick(e, link.href)}
-                      className={cn(
-                        'block px-4 py-3 rounded-lg text-base font-medium',
-                        theme === 'dark'
-                          ? 'text-gray-300 hover:text-white hover:bg-primary-500/15'
-                          : 'text-gray-600 hover:text-primary-700 hover:bg-primary-500/10',
-                        'transition-colors duration-200'
-                      )}
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-                <li className="mt-3 pt-3 border-t border-primary-500/10">
-                  <a
-                    href="#contact"
-                    onClick={(e) => handleNavClick(e, '#contact')}
-                    className={cn(
-                      'flex items-center justify-center gap-2 w-full text-center px-4 py-3 rounded-full',
-                      'bg-secondary-500 hover:bg-secondary-600 text-white font-medium',
-                      'transition-colors duration-200 shadow-lg'
-                    )}
-                  >
-                    <Sparkles className="w-4 h-4" />
-                    Inquire Today
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <MobileSheet ref={sheetRef} id={SHEET_ID} open={menuOpen} activeId={activeId} onNavigate={navigate} />
     </header>
   );
 }
