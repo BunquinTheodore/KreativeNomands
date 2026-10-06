@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import FitLine from '@/components/fx/FitLine';
 import GlassCard from '@/components/fx/GlassCard';
 import Reveal from '@/components/fx/Reveal';
 import SplitText from '@/components/fx/SplitText';
@@ -19,8 +20,10 @@ export default function CtaCard() {
   return (
     <Reveal delay={0.1}>
       <GlassCard glow className="p-6 sm:p-7">
-        <h3 className="font-display text-xl font-semibold leading-snug text-cream-500 sm:text-2xl">
-          <SplitText text="Ready to elevate your brand?" variant="mask" by="words" />
+        <h3 className="font-display font-semibold leading-snug text-cream-500">
+          <FitLine maxPx={24} minPx={14} fluid="5.4vw">
+            <SplitText text="Ready to elevate your brand?" variant="mask" by="words" />
+          </FitLine>
         </h3>
         <p className="mt-3 text-[0.95rem] leading-relaxed text-[color:var(--ink-dim)]">
           Schedule a free consultation call to discuss your creative needs.

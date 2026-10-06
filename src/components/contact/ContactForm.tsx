@@ -20,8 +20,13 @@ export default function ContactForm() {
   const sending = form.phase === 'sending';
   const done = form.phase === 'success';
 
+  const wasDone = useRef(false);
+
   useEffect(() => {
     if (done) successRef.current?.focus();
+    // Returning from the confirmation: the focused button is gone, so land on the first field.
+    else if (wasDone.current) document.getElementById('contact-name')?.focus();
+    wasDone.current = done;
   }, [done]);
 
   return (

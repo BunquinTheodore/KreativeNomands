@@ -41,7 +41,7 @@ export default function Contact() {
           <div className="absolute inset-y-0 left-0 w-0.5">
             <DrawLine axis="y" />
           </div>
-          <div className="grid gap-10 lg:grid-cols-5 lg:gap-14">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-14">
             <div className="space-y-8 lg:col-span-2">
               <InfoCards />
               <CtaCard />

@@ -72,7 +72,7 @@ export default function Footer() {
           <FooterNav heading="Services" links={SERVICE_LINKS} />
 
           <div>
-            <h3 className="mb-4 font-display text-base font-semibold text-cream-500">Contact</h3>
+            <h2 className="mb-4 font-display text-base font-semibold text-cream-500">Contact</h2>
             <address className="not-italic">
               <ul className="space-y-3">
                 {CONTACT_INFO.map((item) => (

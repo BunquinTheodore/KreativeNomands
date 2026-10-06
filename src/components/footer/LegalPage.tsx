@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import AnimatedLogo from '@/components/fx/AnimatedLogo';
 import DrawLine from '@/components/fx/DrawLine';
+import FitLine from '@/components/fx/FitLine';
 import Reveal from '@/components/fx/Reveal';
 import SectionHeader from '@/components/fx/SectionHeader';
 import Button from '@/components/ui/Button';
@@ -88,12 +89,19 @@ export default function LegalPage({ eyebrow, title, subtitle, updated, intro, se
           </div>
           <div className="space-y-10 sm:pl-6">
             {sections.map((section) => (
-              <section key={section.id} id={section.id} aria-labelledby={`${section.id}-title`}>
+              <section
+                key={section.id}
+                id={section.id}
+                aria-labelledby={`${section.id}-title`}
+                className="scroll-mt-24"
+              >
                 <h2
                   id={`${section.id}-title`}
-                  className="font-display text-xl font-semibold leading-snug text-cream-500 sm:text-2xl"
+                  className="font-display font-semibold leading-snug text-cream-500"
                 >
-                  {section.heading}
+                  <FitLine maxPx={24} minPx={14} fluid="5.6vw">
+                    {section.heading}
+                  </FitLine>
                 </h2>
                 {section.paragraphs?.map((text) => (
                   <p key={text} className="measure mt-3 text-[0.98rem] leading-[1.8] text-[color:var(--ink-dim)]">

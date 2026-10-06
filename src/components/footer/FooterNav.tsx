@@ -22,7 +22,7 @@ export default function FooterNav({ heading, links }: FooterNavProps) {
 
   return (
     <nav aria-label={heading}>
-      <h3 className="mb-4 font-display text-base font-semibold text-cream-500">{heading}</h3>
+      <h2 className="mb-4 font-display text-base font-semibold text-cream-500">{heading}</h2>
       <ul className="space-y-2">
         {links.map((link) => (
           <li key={link.label}>

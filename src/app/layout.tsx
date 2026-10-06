@@ -46,7 +46,7 @@ const organizationJsonLd = {
   ],
 };
 // "<" is escaped so the payload can never close the script tag.
-const organizationJsonLdString = JSON.stringify(organizationJsonLd).replace(/</g, '\u003c');
+const organizationJsonLdString = JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c');
 
 // Metadata configuration
 export const metadata: Metadata = {
