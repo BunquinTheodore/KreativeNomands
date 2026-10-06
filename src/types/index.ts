@@ -4,6 +4,9 @@ export interface PortfolioAsset {
   type?: 'video' | 'image';
   title?: string;
   poster?: string; // Optional poster image for video assets
+  thumb?: string; // 640px WebP thumbnail (images) or the poster (videos)
+  width?: number; // Intrinsic pixel width of `src`
+  height?: number; // Intrinsic pixel height of `src`
 }
 
 export interface Project {
