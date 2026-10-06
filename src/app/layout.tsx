@@ -8,7 +8,7 @@ import Cursor from '@/components/fx/Cursor';
 import SfxProvider from '@/components/fx/SfxProvider';
 import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
 import ShineGate from '@/components/fx/ShineGate';
-import { buildFontSwapScript } from '@/lib/font-swap';
+import { buildPostPaintScript } from '@/lib/post-paint';
 
 // Font configuration
 const inter = Inter({
@@ -25,9 +25,13 @@ const poppins = Poppins({
 });
 
 // The variable classes activate the real fonts. They are NOT on <html> in the server markup: the
-// inline script below adds them after the first paint (see lib/font-swap.ts), so no font file is
-// on the critical path. Until then globals.css maps both variables to metric-matched fallbacks.
-const FONT_SWAP_SCRIPT = buildFontSwapScript(`${inter.variable} ${poppins.variable}`);
+// inline script below adds them (and the manifest link) after the first paint (see lib/post-paint.ts),
+// so no font file is on the critical path. Until then globals.css maps both variables to
+// metric-matched fallbacks.
+const POST_PAINT_SCRIPT = buildPostPaintScript({
+  fontClasses: `${inter.variable} ${poppins.variable}`,
+  manifestHref: '/site.webmanifest',
+});
 
 const SITE_URL = 'https://kreativnomads.com.ph';
 
@@ -124,15 +128,12 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // One favicon link: every extra <link rel="icon"> is another request the browser starts right after
+  // load. The 192/512 px PNGs stay available to the web app manifest and the structured data.
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
-    ],
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
-  manifest: '/site.webmanifest',
 };
 
 export const viewport: Viewport = {
@@ -165,7 +166,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: organizationJsonLdString }}
         />
-        <script dangerouslySetInnerHTML={{ __html: FONT_SWAP_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: POST_PAINT_SCRIPT }} />
       </body>
     </html>
   );

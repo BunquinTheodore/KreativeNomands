@@ -38,7 +38,7 @@ export default function CategoryCard({ category, stats, thumbs, index }: Categor
     <GlassCard href={`/portfolio/${category.id}`} tilt glow className="kp-card group">
       <span className="kp-card__hairline" aria-hidden="true" style={style} />
       <div className="kp-strip" style={style} aria-hidden="true">
-        <Marquee speed={speed} direction={direction} gap={STRIP_GAP_PX}>
+        <Marquee speed={speed} direction={direction} gap={STRIP_GAP_PX} deferChildren>
           {thumbs.map((src) => (
             <span key={src} className="kp-tile">
               <Image

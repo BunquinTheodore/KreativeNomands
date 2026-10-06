@@ -33,7 +33,15 @@ export default function BrandPlate() {
         className="about-marks pointer-events-none absolute -inset-x-[22%] -inset-y-12 flex flex-col justify-between"
       >
         {MARK_ROWS.map((row, index) => (
-          <Marquee key={index} speed={ROW_SPEEDS[index]} direction={ROW_DIRECTIONS[index]} gap={44} pauseOnHover={false}>
+          <Marquee
+            key={index}
+            speed={ROW_SPEEDS[index]}
+            direction={ROW_DIRECTIONS[index]}
+            gap={44}
+            pauseOnHover={false}
+            deferChildren
+            reserveHeight={`${Math.round(Math.max(...row.map((mark) => mark.size)) * MARK_RATIO)}px`}
+          >
             {row.map((mark, markIndex) => (
               <Mark key={`${mark.src}-${markIndex}`} mark={mark} />
             ))}

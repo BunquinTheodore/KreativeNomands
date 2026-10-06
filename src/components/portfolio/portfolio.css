@@ -60,6 +60,11 @@
   overflow: hidden;
 }
 
+/* The thumbnails mount after hydration (Marquee deferChildren): the empty strip keeps the tile height. */
+.kp-strip .kn-marquee__group {
+  min-height: 6rem;
+}
+
 .kp-tile {
   position: relative;
   flex: none;
@@ -363,6 +368,10 @@
 }
 
 @media (max-width: 639px) {
+  .kp-strip .kn-marquee__group {
+    min-height: 5rem;
+  }
+
   .kp-tile {
     width: 7rem;
     height: 5rem;

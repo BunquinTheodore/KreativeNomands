@@ -495,6 +495,16 @@
   padding-right: var(--kn-gap, 16px);
 }
 
+/* Rails whose children mount after hydration (Marquee deferChildren) fade in once they are there. */
+.kn-marquee[data-deferred] .kn-marquee__track {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.kn-marquee[data-deferred][data-filled='true'] .kn-marquee__track {
+  opacity: 1;
+}
+
 .kn-marquee[data-dir='right'] .kn-marquee__track {
   animation-direction: reverse;
 }
