@@ -1,6 +1,6 @@
 # components/three
 
-Vanilla `three` (no R3F). Three is loaded with `import('three')` inside effects only, never at module load.
+Vanilla `three` (no R3F). Three is loaded (via the tree-shaken `threeLite.ts` re-export) inside effects only, never at module load.
 
 | File | Role |
 |---|---|
@@ -14,6 +14,9 @@ Vanilla `three` (no R3F). Three is loaded with `import('three')` inside effects 
 Rules of the road
 - Tier: reduced-motion, Save-Data, cores <= 2 or deviceMemory <= 2 => `low` => no WebGL (static fallbacks). Touch devices cap at `mid`.
 - Starfield ~700 (high) / ~250 (mid) points; DPR cap 1.75 (high) / 1.25.
-- Software GL is rejected (`failIfMajorPerformanceCaveat`) so headless/PageSpeed falls back to static.
+- Software GL is rejected (`failIfMajorPerformanceCaveat`). `canUseWebGL()` probes this with a throw-away canvas BEFORE `import('./threeLite')`, so PageSpeed/headless never downloads the three chunk and stays on the static fallback.
+- Boot gate (`onInteractionOrDelay`, all pointer types): after splash exit AND >= `minStartMs` (default 3500) since navigation, or at the first pointerdown/keydown/touch/wheel/scroll, then idle-after-load. `OrbitSelector3D` uses `minStartMs: 0` (it is only reached by scrolling). NorthStar3D and OrbitSelector3D additionally wait to be near the viewport.
+- First frame waits for `renderer.compileAsync` (KHR_parallel_shader_compile), so shader linking never blocks the main thread.
+- NorthStar3D's static fallback `<img>` is the LCP element: eager + `fetchPriority="high"`, using the trimmed `public/logos/north-star-yellow-trim.png`.
 - Events: `kn:sfx` CustomEvent (`'whoosh'` on star click, `'click'` on orb select) for CORE's SfxProvider.
 - New scene = write a `SceneFactory` `(ctx) => { update, resize?, dispose? }`; the stage disposes the scene graph for you.

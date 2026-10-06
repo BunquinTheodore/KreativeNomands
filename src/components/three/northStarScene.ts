@@ -271,6 +271,7 @@ export function createNorthStarFactory(handleRef: { current: NorthStarHandle | n
       if (isTap) triggerBurst()
     }
     const onWindowMove = (event: PointerEvent): void => {
+      if (event.pointerType !== 'mouse') return
       cursorX = event.clientX
       cursorY = event.clientY
       hasCursor = true
@@ -297,11 +298,11 @@ export function createNorthStarFactory(handleRef: { current: NorthStarHandle | n
       },
 
       update(dt, elapsed) {
-        if (elapsed - rectAt > RECT_REFRESH_S) {
-          rect = host.getBoundingClientRect()
-          rectAt = elapsed
-        }
         if (hasCursor) {
+          if (elapsed - rectAt > RECT_REFRESH_S) {
+            rect = host.getBoundingClientRect()
+            rectAt = elapsed
+          }
           const half = Math.max(1, window.innerWidth * 0.5)
           const halfV = Math.max(1, window.innerHeight * 0.5)
           const targetX = clamp((cursorX - (rect.left + rect.width / 2)) / half, -1, 1)

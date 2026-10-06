@@ -7,6 +7,7 @@ import ThreeBackground from '@/components/three/ThreeBackground';
 import Cursor from '@/components/fx/Cursor';
 import SfxProvider from '@/components/fx/SfxProvider';
 import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
+import ShineGate from '@/components/fx/ShineGate';
 
 // Font configuration
 const inter = Inter({
@@ -149,6 +150,7 @@ export default function RootLayout({
         <Cursor />
         <SfxProvider />
         <ScrollProgressLine />
+        <ShineGate />
         <ThreeBackground />
 
         {/* Content sits above the (future) canvas at z-0. */}

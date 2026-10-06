@@ -15,7 +15,8 @@ Styles: `src/app/globals.css` (tokens + utilities) and `./fx.css` (component sty
 | `Marquee` | `<Marquee speed={40} direction="left" pauseOnHover gap={16}>imgs</Marquee>` CSS-only loop. |
 | `GlassCard` | `<GlassCard href tilt glow shine>`; `href` uses next/link; `onClick` makes it a button-role div. |
 | `SectionHeader` | `<SectionHeader eyebrow title subtitle align id />` one-line title + subtitle fitted to the title width. |
-| `FitLine` | `<FitLine maxPx minPx fluid onFit>` one-line shrink-to-fit text. |
+| `FitLine` | `<FitLine maxPx minPx fluid onFit match>` one-line shrink-to-fit text. All fits on the page run in one batched reset/measure/apply pass (`lib/fit.ts`), so there is one forced layout per frame, not one per line. |
+| `ShineGate` | mounted once in the layout. Sets `data-off` on `.shine`, `.kp-sweep` and `[data-pause-offscreen]` elements that are far off-screen; globals.css pauses their looping animation. Add `data-pause-offscreen` to any element with an infinite non-compositable animation. |
 | `DrawLine` | `<DrawLine axis="y\|x" targetRef />` draws with the scroll progress of its parent/target. |
 | `ui/Button` | `<Button variant="primary\|glass\|ghost" href magnetic icon>`; `#id` hrefs smooth-scroll. |
 

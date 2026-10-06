@@ -7,6 +7,7 @@ import { useThreeStage } from './ThreeCanvas'
 
 const STAGE_OPTIONS = {
   start: 'idle',
+  minStartMs: 3500,
   antialias: false,
   maxFps: { high: 60, mid: 40 },
   camera: { fov: 60, near: 0.5, far: 160, position: [0, 0, 28] },

@@ -41,24 +41,29 @@ export default function Marquee({
     const root = rootRef.current;
     const group = groupRef.current;
     if (!root || !group) return undefined;
-    let frame = 0;
+    const sizes = { root: 0, group: 0 };
 
+    // Widths come from ResizeObserver entries: they arrive after layout, so no reflow is forced.
     const measure = () => {
-      frame = 0;
-      const groupWidth = group.getBoundingClientRect().width;
-      if (groupWidth < 1) return;
-      const needed = Math.ceil(root.clientWidth / groupWidth) + 1;
+      if (sizes.group < 1) return;
+      const needed = Math.ceil(sizes.root / sizes.group) + 1;
       // An even number of copies keeps the loop distance equal to one group.
       const even = Math.min(MAX_COPIES, Math.max(2, needed + (needed % 2)));
       setCopies(even);
-      setDuration(Math.max(4, groupWidth / Math.max(1, speed)));
-    };
-    const schedule = () => {
-      if (!frame) frame = window.requestAnimationFrame(measure);
+      setDuration(Math.max(4, sizes.group / Math.max(1, speed)));
     };
 
-    schedule();
-    const resize = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(schedule) : null;
+    const resize =
+      typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver((entries) => {
+            for (const entry of entries) {
+              const width = entry.borderBoxSize?.[0]?.inlineSize ?? entry.contentRect.width;
+              if (entry.target === root) sizes.root = width;
+              else sizes.group = width;
+            }
+            measure();
+          })
+        : null;
     resize?.observe(root);
     resize?.observe(group);
     const io =
@@ -73,7 +78,6 @@ export default function Marquee({
     return () => {
       resize?.disconnect();
       io?.disconnect();
-      if (frame) window.cancelAnimationFrame(frame);
     };
   }, [speed]);
 

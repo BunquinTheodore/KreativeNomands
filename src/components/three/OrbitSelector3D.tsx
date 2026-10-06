@@ -15,6 +15,8 @@ export interface OrbitSelector3DProps {
 
 const STAGE_OPTIONS = {
   start: 'visible',
+  // Reached by scrolling, i.e. the visitor is already interacting: no extra delay.
+  minStartMs: 0,
   maxFps: { high: 60, mid: 45 },
   camera: { fov: 38, near: 0.1, far: 60, position: [0, 0.8, 6.2] },
 } as const

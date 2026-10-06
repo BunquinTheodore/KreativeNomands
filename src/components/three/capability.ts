@@ -1,5 +1,7 @@
+import { whenSplashExit } from '@/lib/splash-state'
+
 /**
- * Tiny, dependency-free capability helpers for the Three.js layer.
+ * Tiny capability helpers for the Three.js layer.
  * Everything here is client-only: call from effects, never during render/SSR.
  */
 
@@ -105,6 +107,79 @@ export function onIdleAfterLoad(cb: () => void): () => void {
     if (idleId !== null && typeof w.cancelIdleCallback === 'function') w.cancelIdleCallback(idleId)
     if (timerId !== null) clearTimeout(timerId)
   }
+}
+
+const INPUT_EVENTS = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'] as const
+
+/**
+ * Runs `cb` once, at the next idle slot after window load, on whichever comes first:
+ *  - the visitor's first input (pointerdown / keydown / touch / wheel / scroll), or
+ *  - the splash having exited AND `minMs` having elapsed since navigation start.
+ * Keeps WebGL boot work (parse three, compile shaders) out of the load-time critical
+ * window on every device class, while starting at once for someone who is interacting.
+ */
+export function onInteractionOrDelay(cb: () => void, minMs: number): () => void {
+  let done = false
+  let timerId: ReturnType<typeof setTimeout> | null = null
+  let cancelIdle: (() => void) | null = null
+  let cancelSplash: (() => void) | null = null
+
+  const detach = (): void => {
+    for (const name of INPUT_EVENTS) window.removeEventListener(name, fire, true)
+  }
+  function fire(): void {
+    if (done) return
+    done = true
+    detach()
+    if (timerId !== null) clearTimeout(timerId)
+    cancelSplash?.()
+    cancelIdle = onIdleAfterLoad(cb)
+  }
+  const armTimer = (): void => {
+    if (done) return
+    // performance.now() counts from navigation start, so a slow load does not pay the delay twice.
+    const remaining = minMs - performance.now()
+    if (remaining <= 0) fire()
+    else timerId = setTimeout(fire, remaining)
+  }
+  for (const name of INPUT_EVENTS) {
+    window.addEventListener(name, fire, { capture: true, passive: true, once: true })
+  }
+  cancelSplash = whenSplashExit(armTimer)
+  return () => {
+    done = true
+    detach()
+    if (timerId !== null) clearTimeout(timerId)
+    cancelSplash?.()
+    cancelIdle?.()
+  }
+}
+
+let webglProbe: boolean | null = null
+
+/**
+ * Cheap WebGL capability probe, cached for the page's lifetime. Requests a context that
+ * fails on software rasterisers (headless Chrome / PageSpeed workers use SwiftShader),
+ * then releases it at once. Lets callers skip downloading three entirely.
+ */
+export function canUseWebGL(): boolean {
+  if (webglProbe !== null) return webglProbe
+  let ok = false
+  try {
+    const canvas = document.createElement('canvas')
+    const attrs = { failIfMajorPerformanceCaveat: true }
+    const gl =
+      (canvas.getContext('webgl2', attrs) as WebGL2RenderingContext | null) ??
+      (canvas.getContext('webgl', attrs) as WebGLRenderingContext | null)
+    if (gl) {
+      ok = true
+      gl.getExtension('WEBGL_lose_context')?.loseContext()
+    }
+  } catch {
+    ok = false
+  }
+  webglProbe = ok
+  return ok
 }
 
 /** Calls `cb` once when `el` is within `rootMargin` of the viewport. Returns a cancel function. */

@@ -12,14 +12,15 @@
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import type * as T from 'three'
 import {
+  canUseWebGL,
   detectCapability,
-  onIdleAfterLoad,
+  onInteractionOrDelay,
   whenNearViewport,
   type Capability,
   type DeviceTier,
 } from './capability'
 
-export type ThreeModule = typeof import('three')
+export type ThreeModule = typeof import('./threeLite')
 
 export interface CameraSpec {
   readonly fov: number
@@ -165,6 +166,7 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
   controller.resize?.(width, height, pixelRatio)
 
   let sized = host.clientWidth > 0 && host.clientHeight > 0
+  let compiled = false
   let inView = true
   let contextLost = false
   let running = false
@@ -197,7 +199,7 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
   }
 
   const sync = (): void => {
-    const shouldRun = !torn && sized && inView && !contextLost && !document.hidden
+    const shouldRun = !torn && compiled && sized && inView && !contextLost && !document.hidden
     if (shouldRun && !running) {
       running = true
       last = performance.now()
@@ -256,7 +258,12 @@ function buildStage(THREE: ThreeModule, opts: StageOptions, fail: () => void): (
   canvas.addEventListener('webglcontextlost', onContextLost)
   canvas.addEventListener('webglcontextrestored', onContextRestored)
   document.addEventListener('visibilitychange', sync)
-  sync()
+  // KHR_parallel_shader_compile: link programs on the GPU process, never block the main thread.
+  const markCompiled = (): void => {
+    compiled = true
+    sync()
+  }
+  renderer.compileAsync(scene, camera).then(markCompiled, markCompiled)
 
   return () => {
     torn = true
@@ -293,9 +300,14 @@ export function createStage(opts: StageOptions): StageHandle {
   }
 
   const start = async (): Promise<void> => {
+    // Software GL (PageSpeed workers, headless) is rejected later anyway: skip the chunk download.
+    if (!canUseWebGL()) {
+      if (!disposed) opts.onUnavailable?.()
+      return
+    }
     let THREE: ThreeModule
     try {
-      THREE = await import('three')
+      THREE = await import('./threeLite')
     } catch {
       if (!disposed) opts.onUnavailable?.()
       return
@@ -314,6 +326,9 @@ export function createStage(opts: StageOptions): StageHandle {
   }
 }
 
+/** Three boots no earlier than this after navigation start (all pointer types). */
+const DEFAULT_MIN_START_MS = 3500
+
 export type StageStatus = 'pending' | 'ready' | 'unavailable'
 
 export interface UseThreeStageOptions {
@@ -322,6 +337,11 @@ export interface UseThreeStageOptions {
   readonly antialias?: boolean
   readonly maxFps?: Partial<Record<DeviceTier, number>>
   readonly camera?: CameraSpec
+  /**
+   * Earliest boot time, in ms since navigation start (and never before the splash exits),
+   * unless the visitor interacts first. Defaults to DEFAULT_MIN_START_MS.
+   */
+  readonly minStartMs?: number
 }
 
 /**
@@ -378,7 +398,16 @@ export function useThreeStage(
       })
     }
 
-    const cancelGate = startMode === 'idle' ? onIdleAfterLoad(begin) : whenNearViewport(host, begin)
+    const minStartMs = opts.minStartMs ?? DEFAULT_MIN_START_MS
+    let cancelDelay: (() => void) | null = null
+    const cancelNear = startMode === 'idle' ? null : whenNearViewport(host, () => {
+      cancelDelay = onInteractionOrDelay(begin, minStartMs)
+    })
+    if (startMode === 'idle') cancelDelay = onInteractionOrDelay(begin, minStartMs)
+    const cancelGate = (): void => {
+      cancelNear?.()
+      cancelDelay?.()
+    }
 
     return () => {
       cancelled = true

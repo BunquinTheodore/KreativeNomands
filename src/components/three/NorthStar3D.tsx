@@ -10,15 +10,18 @@ export interface NorthStar3DProps {
   height?: number | string
 }
 
-const FALLBACK_SRC = '/logos/North-Star-Icon-Yellow_Kreativ-Nomads.png'
-/** Intrinsic size of the logo PNG (also reserves the aspect ratio for the <img>). */
-const FALLBACK_WIDTH = 1016
-const FALLBACK_HEIGHT = 1064
-/** The mark only fills about half of the PNG, so scale it up to match the 3D star's size. */
-const FALLBACK_SCALE = 1.7
+/**
+ * Centered 598x626 window of the 1016x1064 logo PNG (same aspect ratio), resized to 512x536 and
+ * palettised (~8 KB). It is exactly what the old full PNG looked like at scale(1.7), so no CSS
+ * scale hack is needed and the mark still fills the stage like the 3D star does.
+ */
+const FALLBACK_SRC = '/logos/north-star-yellow-trim.png'
+const FALLBACK_WIDTH = 512
+const FALLBACK_HEIGHT = 536
 
 const STAGE_OPTIONS = {
   start: 'visible',
+  minStartMs: 3500,
   maxFps: { high: 60, mid: 45 },
   camera: { fov: 32, near: 0.1, far: 50, position: [0, 0, 4.2] },
 } as const
@@ -62,10 +65,11 @@ export default function NorthStar3D({ className, height = 420 }: NorthStar3DProp
         height={FALLBACK_HEIGHT}
         alt=""
         decoding="async"
-        loading="lazy"
+        loading="eager"
+        fetchPriority="high"
         draggable={false}
         className="pointer-events-none absolute inset-0 h-full w-full object-contain transition-opacity duration-700"
-        style={{ opacity: ready ? 0 : 1, transform: `scale(${FALLBACK_SCALE})` }}
+        style={{ opacity: ready ? 0 : 1 }}
       />
       <div ref={stageRef} className="absolute inset-0" />
     </div>

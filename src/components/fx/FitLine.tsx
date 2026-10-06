@@ -1,8 +1,19 @@
 'use client';
 
-import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode } from 'react';
-import { fitShrink } from '@/lib/fit';
+import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode, type RefObject } from 'react';
+import { dequeueFit, matchSize, queueFit, readFit, setFontSize, shrinkSize, type FitMeasure, type FitTask } from '@/lib/fit';
 import { cn } from '@/lib/utils';
+
+/** A second one-line element (e.g. a subtitle) sized to match this line's final width. */
+export interface FitMatch {
+  ref: RefObject<HTMLElement>;
+  minPx: number;
+  maxPx: number;
+  /** Floor used when even `minPx` would overflow `fitWithin`. */
+  hardMinPx: number;
+  /** Element whose width the matched line must not exceed. */
+  fitWithin: RefObject<HTMLElement>;
+}
 
 interface FitLineProps {
   children: ReactNode;
@@ -16,12 +27,14 @@ interface FitLineProps {
   className?: string;
   /** Called after every fit with the text's final rendered width in px. */
   onFit?: (widthPx: number) => void;
+  match?: FitMatch;
 }
 
 /**
  * Text that is always exactly one line. CSS gives a fluid clamp() size up
  * front (nowrap, so it never wraps even before JS); a ResizeObserver then
  * shrinks the font-size just enough to fit the container, down to `minPx`.
+ * All FitLines on the page are fitted in one batched pass (see lib/fit.ts).
  */
 export default function FitLine({
   children,
@@ -31,41 +44,79 @@ export default function FitLine({
   as: Tag = 'span',
   className,
   onFit,
+  match,
 }: FitLineProps) {
   const boxRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLElement>(null);
   const onFitRef = useRef(onFit);
   onFitRef.current = onFit;
+  const matchRef = useRef(match);
+  matchRef.current = match;
   const scheduleRef = useRef<() => void>(() => undefined);
 
   useEffect(() => {
     const box = boxRef.current;
     const text = textRef.current;
     if (!box || !text) return undefined;
-    let frame = 0;
 
-    const fit = () => {
-      frame = 0;
-      const width = fitShrink(text, box.clientWidth, { minPx });
-      onFitRef.current?.(width);
-    };
-    const schedule = () => {
-      if (!frame) frame = window.requestAnimationFrame(fit);
+    let own: FitMeasure | null = null;
+    let sub: FitMeasure | null = null;
+    let lastWidth = -1;
+
+    const task: FitTask = {
+      reset() {
+        text.style.fontSize = '';
+        const m = matchRef.current;
+        if (m?.ref.current) m.ref.current.style.fontSize = '';
+      },
+      measure() {
+        own = readFit(text, box.clientWidth);
+        const m = matchRef.current;
+        sub = m?.ref.current ? readFit(m.ref.current, m.fitWithin.current?.clientWidth ?? 0) : null;
+      },
+      apply() {
+        if (!own) return;
+        const ownSize = shrinkSize(own, { minPx });
+        setFontSize(text, ownSize);
+        const finalWidth = (own.width * (ownSize ?? own.base)) / own.base;
+        const m = matchRef.current;
+        if (m?.ref.current && sub) {
+          const subSize = matchSize(sub, finalWidth, { minPx: m.minPx, maxPx: m.maxPx });
+          const subWidth = (sub.width * (subSize ?? sub.base)) / sub.base;
+          let applied = subSize;
+          if (sub.available > 0 && subWidth > sub.available) {
+            const current = subSize ?? sub.base;
+            applied = Math.max(m.hardMinPx, Math.floor(current * (sub.available / subWidth) * 100) / 100);
+          }
+          setFontSize(m.ref.current, applied);
+        }
+        onFitRef.current?.(finalWidth);
+      },
     };
 
+    const schedule = () => queueFit(task);
     scheduleRef.current = schedule;
     schedule();
-    const observer = typeof ResizeObserver !== 'undefined' ? new ResizeObserver(schedule) : null;
+    // Re-fit on width changes only: our own font-size writes change the box height, not its width.
+    const observer =
+      typeof ResizeObserver !== 'undefined'
+        ? new ResizeObserver((entries) => {
+            const width = entries[entries.length - 1]?.contentRect.width ?? 0;
+            if (width === lastWidth) return;
+            lastWidth = width;
+            schedule();
+          })
+        : null;
     observer?.observe(box);
     void document.fonts?.ready.then(schedule);
 
     return () => {
       observer?.disconnect();
-      if (frame) window.cancelAnimationFrame(frame);
+      dequeueFit(task);
     };
   }, [minPx, maxPx, fluid]);
 
-  // Content may change between renders; re-fit after every commit (cheap, rAF-coalesced).
+  // Content may change between renders; re-fit after every commit (cheap, batched).
   useEffect(() => {
     scheduleRef.current();
   });

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type RefObject } from 'react';
+import { observeShared } from '@/lib/observe';
 import { whenSplashExit } from '@/lib/splash-state';
 
 /**
@@ -37,28 +38,23 @@ export default function useReveal<T extends HTMLElement>(
     setState('armed');
     let cancelSplash: () => void = () => undefined;
     let visible = false;
+    let stop: () => void = () => undefined;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const last = entries[entries.length - 1];
-        if (!last) return;
-        visible = last.isIntersecting;
-        cancelSplash();
-        if (visible) {
-          cancelSplash = whenSplashExit(() => {
-            if (visible) setState('in');
-          });
-          if (once) observer.disconnect();
-        } else if (!once) {
-          setState('armed');
-        }
-      },
-      { rootMargin, threshold },
-    );
-    observer.observe(el);
+    stop = observeShared(el, { rootMargin, threshold }, (entry) => {
+      visible = entry.isIntersecting;
+      cancelSplash();
+      if (visible) {
+        cancelSplash = whenSplashExit(() => {
+          if (visible) setState('in');
+        });
+        if (once) stop();
+      } else if (!once) {
+        setState('armed');
+      }
+    });
 
     return () => {
-      observer.disconnect();
+      stop();
       cancelSplash();
     };
   }, [once, rootMargin, threshold]);

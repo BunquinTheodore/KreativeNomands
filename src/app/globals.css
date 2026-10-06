@@ -282,3 +282,14 @@
     display: none;
   }
 }
+
+/* ==== perf-js: pause looping animations that are far off-screen (see fx/ShineGate.tsx) ==== */
+.shine[data-off]::after,
+[data-pause-offscreen][data-off],
+[data-pause-offscreen][data-off] *,
+[data-pause-offscreen][data-off]::before,
+[data-pause-offscreen][data-off]::after,
+.kp-sweep[data-off] {
+  animation-play-state: paused;
+}
+/* ==== end perf-js ==== */

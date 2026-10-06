@@ -18,6 +18,13 @@ function decimalsOf(value: number): number {
   return part ? Math.min(part.length, 3) : 0;
 }
 
+/** en-US grouping without Intl (the first toLocaleString call initialises ICU, ~10-40 ms on a phone). */
+function groupThousands(n: number, decimals: number): string {
+  const [whole, fraction] = n.toFixed(decimals).split('.');
+  const grouped = whole.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  return fraction ? `${grouped}.${fraction}` : grouped;
+}
+
 function easeOutExpo(t: number): number {
   return t >= 1 ? 1 : 1 - 2 ** (-10 * t);
 }
@@ -29,11 +36,7 @@ function easeOutExpo(t: number): number {
  */
 export default function CountUp({ to, prefix = '', suffix = '', duration = 1.6, className }: CountUpProps) {
   const decimals = decimalsOf(to);
-  const format = (n: number) =>
-    `${prefix}${n.toLocaleString('en-US', {
-      minimumFractionDigits: decimals,
-      maximumFractionDigits: decimals,
-    })}${suffix}`;
+  const format = (n: number) => `${prefix}${groupThousands(n, decimals)}${suffix}`;
   const finalText = format(to);
 
   const { ref, state } = useReveal<HTMLSpanElement>({ threshold: 0.4 });
