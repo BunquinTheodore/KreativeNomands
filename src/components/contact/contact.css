@@ -69,7 +69,7 @@ textarea.kn-field__control {
 .kn-field__control:focus ~ .kn-field__label,
 .kn-field__control:not(:placeholder-shown) ~ .kn-field__label,
 .kn-field__control:-webkit-autofill ~ .kn-field__label {
-  transform: translate3d(0, -0.62rem, 0) scale(0.76);
+  transform: translate(0, -0.62rem) scale(0.76);
 }
 
 .kn-field__control:focus ~ .kn-field__label {
@@ -283,7 +283,7 @@ textarea.kn-field__control {
 @keyframes kn-burst {
   0% {
     opacity: 1;
-    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(0.4);
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.4);
   }
 
   70% {
@@ -292,7 +292,7 @@ textarea.kn-field__control {
 
   100% {
     opacity: 0;
-    transform: translate3d(calc(-50% + var(--dx)), calc(-50% + var(--dy)), 0) rotate(var(--rot)) scale(1);
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rot)) scale(1);
   }
 }
 

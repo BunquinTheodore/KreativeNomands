@@ -101,7 +101,7 @@
 
 .kp-card:hover .kp-card__arrow,
 .kp-card:focus-visible .kp-card__arrow {
-  transform: translate3d(6px, 0, 0);
+  transform: translate(6px, 0);
 }
 
 /* ----------------------------------------------------------- stage UI */
@@ -254,7 +254,7 @@
 
 .kp-chip:hover {
   color: var(--ink);
-  transform: translate3d(0, -1px, 0);
+  transform: translate(0, -1px);
 }
 
 .kp-chip[aria-current='true'] {
@@ -280,7 +280,7 @@
 
 .kp-thumb:hover {
   opacity: 1;
-  transform: translate3d(0, -2px, 0);
+  transform: translate(0, -2px);
 }
 
 .kp-thumb[aria-current='true'] {
@@ -311,7 +311,7 @@
 .kp-pill:hover {
   color: #fbbf24;
   border-color: rgba(245, 158, 11, 0.5);
-  transform: translate3d(0, -2px, 0);
+  transform: translate(0, -2px);
 }
 
 /* Browser-chrome frame for IT screenshots. */

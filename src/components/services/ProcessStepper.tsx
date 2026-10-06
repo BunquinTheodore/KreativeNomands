@@ -71,9 +71,9 @@ export default function ProcessStepper() {
               <span className="svc-step__badge inline-flex h-12 w-12 items-center justify-center rounded-full border border-cream-500/20 font-display text-lg font-semibold text-cream-500/80">
                 {step.step}
               </span>
-              <h4 className="mt-4 font-display text-lg font-semibold leading-snug text-cream-500">
+              <h3 className="mt-4 font-display text-lg font-semibold leading-snug text-cream-500">
                 {step.title}
-              </h4>
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-cream-500/70 text-pretty">
                 {step.description}
               </p>

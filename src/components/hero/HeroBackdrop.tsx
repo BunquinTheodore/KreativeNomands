@@ -8,11 +8,32 @@ const REEL_SRC = '/media/hero/reel.mp4';
 const POSTER_SRC = '/media/hero/reel-poster.webp';
 const POSTER_WIDTH = 1280;
 const POSTER_HEIGHT = 720;
+/** The reel never competes with the first paint: wait for window load, then this long. */
+const VIDEO_DELAY_MS = 2000;
+
+/** Calls `fn` once the window has loaded and `VIDEO_DELAY_MS` has passed; returns a cancel function. */
+function afterLoadAndIdle(fn: () => void): () => void {
+  let timer = 0;
+  const arm = () => {
+    timer = window.setTimeout(fn, VIDEO_DELAY_MS);
+  };
+  if (document.readyState === 'complete') {
+    arm();
+    return () => window.clearTimeout(timer);
+  }
+  window.addEventListener('load', arm, { once: true });
+  return () => {
+    window.removeEventListener('load', arm);
+    window.clearTimeout(timer);
+  };
+}
 
 /**
  * Background reel. The poster is the server-rendered layer; the video is only
- * mounted after hydration (and never on reduced-motion / Save-Data / low-end
- * devices), fades in on `canplay`, and plays only while the hero is on screen.
+ * mounted after window load + ~2s (and never on reduced-motion / Save-Data /
+ * low-end devices), fades in on `canplay`, and plays only while the hero is on
+ * screen. Below the lg breakpoint the layer is capped at ~1 viewport tall so the
+ * object-cover video is not scaled to a multi-thousand-pixel-wide surface.
  */
 export default function HeroBackdrop() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -21,7 +42,8 @@ export default function HeroBackdrop() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setAllowVideo(getDeviceTier() !== 'low');
+    if (getDeviceTier() === 'low') return undefined;
+    return afterLoadAndIdle(() => setAllowVideo(true));
   }, []);
 
   useEffect(() => {
@@ -55,7 +77,7 @@ export default function HeroBackdrop() {
   }, [allowVideo]);
 
   return (
-    <div ref={rootRef} className="hero-backdrop pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <div ref={rootRef} className="hero-backdrop pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(100%,115svh)] lg:h-full" aria-hidden="true">
       <Image
         src={POSTER_SRC}
         alt=""
@@ -73,7 +95,6 @@ export default function HeroBackdrop() {
           loop
           playsInline
           preload="metadata"
-          poster={POSTER_SRC}
           data-ready={ready}
           onCanPlay={() => setReady(true)}
           className="hero-backdrop__video absolute inset-0 h-full w-full object-cover"

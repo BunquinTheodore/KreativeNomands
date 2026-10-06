@@ -9,7 +9,7 @@
 
 .svc-swap[data-phase='out'] {
   opacity: 0;
-  transform: translate3d(0, -10px, 0);
+  transform: translate(0, -10px);
 }
 
 .svc-enter {
@@ -23,7 +23,7 @@
 @keyframes svc-enter {
   from {
     opacity: 0;
-    transform: translate3d(0, 14px, 0);
+    transform: translate(0, 14px);
   }
 
   to {
@@ -35,7 +35,7 @@
 @keyframes svc-bullet {
   from {
     opacity: 0;
-    transform: translate3d(-16px, 0, 0);
+    transform: translate(-16px, 0);
   }
 
   to {

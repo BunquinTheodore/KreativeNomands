@@ -13,7 +13,7 @@
 @keyframes about-panel-in {
   from {
     opacity: 0;
-    transform: translate3d(14px, 0, 0);
+    transform: translate(14px, 0);
   }
 
   to {
@@ -25,7 +25,7 @@
 /* Sliding segmented-control thumb: one third of the track, minus the 0.25rem padding. */
 .about-tab-thumb {
   width: calc((100% - 0.5rem) / 3);
-  transform: translate3d(calc(var(--active, 0) * 100%), 0, 0);
+  transform: translate(calc(var(--active) * 100%), 0);
   transition: transform 0.45s var(--ease-out-expo);
 }
 
