@@ -10,8 +10,8 @@
  *     Inter alone 48 KB) otherwise sit in the critical path of the first paint on slow networks.
  *  2. The web app manifest, which is not render-related either.
  *
- * It is a ~0.7 KB inline script (no extra request) with a 1.5 s-after-load safety net for browsers or
- * states in which no paint is ever reported (hidden tab).
+ * It is a ~0.8 KB inline script (no extra request) with a 1.5 s-after-load safety net for browsers or
+ * states in which no paint is ever reported (hidden tab). URLs with a hash (deep links) run it at once.
  */
 interface PostPaintOptions {
   /** next/font variable classes that activate the real fonts. */
@@ -28,6 +28,9 @@ export function buildPostPaintScript({ fontClasses, manifestHref }: PostPaintOpt
     `d.className+=' '+${classes};` +
     `var l=document.createElement('link');l.rel='manifest';l.href=${manifest};` +
     "l.crossOrigin='use-credentials';document.head.appendChild(l);}" +
+    // A deep link (/#contact) shows a section straight away: swap the fonts at once, before that
+    // section's first paint, instead of re-flowing its text a moment later.
+    'if(location.hash.length>1){go();return;}' +
     'try{var o=new PerformanceObserver(function(l){' +
     "if(l.getEntriesByName('first-contentful-paint').length){o.disconnect();go();}});" +
     "o.observe({type:'paint',buffered:true});}catch(e){go();}" +

@@ -2,7 +2,11 @@
 
 import { useEffect, useRef, type CSSProperties, type ElementType, type ReactNode, type RefObject } from 'react';
 import { dequeueFit, matchSize, queueFit, readFit, setFontSize, shrinkSize, type FitMeasure, type FitTask } from '@/lib/fit';
+import { observeShared } from '@/lib/observe';
 import { cn } from '@/lib/utils';
+
+/** A line is fitted once it is within this distance (vertically) of the viewport. */
+const NEAR_VIEWPORT_MARGIN = '700px 0px';
 
 /** A second one-line element (e.g. a subtitle) sized to match this line's final width. */
 export interface FitMatch {
@@ -94,23 +98,46 @@ export default function FitLine({
       },
     };
 
-    const schedule = () => queueFit(task);
+    let active = false;
+    let observer: ResizeObserver | null = null;
+    let stopNear: () => void = () => undefined;
+
+    const schedule = () => {
+      if (active) queueFit(task);
+    };
     scheduleRef.current = schedule;
-    schedule();
-    // Re-fit on width changes only: our own font-size writes change the box height, not its width.
-    const observer =
-      typeof ResizeObserver !== 'undefined'
-        ? new ResizeObserver((entries) => {
-            const width = entries[entries.length - 1]?.contentRect.width ?? 0;
-            if (width === lastWidth) return;
-            lastWidth = width;
-            schedule();
-          })
-        : null;
-    observer?.observe(box);
-    void document.fonts?.ready.then(schedule);
+
+    const activate = () => {
+      if (active) return;
+      active = true;
+      schedule();
+      // Re-fit on width changes only: our own font-size writes change the box height, not its width.
+      if (typeof ResizeObserver !== 'undefined') {
+        observer = new ResizeObserver((entries) => {
+          const width = entries[entries.length - 1]?.contentRect.width ?? 0;
+          if (width === lastWidth) return;
+          lastWidth = width;
+          schedule();
+        });
+        observer.observe(box);
+      }
+      void document.fonts?.ready.then(schedule);
+    };
+
+    // A line far below the fold keeps its CSS (clamp) size until the visitor gets close: measuring it
+    // would force layout of the whole content-visibility:auto section it sits in, during hydration.
+    if (typeof IntersectionObserver === 'undefined') {
+      activate();
+    } else {
+      stopNear = observeShared(box, { rootMargin: NEAR_VIEWPORT_MARGIN }, (entry) => {
+        if (!entry.isIntersecting) return;
+        stopNear();
+        activate();
+      });
+    }
 
     return () => {
+      stopNear();
       observer?.disconnect();
       dequeueFit(task);
     };

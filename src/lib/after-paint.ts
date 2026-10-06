@@ -7,6 +7,7 @@ import { runWhenIdle } from '@/lib/idle';
  * It opens, once and for every caller, at the first of:
  *  - the first contentful paint, plus a short settle delay and an idle slot (the normal case), so
  *    none of the island code competes with the render-critical resources or the first frames;
+ *  - at once, when the URL has a hash (a deep link already shows a section: see createGate);
  *  - the visitor's first input (pointer, key, touch, wheel, scroll), so interacting never waits;
  *  - 2.5 s after window load, in case no paint is ever reported (hidden tab, old browser).
  * On the server it is already open: the islands render inline into the HTML.
@@ -33,6 +34,12 @@ function createGate(): Promise<void> {
       INPUT_EVENTS.forEach((name) => window.removeEventListener(name, open, true));
       resolve();
     };
+    // A deep link (/#contact) lands on a section that is already on screen. Hydrating it after the first
+    // paint would visibly re-fit its headings (a layout shift), so such loads do not wait for the paint.
+    if (window.location.hash.length > 1) {
+      open();
+      return;
+    }
     const afterPaint = (): void => {
       timers.push(
         window.setTimeout(() => {

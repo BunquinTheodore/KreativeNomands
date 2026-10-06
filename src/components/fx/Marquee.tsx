@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { runWhenIdle } from '@/lib/idle';
 import { cn } from '@/lib/utils';
 
 interface MarqueeProps {
@@ -24,6 +25,8 @@ interface MarqueeProps {
 
 const FALLBACK_DURATION_S = 40;
 const MAX_COPIES = 8;
+/** Deferred children mount at the next idle slot, or after this long at the latest. */
+const FILL_IDLE_TIMEOUT_MS = 800;
 
 /**
  * Side-to-side drifting rail. Content is duplicated so a CSS transform loop
@@ -49,8 +52,10 @@ export default function Marquee({
   // false on the server and during hydration when deferred, so the markup always matches.
   const [filled, setFilled] = useState(!deferChildren);
 
+  // Mounted in an idle slot, not inside the hydration burst: dozens of frames = dozens of layouts.
   useEffect(() => {
-    if (deferChildren) setFilled(true);
+    if (!deferChildren) return undefined;
+    return runWhenIdle(() => setFilled(true), FILL_IDLE_TIMEOUT_MS);
   }, [deferChildren]);
 
   useEffect(() => {
