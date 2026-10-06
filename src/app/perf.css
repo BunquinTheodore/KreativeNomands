@@ -37,6 +37,13 @@
   contain-intrinsic-block-size: auto var(--cv-h);
 }
 
+/* The portfolio stage's iOS "pseudo fullscreen" is position:fixed. content-visibility:auto
+ * applies layout + paint containment, which would make the section its containing block
+ * (and clip it), so drop the skip while that stage is open. */
+#portfolio:has(.kp-stage--pseudo-fs) {
+  content-visibility: visible;
+}
+
 /* Phones (< 640): text re-wraps as the screen narrows, so heights grow. */
 #about {
   --cv-h: 1595px;
