@@ -73,7 +73,7 @@ export default function SfxProvider(): null {
 
     const onExternalSfx = (event: Event) => {
       const name = (event as CustomEvent<SfxName>).detail;
-      if (typeof name === string) sfx.play(name);
+      if (typeof name === 'string') sfx.play(name);
     };
 
     const gestureOpts: AddEventListenerOptions = { passive: true, once: true, capture: true };
