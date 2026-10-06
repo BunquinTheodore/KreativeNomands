@@ -1,0 +1,134 @@
+/* About section effects. Transform / opacity only; reduced motion is zeroed globally. */
+
+/* Utility classes (e.g. grid) would beat the UA [hidden] rule; keep inactive panels hidden. */
+.about-panel[hidden] {
+  display: none;
+}
+
+/* Panel swap: a quick blur + rise whenever a tab panel becomes visible. */
+.about-panel {
+  animation: about-panel-in 0.55s var(--ease-out-expo) both;
+}
+
+@keyframes about-panel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(14px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Sliding segmented-control thumb: one third of the track, minus the 0.25rem padding. */
+.about-tab-thumb {
+  width: calc((100% - 0.5rem) / 3);
+  transform: translate3d(calc(var(--active, 0) * 100%), 0, 0);
+  transition: transform 0.45s var(--ease-out-expo);
+}
+
+/* Value-card detail: grid-rows 0fr -> 1fr gives a smooth auto-height expand. */
+.about-expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  /* Collapsed detail must also leave the accessibility tree (after the collapse finishes). */
+  visibility: hidden;
+  transition:
+    grid-template-rows 0.4s var(--ease-out-expo),
+    opacity 0.3s ease,
+    visibility 0s linear 0.4s;
+}
+
+.about-expand[data-open='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.about-expand > div {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.about-plus {
+  transition: transform 0.35s var(--ease-out-expo);
+}
+
+.about-plus[data-open='true'] {
+  transform: rotate(45deg);
+}
+
+/* Gradient sweep on stat figures, active while the tile is hovered or focused. */
+.about-sweep {
+  background-image: linear-gradient(
+    100deg,
+    #f5f0dc 0%,
+    #f5f0dc 35%,
+    #f59e0b 50%,
+    #f5f0dc 65%,
+    #f5f0dc 100%
+  );
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.kn-card:hover .about-sweep,
+.kn-card:focus-within .about-sweep {
+  animation: about-sweep 1.4s var(--ease-soft) both;
+}
+
+@keyframes about-sweep {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: 0% 0;
+  }
+}
+
+/* Slow pulse on the statement glyph ring. */
+.about-ring {
+  animation: about-ring 5s ease-in-out infinite;
+}
+
+@keyframes about-ring {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+/* Decorative marquee rows must never become a scroll container. */
+@media (prefers-reduced-motion: reduce) {
+  .about-marks .kn-marquee {
+    overflow: hidden;
+  }
+}
+
+/* Stretched disclosure button: the whole card is the hit area. */
+.about-stretch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  border-radius: 1.25rem;
+}
+
+.about-stretch:focus-visible::after {
+  outline: 2px solid var(--amber);
+  outline-offset: -3px;
+}
