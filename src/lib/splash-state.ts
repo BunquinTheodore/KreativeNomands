@@ -11,6 +11,11 @@ function splashFinishedOrAbsent(): boolean {
   return document.querySelector('.kn-splash') === null;
 }
 
+/** True once the splash has started leaving or is not on the page at all. */
+export function splashGone(): boolean {
+  return splashFinishedOrAbsent();
+}
+
 /** Calls `cb` once the splash begins leaving (or immediately when there is none). */
 export function whenSplashExit(cb: () => void): () => void {
   if (splashFinishedOrAbsent()) {
