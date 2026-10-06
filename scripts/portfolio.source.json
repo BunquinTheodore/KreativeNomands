@@ -1,0 +1,1285 @@
+{
+  "projects": [
+    {
+      "id": "baker-mckenzie",
+      "title": "Baker & McKenzie Virtual Event",
+      "client": "Baker & McKenzie Global Services Manila",
+      "category": "events",
+      "description": "Virtual event assets including opening billboards, logo reveals, and RTO videos for Baker & McKenzie's year-end corporate event.",
+      "thumbnail": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Baker_Mckenzie_Year-End_Event_V3.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Baker_Mckenzie_Year-End_Event_V3.mp4",
+          "type": "video",
+          "title": "Opening Billboard V3"
+        },
+        {
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Opening_Billboard_Reminders_Baker_Mckenzie_Year-End_Event_V2.mp4",
+          "type": "video",
+          "title": "Opening Billboard Reminders"
+        },
+        {
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/CLT_RTO_Video_Baker_Mckenzie_Year-End_Event_V2.mp4",
+          "type": "video",
+          "title": "CLT RTO Video"
+        },
+        {
+          "src": "/portfolio/Events/baker-mckenzie/virtual-event-assets/Stinger_Logo_Reveal_Baker_Mckenzie_Year-End_Event.mp4",
+          "type": "video",
+          "title": "Stinger Logo Reveal"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Motion Graphics",
+        "Event Branding"
+      ],
+      "featured": true
+    },
+    {
+      "id": "monza-events",
+      "title": "Monza Barcade Events",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Complete event coverage including reels, announcements, and recap videos for Monza Barcade's racing-themed bar events.",
+      "thumbnail": "/portfolio/fnb/monza/Events/1_-_MONZA_Monza_Mckinley_Hill_Event_Announcement_Reel.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/1_-_MONZA_Monza_Mckinley_Hill_Event_Announcement_Reel.mp4",
+          "type": "video",
+          "title": "McKinley Hill Event Announcement"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/4_-_MONZA_British_GP_Live_Viewing_Highlights_Reel.mp4",
+          "type": "video",
+          "title": "British GP Highlights"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/5_-_MONZA_Monza_Mckinley_Hill_Adding_Fun_Reel.mp4",
+          "type": "video",
+          "title": "Adding Fun Reel"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/6_-_MONZA_Monza_Mckinley_Hill_Recap_Reel.mp4",
+          "type": "video",
+          "title": "McKinley Hill Recap"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/7_-_MONZA_Hungarian_GP_Live_Viewing_Highlights_Reel.mp4",
+          "type": "video",
+          "title": "Hungarian GP Highlights"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/7-8_-_MONZA_Estancia_Roadshow_Event_Teaser_Reel.mp4",
+          "type": "video",
+          "title": "Estancia Roadshow Teaser"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/9_-_MONZA__Featuring_Cocktails_Reel.mp4",
+          "type": "video",
+          "title": "Cocktails Feature"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/14_-_MONZA_Monza_Eastwood_Day_1_Post_doc_Slideshow_Reel.mp4",
+          "type": "video",
+          "title": "Eastwood Day 1 Slideshow"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/15_-_MONZA_Monza_Eastwood_Recap_Reel.mp4",
+          "type": "video",
+          "title": "Eastwood Recap"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Social Media Content",
+        "Event Coverage"
+      ],
+      "featured": true
+    },
+    {
+      "id": "monza-driving-trial",
+      "title": "Monza Driving Trial Mechanics",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Carousel graphics showcasing the driving trial mechanics for Monza Barcade's McKinley Hill event.",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P1.jpg",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P1.jpg",
+          "type": "image",
+          "title": "Driving Trial Page 1"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P2.jpg",
+          "type": "image",
+          "title": "Driving Trial Page 2"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P3.jpg",
+          "type": "image",
+          "title": "Driving Trial Page 3"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P4.jpg",
+          "type": "image",
+          "title": "Driving Trial Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "monza-eastwood-event",
+      "title": "Monza Eastwood Event Carousel",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Event carousel graphics for Monza Eastwood location.",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P1_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P1_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+          "type": "image",
+          "title": "Eastwood Event Page 1"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P2_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+          "type": "image",
+          "title": "Eastwood Event Page 2"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P3_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+          "type": "image",
+          "title": "Eastwood Event Page 3"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P4_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+          "type": "image",
+          "title": "Eastwood Event Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "monza-winners-mapua",
+      "title": "Monza Mapua Winners Carousel",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Winners announcement carousel for Monza Mapua event.",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P1_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P1_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 1"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P2_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 2"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P3_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 3"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P4_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 4"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P5_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 5"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P6_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "type": "image",
+          "title": "Winners Page 6"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "monza-estancia-roadshow",
+      "title": "Monza Estancia Roadshow",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Event carousel for the Estancia Roadshow event.",
+      "thumbnail": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P1_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P1_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
+          "type": "image",
+          "title": "Estancia Roadshow Page 1"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P2_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
+          "type": "image",
+          "title": "Estancia Roadshow Page 2"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P3_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
+          "type": "image",
+          "title": "Estancia Roadshow Page 3"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P4_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
+          "type": "image",
+          "title": "Estancia Roadshow Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Event Branding"
+      ],
+      "featured": false
+    },
+    {
+      "id": "monza-graphic-design",
+      "title": "Monza Event Graphics",
+      "client": "Monza Barcade",
+      "category": "fnb",
+      "description": "Promotional graphics for Ladies Night, Legends Night, and Formula 1 Grand Prix events.",
+      "thumbnail": "/portfolio/fnb/monza/Events/Graphic-Design/12_-_MONZA_Ladies_Night.png",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/12_-_MONZA_Ladies_Night.png",
+          "type": "image",
+          "title": "Ladies Night"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/13_-_MONZA_Legends_Night_v2.png",
+          "type": "image",
+          "title": "Legends Night"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/2_-_MONZA_Dutch_GP.png",
+          "type": "image",
+          "title": "Dutch GP"
+        },
+        {
+          "src": "/portfolio/fnb/monza/Events/Graphic-Design/3_-_MONZA_British_GP_Podium_Winners.png",
+          "type": "image",
+          "title": "British GP Podium Winners"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Event Branding"
+      ],
+      "featured": true
+    },
+    {
+      "id": "msme-branding",
+      "title": "MSME Branding & Photography",
+      "client": "MSME",
+      "category": "fnb",
+      "description": "Complete branding, graphic design, and photography for MSME food business.",
+      "thumbnail": "/portfolio/fnb/msme/branding/274477883_112539261359770_2611542943264539624_n.jpg",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/msme/branding/274477883_112539261359770_2611542943264539624_n.jpg",
+          "type": "image",
+          "title": "Branding Photo"
+        },
+        {
+          "src": "/portfolio/fnb/msme/branding/5.png",
+          "type": "image",
+          "title": "Graphic Design 1"
+        },
+        {
+          "src": "/portfolio/fnb/msme/branding/6.png",
+          "type": "image",
+          "title": "Graphic Design 2"
+        }
+      ],
+      "services": [
+        "Branding",
+        "Graphic Design",
+        "Photography"
+      ],
+      "featured": false
+    },
+    {
+      "id": "msme-carousel",
+      "title": "MSME Social Media Carousel",
+      "client": "MSME",
+      "category": "fnb",
+      "description": "Social media carousel content for MSME.",
+      "thumbnail": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_IG_Carousel_1.png",
+      "assets": [
+        {
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_IG_Carousel_1.png",
+          "type": "image",
+          "title": "Instagram Carousel 1"
+        },
+        {
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_2.png",
+          "type": "image",
+          "title": "Facebook Carousel 2"
+        },
+        {
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_3.png",
+          "type": "image",
+          "title": "Facebook Carousel 3"
+        },
+        {
+          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_4.png",
+          "type": "image",
+          "title": "Facebook Carousel 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "xendurance-deep-sleep",
+      "title": "Xendurance Deep Sleep Promo",
+      "client": "Xendurance",
+      "category": "health",
+      "description": "Promotional video ads for Xendurance Deep Sleep supplement with 20% off campaign.",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Last Day 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_2.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Last Day 2"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_3.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Last Day 3"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_Star_3.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Star 3"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_1.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Start 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_2.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Start 2"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_4.mp4",
+          "type": "video",
+          "title": "Deep Sleep 20% Off - Start 4"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Ad Creation",
+        "Social Media Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "xendurance-pack-promo",
+      "title": "Xendurance Pack Promotions",
+      "client": "Xendurance",
+      "category": "health",
+      "description": "Video ads for various Xendurance supplement packs including Performance, Victory, Weight Management, and Wellness.",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack.mp4",
+          "type": "video",
+          "title": "Performance Pack"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack_LAST_DAY.mp4",
+          "type": "video",
+          "title": "Performance Pack - Last Day"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack.mp4",
+          "type": "video",
+          "title": "Victory Pack"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack_LAST_DAY.mp4",
+          "type": "video",
+          "title": "Victory Pack - Last Day"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack.mp4",
+          "type": "video",
+          "title": "Weight Management Pack"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack_LAST_DAY.mp4",
+          "type": "video",
+          "title": "Weight Management Pack - Last Day"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack.mp4",
+          "type": "video",
+          "title": "Wellness Pack"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack_LAST_DAY.mp4",
+          "type": "video",
+          "title": "Wellness Pack - Last Day"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Start.mp4",
+          "type": "video",
+          "title": "Pack Promo Start"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Last_Day.mp4",
+          "type": "video",
+          "title": "Pack Promo Last Day"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Ad Creation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "xendurance-probiotic",
+      "title": "Xendurance Probiotic + Prebiotic Promo",
+      "client": "Xendurance",
+      "category": "health",
+      "description": "25% off promotional videos for Probiotic + Prebiotic supplement.",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic__25__Off.mp4",
+          "type": "video",
+          "title": "Probiotic 25% Off"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off.mp4",
+          "type": "video",
+          "title": "Probiotic Last Day 25% Off"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off_2.mp4",
+          "type": "video",
+          "title": "Probiotic Last Day 25% Off V2"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Ad Creation"
+      ],
+      "featured": false
+    },
+    {
+      "id": "xendurance-lifestyle",
+      "title": "Xendurance Lifestyle Content",
+      "client": "Xendurance",
+      "category": "health",
+      "description": "Inspirational lifestyle content and monthly sizzle reels showcasing fitness and athletic performance.",
+      "thumbnail": "/portfolio/health-fitness/xendurance/lifestyle/250523_May_Sizzle_1_9x16.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250523_May_Sizzle_1_9x16.mp4",
+          "type": "video",
+          "title": "May Sizzle 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250528_May_Sizzle_2_9x16.mp4",
+          "type": "video",
+          "title": "May Sizzle 2"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250804_August_Sizzle_1_9x16.mp4",
+          "type": "video",
+          "title": "August Sizzle 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250822_August_Mashup_3_9x16.mp4",
+          "type": "video",
+          "title": "August Mashup 3"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250905_September_Sizzle_1_9x16.mp4",
+          "type": "video",
+          "title": "September Sizzle 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250906_September_Sizzle_2_9x16.mp4",
+          "type": "video",
+          "title": "September Sizzle 2"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250913_September_Sizzle_5_9x16.mp4",
+          "type": "video",
+          "title": "September Sizzle 5"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250917_September_Sizzle_6_9x16.mp4",
+          "type": "video",
+          "title": "September Sizzle 6"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/250918_September_Sizzle_7_9x16.mp4",
+          "type": "video",
+          "title": "September Sizzle 7"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/251015_October_Sizzle_1_9x16.mp4",
+          "type": "video",
+          "title": "October Sizzle 1"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/lifestyle/251121_November_Sizzle_7.mp4",
+          "type": "video",
+          "title": "November Sizzle 7"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Content Creation",
+        "Social Media Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "xendurance-testimonials",
+      "title": "Xendurance Athlete Testimonials",
+      "client": "Xendurance",
+      "category": "health",
+      "description": "Athlete testimonials and HYROX event coverage featuring professional athletes and fitness enthusiasts.",
+      "thumbnail": "/portfolio/health-fitness/xendurance/Testimonials/240513_Danielle_Brandon_Ad_9x16.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/240513_Danielle_Brandon_Ad_9x16.mp4",
+          "type": "video",
+          "title": "Danielle Brandon Testimonial"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/220817_Testimonial_Mashup_Fat_and_Weight_Loss_IG_REEL.mp4",
+          "type": "video",
+          "title": "Weight Loss Testimonials"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250329_Hyrox_Houston_Cindy_&_Nicki.mp4",
+          "type": "video",
+          "title": "HYROX Houston - Cindy & Nicki"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250611_Hyrox_NYC_Pavelchak_x_Crowley.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Pavelchak & Crowley"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250613_Hyrox_NYC_Rodriguez_x_Porter.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Rodriguez & Porter"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250614_Hyrox_NYC_Williams_x_Swartzendruber.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Williams & Swartzendruber"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/250620_Hyrox_NYC_Palmer.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Palmer"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251003_HYROX_BOSTON_Matt_&_Breezy.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Matt & Breezy"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251004_HYROX_BOSTON_Crystal_&_Brian.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Crystal & Brian"
+        },
+        {
+          "src": "/portfolio/health-fitness/xendurance/Testimonials/251008_HYROX_BOSTON_Bobby_&_Sharon.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Bobby & Sharon"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Testimonial Videos",
+        "Event Coverage"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sunlife-branding",
+      "title": "Sunlife Grepa Graphic Design",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Branding and graphic design materials for Sunlife Grepa Financial insurance company.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/19_-_SLGFI240002.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/19_-_SLGFI240002.png",
+          "type": "image",
+          "title": "SLGFI Branding 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/21_-_SLGFI240002.png",
+          "type": "image",
+          "title": "SLGFI Branding 2"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Branding"
+      ],
+      "featured": true
+    },
+    {
+      "id": "sunlife-carousel-1",
+      "title": "Sunlife Healthcare Carousel 1",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P1_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P1_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "type": "image",
+          "title": "Carousel 1 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P2_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "type": "image",
+          "title": "Carousel 1 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P3_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "type": "image",
+          "title": "Carousel 1 - Page 3"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P4_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "type": "image",
+          "title": "Carousel 1 - Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-2",
+      "title": "Sunlife Healthcare Carousel 2",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P1_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P1_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+          "type": "image",
+          "title": "Carousel 2 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P2_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+          "type": "image",
+          "title": "Carousel 2 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P3_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+          "type": "image",
+          "title": "Carousel 2 - Page 3"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-3",
+      "title": "Sunlife Healthcare Carousel 3",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P1_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P1_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
+          "type": "image",
+          "title": "Carousel 3 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P2_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
+          "type": "image",
+          "title": "Carousel 3 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P3_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
+          "type": "image",
+          "title": "Carousel 3 - Page 3"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P4_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
+          "type": "image",
+          "title": "Carousel 3 - Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-4",
+      "title": "Sunlife Healthcare Carousel 4",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Thanksgiving-themed carousel content.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P1_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P1_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
+          "type": "image",
+          "title": "Carousel 4 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P2_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
+          "type": "image",
+          "title": "Carousel 4 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P3_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
+          "type": "image",
+          "title": "Carousel 4 - Page 3"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P4_SLGHC_BRANDING_&_CONTENT_112423_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
+          "type": "image",
+          "title": "Carousel 4 - Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-5",
+      "title": "Sunlife Healthcare Carousel 5",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P1_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P1_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
+          "type": "image",
+          "title": "Carousel 5 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P4_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
+          "type": "image",
+          "title": "Carousel 5 - Page 4"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-6",
+      "title": "Sunlife Healthcare Carousel 6",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "December healthcare awareness carousel.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P1_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P1_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+          "type": "image",
+          "title": "Carousel 6 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P2_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+          "type": "image",
+          "title": "Carousel 6 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P3_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+          "type": "image",
+          "title": "Carousel 6 - Page 3"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P4_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+          "type": "image",
+          "title": "Carousel 6 - Page 4"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P5_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
+          "type": "image",
+          "title": "Carousel 6 - Page 5"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-7",
+      "title": "Sunlife Financial Carousel 7",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Financial services carousel content.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P1.png",
+          "type": "image",
+          "title": "Carousel 7 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P2.png",
+          "type": "image",
+          "title": "Carousel 7 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P5.png",
+          "type": "image",
+          "title": "Carousel 7 - Page 5"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-8",
+      "title": "Sunlife Financial Carousel 8",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Financial services carousel content.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P1.png",
+          "type": "image",
+          "title": "Carousel 8 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P2.png",
+          "type": "image",
+          "title": "Carousel 8 - Page 2"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-carousel-9",
+      "title": "Sunlife Financial Carousel 9",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Financial services carousel content.",
+      "thumbnail": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P1.png",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P1.png",
+          "type": "image",
+          "title": "Carousel 9 - Page 1"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P2.png",
+          "type": "image",
+          "title": "Carousel 9 - Page 2"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P3.png",
+          "type": "image",
+          "title": "Carousel 9 - Page 3"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P4.png",
+          "type": "image",
+          "title": "Carousel 9 - Page 4"
+        },
+        {
+          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P5.png",
+          "type": "image",
+          "title": "Carousel 9 - Page 5"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Social Media Content"
+      ],
+      "featured": false
+    },
+    {
+      "id": "sunlife-video",
+      "title": "Sunlife Let's Talk Accidents",
+      "client": "Sunlife Grepa Financial Inc",
+      "category": "insurance",
+      "description": "Educational video content about accident insurance coverage.",
+      "thumbnail": "/portfolio/Insurance/sunlife/videos/9_-_SLGHC_BRANDING_&_CONTENT_Let_s_Talk_Accidents_111023.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/Insurance/sunlife/videos/9_-_SLGHC_BRANDING_&_CONTENT_Let_s_Talk_Accidents_111023.mp4",
+          "type": "video",
+          "title": "Let's Talk Accidents"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Educational Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "twin-oaks-photos",
+      "title": "Twin Oaks Real Estate Photography",
+      "client": "Twin Oaks Real Estate",
+      "category": "realestate",
+      "description": "Professional real estate photography including interior, exterior, and twilight shots for property listings.",
+      "thumbnail": "/portfolio/real-estate/twin-oaks/photos/1.jpg",
+      "assets": [
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/1.jpg",
+          "type": "image",
+          "title": "Property Photo 1"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/2.jpg",
+          "type": "image",
+          "title": "Property Photo 2"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/3.jpg",
+          "type": "image",
+          "title": "Property Photo 3"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/4.jpg",
+          "type": "image",
+          "title": "Property Photo 4"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/5.jpg",
+          "type": "image",
+          "title": "Property Photo 5"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/6.jpg",
+          "type": "image",
+          "title": "Property Photo 6"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/7.jpg",
+          "type": "image",
+          "title": "Property Photo 7"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/8.jpg",
+          "type": "image",
+          "title": "Property Photo 8"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/9.jpg",
+          "type": "image",
+          "title": "Property Photo 9"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/10.jpg",
+          "type": "image",
+          "title": "Property Photo 10"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/11.jpg",
+          "type": "image",
+          "title": "Property Photo 11"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/12.jpg",
+          "type": "image",
+          "title": "Property Photo 12"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/13.jpg",
+          "type": "image",
+          "title": "Property Photo 13"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/14.jpg",
+          "type": "image",
+          "title": "Property Photo 14"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/15.jpg",
+          "type": "image",
+          "title": "Property Photo 15"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/220714_Ryan_TwilightEdit1_KT.jpg",
+          "type": "image",
+          "title": "Twilight Edit 1"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/photos/220714_Ryan_TwilightEdit2_KT.jpg",
+          "type": "image",
+          "title": "Twilight Edit 2"
+        }
+      ],
+      "services": [
+        "Photography",
+        "Photo Editing",
+        "Real Estate Marketing"
+      ],
+      "featured": true
+    },
+    {
+      "id": "twin-oaks-videos",
+      "title": "Twin Oaks Real Estate Videos",
+      "client": "Twin Oaks Real Estate",
+      "category": "realestate",
+      "description": "Professional real estate video tours including listing videos and Instagram reels.",
+      "thumbnail": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_ListingVideo_KT.mp4",
+      "assets": [
+        {
+          "src": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_ListingVideo_KT.mp4",
+          "type": "video",
+          "title": "Property Listing Video"
+        },
+        {
+          "src": "/portfolio/real-estate/twin-oaks/videos/220714_Ryan_IGReel_KT.mp4",
+          "type": "video",
+          "title": "Instagram Reel"
+        }
+      ],
+      "services": [
+        "Video Production",
+        "Real Estate Marketing",
+        "Social Media Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "it-fredrinn",
+      "title": "Fredrinn — Gym Management SaaS Platform",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A gym-focused SaaS platform designed to support day-to-day business operations through a centralized web system.",
+      "thumbnail": "/portfolio/it/fredrinn.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/fredrinn.png",
+          "type": "image",
+          "title": "Fredrinn Platform Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "SaaS",
+        "Full-Stack Development"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Fredrinn",
+      "liveUrl": "https://fredrinn.vercel.app"
+    },
+    {
+      "id": "it-bluemoon",
+      "title": "Bluemoon Automation — Business Operations Management System",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A role-based operations platform that helps streamline internal workflows, task handling, and business visibility for teams.",
+      "thumbnail": "/portfolio/it/bluemoon.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/bluemoon.png",
+          "type": "image",
+          "title": "Bluemoon Automation Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "Operations Management",
+        "Full-Stack Development"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Bluemoon_Automation",
+      "liveUrl": "https://bluemoon-automation-jql2.vercel.app/"
+    },
+    {
+      "id": "it-alerto",
+      "title": "Alerto — Disaster Reporting and Weather Intelligence Platform",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A web platform for community incident reporting and weather monitoring, built to support faster awareness and response.",
+      "thumbnail": "/portfolio/it/alerto.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/alerto.png",
+          "type": "image",
+          "title": "Alerto Platform Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "GIS Integration",
+        "Full-Stack Development"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Alerto"
+    },
+    {
+      "id": "it-adrido",
+      "title": "AdriDo — Professional Portfolio and Personal Website",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A modern portfolio-style website focused on presenting personal branding, content, and key information in a clean layout.",
+      "thumbnail": "/portfolio/it/adrido.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/adrido.png",
+          "type": "image",
+          "title": "AdriDo Portfolio Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "UI/UX Design",
+        "Portfolio Design"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/AdriDo",
+      "liveUrl": "https://adri-do.vercel.app"
+    },
+    {
+      "id": "it-socialmediamanager",
+      "title": "Social Media Manager Portfolio — Services and Packages Website",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A multi-page marketing website showcasing social media management services, packages, and supporting content pages.",
+      "thumbnail": "/portfolio/it/socialmediamanager.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/socialmediamanager.png",
+          "type": "image",
+          "title": "Social Media Manager Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "Marketing Website",
+        "Front-End Development"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Social-Media-Manager-Portfolio",
+      "liveUrl": "https://bunquintheodore.github.io/Social-Media-Manager-Portfolio/"
+    },
+    {
+      "id": "it-agritrack",
+      "title": "Agri‑Track — Agriculture Tracking and Monitoring System",
+      "client": "Kreative Nomads",
+      "category": "it",
+      "description": "A web-based tracking system for agricultural monitoring, organizing key data into a more accessible and structured workflow.",
+      "thumbnail": "/portfolio/it/agritrack.png",
+      "assets": [
+        {
+          "src": "/portfolio/it/agritrack.png",
+          "type": "image",
+          "title": "Agri-Track System Preview"
+        }
+      ],
+      "services": [
+        "Web Development",
+        "Data Management",
+        "Front-End Development"
+      ],
+      "featured": true,
+      "repoUrl": "https://github.com/BunquinTheodore/Group-5-Agri-Track",
+      "liveUrl": "https://daniel-b-v.github.io/Group-5-Agri-Track/main.html"
+    }
+  ],
+  "categories": [
+    {
+      "id": "all",
+      "label": "All Projects"
+    },
+    {
+      "id": "events",
+      "label": "Events"
+    },
+    {
+      "id": "fnb",
+      "label": "F&B / Restaurant"
+    },
+    {
+      "id": "health",
+      "label": "Health & Fitness"
+    },
+    {
+      "id": "insurance",
+      "label": "Insurance"
+    },
+    {
+      "id": "realestate",
+      "label": "Real Estate"
+    },
+    {
+      "id": "it",
+      "label": "IT Services"
+    }
+  ],
+  "services": [
+    "Video Production",
+    "Motion Graphics",
+    "Graphic Design",
+    "Branding",
+    "Photography",
+    "Photo Editing",
+    "Social Media Content",
+    "Event Coverage",
+    "Event Branding",
+    "Ad Creation",
+    "Content Creation",
+    "Testimonial Videos",
+    "Educational Content",
+    "Real Estate Marketing"
+  ]
+}
