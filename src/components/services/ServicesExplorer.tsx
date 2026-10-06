@@ -23,7 +23,11 @@ export default function ServicesExplorer() {
   const [phase, setPhase] = useState<'in' | 'out'>('in');
 
   useEffect(() => {
-    if (shownId === activeId) return undefined;
+    if (shownId === activeId) {
+      // Selection returned to the shown service mid-fade (A -> B -> A): fade back in.
+      setPhase('in');
+      return undefined;
+    }
     setPhase('out');
     const timer = window.setTimeout(() => {
       setShownId(activeId);
