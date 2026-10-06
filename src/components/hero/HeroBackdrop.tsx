@@ -32,15 +32,19 @@ export default function HeroBackdrop() {
     const play = () => {
       void video.play().catch(() => undefined);
     };
+    let onScreen = false;
     const observer = new IntersectionObserver((entries) => {
       const last = entries[entries.length - 1];
       if (!last) return;
-      if (last.isIntersecting) play();
+      onScreen = last.isIntersecting;
+      if (onScreen && !document.hidden) play();
       else video.pause();
     });
     observer.observe(root);
+    // The observer will not re-fire when the tab returns, so resume by hand.
     const onVisibility = () => {
       if (document.hidden) video.pause();
+      else if (onScreen) play();
     };
     document.addEventListener('visibilitychange', onVisibility);
     return () => {
@@ -59,8 +63,7 @@ export default function HeroBackdrop() {
         height={POSTER_HEIGHT}
         sizes="100vw"
         quality={60}
-        loading="eager"
-        fetchPriority="low"
+        priority
         className="absolute inset-0 h-full w-full object-cover opacity-50"
       />
       {allowVideo && (
