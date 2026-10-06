@@ -41,15 +41,16 @@ export default function ScrollProgressLine() {
     };
 
     window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', schedule, { passive: true });
-    // Fires once right after the first layout, then on every document height change.
+    window.addEventListener('resize', onResizeObserved, { passive: true });
+    // Fires once right after the first layout, then on every document height change (viewport-only
+    // height changes are covered by the resize listener, which re-reads the scroll range).
     const observer =
       typeof ResizeObserver !== 'undefined' ? new ResizeObserver(onResizeObserved) : null;
-    observer?.observe(document.documentElement);
+    observer?.observe(document.body);
 
     return () => {
       window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', schedule);
+      window.removeEventListener('resize', onResizeObserved);
       observer?.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
     };
