@@ -58,9 +58,13 @@ const MobileSheet = forwardRef<HTMLDivElement, MobileSheetProps>(function Mobile
         >
           Inquire Today
         </Button>
-        <p className="mt-6 flex items-center justify-center gap-1.5 text-xs uppercase tracking-[0.24em] text-[var(--ink-dim)]">
+        <a
+          href="/"
+          onClick={(event) => onNavigate(event, 'hero')}
+          className="mt-6 flex items-center justify-center gap-1.5 rounded-full py-2 text-xs uppercase tracking-[0.24em] text-[var(--ink-dim)] transition-colors hover:text-cream-500"
+        >
           Kreativ Nomads <ArrowUpRight className="h-3.5 w-3.5 text-secondary-400" aria-hidden="true" />
-        </p>
+        </a>
       </div>
     </div>
   );

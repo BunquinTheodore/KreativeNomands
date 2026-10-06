@@ -16,8 +16,6 @@ export default function TopBar() {
           alt=""
           width={64}
           height={64}
-          sizes="32px"
-          priority
           className="h-8 w-8 object-contain transition-transform duration-500 group-hover:rotate-[72deg]"
         />
         <span className="font-display text-sm font-semibold tracking-wide text-cream-500 sm:text-base">

@@ -4,8 +4,8 @@ import AnimatedLogo from '@/components/fx/AnimatedLogo';
 import DrawLine from '@/components/fx/DrawLine';
 import FitLine from '@/components/fx/FitLine';
 import Reveal from '@/components/fx/Reveal';
-import SectionHeader from '@/components/fx/SectionHeader';
 import Button from '@/components/ui/Button';
+import LegalHeader from './LegalHeader';
 
 /*
  * LEGAL REVIEW REQUIRED
@@ -58,7 +58,7 @@ export default function LegalPage({ eyebrow, title, subtitle, updated, intro, se
     <>
       <LegalTopBar />
       <main className="container-x section-y" aria-labelledby="legal-heading">
-        <SectionHeader align="center" id="legal-heading" eyebrow={eyebrow} title={title} subtitle={subtitle} />
+        <LegalHeader id="legal-heading" eyebrow={eyebrow} title={title} subtitle={subtitle} />
 
         <Reveal delay={0.15}>
           <p className="measure mx-auto mt-8 text-center text-[0.95rem] leading-relaxed text-[color:var(--ink-dim)]">

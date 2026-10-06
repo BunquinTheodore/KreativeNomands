@@ -1,9 +1,15 @@
+import type { Metadata } from 'next';
 import { Compass, Home } from 'lucide-react';
 import AnimatedLogo from '@/components/fx/AnimatedLogo';
 import FitLine from '@/components/fx/FitLine';
 import Reveal from '@/components/fx/Reveal';
 import SplitText from '@/components/fx/SplitText';
 import Button from '@/components/ui/Button';
+
+export const metadata: Metadata = {
+  title: 'Page not found',
+  robots: { index: false, follow: false },
+};
 
 /** On-brand 404: the North Star keeps shining while the page is lost. */
 export default function NotFound() {
