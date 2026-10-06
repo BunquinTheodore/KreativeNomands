@@ -16,7 +16,9 @@ const nextConfig = {
     return config;
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // WebP only: AVIF costs 0.1-0.3 s of CPU per image to encode on a cold cache (the first visit after a
+    // deploy), which is exactly when the page is loading; WebP is ~5x cheaper and only a few KB larger.
+    formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 31536000, // 1 year cache

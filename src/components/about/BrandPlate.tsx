@@ -51,12 +51,16 @@ export default function BrandPlate() {
 
       <div className="glass-strong shine relative rounded-[1.75rem] p-3 sm:p-4" data-sfx-hover="" suppressHydrationWarning>
         <div className="relative aspect-square overflow-hidden rounded-[1.25rem] ring-1 ring-cream-500/10">
-          <Image
-            src="/logos/Social-Media-DP-Green-BG.png"
+          {/* Static file (scripts/static-image-sizes.mjs), not next/image: no optimizer work on a cold cache. */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logos/Social-Media-DP-Green-BG-880.webp"
+            width={880}
+            height={880}
+            loading="lazy"
+            decoding="async"
             alt="Kreativ Nomads advertising agency brand plate with the North Star compass, established 2023"
-            fill
-            sizes="(min-width: 1024px) 440px, (min-width: 640px) 416px, 90vw"
-            className="object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
           />
           <div
             aria-hidden="true"

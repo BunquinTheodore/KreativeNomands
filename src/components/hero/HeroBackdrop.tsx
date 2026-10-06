@@ -1,11 +1,16 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import { getDeviceTier } from '@/hooks/useDeviceTier';
 
 const REEL_SRC = '/media/hero/reel.mp4';
+/**
+ * Plain static files (scripts/static-image-sizes.mjs makes the two smaller widths), not next/image: the poster is
+ * one of the few things the first paint waits for, and the image optimizer has to encode it on a cold cache.
+ */
 const POSTER_SRC = '/media/hero/reel-poster.webp';
+const POSTER_SRCSET =
+  '/media/hero/reel-poster-640.webp 640w, /media/hero/reel-poster-828.webp 828w, /media/hero/reel-poster.webp 1280w';
 const POSTER_WIDTH = 1280;
 const POSTER_HEIGHT = 720;
 /** The reel never competes with the first paint: wait for window load, then this long. */
@@ -78,14 +83,16 @@ export default function HeroBackdrop() {
 
   return (
     <div ref={rootRef} className="hero-backdrop pointer-events-none absolute inset-x-0 top-0 -z-10 h-[min(100%,115svh)] lg:h-full" aria-hidden="true">
-      <Image
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
         src={POSTER_SRC}
-        alt=""
+        srcSet={POSTER_SRCSET}
+        sizes="100vw"
         width={POSTER_WIDTH}
         height={POSTER_HEIGHT}
-        sizes="100vw"
-        quality={60}
-        priority
+        alt=""
+        decoding="async"
+        fetchPriority="high"
         className="absolute inset-0 h-full w-full object-cover opacity-50"
       />
       {allowVideo && (
