@@ -71,6 +71,11 @@ export default function SfxProvider(): null {
       sfx.play('tick');
     };
 
+    const onExternalSfx = (event: Event) => {
+      const name = (event as CustomEvent<SfxName>).detail;
+      if (typeof name === string) sfx.play(name);
+    };
+
     const gestureOpts: AddEventListenerOptions = { passive: true, once: true, capture: true };
     const cancelIdle = runWhenIdle(() => {
       window.addEventListener('pointerdown', onGesture, gestureOpts);
@@ -79,6 +84,7 @@ export default function SfxProvider(): null {
       document.addEventListener('click', onClick, { passive: true });
       document.addEventListener('pointerover', onPointerOver, { passive: true });
       window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('kn:sfx', onExternalSfx);
     });
 
     return () => {
@@ -89,6 +95,7 @@ export default function SfxProvider(): null {
       document.removeEventListener('click', onClick);
       document.removeEventListener('pointerover', onPointerOver);
       window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('kn:sfx', onExternalSfx);
     };
   }, []);
 

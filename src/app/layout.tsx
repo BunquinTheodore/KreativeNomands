@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import '@/components/fx/fx.css';
 import Splash from '@/components/fx/Splash';
+import ThreeBackground from '@/components/three/ThreeBackground';
 import Cursor from '@/components/fx/Cursor';
 import SfxProvider from '@/components/fx/SfxProvider';
 import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
@@ -113,13 +114,7 @@ export default function RootLayout({
         <Cursor />
         <SfxProvider />
         <ScrollProgressLine />
-
-        {/*
-          INTEGRATOR: mount the Three.js background here, behind the content:
-            <div className="fixed inset-0 z-0" aria-hidden="true"><ThreeBackground /></div>
-          (import ThreeBackground from '@/components/three/ThreeBackground'; it is lazy
-          and renders its own fixed canvas, so the wrapper is optional.)
-        */}
+        <ThreeBackground />
 
         {/* Content sits above the (future) canvas at z-0. */}
         <div className="relative z-10">{children}</div>
