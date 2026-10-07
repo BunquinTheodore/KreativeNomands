@@ -16,23 +16,10 @@ const nextConfig = {
     return config;
   },
   images: {
-    // WebP only: AVIF costs 0.1-0.3 s of CPU per image to encode on a cold cache (the first visit after a
-    // deploy), which is exactly when the page is loading; WebP is ~5x cheaper and only a few KB larger.
-    formats: ['image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 31536000, // 1 year cache
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+    // Every image is pre-optimised at build time by scripts/optimize-media.mjs (WebP, <=1600px, plus 640px
+    // thumbs), so Vercel's image optimizer adds nothing. Skipping it serves the files straight from the CDN and
+    // avoids the free-tier optimization quota (over quota, /_next/image answers 402 and every image breaks).
+    unoptimized: true,
   },
   async redirects() {
     return [{ source: '/portfolio', destination: '/#portfolio', permanent: false }];

@@ -9,6 +9,7 @@ import SfxProvider from '@/components/fx/SfxProvider';
 import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
 import ShineGate from '@/components/fx/ShineGate';
 import { buildPostPaintScript } from '@/lib/post-paint';
+import { SITE_URL } from '@/lib/site';
 
 // Font configuration
 const inter = Inter({
@@ -33,7 +34,6 @@ const POST_PAINT_SCRIPT = buildPostPaintScript({
   manifestHref: '/site.webmanifest',
 });
 
-const SITE_URL = 'https://kreativnomads.com.ph';
 
 // Organization structured data (JSON-LD).
 const organizationJsonLd = {
@@ -89,14 +89,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'Kreativ Nomads' }],
   creator: 'Kreativ Nomads',
   publisher: 'Kreativ Nomads',
-  metadataBase: new URL('https://kreativnomads.com.ph'),
+  metadataBase: new URL(SITE_URL),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_PH',
-    url: 'https://kreativnomads.com.ph',
+    url: SITE_URL,
     siteName: 'Kreativ Nomads',
     title: 'Kreativ Nomads | Creative Agency Philippines',
     description:

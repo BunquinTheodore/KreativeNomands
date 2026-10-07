@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f09442;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#dd6113;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="url(#grad)"/>
-  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white">KN</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-340 -340 680 680" width="64" height="64">
+  <rect x="-340" y="-340" width="680" height="680" rx="150" fill="#0a1111"/>
+  <g fill="#f59e0b" stroke="#f59e0b" stroke-linejoin="round">
+    <circle r="174" fill="none" stroke-width="22"/>
+    <path stroke-width="8" d="M0-295Q8-130 27-40L27 40Q8 130 0 295Q-8 130-27 40L-27-40Q-8-130 0-295Z"/>
+    <path stroke-width="8" d="M-267 0Q-130-18-44-30L44-30Q130-18 267 0Q130 18 44 30L-44 30Q-130 18-267 0Z"/>
+    <path stroke-width="8" transform="rotate(45)" d="M0-246Q6-130 16-34L16 34Q6 130 0 246Q-6 130-16 34L-16-34Q-6-130 0-246Z"/>
+    <path stroke-width="8" transform="rotate(-45)" d="M0-246Q6-130 16-34L16 34Q6 130 0 246Q-6 130-16 34L-16-34Q-6-130 0-246Z"/>
+  </g>
 </svg>

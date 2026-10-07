@@ -1,7 +1,5 @@
 import type { MetadataRoute } from 'next';
-
-/** Absolute origin; keep in sync with `metadataBase` in layout.tsx. */
-const SITE_URL = 'https://kreativnomads.com.ph';
+import { SITE_URL } from '@/lib/site';
 
 const PORTFOLIO_CATEGORIES = ['events', 'fnb', 'health', 'insurance', 'realestate', 'it'] as const;
 
