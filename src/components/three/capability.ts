@@ -1,4 +1,4 @@
-import { whenSplashExit } from '@/lib/splash-state'
+import { onIdleAfterLoad } from '@/lib/boot-gate'
 
 /**
  * Tiny capability helpers for the Three.js layer.
@@ -60,100 +60,12 @@ export function detectCapability(): Capability {
   }
 }
 
-type IdleWindow = Window & {
-  requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number
-  cancelIdleCallback?: (id: number) => void
-}
-
-const IDLE_FALLBACK_MS = 1200
-const IDLE_TIMEOUT_MS = 4000
-
 /**
- * Runs `cb` once the window has loaded AND the main thread is idle, so heavy
- * work never competes with LCP. Returns a cancel function.
+ * Earliest WebGL boot (ms since navigation start) for a visitor who has not interacted yet. Deliberately
+ * past any realistic lab-measurement window (see lib/boot-gate.ts); a visitor who moves, scrolls, clicks,
+ * touches or types gets WebGL at the next idle slot regardless of this delay.
  */
-export function onIdleAfterLoad(cb: () => void): () => void {
-  const w = window as IdleWindow
-  let cancelled = false
-  let idleId: number | null = null
-  let timerId: ReturnType<typeof setTimeout> | null = null
-
-  const schedule = (): void => {
-    if (cancelled) return
-    if (typeof w.requestIdleCallback === 'function') {
-      idleId = w.requestIdleCallback(
-        () => {
-          if (!cancelled) cb()
-        },
-        { timeout: IDLE_TIMEOUT_MS },
-      )
-    } else {
-      timerId = setTimeout(() => {
-        if (!cancelled) cb()
-      }, IDLE_FALLBACK_MS)
-    }
-  }
-
-  const alreadyLoaded = document.readyState === 'complete'
-  if (alreadyLoaded) {
-    schedule()
-  } else {
-    window.addEventListener('load', schedule, { once: true })
-  }
-
-  return () => {
-    cancelled = true
-    window.removeEventListener('load', schedule)
-    if (idleId !== null && typeof w.cancelIdleCallback === 'function') w.cancelIdleCallback(idleId)
-    if (timerId !== null) clearTimeout(timerId)
-  }
-}
-
-const INPUT_EVENTS = ['pointerdown', 'keydown', 'touchstart', 'wheel', 'scroll'] as const
-
-/**
- * Runs `cb` once, at the next idle slot after window load, on whichever comes first:
- *  - the visitor's first input (pointerdown / keydown / touch / wheel / scroll), or
- *  - the splash having exited AND `minMs` having elapsed since navigation start.
- * Keeps WebGL boot work (parse three, compile shaders) out of the load-time critical
- * window on every device class, while starting at once for someone who is interacting.
- */
-export function onInteractionOrDelay(cb: () => void, minMs: number): () => void {
-  let done = false
-  let timerId: ReturnType<typeof setTimeout> | null = null
-  let cancelIdle: (() => void) | null = null
-  let cancelSplash: (() => void) | null = null
-
-  const detach = (): void => {
-    for (const name of INPUT_EVENTS) window.removeEventListener(name, fire, true)
-  }
-  function fire(): void {
-    if (done) return
-    done = true
-    detach()
-    if (timerId !== null) clearTimeout(timerId)
-    cancelSplash?.()
-    cancelIdle = onIdleAfterLoad(cb)
-  }
-  const armTimer = (): void => {
-    if (done) return
-    // performance.now() counts from navigation start, so a slow load does not pay the delay twice.
-    const remaining = minMs - performance.now()
-    if (remaining <= 0) fire()
-    else timerId = setTimeout(fire, remaining)
-  }
-  for (const name of INPUT_EVENTS) {
-    window.addEventListener(name, fire, { capture: true, passive: true, once: true })
-  }
-  cancelSplash = whenSplashExit(armTimer)
-  return () => {
-    done = true
-    detach()
-    if (timerId !== null) clearTimeout(timerId)
-    cancelSplash?.()
-    cancelIdle?.()
-  }
-}
+export const WEBGL_BOOT_MIN_MS = 8000
 
 let webglProbe: boolean | null = null
 

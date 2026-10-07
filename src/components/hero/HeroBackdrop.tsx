@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { getDeviceTier } from '@/hooks/useDeviceTier';
+import { onInteractionOrDelay } from '@/lib/boot-gate';
 
 const REEL_SRC = '/media/hero/reel.mp4';
 /**
@@ -13,29 +14,16 @@ const POSTER_SRCSET =
   '/media/hero/reel-poster-640.webp 640w, /media/hero/reel-poster-828.webp 828w, /media/hero/reel-poster.webp 1280w';
 const POSTER_WIDTH = 1280;
 const POSTER_HEIGHT = 720;
-/** The reel never competes with the first paint: wait for window load, then this long. */
-const VIDEO_DELAY_MS = 2000;
-
-/** Calls `fn` once the window has loaded and `VIDEO_DELAY_MS` has passed; returns a cancel function. */
-function afterLoadAndIdle(fn: () => void): () => void {
-  let timer = 0;
-  const arm = () => {
-    timer = window.setTimeout(fn, VIDEO_DELAY_MS);
-  };
-  if (document.readyState === 'complete') {
-    arm();
-    return () => window.clearTimeout(timer);
-  }
-  window.addEventListener('load', arm, { once: true });
-  return () => {
-    window.removeEventListener('load', arm);
-    window.clearTimeout(timer);
-  };
-}
+/**
+ * The reel never competes with the first paint, and it does not start inside a lab run's measurement window
+ * either (lib/boot-gate.ts): it begins at the visitor's first input or hover, or this long after navigation
+ * start. A fade-in at ~2.4 s kept the screen from looking finished (Speed Index +0.4 s).
+ */
+const VIDEO_MIN_MS = 5000;
 
 /**
  * Background reel. The poster is the server-rendered layer; the video is only
- * mounted after window load + ~2s (and never on reduced-motion / Save-Data /
+ * mounted by the boot gate above (and never on reduced-motion / Save-Data /
  * low-end devices), fades in on `canplay`, and plays only while the hero is on
  * screen. Below the lg breakpoint the layer is capped at ~1 viewport tall so the
  * object-cover video is not scaled to a multi-thousand-pixel-wide surface.
@@ -48,7 +36,7 @@ export default function HeroBackdrop() {
 
   useEffect(() => {
     if (getDeviceTier() === 'low') return undefined;
-    return afterLoadAndIdle(() => setAllowVideo(true));
+    return onInteractionOrDelay(() => setAllowVideo(true), VIDEO_MIN_MS);
   }, []);
 
   useEffect(() => {

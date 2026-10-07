@@ -12,10 +12,11 @@
 
 import { useEffect, useRef, useState, type RefObject } from 'react'
 import type * as T from 'three'
+import { onInteractionOrDelay } from '@/lib/boot-gate'
 import {
+  WEBGL_BOOT_MIN_MS,
   canUseWebGL,
   detectCapability,
-  onInteractionOrDelay,
   whenNearViewport,
   type Capability,
   type DeviceTier,
@@ -74,9 +75,6 @@ export interface StageHandle {
   dispose(): void
 }
 
-/** Three boots no earlier than this after navigation start (all pointer types). */
-const DEFAULT_MIN_START_MS = 3500
-
 export type StageStatus = 'pending' | 'ready' | 'unavailable'
 
 export interface UseThreeStageOptions {
@@ -87,7 +85,7 @@ export interface UseThreeStageOptions {
   readonly camera?: CameraSpec
   /**
    * Earliest boot time, in ms since navigation start (and never before the splash exits),
-   * unless the visitor interacts first. Defaults to DEFAULT_MIN_START_MS.
+   * unless the visitor interacts first. Defaults to WEBGL_BOOT_MIN_MS.
    */
   readonly minStartMs?: number
 }
@@ -158,7 +156,7 @@ export function useThreeStage(
         })
     }
 
-    const minStartMs = opts.minStartMs ?? DEFAULT_MIN_START_MS
+    const minStartMs = opts.minStartMs ?? WEBGL_BOOT_MIN_MS
     let cancelDelay: (() => void) | null = null
     const cancelNear = startMode === 'idle' ? null : whenNearViewport(host, () => {
       cancelDelay = onInteractionOrDelay(begin, minStartMs)

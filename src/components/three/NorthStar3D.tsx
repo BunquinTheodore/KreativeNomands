@@ -21,7 +21,6 @@ const FALLBACK_HEIGHT = 536
 
 const STAGE_OPTIONS = {
   start: 'visible',
-  minStartMs: 3500,
   maxFps: { high: 60, mid: 45 },
   camera: { fov: 32, near: 0.1, far: 50, position: [0, 0, 4.2] },
 } as const

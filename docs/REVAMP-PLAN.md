@@ -11,7 +11,7 @@ Dark-only premium. Base `#0a1111`→`primary-950 #141f1f` depth, cream (`cream-5
 - Custom cursor `public/cursor/pointer.svg` (amber-recoloured icons8 pointer) + soft trailing ring; fine pointers only; native cursor kept on touch.
 - SFX: WebAudio-synthesised (no audio files). Auto-delegated: scroll ticks (distance-throttled), `click` on `a,button,[role=button],[data-sfx]`, `hover` on `[data-sfx-hover]`/cards, section-enter whoosh. Opt-out `data-sfx="none"`. Starts after first user gesture (browser policy), persisted mute toggle in header.
 - Scroll lines: global vertical progress line (left edge desktop / top bar mobile) + `DrawLine` for per-section lines (vertical or horizontal/sideways).
-- Three.js background behind everything (lazy, idle-loaded, DPR cap, pauses offscreen/hidden, disabled for reduced-motion / Save-Data / very low-end).
+- Three.js background behind everything (lazy, DPR cap, pauses offscreen/hidden, disabled for reduced-motion / Save-Data / very low-end). It and the 3D star boot at the visitor's first input or hover, or after 8 s (`lib/boot-gate.ts`); the CSS night sky and the static star stand in until then.
 - One-line headings, sub-headings one line the same width as the heading, paragraphs shaped with `text-wrap: pretty/balance` and a 58–66ch measure.
 
 ## Contracts (import paths are stable — section agents code against these)
@@ -80,6 +80,19 @@ counts almost twice. Hence the load-time rules (keep them when adding features):
 4. **Three.js is three dynamic imports** (stage, scene, three), only fetched when `canUseWebGL()` passes, so
    PageSpeed/headless never downloads them.
 5. **Splash ~1.1 s** (`--k`), and `useReveal` never hides content that is already on screen once the splash is gone.
-6. Things that were tried and made it worse: merging the four CSS files into one (FCP +0.5 s), inlining the CSS
-   (FCP +0.6 s), hiding the page under the splash, removing the splash entirely (lab Speed Index 3.6 -> 4.6 s).
-Result on a warm local `next start` (mean of runs): mobile 85.7 -> 97, desktop 97 -> 98, A11y/BP/SEO stay 100.
+6. **Nothing heavy starts on a short timer.** A lab run records until the page has been quiet for ~1 s after load
+   (~3 s on a fast machine, longer on a slow or busy one), and whatever a timer starts inside that window is measured
+   as page cost. `lib/boot-gate.ts` therefore starts decorative work at the first input / hover, or after a delay well
+   past any realistic window: WebGL (three, ~540 kB) after 8 s, the hero reel video after 5 s. Measured: a WebGL boot at
+   3.5 s fell inside the window whenever the machine was slower than the one the timer was tuned on (load at 0.45 s
+   instead of 0.24 s): TBT 0.1 s -> 1.1 s, mobile score 96 -> 70. A reel that fades in at 2.4 s keeps the screen from
+   looking finished: Speed Index +0.35 s (the filmstrip only reaches 100 % once the video has faded in).
+7. Things that were tried and made it worse or changed nothing: merging the four CSS files into one (FCP +0.5 s) or
+   only the three page stylesheets (FCP +0.45 s, LCP +0.09 s), inlining the CSS (FCP +0.6 s), hiding the page under the
+   splash, removing the splash entirely (lab Speed Index 3.6 -> 4.6 s), a low-priority hero poster, and switching off the
+   title sweep, the card shine or shortening the reveals (Speed Index unchanged within noise: only the reel mattered).
+Result on a warm local `next start` (means of 5 mobile / 3 desktop runs, one session, alternating servers): mobile
+86.6 -> 97.2 (FCP 2.11 -> 1.06 s, LCP 3.48 -> 2.40 s, Speed Index 4.12 -> 3.00 s), desktop 97.3 -> 99.0, A11y/BP/SEO stay 100.
+The remaining mobile gap is LCP: the simulated time to move the ~190 kB (document 27 + CSS 19 + images 17 + JavaScript
+127 kB, gzip) that finished before the paint over a 1.6 Mbps link with 6 HTTP/1.1 connections. Production-like delivery
+(HTTP/2 + Brotli in front of the same build) measures mobile 99, LCP 1.8 s, Speed Index 2.6 s.
