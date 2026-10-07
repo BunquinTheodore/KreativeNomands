@@ -1,0 +1,144 @@
+/*
+ * Global-ish render-path rules (paint / layout cost). Unlayered on purpose:
+ * unlayered rules beat the `@layer components` glass utilities in globals.css.
+ */
+
+/* ------------------------------------------------ below-the-fold skipping
+ * Sections under the hero are not laid out or painted until they near the
+ * viewport. The "auto" keyword makes the browser remember the real height once a section
+ * has been rendered, so the estimates below only matter for the first visit.
+ * They are the measured rendered heights (Chrome, DPR 1, widths 320-1920) as
+ * piecewise-linear functions of the viewport width, so in-page anchors, direct
+ * loads of /#contact and scroll position stay accurate (within ~20px) and CLS
+ * stays ~0. Never applied to #hero (the reel Marquee measures widths in JS).
+ *
+ * --cv-h is the border-box height; contain-intrinsic-size is a content-box
+ * size, so the section padding (.section-y) is subtracted. Only the block axis
+ * is sized; the width stays the normal block width.
+ * Breakpoints follow the layout changes: 640 (sm), 1024 (lg).
+ */
+#about,
+#services,
+#portfolio,
+#contact,
+.kn-footer {
+  content-visibility: auto;
+  --section-pad: clamp(4.5rem, 10vw, 8.5rem);
+}
+
+#about,
+#services,
+#portfolio,
+#contact {
+  contain-intrinsic-block-size: auto calc(var(--cv-h) - 2 * var(--section-pad));
+}
+
+.kn-footer {
+  contain-intrinsic-block-size: auto var(--cv-h);
+}
+
+/* The portfolio stage's iOS "pseudo fullscreen" is position:fixed. content-visibility:auto
+ * applies layout + paint containment, which would make the section its containing block
+ * (and clip it), so drop the skip while that stage is open. */
+#portfolio:has(.kp-stage--pseudo-fs) {
+  content-visibility: visible;
+}
+
+/* Phones (< 640): text re-wraps as the screen narrows, so heights grow. */
+#about {
+  --cv-h: 1595px;
+}
+
+#services {
+  --cv-h: max(2415px, 2666px - 2 * (100vw - 320px));
+}
+
+#portfolio {
+  --cv-h: max(2550px, 2775px - 1.4 * (100vw - 320px));
+}
+
+#contact {
+  --cv-h: 1690px;
+}
+
+.kn-footer {
+  --cv-h: 1230px;
+}
+
+/* Tablets (640 - 1023). */
+@media (min-width: 640px) {
+  #about {
+    --cv-h: 1620px;
+  }
+
+  #services {
+    --cv-h: calc(2465px + max(0px, 100vw - 800px) * 0.33);
+  }
+
+  #portfolio {
+    --cv-h: 1760px;
+  }
+
+  #contact {
+    --cv-h: calc(1605px + max(0px, 100vw - 768px) * 0.3);
+  }
+
+  .kn-footer {
+    --cv-h: 785px;
+  }
+}
+
+/* Desktop (>= 1024): heights settle by ~1280. */
+@media (min-width: 1024px) {
+  #about {
+    --cv-h: min(1364px, 1287px + (100vw - 1024px) * 0.3);
+  }
+
+  #services {
+    --cv-h: 1712px;
+  }
+
+  #portfolio {
+    --cv-h: min(1551px, 1485px + (100vw - 1024px) * 0.26);
+  }
+
+  #contact {
+    --cv-h: min(1282px, 1197px + (100vw - 1024px) * 0.33);
+  }
+
+  .kn-footer {
+    --cv-h: 550px;
+  }
+}
+
+/* ------------------------------------------- mobile / touch glass fallback
+ * ~50 backdrop-filter layers over an animating WebGL canvas force a re-blur
+ * every frame on phones. Swap them for an opaque-ish fill with the same tint;
+ * the header pill and the open mobile sheet keep the real blur (2 layers).
+ */
+@media (max-width: 767px), (pointer: coarse) {
+  .glass,
+  .glass-strong,
+  .kn-field__control {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+
+  .glass {
+    background: rgba(18, 28, 28, 0.74);
+  }
+
+  .glass-strong {
+    background: rgba(20, 31, 31, 0.8);
+  }
+
+  .site-header__glass.glass-strong,
+  .site-sheet.glass-strong {
+    -webkit-backdrop-filter: blur(14px) saturate(135%);
+    backdrop-filter: blur(14px) saturate(135%);
+  }
+
+  .site-header__glass.glass-strong {
+    background: var(--glass-bg-strong);
+  }
+}

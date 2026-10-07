@@ -1,0 +1,38 @@
+/**
+ * The only parts of three the site uses. Importing named members (instead of the whole
+ * namespace) lets webpack tree-shake the rest of three.module.js out of the async chunk.
+ */
+export {
+  ACESFilmicToneMapping,
+  AdditiveBlending,
+  AmbientLight,
+  BufferAttribute,
+  BufferGeometry,
+  CanvasTexture,
+  Color,
+  DoubleSide,
+  Float32BufferAttribute,
+  Fog,
+  Group,
+  LineBasicMaterial,
+  LineLoop,
+  LineSegments,
+  Mesh,
+  MeshBasicMaterial,
+  MeshPhysicalMaterial,
+  PerspectiveCamera,
+  PointLight,
+  Points,
+  PointsMaterial,
+  Raycaster,
+  Scene,
+  ShaderMaterial,
+  SphereGeometry,
+  Sprite,
+  SpriteMaterial,
+  SRGBColorSpace,
+  TorusGeometry,
+  Vector2,
+  Vector3,
+  WebGLRenderer,
+} from 'three'

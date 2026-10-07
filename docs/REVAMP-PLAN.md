@@ -1,0 +1,98 @@
+# Kreativ Nomads — Revamp Plan & Interface Contracts
+
+Stack stays: Next.js 14 App Router, TypeScript, Tailwind 3, framer-motion 11, `three` (vanilla, no R3F), `sharp` (dev, build-time media script).
+Fonts stay: **Inter** (`font-sans`) + **Poppins** (`font-display`). Palette stays (tailwind tokens `primary-*` #3d5a5a family, `secondary/accent-*` amber #f59e0b, `cream-*` #f5f0dc, `dark-*`). No new hues.
+
+## Art direction — "Midnight Forest & Amber"
+Dark-only premium. Base `#0a1111`→`primary-950 #141f1f` depth, cream (`cream-500`) text, amber highlights, teal-green (`primary-300/400`) secondary light. Glass = `rgba(245,240,220,.06)` fill + `backdrop-blur(18px) saturate(140%)` + 1px `rgba(245,240,220,.14)` border + inner top highlight + a **continuously sweeping shine** (CSS keyframe, `::after` gradient, transform-only). Theme switching is deleted (`theme-context`, `ThemeToggle`, all `theme === 'dark'` ternaries).
+
+## Global behaviours (all owned by CORE, available to every section)
+- Splash on every load/refresh (≈1.1s since the mobile-LCP pass: one tempo variable `--k` in fx.css scales the original 1.8s choreography; CSS/SVG only, no sessionStorage gating) with the animated logo, then reveals the page.
+- Custom cursor `public/cursor/pointer.svg` (amber-recoloured icons8 pointer) + soft trailing ring; fine pointers only; native cursor kept on touch.
+- SFX: WebAudio-synthesised (no audio files). Auto-delegated: scroll ticks (distance-throttled), `click` on `a,button,[role=button],[data-sfx]`, `hover` on `[data-sfx-hover]`/cards, section-enter whoosh. Opt-out `data-sfx="none"`. Starts after first user gesture (browser policy), persisted mute toggle in header.
+- Scroll lines: global vertical progress line (left edge desktop / top bar mobile) + `DrawLine` for per-section lines (vertical or horizontal/sideways).
+- Three.js background behind everything (lazy, DPR cap, pauses offscreen/hidden, disabled for reduced-motion / Save-Data / very low-end). It and the 3D star boot at the visitor's first input or hover, or after 8 s (`lib/boot-gate.ts`); the CSS night sky and the static star stand in until then.
+- One-line headings, sub-headings one line the same width as the heading, paragraphs shaped with `text-wrap: pretty/balance` and a 58–66ch measure.
+
+## Contracts (import paths are stable — section agents code against these)
+```
+src/lib/sfx.ts                  export const sfx: { play(name: SfxName): void; setMuted(b:boolean): void; isMuted(): boolean; subscribe(fn):()=>void }
+                                SfxName = 'tick'|'click'|'hover'|'whoosh'|'open'|'close'|'success'|'error'|'next'|'prev'
+src/components/fx/SfxProvider.tsx   default; mounts delegated listeners (rendered in layout)
+src/components/fx/SoundToggle.tsx   default; small glass button (header)
+src/components/fx/Cursor.tsx        default (layout)
+src/components/fx/Splash.tsx        default (layout)
+src/components/fx/AnimatedLogo.tsx  default ({ size?: number; loop?: boolean; className? }) North-Star mark with draw/orbit animation
+src/components/fx/ScrollProgressLine.tsx  default (layout)
+src/components/fx/DrawLine.tsx      default ({ axis?:'y'|'x'; className?; targetRef?: RefObject<HTMLElement> })  line that draws with scroll progress of its section
+src/components/fx/Reveal.tsx        default ({ as?; delay?; y?; x?; className?; children })
+src/components/fx/SplitText.tsx     default ({ text:string; as?; variant?:'rise'|'blur'|'wave'|'flip'|'mask'|'scramble'; stagger?:number; by?:'chars'|'words'; className?; once?:boolean })
+src/components/fx/Typewriter.tsx    default ({ phrases:string[]; className? })
+src/components/fx/CountUp.tsx       default ({ to:number; suffix?; prefix?; duration?; className? })
+src/components/fx/Marquee.tsx       default ({ children; speed?:number(px/s); direction?:'left'|'right'; pauseOnHover?; className?; gap?:number })  side-to-side animating rail (CSS transform loop)
+src/components/fx/GlassCard.tsx     default ({ as?; href?; onClick?; tilt?:boolean; shine?:boolean(default true); glow?:boolean; className?; children })
+src/components/fx/SectionHeader.tsx default ({ eyebrow:string; title:ReactNode; subtitle:string; align?:'left'|'center'; id?:string })
+                                    title = ONE line (fluid font-size via clamp + JS fit fallback, never wraps); subtitle = ONE line fitted to the title's width.
+src/components/fx/FitLine.tsx       default ({ children; maxPx?; minPx?; className? }) shrink-to-fit one-line text
+src/components/ui/Button.tsx        default + named export ({ variant:'primary'|'glass'|'ghost'; href?; onClick?; magnetic?; icon?; children }) anchor/button, shine, SFX-ready
+src/lib/scroll.ts               export scrollToId(id:string, offset?:number); export function useActiveSection(ids:string[]): string
+src/hooks/useInView.ts  usePrefersReducedMotion.ts  useDeviceTier.ts  ('high'|'mid'|'low' from cores/memory/saveData/reducedMotion)
+src/components/three/ThreeBackground.tsx   default client component, lazy; fixed canvas at z-0; props: none
+src/components/three/NorthStar3D.tsx       default ({ className?; height?:number|string }) draggable/hoverable 3D North Star with pointer-follow, click burst
+src/components/three/OrbitSelector3D.tsx   default ({ items:{id:string;label:string}[]; activeId:string; onSelect(id:string):void; className? }) clickable orbiting nodes
+src/components/three/ThreeCanvas.tsx       shared: renderer factory, visibility pause, dispose (internal)
+```
+Tailwind/global utilities added by CORE in `globals.css`: `.glass`, `.glass-strong`, `.shine` (continuous sweep), `.eyebrow`, `.container-x`, `.section-y`, `.text-pretty`, `.text-balance`, `.hairline`, `.noise`; CSS vars `--glass-bg`, `--glass-border`, `--amber`, `--ink`, `--ink-dim`, `--ease-out-expo`.
+
+## Data & media (owned by ASSETS)
+- `scripts/optimize-media.mjs` (sharp + ffmpeg) → `public/media/<category>/<project>/<slug>.{webp,mp4,jpg}`; slug-safe names (no spaces/&/+).
+- Images: ≤1600px long edge WebP q≈78, plus `thumb` 640px WebP. Videos: H.264 mp4 `+faststart`, no audio, ≤720p (≤540×960 for 9:16), ≤12s loop-friendly clip, target ≤1.5 MB each; `poster` WebP for each. Hero reel ≤3 MB.
+- `src/data/portfolio.json` rewritten (BOM stripped): every asset `{src, type, title, poster?, thumb?, width, height}`; `project.thumbnail` is **always an image**. IDs/titles/services/links preserved. `src/types/index.ts` updated accordingly.
+- Delete `public/portfolio`, `public/videos`, oversized `public/logos/*_BG-*.png`, remove Git LFS rule from `.gitattributes`, `vercel.json` buildCommand → `next build`. Also `public/og-image.jpg` (1200×630), PNG apple-touch icon, favicon.
+
+## Wave 2 ownership (no file overlap)
+| Worktree | Owns |
+|---|---|
+| hero-header | `components/Header.tsx`, `components/Hero.tsx`, `app/page.tsx` |
+| about-services | `components/About.tsx`, `components/Services.tsx` |
+| portfolio | `components/PortfolioCategories.tsx`, `components/portfolio/*` (StageViewer, ProjectRail, MediaTile), `app/portfolio/[category]/*`, delete `Portfolio.tsx`, `ITPortfolioGrid.tsx` (folded in) |
+| contact-footer | `components/Contact.tsx`, `components/Footer.tsx`, `app/api/contact/route.ts`, `app/privacy`, `app/terms`, `app/not-found.tsx`, SEO (`app/sitemap.ts`, `app/robots.ts`, layout metadata fields only) |
+
+## Flow
+Splash → **Hero** (headline, Three star, autoplaying reel rail drifting sideways) → **About** (count-up stats, interactive Vision/Mission/Values, 3D star) → **Services** (orbit selector + glass detail panel, animated process stepper with sideways line) → **Work** (category cards, side-scrolling marquees of thumbnails) → **/portfolio/[category]** (project rail + one-asset-at-a-time Stage viewer; no vertical asset scrolling) → **Contact** (working form via `/api/contact`, mailto fallback) → Footer.
+
+## Performance budget (Lighthouse mobile ≥ 90)
+LCP element = hero headline (text) with poster fallback; no render-blocking; Three + SFX + cursor loaded after idle; only the in-view video plays (max 3 concurrent); `next/image` with correct `sizes`; no layout shift (explicit dimensions/aspect ratios); `will-change` only on animating layers; framer `LazyMotion` where practical; reduced-motion & Save-Data honoured.
+
+### How the mobile score is made (measured, Lighthouse 12, simulated Slow 4G / 4x CPU)
+Lighthouse's lab FCP/LCP are *simulated* from a fast local trace: every request that finished before the observed
+paint is replayed on a 1.6 Mbps / 150 ms-RTT link (6 connections per origin over HTTP/1.1, TCP slow start), so what
+counts is the bytes and the number of requests that load before the first paint, not how fast the work really is.
+Speed Index is 1.4 x the *observed* (real) Speed Index + 0.4 x a layout-based estimate, so the splash length
+counts almost twice. Hence the load-time rules (keep them when adding features):
+1. **Nothing but the hero hydrates before the first paint.** Below-the-fold sections are islands
+   (`*Island.tsx`): inline server HTML, JavaScript fetched after first contentful paint + idle
+   (`lib/after-paint.ts`). Page-route JS 23 kB -> 8 kB, RSC payload 103 kB -> 38 kB.
+2. **Decorative image rails mount after hydration** (`Marquee deferChildren`): 145 `<img>` tags (290 kB of a 532 kB
+   document) are no longer in the HTML. Document 44.7 kB -> 26 kB gzip, i.e. under TCP's second slow-start window.
+3. **No font file on the critical path.** Inter/Poppins are activated by an inline script after the first paint
+   (`lib/post-paint.ts`); the first frame uses metric-matched fallbacks (globals.css). The web manifest is added the same way.
+4. **Three.js is three dynamic imports** (stage, scene, three), only fetched when `canUseWebGL()` passes, so
+   PageSpeed/headless never downloads them.
+5. **Splash ~1.1 s** (`--k`), and `useReveal` never hides content that is already on screen once the splash is gone.
+6. **Nothing heavy starts on a short timer.** A lab run records until the page has been quiet for ~1 s after load
+   (~3 s on a fast machine, longer on a slow or busy one), and whatever a timer starts inside that window is measured
+   as page cost. `lib/boot-gate.ts` therefore starts decorative work at the first input / hover, or after a delay well
+   past any realistic window: WebGL (three, ~540 kB) after 8 s, the hero reel video after 5 s. Measured: a WebGL boot at
+   3.5 s fell inside the window whenever the machine was slower than the one the timer was tuned on (load at 0.45 s
+   instead of 0.24 s): TBT 0.1 s -> 1.1 s, mobile score 96 -> 70. A reel that fades in at 2.4 s keeps the screen from
+   looking finished: Speed Index +0.35 s (the filmstrip only reaches 100 % once the video has faded in).
+7. Things that were tried and made it worse or changed nothing: merging the four CSS files into one (FCP +0.5 s) or
+   only the three page stylesheets (FCP +0.45 s, LCP +0.09 s), inlining the CSS (FCP +0.6 s), hiding the page under the
+   splash, removing the splash entirely (lab Speed Index 3.6 -> 4.6 s), a low-priority hero poster, and switching off the
+   title sweep, the card shine or shortening the reveals (Speed Index unchanged within noise: only the reel mattered).
+Result on a warm local `next start` (means of 5 mobile / 3 desktop runs, one session, alternating servers): mobile
+86.6 -> 97.2 (FCP 2.11 -> 1.06 s, LCP 3.48 -> 2.40 s, Speed Index 4.12 -> 3.00 s), desktop 97.3 -> 99.0, A11y/BP/SEO stay 100.
+The remaining mobile gap is LCP: the simulated time to move the ~190 kB (document 27 + CSS 19 + images 17 + JavaScript
+127 kB, gzip) that finished before the paint over a 1.6 Mbps link with 6 HTTP/1.1 connections. Production-like delivery
+(HTTP/2 + Brotli in front of the same build) measures mobile 99, LCP 1.8 s, Speed Index 2.6 s.

@@ -1,0 +1,313 @@
+/*
+ * Contact section styles (imported by Contact.tsx). Transform / opacity only for
+ * anything that animates. Reduced motion is handled globally in globals.css.
+ */
+
+/* ------------------------------------------------------ floating fields */
+.kn-field {
+  position: relative;
+}
+
+.kn-field__control {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 1rem 0.55rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(245, 240, 220, 0.16);
+  background: rgba(245, 240, 220, 0.05);
+  color: var(--ink);
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  outline: none;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+textarea.kn-field__control {
+  min-height: 9.5rem;
+  padding-top: 1.75rem;
+  resize: vertical;
+}
+
+.kn-field__control::placeholder {
+  color: transparent;
+}
+
+.kn-field__control:hover {
+  border-color: rgba(245, 240, 220, 0.28);
+}
+
+.kn-field__control:focus {
+  border-color: rgba(245, 158, 11, 0.7);
+  background: rgba(245, 240, 220, 0.08);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.16);
+}
+
+.kn-field__label {
+  position: absolute;
+  top: 1.05rem;
+  left: 1rem;
+  right: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+  color: var(--ink-dim);
+  font-size: 1rem;
+  line-height: 1.5;
+  transform-origin: 0 0;
+  transition:
+    transform 0.25s var(--ease-out-expo),
+    color 0.25s ease;
+}
+
+.kn-field__control:focus ~ .kn-field__label,
+.kn-field__control:not(:placeholder-shown) ~ .kn-field__label,
+.kn-field__control:-webkit-autofill ~ .kn-field__label {
+  transform: translate(0, -0.62rem) scale(0.76);
+}
+
+.kn-field__control:focus ~ .kn-field__label {
+  color: #fbbf24;
+}
+
+/* Animated focus line under the control. */
+.kn-field__line {
+  position: absolute;
+  left: 0.9rem;
+  right: 0.9rem;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #5a8585, #f59e0b);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  transition: transform 0.45s var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.kn-field__control:focus ~ .kn-field__line {
+  transform: scaleX(1);
+}
+
+.kn-field[data-invalid='true'] .kn-field__control {
+  border-color: rgba(252, 165, 165, 0.7);
+}
+
+.kn-field[data-invalid='true'] .kn-field__control:focus {
+  box-shadow: 0 0 0 3px rgba(252, 165, 165, 0.18);
+}
+
+.kn-field[data-invalid='true'] .kn-field__line {
+  background: #fca5a5;
+  transform: scaleX(1);
+}
+
+.kn-field[data-invalid='true'] .kn-field__label {
+  color: #fca5a5;
+}
+
+.kn-field__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 1.25rem;
+  margin-top: 0.4rem;
+  padding-inline: 0.25rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.kn-field__error {
+  margin: 0;
+  color: #fca5a5;
+}
+
+.kn-field__count {
+  margin: 0 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-dim);
+  white-space: nowrap;
+}
+
+.kn-field__count[data-near='true'] {
+  color: #fbbf24;
+}
+
+/* Honeypot: invisible to people, still in the DOM for bots. */
+.kn-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------ copy button */
+.kn-copy {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  padding-inline: 0.7rem;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(245, 240, 220, 0.16);
+  background: rgba(245, 240, 220, 0.05);
+  color: var(--ink-dim);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s var(--ease-out-expo);
+}
+
+.kn-copy:hover {
+  color: var(--ink);
+  border-color: rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0.1);
+}
+
+.kn-copy:active {
+  transform: scale(0.94);
+}
+
+.kn-copy[data-copied='true'] {
+  color: #0a1111;
+  border-color: transparent;
+  background: #fbbf24;
+}
+
+.kn-copy__tick {
+  animation: kn-pop 0.45s var(--ease-out-expo) both;
+}
+
+.kn-copy__tick path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: kn-tick-draw 0.4s ease 0.05s forwards;
+}
+
+@keyframes kn-pop {
+  from {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kn-tick-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* ------------------------------------------------------------ success burst */
+.kn-success {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  outline: none;
+}
+
+.kn-success__mark {
+  position: relative;
+  width: 6.5rem;
+  height: 6.5rem;
+}
+
+.kn-success__svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.kn-success__ring,
+.kn-success__check {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.kn-success__ring {
+  stroke: #5a8585;
+  stroke-width: 3;
+  animation: kn-tick-draw 0.7s var(--ease-out-expo) forwards;
+}
+
+.kn-success__check {
+  stroke: #fbbf24;
+  stroke-width: 5;
+  animation: kn-tick-draw 0.5s ease 0.55s forwards;
+}
+
+.kn-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.kn-burst__p {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.15rem;
+  background: var(--c, #fbbf24);
+  opacity: 0;
+  animation: kn-burst 1.1s var(--ease-out-expo) var(--d, 0.5s) forwards;
+}
+
+@keyframes kn-burst {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0deg) scale(0.4);
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) rotate(var(--rot)) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------- spinner */
+.kn-spin {
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 9999px;
+  border: 2px solid rgba(10, 17, 17, 0.25);
+  border-top-color: #0a1111;
+  animation: kn-rotate 0.7s linear infinite;
+}
+
+@keyframes kn-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

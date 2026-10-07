@@ -1,0 +1,746 @@
+/*
+ * Styles for the fx/ experience layer. Imported once from app/layout.tsx.
+ * Everything animated here is transform / opacity only (plus one short
+ * filter on SplitText "blur"). prefers-reduced-motion overrides are at the
+ * bottom; globals.css also zeroes animation/transition durations globally.
+ */
+
+/* ------------------------------------------------------------------ logo */
+.kn-logo {
+  display: block;
+  overflow: visible;
+  color: var(--amber);
+}
+
+.kn-logo__ink {
+  fill: currentColor;
+  fill-opacity: 0;
+  stroke: currentColor;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation:
+    kn-draw 1.05s var(--ease-out-expo) var(--d, 0s) forwards,
+    kn-fill 0.55s ease calc(var(--d, 0s) + 0.75s) forwards;
+}
+
+.kn-logo__ring {
+  fill: none;
+  stroke-width: 7;
+  animation: kn-draw 1.25s var(--ease-out-expo) forwards;
+}
+
+.kn-logo__sheen {
+  animation: kn-sheen 3.8s ease-in-out 1.7s infinite;
+  transform: translateX(-380px);
+}
+
+.kn-logo__orbit {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: kn-orbit 14s linear infinite;
+}
+
+.kn-logo__spark {
+  fill: #fde68a;
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(245, 158, 11, 0.9));
+  animation: kn-fade-in 0.5s ease 1.3s forwards;
+}
+
+/* Inside the splash the logo follows the splash tempo (--k, see .kn-splash). */
+.kn-splash .kn-logo__ink {
+  animation:
+    kn-draw calc(1.05s * var(--k)) var(--ease-out-expo) calc(var(--d, 0s) * var(--k)) forwards,
+    kn-fill calc(0.55s * var(--k)) ease calc((var(--d, 0s) + 0.75s) * var(--k)) forwards;
+}
+
+.kn-splash .kn-logo__ring {
+  animation: kn-draw calc(1.25s * var(--k)) var(--ease-out-expo) forwards;
+}
+
+.kn-splash .kn-logo__sheen {
+  animation: kn-sheen 3.8s ease-in-out calc(1.7s * var(--k)) infinite;
+}
+
+.kn-splash .kn-logo__spark {
+  animation: kn-fade-in calc(0.5s * var(--k)) ease calc(1.3s * var(--k)) forwards;
+}
+
+@keyframes kn-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes kn-fill {
+  to {
+    fill-opacity: 1;
+  }
+}
+
+@keyframes kn-sheen {
+  0% {
+    transform: translateX(-380px);
+  }
+
+  60%,
+  100% {
+    transform: translateX(380px);
+  }
+}
+
+@keyframes kn-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kn-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------------- splash */
+.kn-splash {
+  /* Tempo: 1 = the original 1.8 s intro. Every duration / delay below is scaled by it, so the
+   * choreography is unchanged but the page is revealed after ~1.1 s instead of 1.8 s (the exit
+   * starts at 1.8 s * --k). A shorter intro is what the "visually complete" metrics reward. */
+  --k: 0.62;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0a1111;
+  will-change: transform;
+  animation: kn-splash-out calc(0.8s * var(--k)) var(--ease-out-expo) calc(1.8s * var(--k)) forwards;
+}
+
+.kn-splash__glow {
+  position: absolute;
+  width: min(92vw, 760px);
+  aspect-ratio: 1;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 158, 11, 0.13) 0%,
+    rgba(61, 90, 90, 0.2) 38%,
+    transparent 68%
+  );
+  opacity: 0;
+  animation: kn-splash-glow calc(1.4s * var(--k)) ease-out calc(0.1s * var(--k)) forwards;
+}
+
+.kn-splash__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.35rem;
+  padding: 1rem;
+  animation: kn-splash-inner-out calc(0.45s * var(--k)) ease calc(1.65s * var(--k)) forwards;
+}
+
+.kn-splash__logo {
+  width: clamp(96px, 26vw, 140px);
+  height: auto;
+}
+
+.kn-splash__word {
+  display: flex;
+  margin: 0;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  font-size: clamp(1rem, 4.6vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.kn-splash__char {
+  display: inline-block;
+  opacity: 0;
+  transform: translate3d(0, 0.6em, 0);
+  animation: kn-splash-char calc(0.6s * var(--k)) var(--ease-out-expo)
+    calc((0.7s + var(--i, 0) * 0.045s) * var(--k)) forwards;
+}
+
+.kn-splash__bar {
+  width: min(52vw, 220px);
+  height: 2px;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: rgba(245, 240, 220, 0.12);
+}
+
+.kn-splash__fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #5a8585, #f59e0b);
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  animation: kn-splash-bar calc(1.6s * var(--k)) cubic-bezier(0.65, 0, 0.35, 1) calc(0.1s * var(--k)) forwards;
+}
+
+@keyframes kn-splash-glow {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes kn-splash-char {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes kn-splash-bar {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes kn-splash-inner-out {
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes kn-splash-out {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, -100%, 0);
+    visibility: hidden;
+  }
+}
+
+@keyframes kn-splash-fade {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* -------------------------------------------------------- progress lines */
+.kn-progress {
+  --p: 0;
+  --hx: 0px;
+  --hy: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 60;
+  height: 2px;
+  pointer-events: none;
+  background: rgba(245, 240, 220, 0.06);
+}
+
+.kn-progress__fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #3d5a5a, #8db1b1 55%, #f59e0b);
+  transform: scaleX(var(--p));
+  transform-origin: 0 50%;
+  will-change: transform;
+}
+
+.kn-progress__head {
+  position: absolute;
+  top: -2px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background: var(--amber);
+  box-shadow: 0 0 12px 2px rgba(245, 158, 11, 0.65);
+  transform: translate3d(var(--hx), 0, 0);
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .kn-progress {
+    right: auto;
+    bottom: 0;
+    width: 2px;
+    height: auto;
+  }
+
+  .kn-progress__fill {
+    background: linear-gradient(180deg, #3d5a5a, #8db1b1 55%, #f59e0b);
+    transform: scaleY(var(--p));
+    transform-origin: 50% 0;
+  }
+
+  .kn-progress__head {
+    top: -3px;
+    left: -2px;
+    transform: translate3d(0, var(--hy), 0);
+  }
+}
+
+.kn-drawline {
+  --p: 0;
+  --len: 0px;
+  position: relative;
+  flex: none;
+  pointer-events: none;
+}
+
+.kn-drawline::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(245, 240, 220, 0.1);
+}
+
+.kn-drawline--y {
+  width: 2px;
+  height: 100%;
+}
+
+.kn-drawline--x {
+  width: 100%;
+  height: 2px;
+}
+
+.kn-drawline__fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #5a8585, #f59e0b);
+  will-change: transform;
+}
+
+.kn-drawline--y .kn-drawline__fill {
+  background: linear-gradient(180deg, #5a8585, #f59e0b);
+  transform: scaleY(var(--p));
+  transform-origin: 50% 0;
+}
+
+.kn-drawline--x .kn-drawline__fill {
+  transform: scaleX(var(--p));
+  transform-origin: 0 50%;
+}
+
+.kn-drawline__head {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--amber);
+  box-shadow: 0 0 14px 2px rgba(245, 158, 11, 0.6);
+  will-change: transform;
+}
+
+.kn-drawline--y .kn-drawline__head {
+  top: -4px;
+  left: -3px;
+  transform: translate3d(0, calc(var(--p) * var(--len)), 0);
+}
+
+.kn-drawline--x .kn-drawline__head {
+  top: -3px;
+  left: -4px;
+  transform: translate3d(calc(var(--p) * var(--len)), 0, 0);
+}
+
+/* ---------------------------------------------------------------- reveal */
+.kn-reveal {
+  opacity: 0;
+  transform: translate3d(var(--rx, 0px), var(--ry, 24px), 0);
+}
+
+.kn-reveal.is-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease-out-expo) var(--rd, 0s),
+    transform 0.9s var(--ease-out-expo) var(--rd, 0s);
+}
+
+/* ------------------------------------------------------------- split text */
+.kn-split__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.kn-split__unit,
+.kn-split__ch {
+  display: inline-block;
+}
+
+.kn-split[data-variant='flip'] {
+  perspective: 700px;
+}
+
+.kn-split[data-variant='mask'] .kn-split__unit {
+  overflow: hidden;
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+  vertical-align: top;
+}
+
+.kn-split.is-armed .kn-split__ch {
+  opacity: 0;
+}
+
+.kn-split.is-armed[data-variant='rise'] .kn-split__ch {
+  transform: translate3d(0, 0.65em, 0);
+}
+
+.kn-split.is-armed[data-variant='blur'] .kn-split__ch {
+  filter: blur(10px);
+  transform: translate3d(0, 0.2em, 0);
+}
+
+.kn-split.is-armed[data-variant='wave'] .kn-split__ch {
+  transform: translate3d(0, 0.8em, 0) rotate(10deg);
+  transform-origin: 0 100%;
+}
+
+.kn-split.is-armed[data-variant='flip'] .kn-split__ch {
+  transform: rotateX(-95deg);
+  transform-origin: 50% 100%;
+}
+
+.kn-split.is-armed[data-variant='mask'] .kn-split__ch {
+  opacity: 1;
+  transform: translate3d(0, 112%, 0);
+}
+
+.kn-split.is-in .kn-split__ch {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition:
+    opacity 0.7s ease calc(var(--i, 0) * var(--stg, 0.03s)),
+    transform 0.9s var(--ease-out-expo) calc(var(--i, 0) * var(--stg, 0.03s)),
+    filter 0.8s ease calc(var(--i, 0) * var(--stg, 0.03s));
+}
+
+.kn-split.is-in[data-variant='wave'] .kn-split__ch {
+  transition-timing-function: ease, cubic-bezier(0.34, 1.56, 0.64, 1), ease;
+}
+
+/* ------------------------------------------------------------ typewriter */
+.kn-caret {
+  display: inline-block;
+  width: 0.08em;
+  min-width: 2px;
+  height: 1em;
+  margin-left: 0.08em;
+  vertical-align: -0.12em;
+  background: var(--amber);
+  animation: kn-blink 1.05s steps(1) infinite;
+}
+
+@keyframes kn-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------------- marquee */
+.kn-marquee {
+  position: relative;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.kn-marquee__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: kn-marquee var(--kn-dur, 40s) linear infinite;
+}
+
+.kn-marquee__group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: var(--kn-gap, 16px);
+  padding-right: var(--kn-gap, 16px);
+}
+
+/* Rails whose children mount after hydration (Marquee deferChildren) fade in once they are there. */
+.kn-marquee[data-deferred] .kn-marquee__track {
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.kn-marquee[data-deferred][data-filled='true'] .kn-marquee__track {
+  opacity: 1;
+}
+
+.kn-marquee[data-dir='right'] .kn-marquee__track {
+  animation-direction: reverse;
+}
+
+.kn-marquee[data-pause='true']:hover .kn-marquee__track,
+.kn-marquee:focus-within .kn-marquee__track,
+.kn-marquee[data-offscreen='true'] .kn-marquee__track {
+  animation-play-state: paused;
+}
+
+@keyframes kn-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-100% / var(--kn-copies, 2)), 0, 0);
+  }
+}
+
+/* ------------------------------------------------------------ glass card */
+.kn-card {
+  position: relative;
+  isolation: isolate;
+  border-radius: 1.25rem;
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.kn-card--tilt {
+  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+  transition:
+    transform 0.22s ease-out,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.kn-card--tilt:hover {
+  will-change: transform;
+}
+
+.kn-card--action {
+  cursor: pointer;
+}
+
+.kn-card--action:hover {
+  background-color: rgba(245, 240, 220, 0.09);
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.kn-card--glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(245, 158, 11, 0.16),
+    transparent 60%
+  );
+}
+
+.kn-card--glow:hover::before {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------- section header */
+.kn-fit {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.kn-fit__text {
+  display: inline-block;
+  font-size: var(--fit-size, 1em);
+  white-space: nowrap;
+}
+
+.kn-section-header {
+  width: 100%;
+}
+
+.kn-section-header__title {
+  margin-top: 0.9rem;
+}
+
+.kn-section-header__subwrap {
+  max-width: 100%;
+  margin-top: 0.9rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.kn-section-header__sub {
+  display: inline-block;
+  width: max-content;
+  margin: 0;
+  font-size: clamp(0.72rem, 2.5vw, 1.1rem);
+  line-height: 1.5;
+  white-space: nowrap;
+  color: var(--ink-dim);
+}
+
+/* ---------------------------------------------------------------- cursor */
+.kn-cursor {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.kn-cursor[data-visible='true'] {
+  opacity: 1;
+}
+
+.kn-cursor__ring-pos,
+.kn-cursor__glyph-pos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+.kn-cursor__glyph-pos {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.55));
+}
+
+.kn-cursor__ring {
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(245, 158, 11, 0.5);
+  background: rgba(245, 158, 11, 0);
+  transition:
+    transform 0.35s var(--ease-out-expo),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.kn-cursor__glyph {
+  width: 26px;
+  height: 26px;
+  background: var(--amber);
+  -webkit-mask: url('/cursor/pointer.svg') center / contain no-repeat;
+  mask: url('/cursor/pointer.svg') center / contain no-repeat;
+  transform-origin: 25% 6%;
+  transition:
+    transform 0.25s var(--ease-out-expo),
+    opacity 0.2s ease;
+}
+
+.kn-cursor[data-state='hover'] .kn-cursor__ring {
+  transform: scale(1.65);
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.85);
+}
+
+.kn-cursor[data-state='hover'] .kn-cursor__glyph {
+  transform: scale(0.86);
+}
+
+.kn-cursor[data-state='text'] .kn-cursor__ring {
+  transform: scale(0.55);
+  opacity: 0.45;
+}
+
+.kn-cursor[data-state='text'] .kn-cursor__glyph {
+  opacity: 0;
+}
+
+.kn-cursor[data-pressed='true'] .kn-cursor__ring {
+  transform: scale(0.8);
+}
+
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+html.has-custom-cursor
+  :is(
+    textarea,
+    [contenteditable='true'],
+    input:not([type='checkbox']):not([type='radio']):not([type='button']):not([type='submit']):not([type='range']):not([type='file'])
+  ) {
+  cursor: text !important;
+}
+
+@media (pointer: coarse), (hover: none) {
+  .kn-cursor {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------- reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  /* Splash: brief, calm fade instead of the long intro (beats the global 0.01ms rule). */
+  .kn-splash {
+    animation-name: kn-splash-fade !important;
+    animation-duration: 0.3s !important;
+    animation-delay: 0.3s !important;
+    animation-iteration-count: 1 !important;
+    will-change: auto;
+  }
+
+  .kn-splash__inner {
+    animation: none !important;
+  }
+
+  .kn-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .kn-marquee__track {
+    animation: none !important;
+    will-change: auto;
+  }
+
+  .kn-marquee__group[aria-hidden='true'] {
+    display: none;
+  }
+
+  .kn-caret {
+    animation: none !important;
+  }
+}

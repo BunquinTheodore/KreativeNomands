@@ -1,8 +1,14 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from '@/lib/theme-context';
-import AnimatedBackground from '@/components/AnimatedBackground';
+import '@/components/fx/fx.css';
+import Splash from '@/components/fx/Splash';
+import ThreeBackground from '@/components/three/ThreeBackground';
+import Cursor from '@/components/fx/Cursor';
+import SfxProvider from '@/components/fx/SfxProvider';
+import ScrollProgressLine from '@/components/fx/ScrollProgressLine';
+import ShineGate from '@/components/fx/ShineGate';
+import { buildPostPaintScript } from '@/lib/post-paint';
 
 // Font configuration
 const inter = Inter({
@@ -18,6 +24,41 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
+// The variable classes activate the real fonts. They are NOT on <html> in the server markup: the
+// inline script below adds them (and the manifest link) after the first paint (see lib/post-paint.ts),
+// so no font file is on the critical path. Until then globals.css maps both variables to
+// metric-matched fallbacks.
+const POST_PAINT_SCRIPT = buildPostPaintScript({
+  fontClasses: `${inter.variable} ${poppins.variable}`,
+  manifestHref: '/site.webmanifest',
+});
+
+const SITE_URL = 'https://kreativnomads.com.ph';
+
+// Organization structured data (JSON-LD).
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Kreativ Nomads',
+  url: SITE_URL,
+  logo: `${SITE_URL}/icon-512.png`,
+  email: 'contact@kreativnomads.com.ph',
+  telephone: '+63 917 312 5071',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2404 Discovery Suites, ADB Avenue, Ortigas Center',
+    addressLocality: 'Pasig City',
+    addressCountry: 'PH',
+  },
+  sameAs: [
+    'https://facebook.com/kreativnomads',
+    'https://instagram.com/kreativnomads',
+    'https://linkedin.com/company/kreativnomads',
+  ],
+};
+// "<" is escaped so the payload can never close the script tag.
+const organizationJsonLdString = JSON.stringify(organizationJsonLd).replace(/</g, '\\u003c');
+
 // Metadata configuration
 export const metadata: Metadata = {
   title: {
@@ -25,7 +66,9 @@ export const metadata: Metadata = {
     template: '%s | Kreativ Nomads',
   },
   description:
-    'Kreativ Nomads is a creative agency of experienced freelancers providing content strategy, graphic design, and photo/video post-production services.',
+    'Philippines creative agency of experienced freelancers: content strategy, graphic design, and photo and video post-production.',
+  applicationName: 'Kreativ Nomads',
+  category: 'business',
   keywords: [
     'creative agency',
     'Philippines',
@@ -37,6 +80,11 @@ export const metadata: Metadata = {
     'freelance',
     'digital marketing',
     'social media',
+    'photo post-production',
+    'video post-production',
+    'IT services',
+    'Pasig',
+    'Ortigas',
   ],
   authors: [{ name: 'Kreativ Nomads' }],
   creator: 'Kreativ Nomads',
@@ -80,17 +128,17 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  // One favicon link: every extra <link rel="icon"> is another request the browser starts right after
+  // load. The 192/512 px PNGs stay available to the web app manifest and the structured data.
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [{ url: '/favicon.svg' }],
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }],
   },
-  manifest: '/site.webmanifest',
 };
 
 export const viewport: Viewport = {
-  themeColor: '#1a1a1a',
+  themeColor: '#0a1111',
+  colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
@@ -102,12 +150,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} dark`} suppressHydrationWarning>
-      <body className="min-h-screen font-sans antialiased transition-colors duration-300">
-        <ThemeProvider>
-          <AnimatedBackground />
-          {children}
-        </ThemeProvider>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased">
+        {/* Experience layer: all render in the server HTML (Splash) or attach after idle. */}
+        <Splash />
+        <Cursor />
+        <SfxProvider />
+        <ScrollProgressLine />
+        <ShineGate />
+        <ThreeBackground />
+
+        {/* Content sits above the (future) canvas at z-0. */}
+        <div className="relative z-10">{children}</div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: organizationJsonLdString }}
+        />
+        <script dangerouslySetInnerHTML={{ __html: POST_PAINT_SCRIPT }} />
       </body>
     </html>
   );
