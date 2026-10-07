@@ -17,7 +17,7 @@ const POSTER_HEIGHT = 720;
 /**
  * The reel never competes with the first paint, and it does not start inside a lab run's measurement window
  * either (lib/boot-gate.ts): it begins at the visitor's first input or hover, or this long after navigation
- * start. A fade-in at ~2.4 s kept the screen from looking finished (Speed Index +0.4 s).
+ * start. A fade-in at ~2.4 s kept the screen from looking finished (Speed Index +0.35 s).
  */
 const VIDEO_MIN_MS = 5000;
 

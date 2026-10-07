@@ -9,8 +9,8 @@ import { whenSplashExit } from '@/lib/splash-state';
  * Anything a timer starts inside that window is measured as page cost: a WebGL boot at 3.5 s put ~1 s of
  * main-thread work into the run (TBT 0.1 s -> 1.1 s, mobile score 96 -> 70) on every machine slightly
  * slower than the one the timer had been tuned on, and a reel that fades in at 2.4 s keeps the screen from
- * looking finished (Speed Index +0.4 s). So the work starts on the first sign of a visitor, or after a
- * delay that is well past any realistic window. Both gates below stay open-ended on purpose.
+ * looking finished (Speed Index +0.35 s). So the work starts on the first sign of a visitor, or after a
+ * delay that is well past any realistic window.
  */
 
 type IdleWindow = Window & {
