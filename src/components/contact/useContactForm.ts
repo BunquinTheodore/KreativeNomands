@@ -5,6 +5,7 @@ import { emitSfx } from './emitSfx';
 import { buildMailto } from './mailto';
 import {
   EMPTY_CONTACT,
+  HONEYPOT_FIELD,
   trimValues,
   validateContact,
   type ContactApiResponse,
@@ -33,7 +34,7 @@ async function postContact(values: ContactValues, honeypot: string): Promise<Req
     const response = await fetch('/api/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...values, website: honeypot }),
+      body: JSON.stringify({ ...values, [HONEYPOT_FIELD]: honeypot }),
       signal: controller.signal,
     });
     const data = (await response.json().catch(() => null)) as ContactApiResponse | null;
@@ -86,7 +87,7 @@ export function useContactForm() {
 
   const trimmed = useMemo(() => trimValues(values), [values]);
   const rawErrors = useMemo(() => validateContact(trimmed), [trimmed]);
-  const mailtoHref = useMemo(() => buildMailto(trimmed), [trimmed]);
+  const mailto = useMemo(() => buildMailto(trimmed), [trimmed]);
 
   const errors = useMemo<ContactErrors>(() => {
     const visible: { -readonly [K in ContactField]?: string } = {};
@@ -166,7 +167,8 @@ export function useContactForm() {
     errors,
     phase,
     message,
-    mailtoHref,
+    mailtoHref: mailto.href,
+    mailtoTruncated: mailto.truncated,
     setField,
     blurField,
     setHoneypot,

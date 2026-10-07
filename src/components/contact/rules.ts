@@ -78,3 +78,6 @@ export interface ContactApiResponse {
   code?: string;
   fields?: ContactErrors;
 }
+
+/** Non-autofillable, unguessable name of the hidden honeypot field (client and server must agree). */
+export const HONEYPOT_FIELD = 'kn_hp_contact_ref';

@@ -3,6 +3,7 @@ import {
   trimValues,
   validateContact,
   type ContactApiResponse,
+  HONEYPOT_FIELD,
   type ContactValues,
 } from '@/components/contact/rules';
 
@@ -33,7 +34,7 @@ const DEFAULT_FROM = 'Kreativ Nomads Website <onboarding@resend.dev>';
 const SUBJECT_MAX = 120;
 
 /*
- * Rate limiting is an in-memory sliding window per client IP.
+ * Rate limiting is an in-memory sliding window per client IP, capped at RATE_LIMIT_MAX_KEYS entries.
  * Serverless caveat: each warm instance keeps its own Map and cold starts reset it,
  * so this only blunts casual abuse. For hard guarantees use a shared store
  * (Upstash Redis, Vercel KV, ...) or the platform's WAF / rate-limit rules.
@@ -45,9 +46,12 @@ function respond(status: number, body: ContactApiResponse, headers?: Record<stri
 }
 
 function clientKey(request: NextRequest): string {
-  const forwarded = request.headers.get('x-forwarded-for');
-  const first = forwarded?.split(',')[0]?.trim();
-  return first || request.headers.get('x-real-ip')?.trim() || 'unknown';
+  // Prefer headers set by the platform edge; the first x-forwarded-for entry is client-controlled.
+  const platform =
+    request.headers.get('x-real-ip')?.trim() || request.headers.get('x-vercel-forwarded-for')?.trim();
+  if (platform) return platform;
+  const first = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+  return first || 'unknown';
 }
 
 /** Records a hit; returns the seconds to wait when the key is over its limit, else 0. */
@@ -65,6 +69,11 @@ function consumeRateLimit(key: string, now: number): number {
       const last = times[times.length - 1] ?? 0;
       if (now - last >= RATE_LIMIT_WINDOW_MS) hits.delete(k);
     });
+    // Still over the cap: hard-drop the oldest-inserted keys (Map iterates in insertion order).
+    for (const oldest of Array.from(hits.keys())) {
+      if (hits.size <= RATE_LIMIT_MAX_KEYS) break;
+      if (oldest !== key) hits.delete(oldest);
+    }
   }
   return 0;
 }
@@ -119,7 +128,7 @@ function parseSubmission(raw: unknown): ParsedSubmission | null {
   const message = clean(record.message);
   if (name === null || email === null || company === null || message === null) return null;
 
-  const honeypot = typeof record.website === 'string' ? record.website.trim() : '';
+  const honeypot = typeof record[HONEYPOT_FIELD] === 'string' ? String(record[HONEYPOT_FIELD]).trim() : '';
   const values = trimValues({
     name: singleLine(name),
     email: email.trim(),

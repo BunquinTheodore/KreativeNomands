@@ -6,13 +6,15 @@ interface FormFeedbackProps {
   phase: ContactPhase;
   message: string;
   mailtoHref: string;
+  /** The email draft had to cut the message to fit the mailto length limit. */
+  mailtoTruncated?: boolean;
 }
 
 /**
  * Always-mounted live regions so assistive tech announces changes:
  * polite status for progress / fallback, assertive alert for errors.
  */
-export default function FormFeedback({ phase, message, mailtoHref }: FormFeedbackProps) {
+export default function FormFeedback({ phase, message, mailtoHref, mailtoTruncated = false }: FormFeedbackProps) {
   return (
     <div className="mt-2 space-y-3">
       <div role="status" aria-live="polite" aria-atomic="true">
@@ -23,6 +25,11 @@ export default function FormFeedback({ phase, message, mailtoHref }: FormFeedbac
               Online sending isn&apos;t available right now, but your message is safe in the form.
               Open a ready-made email instead and just press send.
             </p>
+            {mailtoTruncated && (
+              <p className="mt-2 text-sm leading-relaxed text-cream-500">
+                Message shortened for the email draft &mdash; please paste the rest.
+              </p>
+            )}
             <div className="mt-3">
               <Button
                 variant="glass"

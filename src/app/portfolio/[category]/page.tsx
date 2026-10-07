@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import CategoryShowcase from '@/components/portfolio/CategoryShowcase';
 import { CATEGORY_IDS, getCategory, isCategoryId } from '@/components/portfolio/categories';
 import { getShowcaseProjects } from '@/components/portfolio/data';
+import { buildSocialMetadata } from '@/lib/seo';
 
 interface CategoryPageProps {
   params: { category: string };
@@ -21,11 +22,11 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
     title: `${category.label} Portfolio`,
     description: category.description,
     alternates: { canonical: `/portfolio/${category.id}` },
-    openGraph: {
-      title: `${category.label} Portfolio | Kreativ Nomads`,
-      description: category.description,
-      url: `/portfolio/${category.id}`,
-    },
+    ...buildSocialMetadata(
+      `${category.label} Portfolio | Kreativ Nomads`,
+      category.description,
+      `/portfolio/${category.id}`,
+    ),
   };
 }
 

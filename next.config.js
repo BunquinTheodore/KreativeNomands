@@ -34,6 +34,9 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [{ source: '/portfolio', destination: '/#portfolio', permanent: false }];
+  },
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },

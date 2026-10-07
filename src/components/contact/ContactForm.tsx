@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button';
 import FloatingField from './FloatingField';
 import FormFeedback from './FormFeedback';
 import SuccessPanel from './SuccessPanel';
-import { CONTACT_LIMITS } from './rules';
+import { CONTACT_LIMITS, HONEYPOT_FIELD } from './rules';
 import { useContactForm } from './useContactForm';
 
 /**
@@ -90,19 +90,26 @@ export default function ContactForm() {
 
           {/* Honeypot: hidden from people and assistive tech; bots fill it. */}
           <div className="kn-hp" aria-hidden="true">
-            <label htmlFor="contact-website">Website (leave this empty)</label>
+            <label htmlFor="contact-hp">Leave this field empty</label>
             <input
-              id="contact-website"
-              name="website"
+              id="contact-hp"
+              name={HONEYPOT_FIELD}
               type="text"
               tabIndex={-1}
               autoComplete="off"
+              data-lpignore="true"
+              data-1p-ignore="true"
               value={form.honeypot}
               onChange={(event) => form.setHoneypot(event.target.value)}
             />
           </div>
 
-          <FormFeedback phase={form.phase} message={form.message} mailtoHref={form.mailtoHref} />
+          <FormFeedback
+            phase={form.phase}
+            message={form.message}
+            mailtoHref={form.mailtoHref}
+            mailtoTruncated={form.mailtoTruncated}
+          />
 
           <Button
             type="submit"

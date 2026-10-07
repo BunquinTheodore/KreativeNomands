@@ -27,12 +27,18 @@ export default function VideoSlide({ asset, label, canPlay, progressRef }: Video
   const reduced = usePrefersReducedMotion();
   const saveData = useSaveData();
   const autoplayAllowed = !reduced && !saveData;
+  const [clientReady, setClientReady] = useState(false);
   const [intent, setIntent] = useState<boolean | null>(null);
   const [playing, setPlaying] = useState(false);
   const [failed, setFailed] = useState(false);
 
   const wantPlay = intent ?? autoplayAllowed;
   const shouldPlay = wantPlay && canPlay && !failed;
+
+  // Save-Data / reduced-motion are only known on the client; until then stay on metadata.
+  useEffect(() => {
+    setClientReady(true);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -110,7 +116,7 @@ export default function VideoSlide({ asset, label, canPlay, progressRef }: Video
             muted
             loop
             playsInline
-            preload={autoplayAllowed ? 'auto' : 'none'}
+            preload={clientReady && autoplayAllowed && canPlay ? 'auto' : 'metadata'}
             aria-label={label}
             className="absolute inset-0 h-full w-full object-contain p-2 sm:p-5"
             onPlay={() => setPlaying(true)}

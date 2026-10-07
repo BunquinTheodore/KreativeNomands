@@ -103,7 +103,7 @@ export function useShowcaseState(projects: readonly ShowcaseProject[]): Showcase
 
   const tick = useCallback(() => {
     const target = wrapWithinProject(projects, stateRef.current);
-    if (target) commit({ ...target, dir: 1 }, true);
+    if (target) commit({ ...target, dir: 1 }, false);
   }, [projects, commit]);
 
   return { state, go, jumpEdge, selectProject, selectAsset, tick };

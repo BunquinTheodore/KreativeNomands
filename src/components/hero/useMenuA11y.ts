@@ -15,7 +15,7 @@ interface MenuA11yOptions {
 
 /**
  * While the mobile menu is open: lock page scroll, close on Escape, trap Tab
- * inside (toggle + sheet), move focus into the sheet and restore it on close.
+ * inside (visible header controls + sheet), move focus into the sheet and restore it on close.
  */
 export default function useMenuA11y({ open, onClose, sheetRef, toggleRef }: MenuA11yOptions): void {
   useEffect(() => {
@@ -25,9 +25,16 @@ export default function useMenuA11y({ open, onClose, sheetRef, toggleRef }: Menu
     root.style.overflow = 'hidden';
 
     const toggle = toggleRef.current;
+    const isVisible = (el: HTMLElement): boolean => el.getClientRects().length > 0;
     const focusables = (): HTMLElement[] => {
-      const inside = Array.from(sheetRef.current?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? []);
-      return toggle ? [toggle, ...inside] : inside;
+      const sheet = sheetRef.current;
+      const inside = Array.from(sheet?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? []);
+      // Header controls (logo, sound toggle, burger) stay visible above the sheet.
+      const header = Array.from(
+        toggle?.closest('header')?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? [],
+      ).filter((el) => !sheet?.contains(el) && isVisible(el));
+      const ordered = toggle && !header.includes(toggle) ? [toggle, ...header] : header;
+      return [...ordered, ...inside];
     };
     // Wait a frame so the sheet is visible (visibility: hidden elements cannot take focus).
     const focusFrame = window.requestAnimationFrame(() => {

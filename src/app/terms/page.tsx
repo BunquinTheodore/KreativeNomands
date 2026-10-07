@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildSocialMetadata } from '@/lib/seo';
 import LegalPage, { type LegalSection } from '@/components/footer/LegalPage';
 import { CONTACT_EMAIL } from '@/components/contact/data';
 
@@ -9,11 +10,14 @@ import { CONTACT_EMAIL } from '@/components/contact/data';
  * the engagement, payment and liability terms) before relying on it.
  */
 
+const DESCRIPTION =
+  'The terms for using the Kreativ Nomads website and how our creative engagements are agreed.';
+
 export const metadata: Metadata = {
   title: 'Terms of Service',
-  description:
-    'The terms for using the Kreativ Nomads website and how our creative engagements are agreed.',
+  description: DESCRIPTION,
   alternates: { canonical: '/terms' },
+  ...buildSocialMetadata('Terms of Service | Kreativ Nomads', DESCRIPTION, '/terms'),
 };
 
 const SECTIONS: readonly LegalSection[] = [

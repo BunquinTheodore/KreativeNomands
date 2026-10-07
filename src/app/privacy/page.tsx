@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { buildSocialMetadata } from '@/lib/seo';
 import LegalPage, { type LegalSection } from '@/components/footer/LegalPage';
 import { CONTACT_ADDRESS, CONTACT_EMAIL } from '@/components/contact/data';
 
@@ -9,11 +10,14 @@ import { CONTACT_ADDRESS, CONTACT_EMAIL } from '@/components/contact/data';
  * and adapt it (vendors, retention periods, DPO details) before relying on it.
  */
 
+const DESCRIPTION =
+  'How Kreativ Nomads collects, uses and protects personal information shared through this website, in line with the Philippine Data Privacy Act of 2012.';
+
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description:
-    'How Kreativ Nomads collects, uses and protects personal information shared through this website, in line with the Philippine Data Privacy Act of 2012.',
+  description: DESCRIPTION,
   alternates: { canonical: '/privacy' },
+  ...buildSocialMetadata('Privacy Policy | Kreativ Nomads', DESCRIPTION, '/privacy'),
 };
 
 const SECTIONS: readonly LegalSection[] = [

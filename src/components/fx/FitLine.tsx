@@ -99,11 +99,12 @@ export default function FitLine({
     };
 
     let active = false;
+    let disposed = false;
     let observer: ResizeObserver | null = null;
     let stopNear: () => void = () => undefined;
 
     const schedule = () => {
-      if (active) queueFit(task);
+      if (active && !disposed) queueFit(task);
     };
     scheduleRef.current = schedule;
 
@@ -137,6 +138,8 @@ export default function FitLine({
     }
 
     return () => {
+      disposed = true;
+      active = false;
       stopNear();
       observer?.disconnect();
       dequeueFit(task);

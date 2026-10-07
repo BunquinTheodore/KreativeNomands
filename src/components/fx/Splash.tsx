@@ -23,6 +23,31 @@ export default function Splash() {
     const el = rootRef.current;
     if (!el) return undefined;
 
+    const finish = () => {
+      markSplashExit('done');
+      setGone(true);
+    };
+
+    // Hydration can land after the exit animation already ended: animationend was missed.
+    const exitFinished = (): boolean => {
+      if (typeof el.getAnimations === 'function' && typeof CSSAnimation !== 'undefined') {
+        const finished = el
+          .getAnimations()
+          .some(
+            (a) =>
+              a instanceof CSSAnimation &&
+              EXIT_ANIMATIONS.has(a.animationName) &&
+              a.playState === 'finished',
+          );
+        if (finished) return true;
+      }
+      return window.getComputedStyle(el).visibility === 'hidden';
+    };
+    if (exitFinished()) {
+      finish();
+      return undefined;
+    }
+
     const exitStarted = (): boolean => {
       if (typeof el.getAnimations !== 'function' || typeof CSSAnimation === 'undefined') return false;
       return el.getAnimations().some(
@@ -37,10 +62,6 @@ export default function Splash() {
 
     const onStart = (event: AnimationEvent) => {
       if (event.target === el && EXIT_ANIMATIONS.has(event.animationName)) markSplashExit('exit');
-    };
-    const finish = () => {
-      markSplashExit('done');
-      setGone(true);
     };
     const onEnd = (event: AnimationEvent) => {
       if (event.target === el && EXIT_ANIMATIONS.has(event.animationName)) finish();
