@@ -27,7 +27,7 @@ const ITEM: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.16, 1, 0.3, 1] } },
 };
 
-/** "01 —" numbering, as in the client's write-ups. */
+/** "01" numbering, as in the client's write-ups. */
 function ordinal(index: number): string {
   return String(index + 1).padStart(2, '0');
 }
@@ -118,7 +118,7 @@ export default function CaseStudySlide({ asset, animateIn }: CaseStudySlideProps
                     {study.contributions.map((item, index) => (
                       <li key={item.title} className="kp-case-card glass">
                         <p className="font-display text-sm font-semibold tabular-nums text-secondary-400" aria-hidden="true">
-                          {ordinal(index)} &mdash;
+                          {ordinal(index)}
                         </p>
                         <h4 className="font-display text-base font-semibold leading-snug text-cream-500 text-balance sm:text-lg">
                           {item.title}

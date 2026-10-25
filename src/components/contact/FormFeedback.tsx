@@ -27,7 +27,7 @@ export default function FormFeedback({ phase, message, mailtoHref, mailtoTruncat
             </p>
             {mailtoTruncated && (
               <p className="mt-2 text-sm leading-relaxed text-cream-500">
-                Message shortened for the email draft &mdash; please paste the rest.
+                Message shortened for the email draft. Please paste the rest.
               </p>
             )}
             <div className="mt-3">

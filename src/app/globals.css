@@ -216,14 +216,6 @@
     color: #fbbf24;
   }
 
-  .eyebrow::before {
-    content: '';
-    width: 1.75rem;
-    height: 1px;
-    background: currentColor;
-    opacity: 0.7;
-  }
-
   .container-x {
     width: 100%;
     max-width: 80rem;
