@@ -9,13 +9,18 @@ import {
   type CSSProperties,
   type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
+  type ReactNode,
+  type RefObject,
 } from 'react';
 import { AnimatePresence, m, type Variants } from 'framer-motion';
 import SplitText from '@/components/fx/SplitText';
 import useInView from '@/hooks/useInView';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
+import { assetLabel } from './assetText';
 import BrowserSlide from './BrowserSlide';
+import CaseStudySlide from './CaseStudySlide';
 import type { ShowcaseAsset, ShowcaseProject } from './data';
+import DriveSlide from './DriveSlide';
 import ImageSlide from './ImageSlide';
 import { emitSfx, type Direction } from './navigation';
 import { BROWSER_SIZES, preloadStageImage, STAGE_SIZES } from './preload';
@@ -59,6 +64,63 @@ function isFullscreenSupported(el: HTMLElement): boolean {
   return typeof el.requestFullscreen === 'function';
 }
 
+/** Images and (facade) Drive videos can be slideshown; local videos and case studies cannot. */
+function isSlideshowKind(asset: ShowcaseAsset): boolean {
+  return asset.kind === 'image' || asset.kind === 'drive';
+}
+
+interface SlideContext {
+  project: ShowcaseProject;
+  asset: ShowcaseAsset;
+  browserMode: boolean;
+  priority: boolean;
+  canPlay: boolean;
+  progressRef: RefObject<HTMLSpanElement>;
+  driveActive: boolean;
+  onActivateDrive: () => void;
+}
+
+/** The slide body for each asset kind (exhaustive: a new kind fails to compile here). */
+function renderSlide({
+  project,
+  asset,
+  browserMode,
+  priority,
+  canPlay,
+  progressRef,
+  driveActive,
+  onActivateDrive,
+}: SlideContext): ReactNode {
+  const label = `${assetLabel(asset)}: ${project.title}`;
+  switch (asset.kind) {
+    case 'image':
+      return browserMode ? (
+        <BrowserSlide project={project} asset={asset} priority={priority} />
+      ) : (
+        <ImageSlide asset={asset} alt={label} priority={priority} />
+      );
+    case 'video':
+      return <VideoSlide asset={asset} label={label} canPlay={canPlay} progressRef={progressRef} />;
+    case 'drive':
+      return (
+        <DriveSlide
+          asset={asset}
+          label={label}
+          priority={priority}
+          active={driveActive}
+          onActivate={onActivateDrive}
+        />
+      );
+    case 'case-study':
+      // The initial (server-rendered) slide shows its text at once; later slides stagger in.
+      return <CaseStudySlide asset={asset} animateIn={!priority} />;
+    default: {
+      const exhaustive: never = asset.kind;
+      return exhaustive;
+    }
+  }
+}
+
 export default function StageViewer({
   project,
   assetIndex,
@@ -84,16 +146,33 @@ export default function StageViewer({
   const slideKey = project && asset ? `${project.id}:${assetIndex}` : 'empty';
   const initialKey = useRef(slideKey).current;
 
-  // Slideshow: image-only projects with more than one asset, on unless reduced motion.
+  // A Drive player is mounted only after the viewer asks, and only for that slide: any navigation
+  // forgets it (reset during render, so coming back shows the facade again, never a stale player).
+  const [driveSlideKey, setDriveSlideKey] = useState<string | null>(null);
+  const [lastSlideKey, setLastSlideKey] = useState(slideKey);
+  if (lastSlideKey !== slideKey) {
+    setLastSlideKey(slideKey);
+    setDriveSlideKey(null);
+  }
+  const driveActive = asset?.kind === 'drive' && driveSlideKey === slideKey;
+
+  // Slideshow: image / Drive-facade projects with more than one asset, on unless reduced motion.
   const slideshowAvailable = Boolean(
-    project && assetTotal > 1 && project.assets.every((item) => item.kind === 'image'),
+    project && assetTotal > 1 && project.assets.every(isSlideshowKind),
   );
   const [slideshowOn, setSlideshowOn] = useState(false);
   useEffect(() => setSlideshowOn(!reduced), [reduced]);
   const [hovered, setHovered] = useState(false);
   const [keyboardFocus, setKeyboardFocus] = useState(false);
+  // Never advance away from a playing Drive video.
   const running =
-    slideshowOn && slideshowAvailable && inView && pageVisible && !hovered && !keyboardFocus;
+    slideshowOn &&
+    slideshowAvailable &&
+    inView &&
+    pageVisible &&
+    !hovered &&
+    !keyboardFocus &&
+    !driveActive;
   useSlideTimer(running, slideKey, SLIDESHOW_MS, onSlideshowTick);
 
   // Fullscreen with a CSS fallback where the API is missing (e.g. iOS Safari on a div).
@@ -154,7 +233,10 @@ export default function StageViewer({
     // A touch swipe never produces a click, so clear the flag on every new press.
     swiped.current = false;
     if (event.pointerType === 'mouse' && event.button !== 0) return;
-    if ((event.target as HTMLElement).closest('[data-noswipe], a')) return;
+    const target = event.target as HTMLElement;
+    if (target.closest('[data-noswipe], a')) return;
+    // Mouse drags over selectable text (case studies) select it instead of swiping.
+    if (event.pointerType === 'mouse' && target.closest('[data-kp-selectable]')) return;
     drag.current = { x: event.clientX, y: event.clientY };
   };
   const onPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -186,6 +268,17 @@ export default function StageViewer({
     assetTotal > 1
       ? `Asset ${assetIndex + 1} of ${assetTotal}`
       : `Project ${projectIndex + 1} of ${projectCount}`;
+  // The caption box sits on media only: not in the IT browser frame, not over a case study (it has
+  // its own title) and not over a playing Drive player (whose controls run along the bottom).
+  const showCaption = Boolean(
+    asset &&
+      !(browserMode && asset.kind === 'image') &&
+      asset.kind !== 'case-study' &&
+      !driveActive,
+  );
+  // Phones: the arrows sit low wherever the slide has its own content to keep clear. A Drive facade
+  // keeps them centred (its caption owns the bottom corner); only the mounted player needs them low.
+  const arrowsLow = browserMode || asset?.kind === 'case-study' || driveActive;
   const timerStyle = {
     '--kp-ms': `${SLIDESHOW_MS}ms`,
     '--kp-state': running ? 'running' : 'paused',
@@ -230,35 +323,30 @@ export default function StageViewer({
             aria-label={counterLabel}
             className="absolute inset-0"
           >
-            {browserMode ? (
-              <BrowserSlide project={project} asset={asset} priority={slideKey === initialKey} />
-            ) : asset.kind === 'video' ? (
-              <VideoSlide
-                asset={asset}
-                label={`${asset.title}: ${project.title}`}
-                canPlay={inView && pageVisible}
-                progressRef={progressRef}
-              />
-            ) : (
-              <ImageSlide
-                asset={asset}
-                alt={`${asset.title}: ${project.title}`}
-                priority={slideKey === initialKey}
-              />
-            )}
-            {browserMode ? null : (
+            {renderSlide({
+              project,
+              asset,
+              browserMode,
+              priority: slideKey === initialKey,
+              canPlay: inView && pageVisible,
+              progressRef,
+              driveActive,
+              onActivateDrive: () => setDriveSlideKey(slideKey),
+            })}
+            {showCaption ? (
               <>
                 <div className="kp-scrim" aria-hidden="true" />
+                {/* Naming convention: line 1 Project Name, line 2 "Service · Type of Material". */}
                 <div className="pointer-events-none absolute inset-x-3 bottom-3 z-[2] flex max-w-[calc(100%-1.5rem)] flex-col gap-0.5 sm:inset-x-5 sm:bottom-5 sm:max-w-[70%]">
                   <p className="truncate font-display text-base font-semibold text-cream-500 sm:text-xl">
                     <SplitText text={asset.title} variant="blur" by="words" stagger={0.06} />
                   </p>
-                  <p className="truncate text-xs text-cream-500/70 sm:text-sm">
-                    {project.title} &middot; {project.client}
-                  </p>
+                  {asset.subtitle ? (
+                    <p className="truncate text-xs text-cream-500/70 sm:text-sm">{asset.subtitle}</p>
+                  ) : null}
                 </div>
               </>
-            )}
+            ) : null}
           </m.div>
         ) : (
           <m.p
@@ -285,8 +373,8 @@ export default function StageViewer({
           />
           {canNavigate ? (
             <>
-              <NavButton side="prev" onClick={onPrev} lowOnMobile={browserMode} />
-              <NavButton side="next" onClick={onNext} lowOnMobile={browserMode} />
+              <NavButton side="prev" onClick={onPrev} lowOnMobile={arrowsLow} />
+              <NavButton side="next" onClick={onNext} lowOnMobile={arrowsLow} />
             </>
           ) : null}
           <span className="kp-hair" aria-hidden="true">
@@ -301,7 +389,7 @@ export default function StageViewer({
             )}
           </span>
           <p className="sr-only" aria-live="polite">
-            {asset.title}, {counterLabel}
+            {assetLabel(asset)}, {counterLabel}
           </p>
         </>
       ) : null}

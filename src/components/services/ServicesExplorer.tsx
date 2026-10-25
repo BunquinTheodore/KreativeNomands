@@ -11,9 +11,17 @@ const ORBIT_ITEMS = SERVICES.map(({ id, label }) => ({ id, label }));
 /** Length of the fade-out half of the crossfade, in ms. */
 const SWAP_OUT_MS = 180;
 
-/** Deep links look like `/#services-content-strategy` (the footer's Services column). */
+/** Deep links look like `/#services-creative-content` (the footer's Services column). */
 const SERVICE_HASH_PREFIX = 'services-';
 const SECTION_ID = 'services';
+
+/** Ids of the previous service line-up, so old `#services-<id>` links still open the closest service. */
+const LEGACY_SERVICE_IDS: ReadonlyMap<string, ServiceId> = new Map<string, ServiceId>([
+  ['content-strategy', 'branding-marketing'],
+  ['graphic-design', 'creative-content'],
+  ['post-production', 'creative-content'],
+  ['it-services', 'it-digital'],
+]);
 
 const isServiceId = (id: string): id is ServiceId => SERVICES.some((service) => service.id === id);
 
@@ -22,7 +30,7 @@ function serviceFromHash(hash: string): ServiceId | null {
   const raw = hash.replace(/^#/, '');
   if (!raw.startsWith(SERVICE_HASH_PREFIX)) return null;
   const id = raw.slice(SERVICE_HASH_PREFIX.length);
-  return isServiceId(id) ? id : null;
+  return isServiceId(id) ? id : (LEGACY_SERVICE_IDS.get(id) ?? null);
 }
 
 /**

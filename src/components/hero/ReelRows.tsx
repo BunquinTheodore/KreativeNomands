@@ -14,7 +14,7 @@ function ReelFrame({ item, index }: { item: ReelItem; index: number }) {
   const sizes = `calc(${FRAME_HEIGHT} * ${item.ratio.toFixed(3)})`;
   return (
     <Link
-      href={`/portfolio/${item.categoryId}`}
+      href={`/portfolio/${item.categoryId}?p=${encodeURIComponent(item.id)}`}
       aria-label={`${item.title} - view ${item.categoryLabel} work`}
       data-sfx-hover
       className="hero-frame shine"

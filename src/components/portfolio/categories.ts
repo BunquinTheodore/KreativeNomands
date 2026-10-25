@@ -1,4 +1,4 @@
-import { Building2, Calendar, Heart, Monitor, Shield, Utensils, type LucideIcon } from 'lucide-react';
+import { Clapperboard, Headset, Megaphone, Monitor, type LucideIcon } from 'lucide-react';
 
 /** Palette-only accents (hex values come from the tailwind brand tokens). */
 export interface CategoryAccent {
@@ -12,73 +12,74 @@ const AMBER: CategoryAccent = { from: '#f59e0b', to: '#fbbf24' };
 const TEAL: CategoryAccent = { from: '#5a8585', to: '#8db1b1' };
 const CREAM: CategoryAccent = { from: '#e6d9b8', to: '#f5f0dc' };
 
-export const CATEGORY_IDS = ['events', 'fnb', 'health', 'insurance', 'realestate', 'it'] as const;
+export const CATEGORY_IDS = ['it', 'photo-video', 'virtual-support', 'brand-marketing'] as const;
 export type CategoryId = (typeof CATEGORY_IDS)[number];
 
 export interface CategoryMeta {
   id: CategoryId;
   label: string;
-  /** One-line-friendly blurb (cards, category sub-heading). */
-  blurb: string;
   /** Longer sentence for SEO metadata. */
   description: string;
+  /** Industries served, shown as tags on the portfolio cards. */
+  industries: readonly string[];
   icon: LucideIcon;
   accent: CategoryAccent;
 }
 
-/** Single source of truth for category copy, icons and accents. */
+/** Single source of truth for service category copy, industry tags, icons and accents. */
 export const CATEGORIES: readonly CategoryMeta[] = [
   {
-    id: 'events',
-    label: 'Events',
-    blurb: 'Corporate events, virtual gatherings, and live experiences',
-    description:
-      'Corporate events, virtual gatherings, and live experiences that create lasting impressions.',
-    icon: Calendar,
-    accent: AMBER,
-  },
-  {
-    id: 'fnb',
-    label: 'Food & Beverage',
-    blurb: 'Restaurant branding and promotional content',
-    description:
-      'Restaurant branding, menu design, and promotional content for the culinary industry.',
-    icon: Utensils,
-    accent: TEAL,
-  },
-  {
-    id: 'health',
-    label: 'Health & Fitness',
-    blurb: 'Wellness brands and fitness campaigns',
-    description: 'Wellness brands, fitness campaigns, and health-focused marketing materials.',
-    icon: Heart,
-    accent: CREAM,
-  },
-  {
-    id: 'insurance',
-    label: 'Insurance',
-    blurb: 'Financial services branding and educational content',
-    description:
-      'Financial services branding and educational content for insurance providers.',
-    icon: Shield,
-    accent: AMBER,
-  },
-  {
-    id: 'realestate',
-    label: 'Real Estate',
-    blurb: 'Property marketing and virtual tours',
-    description: 'Property marketing, virtual tours, and real estate promotional materials.',
-    icon: Building2,
-    accent: TEAL,
-  },
-  {
     id: 'it',
-    label: 'IT Services',
-    blurb: 'Technology solutions and digital marketing',
+    label: 'IT & Digital Solutions',
     description:
-      'End-to-end web projects, from SaaS platforms and business tools to portfolios and data systems.',
+      'Websites, mobile apps, custom systems and workflow automations built for businesses across food and beverage, finance, fitness, education and more.',
+    industries: [
+      'F&B',
+      'Finance',
+      'Fitness & Wellness',
+      'Education',
+      'Personal Care',
+      'Investment',
+      'Public Safety',
+      'Automation',
+    ],
     icon: Monitor,
+    accent: AMBER,
+  },
+  {
+    id: 'photo-video',
+    label: 'Photo & Video Editing',
+    description:
+      'Video editing, photo editing and graphic design for food and beverage, wellness, real estate, insurance, wedding and event clients.',
+    industries: [
+      'Food & Beverage',
+      'Health, Wellness & Nutrition',
+      'Real Estate',
+      'Insurance',
+      'Wedding',
+      'AI',
+      'Events',
+    ],
+    icon: Clapperboard,
+    accent: TEAL,
+  },
+  {
+    id: 'virtual-support',
+    label: 'Business & Virtual Support',
+    description:
+      'Community management, customer support, product quality assurance and editorial operations for food and beverage and AI companies.',
+    industries: ['Food & Beverage', 'AI'],
+    icon: Headset,
     accent: CREAM,
+  },
+  {
+    id: 'brand-marketing',
+    label: 'Brand & Content Marketing',
+    description:
+      'Brand identities, social content and content strategy for food and beverage businesses and insurance providers.',
+    industries: ['Food & Beverage', 'Insurance'],
+    icon: Megaphone,
+    accent: AMBER,
   },
 ];
 

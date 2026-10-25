@@ -54,6 +54,9 @@ export default function CategoryShowcase({ categoryId, projects }: CategoryShowc
     const onKey = (event: KeyboardEvent) => {
       if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
       if (isTypingTarget(event.target)) return;
+      // A focused case-study panel scrolls to its top / bottom with Home / End (native behaviour).
+      const inScroller = event.target instanceof Element && event.target.closest('[data-kp-selectable]');
+      if (inScroller && (event.key === 'Home' || event.key === 'End')) return;
       switch (event.key) {
         case 'ArrowRight':
           event.preventDefault();

@@ -25,6 +25,8 @@ const ORB_RADIUS = 0.17
 const HIT_RADIUS = 0.36
 const RING_SEGMENTS = 128
 const IDLE_RING_SPEED = 0.15
+/** Minimum gap (px) between the hover tooltip and the stage edge. */
+const TOOLTIP_EDGE_PX = 8
 
 interface Orb {
   readonly group: T.Group
@@ -201,6 +203,8 @@ export function createOrbitFactory(
     let tooltipX = -1
     let tooltipY = -1
     let tooltipShown = false
+    /** Half the tooltip's width, measured once per label change, so long labels stay inside the stage. */
+    let tooltipHalf = 0
 
     const updateTooltip = (index: number): void => {
       const el = tooltipRef.current
@@ -217,10 +221,13 @@ export function createOrbitFactory(
       if (tooltipText !== item.label) {
         el.textContent = item.label
         tooltipText = item.label
+        tooltipHalf = el.offsetWidth / 2
       }
       orb.group.getWorldPosition(projected)
       projected.project(camera)
-      const x = Math.round((projected.x * 0.5 + 0.5) * width * 2) / 2
+      const rawX = (projected.x * 0.5 + 0.5) * width
+      const edge = Math.min(tooltipHalf + TOOLTIP_EDGE_PX, width / 2)
+      const x = Math.round(Math.min(Math.max(rawX, edge), width - edge) * 2) / 2
       const y = Math.round((-projected.y * 0.5 + 0.5) * height * 2) / 2
       if (x !== tooltipX || y !== tooltipY) {
         el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -190%)`

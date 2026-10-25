@@ -68,7 +68,7 @@ const textLeft = left + star.info.width + gap;
 const tagline = Buffer.from(
   `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
     <text x="${textLeft + 4}" y="${wordTop + word.info.height + 52}" fill="#f5f0dc" fill-opacity="0.9"
-      font-family="Inter, Poppins, Segoe UI, Arial, Helvetica, sans-serif" font-size="30" letter-spacing="1.2">Your Creative Virtual Assistant</text>
+      font-family="Inter, Poppins, Segoe UI, Arial, Helvetica, sans-serif" font-size="30" letter-spacing="1.2">Your Partner in Business Growth</text>
   </svg>`,
 );
 

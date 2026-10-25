@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, FileText, Layers } from 'lucide-react';
 import usePrefersReducedMotion from '@/hooks/usePrefersReducedMotion';
 import type { ShowcaseProject } from './data';
 import ProgressLine from './ProgressLine';
@@ -16,6 +16,50 @@ interface ProjectRailProps {
 
 const EDGE_EPSILON_PX = 2;
 const SCROLL_FRACTION = 0.8;
+
+/** Round avatar: the project thumbnail, or an icon for tabs without one (text-only case studies). */
+function ChipAvatar({ project }: { project: ShowcaseProject }) {
+  if (project.thumbnail) {
+    return (
+      <Image
+        src={project.thumbnail}
+        alt=""
+        width={64}
+        height={64}
+        sizes="32px"
+        draggable={false}
+        referrerPolicy="no-referrer"
+        className="relative z-10 h-8 w-8 flex-none rounded-full object-cover"
+      />
+    );
+  }
+  const Icon = project.assets.every((asset) => asset.kind === 'case-study') ? FileText : Layers;
+  return (
+    <span className="kp-chip__avatar" aria-hidden="true">
+      <Icon className="h-4 w-4" />
+    </span>
+  );
+}
+
+/**
+ * "Industry - Client", shown in full from sm up (the rail scrolls). On phones the industry is capped and
+ * a long client name ends in an ellipsis; the full title stays in the tooltip and the accessible name.
+ */
+function ChipLabel({ project }: { project: ShowcaseProject }) {
+  const prefix = `${project.industry} - `;
+  if (!project.industry || !project.title.startsWith(prefix)) {
+    return <span className="relative z-10 min-w-0 truncate">{project.title}</span>;
+  }
+  return (
+    <span className="relative z-10 flex min-w-0 items-baseline">
+      <span className="max-w-[9rem] flex-none truncate font-semibold sm:max-w-none">{project.industry}</span>
+      <span className="flex-none whitespace-pre" aria-hidden="true">
+        {' - '}
+      </span>
+      <span className="min-w-0 truncate">{project.title.slice(prefix.length)}</span>
+    </span>
+  );
+}
 
 /**
  * Horizontally scrolling / draggable project chips (scroll-snap, arrow
@@ -127,16 +171,8 @@ export default function ProjectRail({ projects, activeIndex, onSelect }: Project
                 onClick={() => onSelect(index)}
                 className="kp-chip glass shine"
               >
-                <Image
-                  src={project.thumbnail}
-                  alt=""
-                  width={64}
-                  height={64}
-                  sizes="32px"
-                  draggable={false}
-                  className="relative z-10 h-8 w-8 flex-none rounded-full object-cover"
-                />
-                <span className="relative z-10 min-w-0 truncate">{project.title}</span>
+                <ChipAvatar project={project} />
+                <ChipLabel project={project} />
               </button>
             );
           })}

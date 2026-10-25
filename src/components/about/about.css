@@ -112,6 +112,11 @@
   }
 }
 
+/* "Drag to spin" hint under the plate's 3D star (same tracking as the hero's). */
+.about-star-hint {
+  letter-spacing: 0.18em;
+}
+
 /* Decorative marquee rows must never become a scroll container. */
 @media (prefers-reduced-motion: reduce) {
   .about-marks .kn-marquee {

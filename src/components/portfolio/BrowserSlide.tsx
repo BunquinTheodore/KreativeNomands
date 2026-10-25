@@ -12,9 +12,10 @@ interface BrowserSlideProps {
   priority?: boolean;
 }
 
+/** The site's host + path; without a link, the client's name (never a made-up domain). */
 function addressLabel(project: ShowcaseProject): string {
   const source = project.liveUrl ?? project.repoUrl;
-  if (!source) return 'kreativnomads.com.ph';
+  if (!source) return project.client || project.title;
   try {
     const url = new URL(source);
     const path = url.pathname.replace(/\/$/, '');
@@ -65,9 +66,15 @@ export default function BrowserSlide({ project, asset, priority = false }: Brows
         </div>
 
         <div className="flex w-full max-w-3xl flex-col items-center gap-3 text-center">
-          <h2 title={project.title} className="max-w-full truncate font-display text-lg font-semibold text-cream-500 sm:text-2xl">
-            <SplitText text={project.title} variant="blur" by="words" stagger={0.07} />
-          </h2>
+          {/* Naming convention, as in the stage caption: line 1 the screen / page, line 2 "Service · Type of Material". */}
+          <div className="flex max-w-full flex-col items-center gap-0.5">
+            <h2 title={asset.title} className="max-w-full truncate font-display text-lg font-semibold text-cream-500 sm:text-2xl">
+              <SplitText text={asset.title} variant="blur" by="words" stagger={0.07} />
+            </h2>
+            {asset.subtitle ? (
+              <p className="max-w-full truncate text-xs text-cream-500/70 sm:text-sm">{asset.subtitle}</p>
+            ) : null}
+          </div>
           <p className="measure line-clamp-2 text-sm leading-relaxed text-cream-500/70 text-pretty sm:text-[0.9375rem]">
             {project.description}
           </p>

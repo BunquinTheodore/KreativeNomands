@@ -1,1771 +1,2822 @@
 {
   "projects": [
     {
-      "id": "baker-mckenzie",
-      "title": "Baker & McKenzie Virtual Event",
-      "client": "Baker & McKenzie Global Services Manila",
-      "category": "events",
-      "description": "Virtual event assets including opening billboards, logo reveals, and RTO videos for Baker & McKenzie's year-end corporate event.",
-      "thumbnail": "/media/events/baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
-      "assets": [
-        {
-          "src": "/media/events/baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3.mp4",
-          "type": "video",
-          "title": "Opening Billboard V3",
-          "poster": "/media/events/baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
-          "thumb": "/media/events/baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
-          "width": 1280,
-          "height": 720
-        },
-        {
-          "src": "/media/events/baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2.mp4",
-          "type": "video",
-          "title": "Opening Billboard Reminders",
-          "poster": "/media/events/baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2-poster.webp",
-          "thumb": "/media/events/baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2-poster.webp",
-          "width": 1280,
-          "height": 720
-        },
-        {
-          "src": "/media/events/baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2.mp4",
-          "type": "video",
-          "title": "CLT RTO Video",
-          "poster": "/media/events/baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2-poster.webp",
-          "thumb": "/media/events/baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2-poster.webp",
-          "width": 1280,
-          "height": 720
-        },
-        {
-          "src": "/media/events/baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event.mp4",
-          "type": "video",
-          "title": "Stinger Logo Reveal",
-          "poster": "/media/events/baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event-poster.webp",
-          "thumb": "/media/events/baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event-poster.webp",
-          "width": 1280,
-          "height": 720
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Motion Graphics",
-        "Event Branding"
-      ],
-      "featured": true
-    },
-    {
-      "id": "monza-events",
-      "title": "Monza Barcade Events",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Complete event coverage including reels, announcements, and recap videos for Monza Barcade's racing-themed bar events.",
-      "thumbnail": "/media/fnb/monza-events/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-events/1-monza-monza-mckinley-hill-event-announcement-reel.mp4",
-          "type": "video",
-          "title": "McKinley Hill Event Announcement",
-          "poster": "/media/fnb/monza-events/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/4-monza-british-gp-live-viewing-highlights-reel.mp4",
-          "type": "video",
-          "title": "British GP Highlights",
-          "poster": "/media/fnb/monza-events/4-monza-british-gp-live-viewing-highlights-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/4-monza-british-gp-live-viewing-highlights-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/5-monza-monza-mckinley-hill-adding-fun-reel.mp4",
-          "type": "video",
-          "title": "Adding Fun Reel",
-          "poster": "/media/fnb/monza-events/5-monza-monza-mckinley-hill-adding-fun-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/5-monza-monza-mckinley-hill-adding-fun-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/6-monza-monza-mckinley-hill-recap-reel.mp4",
-          "type": "video",
-          "title": "McKinley Hill Recap",
-          "poster": "/media/fnb/monza-events/6-monza-monza-mckinley-hill-recap-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/6-monza-monza-mckinley-hill-recap-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/7-monza-hungarian-gp-live-viewing-highlights-reel.mp4",
-          "type": "video",
-          "title": "Hungarian GP Highlights",
-          "poster": "/media/fnb/monza-events/7-monza-hungarian-gp-live-viewing-highlights-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/7-monza-hungarian-gp-live-viewing-highlights-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/7-8-monza-estancia-roadshow-event-teaser-reel.mp4",
-          "type": "video",
-          "title": "Estancia Roadshow Teaser",
-          "poster": "/media/fnb/monza-events/7-8-monza-estancia-roadshow-event-teaser-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/7-8-monza-estancia-roadshow-event-teaser-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/9-monza-featuring-cocktails-reel.mp4",
-          "type": "video",
-          "title": "Cocktails Feature",
-          "poster": "/media/fnb/monza-events/9-monza-featuring-cocktails-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/9-monza-featuring-cocktails-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel.mp4",
-          "type": "video",
-          "title": "Eastwood Day 1 Slideshow",
-          "poster": "/media/fnb/monza-events/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/fnb/monza-events/15-monza-monza-eastwood-recap-reel.mp4",
-          "type": "video",
-          "title": "Eastwood Recap",
-          "poster": "/media/fnb/monza-events/15-monza-monza-eastwood-recap-reel-poster.webp",
-          "thumb": "/media/fnb/monza-events/15-monza-monza-eastwood-recap-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Social Media Content",
-        "Event Coverage"
-      ],
-      "featured": true
-    },
-    {
-      "id": "monza-driving-trial",
-      "title": "Monza Driving Trial Mechanics",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Carousel graphics showcasing the driving trial mechanics for Monza Barcade's McKinley Hill event.",
-      "thumbnail": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p1.webp",
-          "type": "image",
-          "title": "Driving Trial Page 1",
-          "thumb": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p1-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p2.webp",
-          "type": "image",
-          "title": "Driving Trial Page 2",
-          "thumb": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p2-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p3.webp",
-          "type": "image",
-          "title": "Driving Trial Page 3",
-          "thumb": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p3-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p4.webp",
-          "type": "image",
-          "title": "Driving Trial Page 4",
-          "thumb": "/media/fnb/monza-driving-trial/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p4-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "monza-eastwood-event",
-      "title": "Monza Eastwood Event Carousel",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Event carousel graphics for Monza Eastwood location.",
-      "thumbnail": "/media/fnb/monza-eastwood-event/8-p1-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-eastwood-event/8-p1-monza-monza-eastwood-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Eastwood Event Page 1",
-          "thumb": "/media/fnb/monza-eastwood-event/8-p1-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-eastwood-event/8-p2-monza-monza-eastwood-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Eastwood Event Page 2",
-          "thumb": "/media/fnb/monza-eastwood-event/8-p2-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-eastwood-event/8-p3-monza-monza-eastwood-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Eastwood Event Page 3",
-          "thumb": "/media/fnb/monza-eastwood-event/8-p3-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-eastwood-event/8-p4-monza-monza-eastwood-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Eastwood Event Page 4",
-          "thumb": "/media/fnb/monza-eastwood-event/8-p4-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "monza-winners-mapua",
-      "title": "Monza Mapua Winners Carousel",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Winners announcement carousel for Monza Mapua event.",
-      "thumbnail": "/media/fnb/monza-winners-mapua/3-p1-monza-monza-mapua-winners-graphic-design-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p1-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 1",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p1-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p2-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 2",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p2-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p3-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 3",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p3-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p4-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 4",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p4-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p5-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 5",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p5-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-winners-mapua/3-p6-monza-monza-mapua-winners-graphic-design.webp",
-          "type": "image",
-          "title": "Winners Page 6",
-          "thumb": "/media/fnb/monza-winners-mapua/3-p6-monza-monza-mapua-winners-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "monza-estancia-roadshow",
-      "title": "Monza Estancia Roadshow",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Event carousel for the Estancia Roadshow event.",
-      "thumbnail": "/media/fnb/monza-estancia-roadshow/9-p1-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-estancia-roadshow/9-p1-monza-estancia-roadshow-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Estancia Roadshow Page 1",
-          "thumb": "/media/fnb/monza-estancia-roadshow/9-p1-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-estancia-roadshow/9-p2-monza-estancia-roadshow-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Estancia Roadshow Page 2",
-          "thumb": "/media/fnb/monza-estancia-roadshow/9-p2-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-estancia-roadshow/9-p3-monza-estancia-roadshow-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Estancia Roadshow Page 3",
-          "thumb": "/media/fnb/monza-estancia-roadshow/9-p3-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/monza-estancia-roadshow/9-p4-monza-estancia-roadshow-event-carousel-graphic-design.webp",
-          "type": "image",
-          "title": "Estancia Roadshow Page 4",
-          "thumb": "/media/fnb/monza-estancia-roadshow/9-p4-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Event Branding"
-      ],
-      "featured": false
-    },
-    {
-      "id": "monza-graphic-design",
-      "title": "Monza Event Graphics",
-      "client": "Monza Barcade",
-      "category": "fnb",
-      "description": "Promotional graphics for Ladies Night, Legends Night, and Formula 1 Grand Prix events.",
-      "thumbnail": "/media/fnb/monza-graphic-design/12-monza-ladies-night-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/monza-graphic-design/12-monza-ladies-night.webp",
-          "type": "image",
-          "title": "Ladies Night",
-          "thumb": "/media/fnb/monza-graphic-design/12-monza-ladies-night-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-graphic-design/13-monza-legends-night-v2.webp",
-          "type": "image",
-          "title": "Legends Night",
-          "thumb": "/media/fnb/monza-graphic-design/13-monza-legends-night-v2-thumb.webp",
-          "width": 1200,
-          "height": 1200
-        },
-        {
-          "src": "/media/fnb/monza-graphic-design/2-monza-dutch-gp.webp",
-          "type": "image",
-          "title": "Dutch GP",
-          "thumb": "/media/fnb/monza-graphic-design/2-monza-dutch-gp-thumb.webp",
-          "width": 1284,
-          "height": 1600
-        },
-        {
-          "src": "/media/fnb/monza-graphic-design/3-monza-british-gp-podium-winners.webp",
-          "type": "image",
-          "title": "British GP Podium Winners",
-          "thumb": "/media/fnb/monza-graphic-design/3-monza-british-gp-podium-winners-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Event Branding"
-      ],
-      "featured": true
-    },
-    {
-      "id": "msme-branding",
-      "title": "MSME Branding & Photography",
-      "client": "MSME",
-      "category": "fnb",
-      "description": "Complete branding, graphic design, and photography for MSME food business.",
-      "thumbnail": "/media/fnb/msme-branding/274477883-112539261359770-2611542943264539624-n-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/msme-branding/274477883-112539261359770-2611542943264539624-n.webp",
-          "type": "image",
-          "title": "Branding Photo",
-          "thumb": "/media/fnb/msme-branding/274477883-112539261359770-2611542943264539624-n-thumb.webp",
-          "width": 1600,
-          "height": 1600
-        },
-        {
-          "src": "/media/fnb/msme-branding/5.webp",
-          "type": "image",
-          "title": "Graphic Design 1",
-          "thumb": "/media/fnb/msme-branding/5-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/msme-branding/6.webp",
-          "type": "image",
-          "title": "Graphic Design 2",
-          "thumb": "/media/fnb/msme-branding/6-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Branding",
-        "Graphic Design",
-        "Photography"
-      ],
-      "featured": false
-    },
-    {
-      "id": "msme-carousel",
-      "title": "MSME Social Media Carousel",
-      "client": "MSME",
-      "category": "fnb",
-      "description": "Social media carousel content for MSME.",
-      "thumbnail": "/media/fnb/msme-carousel/fp-ig-carousel-1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/fnb/msme-carousel/fp-ig-carousel-1.webp",
-          "type": "image",
-          "title": "Instagram Carousel 1",
-          "thumb": "/media/fnb/msme-carousel/fp-ig-carousel-1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/msme-carousel/fp-fb-carousel-2.webp",
-          "type": "image",
-          "title": "Facebook Carousel 2",
-          "thumb": "/media/fnb/msme-carousel/fp-fb-carousel-2-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/msme-carousel/fp-fb-carousel-3.webp",
-          "type": "image",
-          "title": "Facebook Carousel 3",
-          "thumb": "/media/fnb/msme-carousel/fp-fb-carousel-3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/fnb/msme-carousel/fp-fb-carousel-4.webp",
-          "type": "image",
-          "title": "Facebook Carousel 4",
-          "thumb": "/media/fnb/msme-carousel/fp-fb-carousel-4-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "xendurance-deep-sleep",
-      "title": "Xendurance Deep Sleep Promo",
-      "client": "Xendurance",
-      "category": "health",
-      "description": "Promotional video ads for Xendurance Deep Sleep supplement with 20% off campaign.",
-      "thumbnail": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-1-poster.webp",
-      "assets": [
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-1.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Last Day 1",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-1-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-1-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-2.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Last Day 2",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-2-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-2-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-3.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Last Day 3",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-3-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-last-3-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-star-3.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Star 3",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-star-3-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-star-3-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-1.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Start 1",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-1-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-1-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-2.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Start 2",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-2-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-2-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-4.mp4",
-          "type": "video",
-          "title": "Deep Sleep 20% Off - Start 4",
-          "poster": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-4-poster.webp",
-          "thumb": "/media/health/xendurance-deep-sleep/220809-deep-sleep-20-off-start-4-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Ad Creation",
-        "Social Media Content"
-      ],
-      "featured": true
-    },
-    {
-      "id": "xendurance-pack-promo",
-      "title": "Xendurance Pack Promotions",
-      "client": "Xendurance",
-      "category": "health",
-      "description": "Video ads for various Xendurance supplement packs including Performance, Victory, Weight Management, and Wellness.",
-      "thumbnail": "/media/health/xendurance-pack-promo/performance-pack-poster.webp",
-      "assets": [
-        {
-          "src": "/media/health/xendurance-pack-promo/performance-pack.mp4",
-          "type": "video",
-          "title": "Performance Pack",
-          "poster": "/media/health/xendurance-pack-promo/performance-pack-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/performance-pack-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/performance-pack-last-day.mp4",
-          "type": "video",
-          "title": "Performance Pack - Last Day",
-          "poster": "/media/health/xendurance-pack-promo/performance-pack-last-day-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/performance-pack-last-day-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/victory-pack.mp4",
-          "type": "video",
-          "title": "Victory Pack",
-          "poster": "/media/health/xendurance-pack-promo/victory-pack-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/victory-pack-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/victory-pack-last-day.mp4",
-          "type": "video",
-          "title": "Victory Pack - Last Day",
-          "poster": "/media/health/xendurance-pack-promo/victory-pack-last-day-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/victory-pack-last-day-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/weight-management-pack.mp4",
-          "type": "video",
-          "title": "Weight Management Pack",
-          "poster": "/media/health/xendurance-pack-promo/weight-management-pack-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/weight-management-pack-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/weight-management-pack-last-day.mp4",
-          "type": "video",
-          "title": "Weight Management Pack - Last Day",
-          "poster": "/media/health/xendurance-pack-promo/weight-management-pack-last-day-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/weight-management-pack-last-day-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/wellness-pack.mp4",
-          "type": "video",
-          "title": "Wellness Pack",
-          "poster": "/media/health/xendurance-pack-promo/wellness-pack-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/wellness-pack-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/wellness-pack-last-day.mp4",
-          "type": "video",
-          "title": "Wellness Pack - Last Day",
-          "poster": "/media/health/xendurance-pack-promo/wellness-pack-last-day-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/wellness-pack-last-day-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/220820-pack-promo-start.mp4",
-          "type": "video",
-          "title": "Pack Promo Start",
-          "poster": "/media/health/xendurance-pack-promo/220820-pack-promo-start-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/220820-pack-promo-start-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-pack-promo/220820-pack-promo-last-day.mp4",
-          "type": "video",
-          "title": "Pack Promo Last Day",
-          "poster": "/media/health/xendurance-pack-promo/220820-pack-promo-last-day-poster.webp",
-          "thumb": "/media/health/xendurance-pack-promo/220820-pack-promo-last-day-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Ad Creation"
-      ],
-      "featured": false
-    },
-    {
-      "id": "xendurance-probiotic",
-      "title": "Xendurance Probiotic + Prebiotic Promo",
-      "client": "Xendurance",
-      "category": "health",
-      "description": "25% off promotional videos for Probiotic + Prebiotic supplement.",
-      "thumbnail": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-25-off-poster.webp",
-      "assets": [
-        {
-          "src": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-25-off.mp4",
-          "type": "video",
-          "title": "Probiotic 25% Off",
-          "poster": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-25-off-poster.webp",
-          "thumb": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-25-off-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off.mp4",
-          "type": "video",
-          "title": "Probiotic Last Day 25% Off",
-          "poster": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off-poster.webp",
-          "thumb": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off-2.mp4",
-          "type": "video",
-          "title": "Probiotic Last Day 25% Off V2",
-          "poster": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off-2-poster.webp",
-          "thumb": "/media/health/xendurance-probiotic/220827-probiotic-plus-prebiotic-last-day-25-off-2-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Ad Creation"
-      ],
-      "featured": false
-    },
-    {
-      "id": "xendurance-lifestyle",
-      "title": "Xendurance Lifestyle Content",
-      "client": "Xendurance",
-      "category": "health",
-      "description": "Inspirational lifestyle content and monthly sizzle reels showcasing fitness and athletic performance.",
-      "thumbnail": "/media/health/xendurance-lifestyle/250523-may-sizzle-1-9x16-poster.webp",
-      "assets": [
-        {
-          "src": "/media/health/xendurance-lifestyle/250523-may-sizzle-1-9x16.mp4",
-          "type": "video",
-          "title": "May Sizzle 1",
-          "poster": "/media/health/xendurance-lifestyle/250523-may-sizzle-1-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250523-may-sizzle-1-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250528-may-sizzle-2-9x16.mp4",
-          "type": "video",
-          "title": "May Sizzle 2",
-          "poster": "/media/health/xendurance-lifestyle/250528-may-sizzle-2-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250528-may-sizzle-2-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250804-august-sizzle-1-9x16.mp4",
-          "type": "video",
-          "title": "August Sizzle 1",
-          "poster": "/media/health/xendurance-lifestyle/250804-august-sizzle-1-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250804-august-sizzle-1-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250822-august-mashup-3-9x16.mp4",
-          "type": "video",
-          "title": "August Mashup 3",
-          "poster": "/media/health/xendurance-lifestyle/250822-august-mashup-3-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250822-august-mashup-3-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250905-september-sizzle-1-9x16.mp4",
-          "type": "video",
-          "title": "September Sizzle 1",
-          "poster": "/media/health/xendurance-lifestyle/250905-september-sizzle-1-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250905-september-sizzle-1-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250906-september-sizzle-2-9x16.mp4",
-          "type": "video",
-          "title": "September Sizzle 2",
-          "poster": "/media/health/xendurance-lifestyle/250906-september-sizzle-2-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250906-september-sizzle-2-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250913-september-sizzle-5-9x16.mp4",
-          "type": "video",
-          "title": "September Sizzle 5",
-          "poster": "/media/health/xendurance-lifestyle/250913-september-sizzle-5-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250913-september-sizzle-5-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250917-september-sizzle-6-9x16.mp4",
-          "type": "video",
-          "title": "September Sizzle 6",
-          "poster": "/media/health/xendurance-lifestyle/250917-september-sizzle-6-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250917-september-sizzle-6-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/250918-september-sizzle-7-9x16.mp4",
-          "type": "video",
-          "title": "September Sizzle 7",
-          "poster": "/media/health/xendurance-lifestyle/250918-september-sizzle-7-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/250918-september-sizzle-7-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/251015-october-sizzle-1-9x16.mp4",
-          "type": "video",
-          "title": "October Sizzle 1",
-          "poster": "/media/health/xendurance-lifestyle/251015-october-sizzle-1-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/251015-october-sizzle-1-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-lifestyle/251121-november-sizzle-7.mp4",
-          "type": "video",
-          "title": "November Sizzle 7",
-          "poster": "/media/health/xendurance-lifestyle/251121-november-sizzle-7-poster.webp",
-          "thumb": "/media/health/xendurance-lifestyle/251121-november-sizzle-7-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Content Creation",
-        "Social Media Content"
-      ],
-      "featured": true
-    },
-    {
-      "id": "xendurance-testimonials",
-      "title": "Xendurance Athlete Testimonials",
-      "client": "Xendurance",
-      "category": "health",
-      "description": "Athlete testimonials and HYROX event coverage featuring professional athletes and fitness enthusiasts.",
-      "thumbnail": "/media/health/xendurance-testimonials/240513-danielle-brandon-ad-9x16-poster.webp",
-      "assets": [
-        {
-          "src": "/media/health/xendurance-testimonials/240513-danielle-brandon-ad-9x16.mp4",
-          "type": "video",
-          "title": "Danielle Brandon Testimonial",
-          "poster": "/media/health/xendurance-testimonials/240513-danielle-brandon-ad-9x16-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/240513-danielle-brandon-ad-9x16-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/220817-testimonial-mashup-fat-and-weight-loss-ig-reel.mp4",
-          "type": "video",
-          "title": "Weight Loss Testimonials",
-          "poster": "/media/health/xendurance-testimonials/220817-testimonial-mashup-fat-and-weight-loss-ig-reel-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/220817-testimonial-mashup-fat-and-weight-loss-ig-reel-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/250329-hyrox-houston-cindy-and-nicki.mp4",
-          "type": "video",
-          "title": "HYROX Houston - Cindy & Nicki",
-          "poster": "/media/health/xendurance-testimonials/250329-hyrox-houston-cindy-and-nicki-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/250329-hyrox-houston-cindy-and-nicki-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/250611-hyrox-nyc-pavelchak-x-crowley.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Pavelchak & Crowley",
-          "poster": "/media/health/xendurance-testimonials/250611-hyrox-nyc-pavelchak-x-crowley-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/250611-hyrox-nyc-pavelchak-x-crowley-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/250613-hyrox-nyc-rodriguez-x-porter.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Rodriguez & Porter",
-          "poster": "/media/health/xendurance-testimonials/250613-hyrox-nyc-rodriguez-x-porter-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/250613-hyrox-nyc-rodriguez-x-porter-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/250614-hyrox-nyc-williams-x-swartzendruber.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Williams & Swartzendruber",
-          "poster": "/media/health/xendurance-testimonials/250614-hyrox-nyc-williams-x-swartzendruber-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/250614-hyrox-nyc-williams-x-swartzendruber-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/250620-hyrox-nyc-palmer.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Palmer",
-          "poster": "/media/health/xendurance-testimonials/250620-hyrox-nyc-palmer-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/250620-hyrox-nyc-palmer-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/251003-hyrox-boston-matt-and-breezy.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Matt & Breezy",
-          "poster": "/media/health/xendurance-testimonials/251003-hyrox-boston-matt-and-breezy-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/251003-hyrox-boston-matt-and-breezy-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/251004-hyrox-boston-crystal-and-brian.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Crystal & Brian",
-          "poster": "/media/health/xendurance-testimonials/251004-hyrox-boston-crystal-and-brian-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/251004-hyrox-boston-crystal-and-brian-poster.webp",
-          "width": 540,
-          "height": 960
-        },
-        {
-          "src": "/media/health/xendurance-testimonials/251008-hyrox-boston-bobby-and-sharon.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Bobby & Sharon",
-          "poster": "/media/health/xendurance-testimonials/251008-hyrox-boston-bobby-and-sharon-poster.webp",
-          "thumb": "/media/health/xendurance-testimonials/251008-hyrox-boston-bobby-and-sharon-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Testimonial Videos",
-        "Event Coverage"
-      ],
-      "featured": true
-    },
-    {
-      "id": "sunlife-branding",
-      "title": "Sunlife Grepa Graphic Design",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Branding and graphic design materials for Sunlife Grepa Financial insurance company.",
-      "thumbnail": "/media/insurance/sunlife-branding/19-slgfi240002-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-branding/19-slgfi240002.webp",
-          "type": "image",
-          "title": "SLGFI Branding 1",
-          "thumb": "/media/insurance/sunlife-branding/19-slgfi240002-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-branding/21-slgfi240002.webp",
-          "type": "image",
-          "title": "SLGFI Branding 2",
-          "thumb": "/media/insurance/sunlife-branding/21-slgfi240002-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Branding"
-      ],
-      "featured": true
-    },
-    {
-      "id": "sunlife-carousel-1",
-      "title": "Sunlife Healthcare Carousel 1",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/media/insurance/sunlife-carousel-1/5-p1-slghc-branding-and-content-110423-final-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-1/5-p1-slghc-branding-and-content-110423-final.webp",
-          "type": "image",
-          "title": "Carousel 1 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-1/5-p1-slghc-branding-and-content-110423-final-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-1/5-p2-slghc-branding-and-content-110423-final.webp",
-          "type": "image",
-          "title": "Carousel 1 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-1/5-p2-slghc-branding-and-content-110423-final-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-1/5-p3-slghc-branding-and-content-110423-final.webp",
-          "type": "image",
-          "title": "Carousel 1 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-1/5-p3-slghc-branding-and-content-110423-final-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-1/5-p4-slghc-branding-and-content-110423-final.webp",
-          "type": "image",
-          "title": "Carousel 1 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-1/5-p4-slghc-branding-and-content-110423-final-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-2",
-      "title": "Sunlife Healthcare Carousel 2",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/media/insurance/sunlife-carousel-2/11-p1-slghc-branding-and-content-111323-rev4-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-2/11-p1-slghc-branding-and-content-111323-rev4.webp",
-          "type": "image",
-          "title": "Carousel 2 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-2/11-p1-slghc-branding-and-content-111323-rev4-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-2/11-p2-slghc-branding-and-content-111323-rev4.webp",
-          "type": "image",
-          "title": "Carousel 2 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-2/11-p2-slghc-branding-and-content-111323-rev4-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-2/11-p3-slghc-branding-and-content-111323-rev4.webp",
-          "type": "image",
-          "title": "Carousel 2 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-2/11-p3-slghc-branding-and-content-111323-rev4-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-3",
-      "title": "Sunlife Healthcare Carousel 3",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/media/insurance/sunlife-carousel-3/16-p1-slghc-branding-and-content-112023-rev3-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-3/16-p1-slghc-branding-and-content-112023-rev3.webp",
-          "type": "image",
-          "title": "Carousel 3 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-3/16-p1-slghc-branding-and-content-112023-rev3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-3/16-p2-slghc-branding-and-content-112023-rev3.webp",
-          "type": "image",
-          "title": "Carousel 3 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-3/16-p2-slghc-branding-and-content-112023-rev3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-3/16-p3-slghc-branding-and-content-112023-rev3.webp",
-          "type": "image",
-          "title": "Carousel 3 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-3/16-p3-slghc-branding-and-content-112023-rev3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-3/16-p4-slghc-branding-and-content-112023-rev3.webp",
-          "type": "image",
-          "title": "Carousel 3 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-3/16-p4-slghc-branding-and-content-112023-rev3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-4",
-      "title": "Sunlife Healthcare Carousel 4",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Thanksgiving-themed carousel content.",
-      "thumbnail": "/media/insurance/sunlife-carousel-4/19-p1-slghc-branding-and-content-112423-rev1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-4/19-p1-slghc-branding-and-content-112423-rev1.webp",
-          "type": "image",
-          "title": "Carousel 4 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-4/19-p1-slghc-branding-and-content-112423-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-4/19-p2-slghc-branding-and-content-112423-rev1.webp",
-          "type": "image",
-          "title": "Carousel 4 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-4/19-p2-slghc-branding-and-content-112423-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-4/19-p3-slghc-branding-and-content-112423-rev1.webp",
-          "type": "image",
-          "title": "Carousel 4 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-4/19-p3-slghc-branding-and-content-112423-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-4/19-p4-slghc-branding-and-content-112423-slghc-branding-and-content-112423-rev1.webp",
-          "type": "image",
-          "title": "Carousel 4 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-4/19-p4-slghc-branding-and-content-112423-slghc-branding-and-content-112423-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-5",
-      "title": "Sunlife Healthcare Carousel 5",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Social media carousel content for Sunlife Grepa Healthcare.",
-      "thumbnail": "/media/insurance/sunlife-carousel-5/21-p1-slghc-branding-and-content-112723-rev1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-5/21-p1-slghc-branding-and-content-112723-rev1.webp",
-          "type": "image",
-          "title": "Carousel 5 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-5/21-p1-slghc-branding-and-content-112723-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-5/21-p4-slghc-branding-and-content-112723-rev1.webp",
-          "type": "image",
-          "title": "Carousel 5 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-5/21-p4-slghc-branding-and-content-112723-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-6",
-      "title": "Sunlife Healthcare Carousel 6",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "December healthcare awareness carousel.",
-      "thumbnail": "/media/insurance/sunlife-carousel-6/27-p1-slghc-branding-and-content-120623-rev1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-6/27-p1-slghc-branding-and-content-120623-rev1.webp",
-          "type": "image",
-          "title": "Carousel 6 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-6/27-p1-slghc-branding-and-content-120623-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-6/27-p2-slghc-branding-and-content-120623-rev1.webp",
-          "type": "image",
-          "title": "Carousel 6 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-6/27-p2-slghc-branding-and-content-120623-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-6/27-p3-slghc-branding-and-content-120623-rev1.webp",
-          "type": "image",
-          "title": "Carousel 6 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-6/27-p3-slghc-branding-and-content-120623-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-6/27-p4-slghc-branding-and-content-120623-rev1.webp",
-          "type": "image",
-          "title": "Carousel 6 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-6/27-p4-slghc-branding-and-content-120623-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-6/27-p5-slghc-branding-and-content-120623-rev1.webp",
-          "type": "image",
-          "title": "Carousel 6 - Page 5",
-          "thumb": "/media/insurance/sunlife-carousel-6/27-p5-slghc-branding-and-content-120623-rev1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-7",
-      "title": "Sunlife Financial Carousel 7",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Financial services carousel content.",
-      "thumbnail": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p1.webp",
-          "type": "image",
-          "title": "Carousel 7 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p2.webp",
-          "type": "image",
-          "title": "Carousel 7 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p2-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p5.webp",
-          "type": "image",
-          "title": "Carousel 7 - Page 5",
-          "thumb": "/media/insurance/sunlife-carousel-7/6-slgfi240002-p5-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-8",
-      "title": "Sunlife Financial Carousel 8",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Financial services carousel content.",
-      "thumbnail": "/media/insurance/sunlife-carousel-8/13-slgfi240002-p1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-8/13-slgfi240002-p1.webp",
-          "type": "image",
-          "title": "Carousel 8 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-8/13-slgfi240002-p1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-8/13-slgfi240002-p2.webp",
-          "type": "image",
-          "title": "Carousel 8 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-8/13-slgfi240002-p2-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-carousel-9",
-      "title": "Sunlife Financial Carousel 9",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Financial services carousel content.",
-      "thumbnail": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p1.webp",
-          "type": "image",
-          "title": "Carousel 9 - Page 1",
-          "thumb": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p1-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p2.webp",
-          "type": "image",
-          "title": "Carousel 9 - Page 2",
-          "thumb": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p2-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p3.webp",
-          "type": "image",
-          "title": "Carousel 9 - Page 3",
-          "thumb": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p3-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p4.webp",
-          "type": "image",
-          "title": "Carousel 9 - Page 4",
-          "thumb": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p4-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        },
-        {
-          "src": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p5.webp",
-          "type": "image",
-          "title": "Carousel 9 - Page 5",
-          "thumb": "/media/insurance/sunlife-carousel-9/14-slgfi240002-p5-thumb.webp",
-          "width": 1080,
-          "height": 1080
-        }
-      ],
-      "services": [
-        "Graphic Design",
-        "Social Media Content"
-      ],
-      "featured": false
-    },
-    {
-      "id": "sunlife-video",
-      "title": "Sunlife Let's Talk Accidents",
-      "client": "Sunlife Grepa Financial Inc",
-      "category": "insurance",
-      "description": "Educational video content about accident insurance coverage.",
-      "thumbnail": "/media/insurance/sunlife-video/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
-      "assets": [
-        {
-          "src": "/media/insurance/sunlife-video/9-slghc-branding-and-content-let-s-talk-accidents-111023.mp4",
-          "type": "video",
-          "title": "Let's Talk Accidents",
-          "poster": "/media/insurance/sunlife-video/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
-          "thumb": "/media/insurance/sunlife-video/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Educational Content"
-      ],
-      "featured": true
-    },
-    {
-      "id": "twin-oaks-photos",
-      "title": "Twin Oaks Real Estate Photography",
-      "client": "Twin Oaks Real Estate",
-      "category": "realestate",
-      "description": "Professional real estate photography including interior, exterior, and twilight shots for property listings.",
-      "thumbnail": "/media/realestate/twin-oaks-photos/1-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/realestate/twin-oaks-photos/1.webp",
-          "type": "image",
-          "title": "Property Photo 1",
-          "thumb": "/media/realestate/twin-oaks-photos/1-thumb.webp",
-          "width": 1600,
-          "height": 1066
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/2.webp",
-          "type": "image",
-          "title": "Property Photo 2",
-          "thumb": "/media/realestate/twin-oaks-photos/2-thumb.webp",
-          "width": 1600,
-          "height": 1066
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/3.webp",
-          "type": "image",
-          "title": "Property Photo 3",
-          "thumb": "/media/realestate/twin-oaks-photos/3-thumb.webp",
-          "width": 1600,
-          "height": 1066
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/4.webp",
-          "type": "image",
-          "title": "Property Photo 4",
-          "thumb": "/media/realestate/twin-oaks-photos/4-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/5.webp",
-          "type": "image",
-          "title": "Property Photo 5",
-          "thumb": "/media/realestate/twin-oaks-photos/5-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/6.webp",
-          "type": "image",
-          "title": "Property Photo 6",
-          "thumb": "/media/realestate/twin-oaks-photos/6-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/7.webp",
-          "type": "image",
-          "title": "Property Photo 7",
-          "thumb": "/media/realestate/twin-oaks-photos/7-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/8.webp",
-          "type": "image",
-          "title": "Property Photo 8",
-          "thumb": "/media/realestate/twin-oaks-photos/8-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/9.webp",
-          "type": "image",
-          "title": "Property Photo 9",
-          "thumb": "/media/realestate/twin-oaks-photos/9-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/10.webp",
-          "type": "image",
-          "title": "Property Photo 10",
-          "thumb": "/media/realestate/twin-oaks-photos/10-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/11.webp",
-          "type": "image",
-          "title": "Property Photo 11",
-          "thumb": "/media/realestate/twin-oaks-photos/11-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/12.webp",
-          "type": "image",
-          "title": "Property Photo 12",
-          "thumb": "/media/realestate/twin-oaks-photos/12-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/13.webp",
-          "type": "image",
-          "title": "Property Photo 13",
-          "thumb": "/media/realestate/twin-oaks-photos/13-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/14.webp",
-          "type": "image",
-          "title": "Property Photo 14",
-          "thumb": "/media/realestate/twin-oaks-photos/14-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/15.webp",
-          "type": "image",
-          "title": "Property Photo 15",
-          "thumb": "/media/realestate/twin-oaks-photos/15-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/220714-ryan-twilightedit1-kt.webp",
-          "type": "image",
-          "title": "Twilight Edit 1",
-          "thumb": "/media/realestate/twin-oaks-photos/220714-ryan-twilightedit1-kt-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        },
-        {
-          "src": "/media/realestate/twin-oaks-photos/220714-ryan-twilightedit2-kt.webp",
-          "type": "image",
-          "title": "Twilight Edit 2",
-          "thumb": "/media/realestate/twin-oaks-photos/220714-ryan-twilightedit2-kt-thumb.webp",
-          "width": 1600,
-          "height": 1067
-        }
-      ],
-      "services": [
-        "Photography",
-        "Photo Editing",
-        "Real Estate Marketing"
-      ],
-      "featured": true
-    },
-    {
-      "id": "twin-oaks-videos",
-      "title": "Twin Oaks Real Estate Videos",
-      "client": "Twin Oaks Real Estate",
-      "category": "realestate",
-      "description": "Professional real estate video tours including listing videos and Instagram reels.",
-      "thumbnail": "/media/realestate/twin-oaks-videos/220714-ryan-listingvideo-kt-poster.webp",
-      "assets": [
-        {
-          "src": "/media/realestate/twin-oaks-videos/220714-ryan-listingvideo-kt.mp4",
-          "type": "video",
-          "title": "Property Listing Video",
-          "poster": "/media/realestate/twin-oaks-videos/220714-ryan-listingvideo-kt-poster.webp",
-          "thumb": "/media/realestate/twin-oaks-videos/220714-ryan-listingvideo-kt-poster.webp",
-          "width": 1280,
-          "height": 720
-        },
-        {
-          "src": "/media/realestate/twin-oaks-videos/220714-ryan-igreel-kt.mp4",
-          "type": "video",
-          "title": "Instagram Reel",
-          "poster": "/media/realestate/twin-oaks-videos/220714-ryan-igreel-kt-poster.webp",
-          "thumb": "/media/realestate/twin-oaks-videos/220714-ryan-igreel-kt-poster.webp",
-          "width": 540,
-          "height": 960
-        }
-      ],
-      "services": [
-        "Video Production",
-        "Real Estate Marketing",
-        "Social Media Content"
-      ],
-      "featured": true
-    },
-    {
-      "id": "it-fredrinn",
-      "title": "Fredrinn — Gym Management SaaS Platform",
-      "client": "Kreative Nomads",
+      "id": "it-pilotos-grounds",
+      "title": "F&B - Pilotos Grounds",
+      "industry": "F&B",
+      "client": "Pilotos Grounds",
       "category": "it",
-      "description": "A gym-focused SaaS platform designed to support day-to-day business operations through a centralized web system.",
-      "thumbnail": "/media/it/it-fredrinn/fredrinn-thumb.webp",
+      "description": "A multi page website for Pilotos Grounds, a Batangas City coffee brand with a mobile espresso cart for weddings, corporate events and celebrations, plus a late night sister cafe called Afterhours.",
+      "thumbnail": "/media/it/it-pilotos-grounds/cover-pilotos-grounds-thumb.webp",
       "assets": [
         {
-          "src": "/media/it/it-fredrinn/fredrinn.webp",
+          "src": "/media/it/it-pilotos-grounds/cover-pilotos-grounds.webp",
           "type": "image",
-          "title": "Fredrinn Platform Preview",
-          "thumb": "/media/it/it-fredrinn/fredrinn-thumb.webp",
+          "title": "Pilotos Grounds",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-pilotos-grounds/cover-pilotos-grounds-thumb.webp",
           "width": 1600,
-          "height": 726
+          "height": 982
         }
       ],
       "services": [
         "Web Development",
-        "SaaS",
-        "Full-Stack Development"
+        "UI & UX Design"
       ],
       "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/Fredrinn",
-      "liveUrl": "https://fredrinn.vercel.app"
+      "liveUrl": "https://www.pilotos.ph/"
     },
     {
-      "id": "it-bluemoon",
-      "title": "Bluemoon Automation — Business Operations Management System",
-      "client": "Kreative Nomads",
+      "id": "it-bluemoon-philippines",
+      "title": "F&B - BlueMoon Philippines",
+      "industry": "F&B",
+      "client": "BlueMoon Philippines",
       "category": "it",
-      "description": "A role-based operations platform that helps streamline internal workflows, task handling, and business visibility for teams.",
-      "thumbnail": "/media/it/it-bluemoon/bluemoon-thumb.webp",
+      "description": "A one page website for a Batangas City stall that serves build your own rice bowls, fries and coffee, with the full priced menu, gallery and opening hours in one smooth scrolling page.",
+      "thumbnail": "/media/it/it-bluemoon-philippines/cover-bluemoon-philippines-thumb.webp",
       "assets": [
         {
-          "src": "/media/it/it-bluemoon/bluemoon.webp",
+          "src": "/media/it/it-bluemoon-philippines/cover-bluemoon-philippines.webp",
           "type": "image",
-          "title": "Bluemoon Automation Preview",
-          "thumb": "/media/it/it-bluemoon/bluemoon-thumb.webp",
+          "title": "BlueMoon Philippines",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-bluemoon-philippines/cover-bluemoon-philippines-thumb.webp",
           "width": 1600,
-          "height": 729
+          "height": 1000
         }
       ],
       "services": [
         "Web Development",
-        "Operations Management",
-        "Full-Stack Development"
+        "UI & UX Design"
       ],
       "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/Bluemoon_Automation",
-      "liveUrl": "https://bluemoon-automation-jql2.vercel.app/"
+      "liveUrl": "https://blue-moon-cafe-theta.vercel.app/"
     },
     {
-      "id": "it-alerto",
-      "title": "Alerto — Disaster Reporting and Weather Intelligence Platform",
-      "client": "Kreative Nomads",
+      "id": "it-classic-fades-barbershop",
+      "title": "Personal Care - Classic Fades Barbershop",
+      "industry": "Personal Care",
+      "client": "Classic Fades Barbershop",
       "category": "it",
-      "description": "A web platform for community incident reporting and weather monitoring, built to support faster awareness and response.",
-      "thumbnail": "/media/it/it-alerto/alerto-thumb.webp",
+      "description": "A one page website for Classic Fades Barbershop in Batangas City, with clear pricing, the shop's services, a home visit option, weekly hours and the shop's location.",
+      "thumbnail": "/media/it/it-classic-fades-barbershop/cover-classic-fades-barbershop-thumb.webp",
       "assets": [
         {
-          "src": "/media/it/it-alerto/alerto.webp",
+          "src": "/media/it/it-classic-fades-barbershop/cover-classic-fades-barbershop.webp",
           "type": "image",
-          "title": "Alerto Platform Preview",
-          "thumb": "/media/it/it-alerto/alerto-thumb.webp",
-          "width": 1600,
-          "height": 731
+          "title": "Classic Fades Barbershop",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-classic-fades-barbershop/cover-classic-fades-barbershop-thumb.webp",
+          "width": 1365,
+          "height": 768
         }
       ],
       "services": [
         "Web Development",
-        "GIS Integration",
-        "Full-Stack Development"
+        "UI & UX Design"
       ],
       "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/Alerto"
+      "liveUrl": "https://klasik-fades.vercel.app/"
     },
     {
-      "id": "it-adrido",
-      "title": "AdriDo — Professional Portfolio and Personal Website",
-      "client": "Kreative Nomads",
+      "id": "it-corepluus",
+      "title": "Wellness - Core+ Manila",
+      "industry": "Wellness",
+      "client": "Core+ Manila",
       "category": "it",
-      "description": "A modern portfolio-style website focused on presenting personal branding, content, and key information in a clean layout.",
-      "thumbnail": "/media/it/it-adrido/adrido-thumb.webp",
+      "description": "A cinematic pre launch site for a Rockwell, Makati longevity and wellness destination, built around three connected pillars: Movement, Nourish, and Restore.",
+      "thumbnail": "/media/it/it-corepluus/cover-corepluus-thumb.webp",
       "assets": [
         {
-          "src": "/media/it/it-adrido/adrido.webp",
+          "src": "/media/it/it-corepluus/cover-corepluus.webp",
           "type": "image",
-          "title": "AdriDo Portfolio Preview",
-          "thumb": "/media/it/it-adrido/adrido-thumb.webp",
-          "width": 1600,
-          "height": 729
-        }
-      ],
-      "services": [
-        "Web Development",
-        "UI/UX Design",
-        "Portfolio Design"
-      ],
-      "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/AdriDo",
-      "liveUrl": "https://adri-do.vercel.app"
-    },
-    {
-      "id": "it-socialmediamanager",
-      "title": "Social Media Manager Portfolio — Services and Packages Website",
-      "client": "Kreative Nomads",
-      "category": "it",
-      "description": "A multi-page marketing website showcasing social media management services, packages, and supporting content pages.",
-      "thumbnail": "/media/it/it-socialmediamanager/socialmediamanager-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/it/it-socialmediamanager/socialmediamanager.webp",
-          "type": "image",
-          "title": "Social Media Manager Preview",
-          "thumb": "/media/it/it-socialmediamanager/socialmediamanager-thumb.webp",
-          "width": 1600,
-          "height": 731
-        }
-      ],
-      "services": [
-        "Web Development",
-        "Marketing Website",
-        "Front-End Development"
-      ],
-      "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/Social-Media-Manager-Portfolio",
-      "liveUrl": "https://bunquintheodore.github.io/Social-Media-Manager-Portfolio/"
-    },
-    {
-      "id": "it-agritrack",
-      "title": "Agri‑Track — Agriculture Tracking and Monitoring System",
-      "client": "Kreative Nomads",
-      "category": "it",
-      "description": "A web-based tracking system for agricultural monitoring, organizing key data into a more accessible and structured workflow.",
-      "thumbnail": "/media/it/it-agritrack/agritrack-thumb.webp",
-      "assets": [
-        {
-          "src": "/media/it/it-agritrack/agritrack.webp",
-          "type": "image",
-          "title": "Agri-Track System Preview",
-          "thumb": "/media/it/it-agritrack/agritrack-thumb.webp",
+          "title": "Core+ Manila",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-corepluus/cover-corepluus-thumb.webp",
           "width": 1600,
           "height": 738
         }
       ],
       "services": [
         "Web Development",
-        "Data Management",
-        "Front-End Development"
+        "UI & UX Design"
       ],
       "featured": true,
-      "repoUrl": "https://github.com/BunquinTheodore/Group-5-Agri-Track",
-      "liveUrl": "https://daniel-b-v.github.io/Group-5-Agri-Track/main.html"
+      "liveUrl": "https://corepluusmanila.com/"
+    },
+    {
+      "id": "it-shsadc",
+      "title": "Education - Ateneo de Cebu Alumni Association",
+      "industry": "Education",
+      "client": "Ateneo de Cebu Alumni Association",
+      "category": "it",
+      "description": "A community and fundraising hub for the Sacred Heart School, Ateneo de Cebu Alumni Association, spanning events, scholarship campaigns, and donor giving since 1961.",
+      "thumbnail": "/media/it/it-shsadc/cover-shsadc-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-shsadc/cover-shsadc.webp",
+          "type": "image",
+          "title": "Official Ateneo Alumni Website",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-shsadc/cover-shsadc-thumb.webp",
+          "width": 1600,
+          "height": 792
+        }
+      ],
+      "services": [
+        "Web Development",
+        "Content Management"
+      ],
+      "featured": true,
+      "liveUrl": "https://www.shsadcalumni.com/"
+    },
+    {
+      "id": "it-gn-ventures",
+      "title": "Investment - GN Ventures",
+      "industry": "Investment",
+      "client": "GN Ventures",
+      "category": "it",
+      "description": "A family of five connected websites for GN Ventures: a trading community, a learning platform, an events agency, a crypto news site and an applied AI studio.",
+      "thumbnail": "/media/it/it-gn-ventures/cover-gn-ventures-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-gn-ventures/cover-gn-ventures.webp",
+          "type": "image",
+          "title": "GN Ventures",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/cover-gn-ventures-thumb.webp",
+          "width": 1600,
+          "height": 1000
+        },
+        {
+          "src": "/media/it/it-gn-ventures/gn-joinmazal.webp",
+          "type": "image",
+          "title": "MAZAL Community",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/gn-joinmazal-thumb.webp",
+          "width": 1600,
+          "height": 812
+        },
+        {
+          "src": "/media/it/it-gn-ventures/gn-gnacademy.webp",
+          "type": "image",
+          "title": "GN Academy",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/gn-gnacademy-thumb.webp",
+          "width": 1600,
+          "height": 812
+        },
+        {
+          "src": "/media/it/it-gn-ventures/gn-gnclubs.webp",
+          "type": "image",
+          "title": "GN Club",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/gn-gnclubs-thumb.webp",
+          "width": 1440,
+          "height": 900
+        },
+        {
+          "src": "/media/it/it-gn-ventures/gn-gnmedia.webp",
+          "type": "image",
+          "title": "GN Media",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/gn-gnmedia-thumb.webp",
+          "width": 1600,
+          "height": 702
+        },
+        {
+          "src": "/media/it/it-gn-ventures/gn-gnlab.webp",
+          "type": "image",
+          "title": "GN Labs",
+          "service": "Web Development",
+          "material": "Website",
+          "thumb": "/media/it/it-gn-ventures/gn-gnlab-thumb.webp",
+          "width": 1600,
+          "height": 822
+        }
+      ],
+      "services": [
+        "Web Development",
+        "Multi Site Ecosystem"
+      ],
+      "featured": true
+    },
+    {
+      "id": "it-tarsi",
+      "title": "Finance - Tarsi",
+      "industry": "Finance",
+      "client": "Tarsi",
+      "category": "it",
+      "description": "A conversational personal finance app that lets users log expenses, check balances, and track net worth across e wallets, banks, and cards using plain language.",
+      "thumbnail": "/media/it/it-tarsi/cover-tarsi-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-tarsi/cover-tarsi.webp",
+          "type": "image",
+          "title": "Tarsi Budget Tracker",
+          "service": "Mobile App Development",
+          "material": "App",
+          "thumb": "/media/it/it-tarsi/cover-tarsi-thumb.webp",
+          "width": 1600,
+          "height": 790
+        }
+      ],
+      "services": [
+        "Mobile App Development",
+        "AI"
+      ],
+      "featured": true,
+      "liveUrl": "https://tarsi.pocketdevs.ph/"
+    },
+    {
+      "id": "it-kabi",
+      "title": "Fitness - Kabi | Gym Bro",
+      "industry": "Fitness",
+      "client": "Kabi | Gym Bro",
+      "category": "it",
+      "description": "A no clutter iOS gym log for lifters, with routines, active session set tracking, body and food logging, and performance analytics.",
+      "thumbnail": "/media/it/it-kabi/cover-kabi-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-kabi/cover-kabi.webp",
+          "type": "image",
+          "title": "Kabi | Gym Bro",
+          "service": "Mobile App Development",
+          "material": "App",
+          "thumb": "/media/it/it-kabi/cover-kabi-thumb.webp",
+          "width": 1568,
+          "height": 772
+        }
+      ],
+      "services": [
+        "Mobile App Development",
+        "iOS"
+      ],
+      "featured": true,
+      "liveUrl": "https://apps.apple.com/ph/app/kabi-gym-bro/id6763519763"
+    },
+    {
+      "id": "it-alerto",
+      "title": "Public Safety - Alerto",
+      "industry": "Public Safety",
+      "client": "Alerto",
+      "category": "it",
+      "description": "A real time weather and disaster monitoring portal covering all 34 cities and municipalities of Batangas Province, with live alerts, class suspension tracking, and community incident reports.",
+      "thumbnail": "/media/it/it-alerto/cover-alerto-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-alerto/cover-alerto.webp",
+          "type": "image",
+          "title": "Alerto Weather & Disaster Monitoring",
+          "service": "Custom Software & Systems",
+          "material": "Platform",
+          "thumb": "/media/it/it-alerto/cover-alerto-thumb.webp",
+          "width": 1600,
+          "height": 1200
+        }
+      ],
+      "services": [
+        "Custom Software & Systems",
+        "Real Time Dashboard"
+      ],
+      "featured": true,
+      "liveUrl": "https://alerto-wheat.vercel.app/"
+    },
+    {
+      "id": "it-ai-customer-support",
+      "title": "Automation - AI Customer Support & Escalation",
+      "industry": "Automation",
+      "client": "AI Customer Support & Escalation",
+      "category": "it",
+      "description": "A message triage system for an e commerce brand that answers only what it can prove from a live spreadsheet; everything else, and anything from a distressed customer, goes straight to a human with the order already looked up.",
+      "thumbnail": "/media/it/it-ai-customer-support/support-escalation-workflow-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-ai-customer-support/support-escalation-workflow.webp",
+          "type": "image",
+          "title": "AI Customer Support & Escalation",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-escalation-workflow-thumb.webp",
+          "width": 1600,
+          "height": 526
+        },
+        {
+          "src": "/media/it/it-ai-customer-support/support-inputs-normalization.webp",
+          "type": "image",
+          "title": "Inputs & Normalization",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-inputs-normalization-thumb.webp",
+          "width": 1110,
+          "height": 560
+        },
+        {
+          "src": "/media/it/it-ai-customer-support/support-classification.webp",
+          "type": "image",
+          "title": "Classification",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-classification-thumb.webp",
+          "width": 1009,
+          "height": 697
+        },
+        {
+          "src": "/media/it/it-ai-customer-support/support-response-routing.webp",
+          "type": "image",
+          "title": "Response Routing",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-response-routing-thumb.webp",
+          "width": 1537,
+          "height": 601
+        },
+        {
+          "src": "/media/it/it-ai-customer-support/support-logging.webp",
+          "type": "image",
+          "title": "Logging",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-logging-thumb.webp",
+          "width": 778,
+          "height": 505
+        },
+        {
+          "src": "/media/it/it-ai-customer-support/support-daily-digest.webp",
+          "type": "image",
+          "title": "Daily Digest",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-ai-customer-support/support-daily-digest-thumb.webp",
+          "width": 869,
+          "height": 323
+        }
+      ],
+      "services": [
+        "Process Automation",
+        "AI Integration"
+      ],
+      "featured": true
+    },
+    {
+      "id": "it-appointment-booking",
+      "title": "Automation - Appointment Booking & No Show Recovery",
+      "industry": "Automation",
+      "client": "Appointment Booking & No Show Recovery",
+      "category": "it",
+      "description": "A booking system for local service businesses that catches conflicts, chases confirmations on a 48h | 24h | 2h schedule, and offers a cancelled or no show slot to a waitlisted customer within the same minute.",
+      "thumbnail": "/media/it/it-appointment-booking/appointment-workflow-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-appointment-booking/appointment-workflow.webp",
+          "type": "image",
+          "title": "Appointment Booking & No Show Recovery",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-workflow-thumb.webp",
+          "width": 1029,
+          "height": 741
+        },
+        {
+          "src": "/media/it/it-appointment-booking/appointment-booking-conflicts.webp",
+          "type": "image",
+          "title": "Booking & Conflicts",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-booking-conflicts-thumb.webp",
+          "width": 1600,
+          "height": 612
+        },
+        {
+          "src": "/media/it/it-appointment-booking/appointment-reminders.webp",
+          "type": "image",
+          "title": "Reminder Sequence",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-reminders-thumb.webp",
+          "width": 1562,
+          "height": 290
+        },
+        {
+          "src": "/media/it/it-appointment-booking/appointment-reply-processing.webp",
+          "type": "image",
+          "title": "Reply Processing",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-reply-processing-thumb.webp",
+          "width": 1174,
+          "height": 336
+        },
+        {
+          "src": "/media/it/it-appointment-booking/appointment-waitlist-recovery.webp",
+          "type": "image",
+          "title": "Waitlist Recovery",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-waitlist-recovery-thumb.webp",
+          "width": 857,
+          "height": 566
+        },
+        {
+          "src": "/media/it/it-appointment-booking/appointment-noshow-digest.webp",
+          "type": "image",
+          "title": "No Show & Digest",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-appointment-booking/appointment-noshow-digest-thumb.webp",
+          "width": 1036,
+          "height": 279
+        }
+      ],
+      "services": [
+        "Process Automation",
+        "Scheduling"
+      ],
+      "featured": true
+    },
+    {
+      "id": "it-lead-qualification",
+      "title": "Automation - AI Lead Qualification",
+      "industry": "Automation",
+      "client": "AI Lead Qualification",
+      "category": "it",
+      "description": "A lead intake system that scores every inbound enquiry 0 to 100 on real buying intent, routes hot leads to the sales team, saves everything to a CRM sheet and replies to the lead instantly.",
+      "thumbnail": "/media/it/it-lead-qualification/lead-qualification-workflow-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-lead-qualification/lead-qualification-workflow.webp",
+          "type": "image",
+          "title": "AI Lead Qualification",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-lead-qualification/lead-qualification-workflow-thumb.webp",
+          "width": 1600,
+          "height": 648
+        }
+      ],
+      "services": [
+        "Process Automation",
+        "AI Integration"
+      ],
+      "featured": true
+    },
+    {
+      "id": "it-everyday-automations",
+      "title": "Automation - Everyday Business Automations",
+      "industry": "Automation",
+      "client": "Everyday Business Automations",
+      "category": "it",
+      "description": "Three small, standalone automations: a contact form that notifies and auto replies, an invoice reminder that chases overdue payments, and a review request that follows up after a job is done.",
+      "thumbnail": "/media/it/it-everyday-automations/contact-form-workflow-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/it/it-everyday-automations/contact-form-workflow.webp",
+          "type": "image",
+          "title": "Contact Form Response",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-everyday-automations/contact-form-workflow-thumb.webp",
+          "width": 1234,
+          "height": 643
+        },
+        {
+          "src": "/media/it/it-everyday-automations/invoice-reminder-workflow.webp",
+          "type": "image",
+          "title": "Invoice Reminders",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-everyday-automations/invoice-reminder-workflow-thumb.webp",
+          "width": 1600,
+          "height": 542
+        },
+        {
+          "src": "/media/it/it-everyday-automations/review-request-workflow.webp",
+          "type": "image",
+          "title": "Review Requests",
+          "service": "Process Automation",
+          "material": "Workflow",
+          "thumb": "/media/it/it-everyday-automations/review-request-workflow-thumb.webp",
+          "width": 1600,
+          "height": 486
+        }
+      ],
+      "services": [
+        "Process Automation",
+        "Small Business Tools"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-xendurance",
+      "title": "Health & Wellness - Xendurance",
+      "industry": "Health & Wellness",
+      "client": "Xendurance",
+      "category": "photo-video",
+      "description": "Lifestyle sizzles, product promos, athlete testimonials and event highlight reels for Xendurance, a performance supplement brand.",
+      "thumbnail": "/media/photo-video/pv-xendurance/250523-may-sizzle-1-9x16-poster.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-xendurance/250523-may-sizzle-1-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 1",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250523-may-sizzle-1-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250523-may-sizzle-1-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250528-may-sizzle-2-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 2",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250528-may-sizzle-2-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250528-may-sizzle-2-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250822-august-mashup-3-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 3",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250822-august-mashup-3-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250822-august-mashup-3-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250905-september-sizzle-1-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 4",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250905-september-sizzle-1-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250905-september-sizzle-1-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250906-september-sizzle-2-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 5",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250906-september-sizzle-2-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250906-september-sizzle-2-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250913-september-sizzle-5-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 6",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250913-september-sizzle-5-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250913-september-sizzle-5-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/251015-october-sizzle-1-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 7",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/251015-october-sizzle-1-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/251015-october-sizzle-1-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250917-september-sizzle-6-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 8",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250917-september-sizzle-6-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250917-september-sizzle-6-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/251121-november-sizzle-7.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 9",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/251121-november-sizzle-7-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/251121-november-sizzle-7-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250918-september-sizzle-7-9x16.mp4",
+          "type": "video",
+          "title": "XND Lifestyle 10",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250918-september-sizzle-7-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250918-september-sizzle-7-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250804-august-sizzle-1-9x16.mp4",
+          "type": "video",
+          "title": "August Sizzle",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250804-august-sizzle-1-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250804-august-sizzle-1-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-1.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 1",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-1-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-1-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-2.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 2",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-2-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-2-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-1.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 3",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-1-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-1-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-2.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 4",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-2-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-2-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-3.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 5",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-3-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-last-3-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-star-3.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 6",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-star-3-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-star-3-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-4.mp4",
+          "type": "video",
+          "title": "Deep Sleep Promo 7",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-4-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220809-deep-sleep-20-off-start-4-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220820-pack-promo-start.mp4",
+          "type": "video",
+          "title": "Labor Day Promo 1",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220820-pack-promo-start-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220820-pack-promo-start-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220820-pack-promo-last-day.mp4",
+          "type": "video",
+          "title": "Labor Day Promo 2",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220820-pack-promo-last-day-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220820-pack-promo-last-day-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/performance-pack.mp4",
+          "type": "video",
+          "title": "Performance Pack Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/performance-pack-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/performance-pack-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/performance-pack-last-day.mp4",
+          "type": "video",
+          "title": "Performance Pack Last Day Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/performance-pack-last-day-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/performance-pack-last-day-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/victory-pack.mp4",
+          "type": "video",
+          "title": "Victory Pack Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/victory-pack-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/victory-pack-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/victory-pack-last-day.mp4",
+          "type": "video",
+          "title": "Victory Pack Last Day Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/victory-pack-last-day-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/victory-pack-last-day-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/weight-management-pack.mp4",
+          "type": "video",
+          "title": "Weight Management Pack Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/weight-management-pack-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/weight-management-pack-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/weight-management-pack-last-day.mp4",
+          "type": "video",
+          "title": "Weight Management Pack Last Day Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/weight-management-pack-last-day-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/weight-management-pack-last-day-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/wellness-pack.mp4",
+          "type": "video",
+          "title": "Wellness Pack Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/wellness-pack-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/wellness-pack-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/wellness-pack-last-day.mp4",
+          "type": "video",
+          "title": "Wellness Pack Last Day Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/wellness-pack-last-day-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/wellness-pack-last-day-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-25-off.mp4",
+          "type": "video",
+          "title": "Probiotic + Prebiotic Promo 1",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-25-off-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-25-off-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off.mp4",
+          "type": "video",
+          "title": "Probiotic + Prebiotic Promo 2",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off-2.mp4",
+          "type": "video",
+          "title": "Probiotic + Prebiotic Promo 3",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off-2-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220827-probiotic-plus-prebiotic-last-day-25-off-2-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/240513-danielle-brandon-ad-9x16.mp4",
+          "type": "video",
+          "title": "Danielle Brandon Ad",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "/media/photo-video/pv-xendurance/240513-danielle-brandon-ad-9x16-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/240513-danielle-brandon-ad-9x16-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/220817-testimonial-mashup-fat-and-weight-loss-ig-reel.mp4",
+          "type": "video",
+          "title": "Weight Loss Testimonials",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/220817-testimonial-mashup-fat-and-weight-loss-ig-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/220817-testimonial-mashup-fat-and-weight-loss-ig-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250329-hyrox-houston-cindy-and-nicki.mp4",
+          "type": "video",
+          "title": "HYROX Houston - Cindy & Nicki",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250329-hyrox-houston-cindy-and-nicki-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250329-hyrox-houston-cindy-and-nicki-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250611-hyrox-nyc-pavelchak-x-crowley.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Pavelchak & Crowley",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250611-hyrox-nyc-pavelchak-x-crowley-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250611-hyrox-nyc-pavelchak-x-crowley-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250613-hyrox-nyc-rodriguez-x-porter.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Rodriguez & Porter",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250613-hyrox-nyc-rodriguez-x-porter-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250613-hyrox-nyc-rodriguez-x-porter-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250614-hyrox-nyc-williams-x-swartzendruber.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Williams & Swartzendruber",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250614-hyrox-nyc-williams-x-swartzendruber-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250614-hyrox-nyc-williams-x-swartzendruber-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/250620-hyrox-nyc-palmer.mp4",
+          "type": "video",
+          "title": "HYROX NYC - Palmer",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/250620-hyrox-nyc-palmer-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/250620-hyrox-nyc-palmer-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/251003-hyrox-boston-matt-and-breezy.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Matt & Breezy",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/251003-hyrox-boston-matt-and-breezy-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/251003-hyrox-boston-matt-and-breezy-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/251004-hyrox-boston-crystal-and-brian.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Crystal & Brian",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/251004-hyrox-boston-crystal-and-brian-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/251004-hyrox-boston-crystal-and-brian-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-xendurance/251008-hyrox-boston-bobby-and-sharon.mp4",
+          "type": "video",
+          "title": "HYROX Boston - Bobby & Sharon",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-xendurance/251008-hyrox-boston-bobby-and-sharon-poster.webp",
+          "thumb": "/media/photo-video/pv-xendurance/251008-hyrox-boston-bobby-and-sharon-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "https://drive.google.com/file/d/1mHr8UaK4xjia9RG3t6kbsKDRIcCU4SWc/preview",
+          "type": "drive",
+          "title": "Coffee House Creamer",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1mHr8UaK4xjia9RG3t6kbsKDRIcCU4SWc&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1mHr8UaK4xjia9RG3t6kbsKDRIcCU4SWc&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1mHr8UaK4xjia9RG3t6kbsKDRIcCU4SWc"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1c8mQOw3pNsfF50MlYv7YZWoiJh5OEYCa/preview",
+          "type": "drive",
+          "title": "Skincare Launch Sizzle",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1c8mQOw3pNsfF50MlYv7YZWoiJh5OEYCa&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1c8mQOw3pNsfF50MlYv7YZWoiJh5OEYCa&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1c8mQOw3pNsfF50MlYv7YZWoiJh5OEYCa"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1RVpNB6QbSC-mh3onJrWYGziPRT7HgTFC/preview",
+          "type": "drive",
+          "title": "TeamXND Promo",
+          "service": "Video Editing",
+          "material": "Ad",
+          "poster": "https://drive.google.com/thumbnail?id=1RVpNB6QbSC-mh3onJrWYGziPRT7HgTFC&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1RVpNB6QbSC-mh3onJrWYGziPRT7HgTFC&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1RVpNB6QbSC-mh3onJrWYGziPRT7HgTFC"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1kSE9KxJmjxs7PuZGqvVFA2fp2kwsKOcz/preview",
+          "type": "drive",
+          "title": "Bigfoot Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1kSE9KxJmjxs7PuZGqvVFA2fp2kwsKOcz&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1kSE9KxJmjxs7PuZGqvVFA2fp2kwsKOcz&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1kSE9KxJmjxs7PuZGqvVFA2fp2kwsKOcz"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1W6Tlsn8b9C6mYwQuNHjE9dxx1JfMrsTk/preview",
+          "type": "drive",
+          "title": "CrossFit Games Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1W6Tlsn8b9C6mYwQuNHjE9dxx1JfMrsTk&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1W6Tlsn8b9C6mYwQuNHjE9dxx1JfMrsTk&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1W6Tlsn8b9C6mYwQuNHjE9dxx1JfMrsTk"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1h9TD29M5XX35ca0A0MHsGfMDZKQYq98g/preview",
+          "type": "drive",
+          "title": "Crossfit Mashup",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1h9TD29M5XX35ca0A0MHsGfMDZKQYq98g&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1h9TD29M5XX35ca0A0MHsGfMDZKQYq98g&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1h9TD29M5XX35ca0A0MHsGfMDZKQYq98g"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1mlwGtceBg-xEYCzOnV-CpSfiAyKFvD07/preview",
+          "type": "drive",
+          "title": "Hyrox Boston Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1mlwGtceBg-xEYCzOnV-CpSfiAyKFvD07&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1mlwGtceBg-xEYCzOnV-CpSfiAyKFvD07&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1mlwGtceBg-xEYCzOnV-CpSfiAyKFvD07"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1S-hG7YCtSNjE9-gZw7ZlbYWNcF7P49EG/preview",
+          "type": "drive",
+          "title": "Hyrox NYC Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1S-hG7YCtSNjE9-gZw7ZlbYWNcF7P49EG&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1S-hG7YCtSNjE9-gZw7ZlbYWNcF7P49EG&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1S-hG7YCtSNjE9-gZw7ZlbYWNcF7P49EG"
+        },
+        {
+          "src": "https://drive.google.com/file/d/14AGHaq265Ah0m3q5FZGxdRE2LubJK3U0/preview",
+          "type": "drive",
+          "title": "Hyrox World's All Teams Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=14AGHaq265Ah0m3q5FZGxdRE2LubJK3U0&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=14AGHaq265Ah0m3q5FZGxdRE2LubJK3U0&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "14AGHaq265Ah0m3q5FZGxdRE2LubJK3U0"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1Rkh7enomA7ZDT1fEY8_Sjp7i_djBaltI/preview",
+          "type": "drive",
+          "title": "Josh Bridges Boxing",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1Rkh7enomA7ZDT1fEY8_Sjp7i_djBaltI&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1Rkh7enomA7ZDT1fEY8_Sjp7i_djBaltI&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1Rkh7enomA7ZDT1fEY8_Sjp7i_djBaltI"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1EePcNYWFf_WF5NjjptdbTjGsgQ3lgfxI/preview",
+          "type": "drive",
+          "title": "Workout Mashup 1",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1EePcNYWFf_WF5NjjptdbTjGsgQ3lgfxI&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1EePcNYWFf_WF5NjjptdbTjGsgQ3lgfxI&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1EePcNYWFf_WF5NjjptdbTjGsgQ3lgfxI"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1kNBgwlwkNq5nAjDxkRhYAZgbSNxLKjWY/preview",
+          "type": "drive",
+          "title": "Workout Mashup 2",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1kNBgwlwkNq5nAjDxkRhYAZgbSNxLKjWY&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1kNBgwlwkNq5nAjDxkRhYAZgbSNxLKjWY&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1kNBgwlwkNq5nAjDxkRhYAZgbSNxLKjWY"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1L6EuaaZA9YsMsXryZMJbOdiqhUIdGOQJ/preview",
+          "type": "drive",
+          "title": "Workout Mashup 3",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1L6EuaaZA9YsMsXryZMJbOdiqhUIdGOQJ&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1L6EuaaZA9YsMsXryZMJbOdiqhUIdGOQJ&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1L6EuaaZA9YsMsXryZMJbOdiqhUIdGOQJ"
+        },
+        {
+          "src": "https://drive.google.com/file/d/17mcLseSGmCZXkss43jF1PD9WDxpqqy4M/preview",
+          "type": "drive",
+          "title": "Workout Mashup 4",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=17mcLseSGmCZXkss43jF1PD9WDxpqqy4M&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=17mcLseSGmCZXkss43jF1PD9WDxpqqy4M&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "17mcLseSGmCZXkss43jF1PD9WDxpqqy4M"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1BDCQE-Zli--GCXu8hJb8Hu-IqAKCHkAr/preview",
+          "type": "drive",
+          "title": "Workout Mashup 5",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1BDCQE-Zli--GCXu8hJb8Hu-IqAKCHkAr&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1BDCQE-Zli--GCXu8hJb8Hu-IqAKCHkAr&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1BDCQE-Zli--GCXu8hJb8Hu-IqAKCHkAr"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1tLGNG3dehsDkB6osxehQkGcRIrMmrI4Q/preview",
+          "type": "drive",
+          "title": "Workout Mashup 6",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1tLGNG3dehsDkB6osxehQkGcRIrMmrI4Q&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1tLGNG3dehsDkB6osxehQkGcRIrMmrI4Q&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1tLGNG3dehsDkB6osxehQkGcRIrMmrI4Q"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1rzUfPqsC44o_RG1FvJ91qxv2oBUI9vKD/preview",
+          "type": "drive",
+          "title": "World Fitness Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1rzUfPqsC44o_RG1FvJ91qxv2oBUI9vKD&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1rzUfPqsC44o_RG1FvJ91qxv2oBUI9vKD&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1rzUfPqsC44o_RG1FvJ91qxv2oBUI9vKD"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1oncKmCvmHCYLQOJBuvQjSOf4cYaKcphZ/preview",
+          "type": "drive",
+          "title": "XND Sizzle 1",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1oncKmCvmHCYLQOJBuvQjSOf4cYaKcphZ&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1oncKmCvmHCYLQOJBuvQjSOf4cYaKcphZ&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1oncKmCvmHCYLQOJBuvQjSOf4cYaKcphZ"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1YK9p4MJvvFI8FU30MQIP7PVi73uVgnI-/preview",
+          "type": "drive",
+          "title": "XND Sizzle 2",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1YK9p4MJvvFI8FU30MQIP7PVi73uVgnI-&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1YK9p4MJvvFI8FU30MQIP7PVi73uVgnI-&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1YK9p4MJvvFI8FU30MQIP7PVi73uVgnI-"
+        },
+        {
+          "src": "https://drive.google.com/file/d/17ZWTCae35kQea-F7vY0zb01NrTmXX-VT/preview",
+          "type": "drive",
+          "title": "XND Sizzle 3",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=17ZWTCae35kQea-F7vY0zb01NrTmXX-VT&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=17ZWTCae35kQea-F7vY0zb01NrTmXX-VT&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "17ZWTCae35kQea-F7vY0zb01NrTmXX-VT"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1oR8R_W4wLzPSQyfLAEfEv9ulhiXXWGcg/preview",
+          "type": "drive",
+          "title": "XND Sizzle 4",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1oR8R_W4wLzPSQyfLAEfEv9ulhiXXWGcg&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1oR8R_W4wLzPSQyfLAEfEv9ulhiXXWGcg&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1oR8R_W4wLzPSQyfLAEfEv9ulhiXXWGcg"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1psMaybl75KK6WAyLbanZ_T3s1m6XYL_F/preview",
+          "type": "drive",
+          "title": "XND Sizzle 5",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1psMaybl75KK6WAyLbanZ_T3s1m6XYL_F&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1psMaybl75KK6WAyLbanZ_T3s1m6XYL_F&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1psMaybl75KK6WAyLbanZ_T3s1m6XYL_F"
+        },
+        {
+          "src": "https://drive.google.com/file/d/117M-xV29e9Ce7OelRJwuWkUGc0LJrdkI/preview",
+          "type": "drive",
+          "title": "XND Sizzle 6",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=117M-xV29e9Ce7OelRJwuWkUGc0LJrdkI&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=117M-xV29e9Ce7OelRJwuWkUGc0LJrdkI&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "117M-xV29e9Ce7OelRJwuWkUGc0LJrdkI"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1XSUsyMsFqvEfsu02SAF_7WQqiLgGBRnG/preview",
+          "type": "drive",
+          "title": "XND Sizzle 7",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1XSUsyMsFqvEfsu02SAF_7WQqiLgGBRnG&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1XSUsyMsFqvEfsu02SAF_7WQqiLgGBRnG&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1XSUsyMsFqvEfsu02SAF_7WQqiLgGBRnG"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1XBfQ7s3_ZMziZYuXP8iPGDs87WDnyQxX/preview",
+          "type": "drive",
+          "title": "XND Sizzle 8",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1XBfQ7s3_ZMziZYuXP8iPGDs87WDnyQxX&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1XBfQ7s3_ZMziZYuXP8iPGDs87WDnyQxX&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1XBfQ7s3_ZMziZYuXP8iPGDs87WDnyQxX"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1wq-bpXi3MUy-Cg_ZvgAFVbzQdD7WCQI1/preview",
+          "type": "drive",
+          "title": "XND Sizzle 9",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1wq-bpXi3MUy-Cg_ZvgAFVbzQdD7WCQI1&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1wq-bpXi3MUy-Cg_ZvgAFVbzQdD7WCQI1&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1wq-bpXi3MUy-Cg_ZvgAFVbzQdD7WCQI1"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1mWysdMTxTEfKH0ugPGGkNsG8NITBgQjU/preview",
+          "type": "drive",
+          "title": "XND Sizzle 10",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1mWysdMTxTEfKH0ugPGGkNsG8NITBgQjU&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1mWysdMTxTEfKH0ugPGGkNsG8NITBgQjU&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1mWysdMTxTEfKH0ugPGGkNsG8NITBgQjU"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1cdsf3egHQM1q-sf2OWh7ggctVdv4lejh/preview",
+          "type": "drive",
+          "title": "Sizzle 11",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1cdsf3egHQM1q-sf2OWh7ggctVdv4lejh&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1cdsf3egHQM1q-sf2OWh7ggctVdv4lejh&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1cdsf3egHQM1q-sf2OWh7ggctVdv4lejh"
+        }
+      ],
+      "services": [
+        "Video Editing",
+        "Ad Creation",
+        "Social Media Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-tone-media",
+      "title": "Wedding - Tone Media Collaboration",
+      "industry": "Wedding",
+      "client": "Tone Media Collaboration",
+      "category": "photo-video",
+      "description": "Cinematic wedding teasers and highlight films edited in collaboration with Tone Media.",
+      "thumbnail": "https://drive.google.com/thumbnail?id=12WLtGXC_8l_DPIeIH1JFQpNeltu8-dxP&sz=w320",
+      "assets": [
+        {
+          "src": "https://drive.google.com/file/d/12WLtGXC_8l_DPIeIH1JFQpNeltu8-dxP/preview",
+          "type": "drive",
+          "title": "Bella & Nick Teaser",
+          "service": "Video Editing",
+          "material": "Wedding Teaser",
+          "poster": "https://drive.google.com/thumbnail?id=12WLtGXC_8l_DPIeIH1JFQpNeltu8-dxP&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=12WLtGXC_8l_DPIeIH1JFQpNeltu8-dxP&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "12WLtGXC_8l_DPIeIH1JFQpNeltu8-dxP"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1R-syL1hk0Q7rOe_COTtli-hV761VQdLG/preview",
+          "type": "drive",
+          "title": "Caroline & Will Teaser",
+          "service": "Video Editing",
+          "material": "Wedding Teaser",
+          "poster": "https://drive.google.com/thumbnail?id=1R-syL1hk0Q7rOe_COTtli-hV761VQdLG&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1R-syL1hk0Q7rOe_COTtli-hV761VQdLG&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1R-syL1hk0Q7rOe_COTtli-hV761VQdLG"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1S8o9fyNoA9E3SdfwQe9k7NyBLAAaNK9o/preview",
+          "type": "drive",
+          "title": "Deirdre & Brian Teaser",
+          "service": "Video Editing",
+          "material": "Wedding Teaser",
+          "poster": "https://drive.google.com/thumbnail?id=1S8o9fyNoA9E3SdfwQe9k7NyBLAAaNK9o&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1S8o9fyNoA9E3SdfwQe9k7NyBLAAaNK9o&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1S8o9fyNoA9E3SdfwQe9k7NyBLAAaNK9o"
+        },
+        {
+          "src": "https://drive.google.com/file/d/18lDgY7Cfs4kELb52Wcb36OTxYoMZ1bDB/preview",
+          "type": "drive",
+          "title": "Katelyn & Gabe Highlight",
+          "service": "Video Editing",
+          "material": "Wedding Highlight",
+          "poster": "https://drive.google.com/thumbnail?id=18lDgY7Cfs4kELb52Wcb36OTxYoMZ1bDB&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=18lDgY7Cfs4kELb52Wcb36OTxYoMZ1bDB&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "18lDgY7Cfs4kELb52Wcb36OTxYoMZ1bDB"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1eaoh5WduKbqvJ-4W0TLbBMX8fgVD9RXx/preview",
+          "type": "drive",
+          "title": "Marina & Gary Teaser",
+          "service": "Video Editing",
+          "material": "Wedding Teaser",
+          "poster": "https://drive.google.com/thumbnail?id=1eaoh5WduKbqvJ-4W0TLbBMX8fgVD9RXx&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1eaoh5WduKbqvJ-4W0TLbBMX8fgVD9RXx&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1eaoh5WduKbqvJ-4W0TLbBMX8fgVD9RXx"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1ZMH3k8UXHNRtly128WBk8nj6fvl19rAb/preview",
+          "type": "drive",
+          "title": "Rehearsal Dinner",
+          "service": "Video Editing",
+          "material": "Wedding Teaser",
+          "poster": "https://drive.google.com/thumbnail?id=1ZMH3k8UXHNRtly128WBk8nj6fvl19rAb&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1ZMH3k8UXHNRtly128WBk8nj6fvl19rAb&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1ZMH3k8UXHNRtly128WBk8nj6fvl19rAb"
+        }
+      ],
+      "services": [
+        "Video Editing",
+        "Color Grading"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-sunlife",
+      "title": "Insurance - Sun Life Grepa Financial Inc.",
+      "industry": "Insurance",
+      "client": "Sun Life Grepa Financial Inc.",
+      "category": "photo-video",
+      "description": "Educational videos, social carousels and brand creatives for Sun Life Grepa Financial and Sun Life Grepa Healthcare.",
+      "thumbnail": "/media/photo-video/pv-sunlife/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-sunlife/9-slghc-branding-and-content-let-s-talk-accidents-111023.mp4",
+          "type": "video",
+          "title": "Let's Talk Accidents",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-sunlife/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
+          "thumb": "/media/photo-video/pv-sunlife/9-slghc-branding-and-content-let-s-talk-accidents-111023-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "https://drive.google.com/file/d/1qYiq9UHd7GVYnJLzwmNL4UwE7Zvzf-5z/preview",
+          "type": "drive",
+          "title": "Achieve Your Goals",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1qYiq9UHd7GVYnJLzwmNL4UwE7Zvzf-5z&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1qYiq9UHd7GVYnJLzwmNL4UwE7Zvzf-5z&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1qYiq9UHd7GVYnJLzwmNL4UwE7Zvzf-5z"
+        },
+        {
+          "src": "https://drive.google.com/file/d/19881K4RgVqlj6x4phKBv3qvEpHJIjnez/preview",
+          "type": "drive",
+          "title": "All-in-One Package",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=19881K4RgVqlj6x4phKBv3qvEpHJIjnez&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=19881K4RgVqlj6x4phKBv3qvEpHJIjnez&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "19881K4RgVqlj6x4phKBv3qvEpHJIjnez"
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/19-slgfi240002.webp",
+          "type": "image",
+          "title": "What Made You Buy Life Insurance?",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/19-slgfi240002-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/21-slgfi240002.webp",
+          "type": "image",
+          "title": "Insure Your Future Dreams",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/21-slgfi240002-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/5-p1-slghc-branding-and-content-110423-final.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 1 Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/5-p1-slghc-branding-and-content-110423-final-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/5-p2-slghc-branding-and-content-110423-final.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 1 Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/5-p2-slghc-branding-and-content-110423-final-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/5-p3-slghc-branding-and-content-110423-final.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 1 Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/5-p3-slghc-branding-and-content-110423-final-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/5-p4-slghc-branding-and-content-110423-final.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 1 Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/5-p4-slghc-branding-and-content-110423-final-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/11-p1-slghc-branding-and-content-111323-rev4.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 2 Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/11-p1-slghc-branding-and-content-111323-rev4-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/11-p2-slghc-branding-and-content-111323-rev4.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 2 Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/11-p2-slghc-branding-and-content-111323-rev4-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/11-p3-slghc-branding-and-content-111323-rev4.webp",
+          "type": "image",
+          "title": "MSME MyBiz Carousel 2 Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/11-p3-slghc-branding-and-content-111323-rev4-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/21-p1-slghc-branding-and-content-112723-rev1.webp",
+          "type": "image",
+          "title": "MSME MyBiz Hipster Carousel Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/21-p1-slghc-branding-and-content-112723-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/21-p4-slghc-branding-and-content-112723-rev1.webp",
+          "type": "image",
+          "title": "MSME MyBiz Hipster Carousel Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/21-p4-slghc-branding-and-content-112723-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/16-p1-slghc-branding-and-content-112023-rev3.webp",
+          "type": "image",
+          "title": "Accident Prosafe Carousel Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/16-p1-slghc-branding-and-content-112023-rev3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/16-p2-slghc-branding-and-content-112023-rev3.webp",
+          "type": "image",
+          "title": "Accident Prosafe Carousel Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/16-p2-slghc-branding-and-content-112023-rev3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/16-p3-slghc-branding-and-content-112023-rev3.webp",
+          "type": "image",
+          "title": "Accident Prosafe Carousel Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/16-p3-slghc-branding-and-content-112023-rev3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/16-p4-slghc-branding-and-content-112023-rev3.webp",
+          "type": "image",
+          "title": "Accident Prosafe Carousel Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/16-p4-slghc-branding-and-content-112023-rev3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/19-p1-slghc-branding-and-content-112423-rev1.webp",
+          "type": "image",
+          "title": "Smart Care Plus Carousel Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/19-p1-slghc-branding-and-content-112423-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/19-p2-slghc-branding-and-content-112423-rev1.webp",
+          "type": "image",
+          "title": "Smart Care Plus Carousel Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/19-p2-slghc-branding-and-content-112423-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/19-p3-slghc-branding-and-content-112423-rev1.webp",
+          "type": "image",
+          "title": "Smart Care Plus Carousel Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/19-p3-slghc-branding-and-content-112423-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/19-p4-slghc-branding-and-content-112423-slghc-branding-and-content-112423-rev1.webp",
+          "type": "image",
+          "title": "Smart Care Plus Carousel Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/19-p4-slghc-branding-and-content-112423-slghc-branding-and-content-112423-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/27-p1-slghc-branding-and-content-120623-rev1.webp",
+          "type": "image",
+          "title": "Company Edge Carousel Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/27-p1-slghc-branding-and-content-120623-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/27-p2-slghc-branding-and-content-120623-rev1.webp",
+          "type": "image",
+          "title": "Company Edge Carousel Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/27-p2-slghc-branding-and-content-120623-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/27-p3-slghc-branding-and-content-120623-rev1.webp",
+          "type": "image",
+          "title": "Company Edge Carousel Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/27-p3-slghc-branding-and-content-120623-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/27-p4-slghc-branding-and-content-120623-rev1.webp",
+          "type": "image",
+          "title": "Company Edge Carousel Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/27-p4-slghc-branding-and-content-120623-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/27-p5-slghc-branding-and-content-120623-rev1.webp",
+          "type": "image",
+          "title": "Company Edge Carousel Page 5",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/27-p5-slghc-branding-and-content-120623-rev1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/6-slgfi240002-p1.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 1 Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/6-slgfi240002-p1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/6-slgfi240002-p2.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 1 Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/6-slgfi240002-p2-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/6-slgfi240002-p5.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 1 Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/6-slgfi240002-p5-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/13-slgfi240002-p1.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 2 Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/13-slgfi240002-p1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/13-slgfi240002-p2.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 2 Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/13-slgfi240002-p2-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/14-slgfi240002-p1.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 3 Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/14-slgfi240002-p1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/14-slgfi240002-p2.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 3 Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/14-slgfi240002-p2-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/14-slgfi240002-p3.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 3 Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/14-slgfi240002-p3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/14-slgfi240002-p4.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 3 Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/14-slgfi240002-p4-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-sunlife/14-slgfi240002-p5.webp",
+          "type": "image",
+          "title": "Financial Tips Carousel 3 Page 5",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-sunlife/14-slgfi240002-p5-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Video Editing",
+        "Educational Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-twin-oaks",
+      "title": "Real Estate - Twin Oaks Real Estate",
+      "industry": "Real Estate",
+      "client": "Twin Oaks Real Estate",
+      "category": "photo-video",
+      "description": "Listing photo edits, twilight edits and property videos for Twin Oaks Real Estate.",
+      "thumbnail": "/media/photo-video/pv-twin-oaks/220714-ryan-listingvideo-kt-poster.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-twin-oaks/220714-ryan-listingvideo-kt.mp4",
+          "type": "video",
+          "title": "Property Listing Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-twin-oaks/220714-ryan-listingvideo-kt-poster.webp",
+          "thumb": "/media/photo-video/pv-twin-oaks/220714-ryan-listingvideo-kt-poster.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/220714-ryan-igreel-kt.mp4",
+          "type": "video",
+          "title": "Twin Oaks Intro",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-twin-oaks/220714-ryan-igreel-kt-poster.webp",
+          "thumb": "/media/photo-video/pv-twin-oaks/220714-ryan-igreel-kt-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/1.webp",
+          "type": "image",
+          "title": "Property Listing 1",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/1-thumb.webp",
+          "width": 1600,
+          "height": 1066
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/2.webp",
+          "type": "image",
+          "title": "Property Listing 2",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/2-thumb.webp",
+          "width": 1600,
+          "height": 1066
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/3.webp",
+          "type": "image",
+          "title": "Property Listing 3",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/3-thumb.webp",
+          "width": 1600,
+          "height": 1066
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/4.webp",
+          "type": "image",
+          "title": "Property Listing 4",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/4-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/5.webp",
+          "type": "image",
+          "title": "Property Listing 5",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/5-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/6.webp",
+          "type": "image",
+          "title": "Property Listing 6",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/6-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/7.webp",
+          "type": "image",
+          "title": "Property Listing 7",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/7-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/8.webp",
+          "type": "image",
+          "title": "Property Listing 8",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/8-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/9.webp",
+          "type": "image",
+          "title": "Property Listing 9",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/9-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/10.webp",
+          "type": "image",
+          "title": "Property Listing 10",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/10-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/11.webp",
+          "type": "image",
+          "title": "Property Listing 11",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/11-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/12.webp",
+          "type": "image",
+          "title": "Property Listing 12",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/12-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/13.webp",
+          "type": "image",
+          "title": "Property Listing 13",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/13-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/14.webp",
+          "type": "image",
+          "title": "Property Listing 14",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/14-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/15.webp",
+          "type": "image",
+          "title": "Property Listing 15",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/15-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/220714-ryan-twilightedit1-kt.webp",
+          "type": "image",
+          "title": "Property Listing 16",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/220714-ryan-twilightedit1-kt-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        },
+        {
+          "src": "/media/photo-video/pv-twin-oaks/220714-ryan-twilightedit2-kt.webp",
+          "type": "image",
+          "title": "Property Listing 17",
+          "service": "Photo Editing",
+          "material": "Listing Assets",
+          "thumb": "/media/photo-video/pv-twin-oaks/220714-ryan-twilightedit2-kt-thumb.webp",
+          "width": 1600,
+          "height": 1067
+        }
+      ],
+      "services": [
+        "Photo Editing",
+        "Video Editing",
+        "Real Estate Marketing"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-monza",
+      "title": "F&B - Monza Barcade",
+      "industry": "F&B",
+      "client": "Monza Barcade",
+      "category": "photo-video",
+      "description": "Event reels, race-day highlights and event graphics for Monza Barcade's racing-themed bar pop-ups.",
+      "thumbnail": "/media/photo-video/pv-monza/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-monza/1-monza-monza-mckinley-hill-event-announcement-reel.mp4",
+          "type": "video",
+          "title": "Mckinley Hill Event Announcement",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/1-monza-monza-mckinley-hill-event-announcement-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/4-monza-british-gp-live-viewing-highlights-reel.mp4",
+          "type": "video",
+          "title": "British GP Highlights",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/4-monza-british-gp-live-viewing-highlights-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/4-monza-british-gp-live-viewing-highlights-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/5-monza-monza-mckinley-hill-adding-fun-reel.mp4",
+          "type": "video",
+          "title": "Mckinley Hill Adding Fun",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/5-monza-monza-mckinley-hill-adding-fun-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/5-monza-monza-mckinley-hill-adding-fun-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/6-monza-monza-mckinley-hill-recap-reel.mp4",
+          "type": "video",
+          "title": "Mckinley Hill Pop Up Recap",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/6-monza-monza-mckinley-hill-recap-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/6-monza-monza-mckinley-hill-recap-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/7-monza-hungarian-gp-live-viewing-highlights-reel.mp4",
+          "type": "video",
+          "title": "Hungarian GP Highlight",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/7-monza-hungarian-gp-live-viewing-highlights-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/7-monza-hungarian-gp-live-viewing-highlights-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/7-8-monza-estancia-roadshow-event-teaser-reel.mp4",
+          "type": "video",
+          "title": "Estancia Roadshow Teaser",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/7-8-monza-estancia-roadshow-event-teaser-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/7-8-monza-estancia-roadshow-event-teaser-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/9-monza-featuring-cocktails-reel.mp4",
+          "type": "video",
+          "title": "Monza Cocktails",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/9-monza-featuring-cocktails-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/9-monza-featuring-cocktails-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel.mp4",
+          "type": "video",
+          "title": "Eastwood Day 1 Slideshow",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/14-monza-monza-eastwood-day-1-post-doc-slideshow-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/15-monza-monza-eastwood-recap-reel.mp4",
+          "type": "video",
+          "title": "Eastwood Pop Up Recap",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "/media/photo-video/pv-monza/15-monza-monza-eastwood-recap-reel-poster.webp",
+          "thumb": "/media/photo-video/pv-monza/15-monza-monza-eastwood-recap-reel-poster.webp",
+          "width": 540,
+          "height": 960
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-monza-british-gp-podium-winners.webp",
+          "type": "image",
+          "title": "British GP Winners",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-monza-british-gp-podium-winners-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/2-monza-dutch-gp.webp",
+          "type": "image",
+          "title": "Dutch GP",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/2-monza-dutch-gp-thumb.webp",
+          "width": 1284,
+          "height": 1600
+        },
+        {
+          "src": "/media/photo-video/pv-monza/12-monza-ladies-night.webp",
+          "type": "image",
+          "title": "Ladies Night",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/12-monza-ladies-night-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/13-monza-legends-night-v2.webp",
+          "type": "image",
+          "title": "Legends Night",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/13-monza-legends-night-v2-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/8-p1-monza-monza-eastwood-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Eastwood Roadshow Page 1",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/8-p1-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/8-p2-monza-monza-eastwood-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Eastwood Roadshow Page 2",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/8-p2-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/8-p3-monza-monza-eastwood-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Eastwood Roadshow Page 3",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/8-p3-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/8-p4-monza-monza-eastwood-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Eastwood Roadshow Page 4",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/8-p4-monza-monza-eastwood-event-carousel-graphic-design-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p1-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 1",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p1-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p2-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 2",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p2-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p3-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 3",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p3-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p4-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 4",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p4-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p5-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 5",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p5-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-p6-monza-monza-mapua-winners-graphic-design.webp",
+          "type": "image",
+          "title": "Mapua Winners Page 6",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-monza/3-p6-monza-monza-mapua-winners-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/9-p1-monza-estancia-roadshow-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Estancia Roadshow Page 1",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/9-p1-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/9-p2-monza-estancia-roadshow-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Estancia Roadshow Page 2",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/9-p2-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/9-p3-monza-estancia-roadshow-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Estancia Roadshow Page 3",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/9-p3-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/9-p4-monza-estancia-roadshow-event-carousel-graphic-design.webp",
+          "type": "image",
+          "title": "Estancia Roadshow Page 4",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/9-p4-monza-estancia-roadshow-event-carousel-graphic-design-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p1.webp",
+          "type": "image",
+          "title": "Driving Trial Mechanics Page 1",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p1-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p2.webp",
+          "type": "image",
+          "title": "Driving Trial Mechanics Page 2",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p2-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p3.webp",
+          "type": "image",
+          "title": "Driving Trial Mechanics Page 3",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p3-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        },
+        {
+          "src": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p4.webp",
+          "type": "image",
+          "title": "Driving Trial Mechanics Page 4",
+          "service": "Graphic Design",
+          "material": "Event Creatives",
+          "thumb": "/media/photo-video/pv-monza/3-monza-monza-mckinley-hill-driving-trial-graphic-design-p4-thumb.webp",
+          "width": 1200,
+          "height": 1200
+        }
+      ],
+      "services": [
+        "Video Editing",
+        "Graphic Design",
+        "Event Creatives"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-baker-mckenzie",
+      "title": "Shared Services - Baker & Mckenzie Global Services Manila",
+      "industry": "Shared Services",
+      "client": "Baker & Mckenzie Global Services Manila",
+      "category": "photo-video",
+      "description": "Opening billboards, a logo stinger and an RTO teaser for Baker & McKenzie Global Services Manila's year-end virtual event.",
+      "thumbnail": "/media/photo-video/pv-baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3.mp4",
+          "type": "video",
+          "title": "Opening Billboard",
+          "service": "Video Editing",
+          "material": "Event Creatives",
+          "poster": "/media/photo-video/pv-baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
+          "thumb": "/media/photo-video/pv-baker-mckenzie/opening-billboard-baker-mckenzie-year-end-event-v3-poster.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "/media/photo-video/pv-baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2.mp4",
+          "type": "video",
+          "title": "Opening Billboard Reminders",
+          "service": "Video Editing",
+          "material": "Event Creatives",
+          "poster": "/media/photo-video/pv-baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2-poster.webp",
+          "thumb": "/media/photo-video/pv-baker-mckenzie/opening-billboard-reminders-baker-mckenzie-year-end-event-v2-poster.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "/media/photo-video/pv-baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2.mp4",
+          "type": "video",
+          "title": "Year-End RTO Teaser",
+          "service": "Video Editing",
+          "material": "Event Creatives",
+          "poster": "/media/photo-video/pv-baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2-poster.webp",
+          "thumb": "/media/photo-video/pv-baker-mckenzie/clt-rto-video-baker-mckenzie-year-end-event-v2-poster.webp",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "src": "/media/photo-video/pv-baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event.mp4",
+          "type": "video",
+          "title": "Stinger Logo Reveal",
+          "service": "Video Editing",
+          "material": "Event Creatives",
+          "poster": "/media/photo-video/pv-baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event-poster.webp",
+          "thumb": "/media/photo-video/pv-baker-mckenzie/stinger-logo-reveal-baker-mckenzie-year-end-event-poster.webp",
+          "width": 1280,
+          "height": 720
+        }
+      ],
+      "services": [
+        "Video Editing",
+        "Motion Graphics",
+        "Event Creatives"
+      ],
+      "featured": true
+    },
+    {
+      "id": "pv-msmes-creators",
+      "title": "Miscellaneous - MSMEs & Creators",
+      "industry": "Miscellaneous",
+      "client": "MSMEs & Creators",
+      "category": "photo-video",
+      "description": "Brand assets and short-form video edits for small businesses and independent creators.",
+      "thumbnail": "/media/photo-video/pv-msmes-creators/lees-kitchen-assets-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/photo-video/pv-msmes-creators/lees-kitchen-assets.webp",
+          "type": "image",
+          "title": "Lee's Kitchen Assets",
+          "service": "Graphic Design",
+          "material": "Content",
+          "thumb": "/media/photo-video/pv-msmes-creators/lees-kitchen-assets-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "https://drive.google.com/file/d/1juHwoRH4WoIlJ01wQzf0fegHhNGW1VYa/preview",
+          "type": "drive",
+          "title": "Anderson Eye Creams",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1juHwoRH4WoIlJ01wQzf0fegHhNGW1VYa&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1juHwoRH4WoIlJ01wQzf0fegHhNGW1VYa&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1juHwoRH4WoIlJ01wQzf0fegHhNGW1VYa"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1i_xx1ioPYibNY89KMtevZZDHfDjxQbTQ/preview",
+          "type": "drive",
+          "title": "Husky Cookoff",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1i_xx1ioPYibNY89KMtevZZDHfDjxQbTQ&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1i_xx1ioPYibNY89KMtevZZDHfDjxQbTQ&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1i_xx1ioPYibNY89KMtevZZDHfDjxQbTQ"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1QiCi2Y7AkxtzQEgYC4zecBgrW03sdGYf/preview",
+          "type": "drive",
+          "title": "SIM1 Racing Trailer",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1QiCi2Y7AkxtzQEgYC4zecBgrW03sdGYf&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1QiCi2Y7AkxtzQEgYC4zecBgrW03sdGYf&sz=w320",
+          "width": 1000,
+          "height": 1778,
+          "driveId": "1QiCi2Y7AkxtzQEgYC4zecBgrW03sdGYf"
+        },
+        {
+          "src": "https://drive.google.com/file/d/1qOs9sDUL2qudlJqLVMe4co8VaHpCgA61/preview",
+          "type": "drive",
+          "title": "TUF Monitor",
+          "service": "Video Editing",
+          "material": "Content",
+          "poster": "https://drive.google.com/thumbnail?id=1qOs9sDUL2qudlJqLVMe4co8VaHpCgA61&sz=w1000",
+          "thumb": "https://drive.google.com/thumbnail?id=1qOs9sDUL2qudlJqLVMe4co8VaHpCgA61&sz=w320",
+          "width": 1000,
+          "height": 562,
+          "driveId": "1qOs9sDUL2qudlJqLVMe4co8VaHpCgA61"
+        }
+      ],
+      "services": [
+        "Graphic Design",
+        "Video Editing"
+      ],
+      "featured": false
+    },
+    {
+      "id": "vs-monza",
+      "title": "F&B - Monza Barcade",
+      "industry": "F&B",
+      "client": "Monza Barcade",
+      "category": "virtual-support",
+      "description": "Virtual community management and customer support for Monza Barcade across social media channels.",
+      "thumbnail": "",
+      "assets": [
+        {
+          "src": "",
+          "type": "case-study",
+          "title": "Community Management & Customer Support",
+          "service": "Business & Virtual Support",
+          "material": "Case Study",
+          "caseStudy": {
+            "title": "Community Management & Customer Support",
+            "meta": [
+              {
+                "label": "Client",
+                "value": "Monza Barcade"
+              },
+              {
+                "label": "Industry",
+                "value": "Food & Beverage / Hospitality"
+              },
+              {
+                "label": "Service",
+                "value": "Business & Virtual Support"
+              }
+            ],
+            "overview": "Provided virtual community management for Monza Barcade, handling customer communications across social media and coordinating inquiries and requests with restaurant management and owners.",
+            "contributions": [
+              {
+                "title": "Social Media Communication",
+                "body": "Managed incoming messages and inquiries from prospective and existing customers, providing information and responding to questions across social media channels."
+              },
+              {
+                "title": "Internal Coordination",
+                "body": "Acted as the communication bridge between online customers and the restaurant manager and owners, relaying inquiries, requests, and concerns for appropriate follow-through."
+              },
+              {
+                "title": "Customer Support",
+                "body": "Maintained responsive and organized customer communication, helping ensure inquiries were addressed and relevant requests were communicated to the on-ground team."
+              }
+            ],
+            "expertise": [
+              "Social Media Community Management",
+              "Customer Inquiry Handling",
+              "Online Customer Support",
+              "Internal Team Coordination",
+              "Virtual Customer Service"
+            ],
+            "note": "Product details and work materials withheld due to confidentiality."
+          }
+        }
+      ],
+      "services": [
+        "Community Management",
+        "Customer Support"
+      ],
+      "featured": true
+    },
+    {
+      "id": "vs-ponder",
+      "title": "AI - Ponder Technologies Inc",
+      "industry": "AI",
+      "client": "Ponder Technologies Inc",
+      "category": "virtual-support",
+      "description": "Editorial benchmarking, product QA and editorial operations for Ponder's AI-powered video editing platform.",
+      "thumbnail": "",
+      "assets": [
+        {
+          "src": "",
+          "type": "case-study",
+          "title": "AI Product Development & Editorial Operations",
+          "service": "Business & Virtual Support",
+          "material": "Case Study",
+          "caseStudy": {
+            "title": "AI Product Development & Editorial Operations",
+            "meta": [
+              {
+                "label": "Client",
+                "value": "Ponder — New York City, USA"
+              },
+              {
+                "label": "Role",
+                "value": "Senior Editor & Editorial Operations Lead"
+              },
+              {
+                "label": "Industry",
+                "value": "Artificial Intelligence & Video Technology"
+              }
+            ],
+            "overview": "Contributed to the development of Ponder's AI-powered video editing platform through expert editorial benchmarking, product quality assurance, editor onboarding, and collaboration with engineering to improve product quality and editing capabilities.",
+            "contributions": [
+              {
+                "title": "Expert Editorial Benchmarking",
+                "body": "Translated professional editorial expertise into benchmark reference videos, applying detailed editorial judgment to demonstrate how footage should be interpreted, selected, structured, and refined. Created reference materials that captured professional editing decisions to support the development and evaluation of the AI's editing capabilities."
+              },
+              {
+                "title": "Product Quality Assurance",
+                "body": "Tested staging, beta, and production versions of the application to identify bugs, assess functionality, evaluate editing workflows, and recommend improvements. Provided structured feedback to help improve product reliability, usability, and editing performance."
+              },
+              {
+                "title": "Editorial Operations & Team Onboarding",
+                "body": "Managed editorial deliverables while onboarding and training incoming editors on internal workflows, quality expectations, and established processes."
+              },
+              {
+                "title": "Cross-Functional Product Collaboration",
+                "body": "Collaborated with engineering, the founding team, and UI teams to translate editorial needs into actionable product feedback and workflow improvements."
+              }
+            ],
+            "expertise": [
+              "Expert Editorial Benchmarking for AI",
+              "AI Product Quality Assurance",
+              "Software Testing & Release Validation",
+              "Editorial Workflow Evaluation",
+              "Editor Training & Onboarding",
+              "Cross-Functional Product Collaboration"
+            ],
+            "note": "Product details and work materials withheld due to confidentiality."
+          }
+        }
+      ],
+      "services": [
+        "Quality Assurance",
+        "Editorial Operations"
+      ],
+      "featured": true
+    },
+    {
+      "id": "bm-msmes",
+      "title": "F&B - MSMEs",
+      "industry": "F&B",
+      "client": "MSMEs",
+      "category": "brand-marketing",
+      "description": "Brand identities, social posts and carousels for food and beverage small businesses.",
+      "thumbnail": "/media/brand-marketing/bm-msmes/msme-collaboration-thumb.webp",
+      "assets": [
+        {
+          "src": "/media/brand-marketing/bm-msmes/msme-collaboration.webp",
+          "type": "image",
+          "title": "MSME Collaboration",
+          "service": "Brand Marketing",
+          "material": "Brand Assets & Positioning",
+          "thumb": "/media/brand-marketing/bm-msmes/msme-collaboration-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/274477883-112539261359770-2611542943264539624-n.webp",
+          "type": "image",
+          "title": "Lee's Kitchen Brand Identity",
+          "service": "Brand Marketing",
+          "material": "Brand Assets & Positioning",
+          "thumb": "/media/brand-marketing/bm-msmes/274477883-112539261359770-2611542943264539624-n-thumb.webp",
+          "width": 1600,
+          "height": 1600
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/5.webp",
+          "type": "image",
+          "title": "Lee's Kitchen Social Post 1",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/5-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/6.webp",
+          "type": "image",
+          "title": "Lee's Kitchen Social Post 2",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/6-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/fp-ig-carousel-1.webp",
+          "type": "image",
+          "title": "Silog Bowls Carousel Page 1",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/fp-ig-carousel-1-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/fp-fb-carousel-2.webp",
+          "type": "image",
+          "title": "Silog Bowls Carousel Page 2",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/fp-fb-carousel-2-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/fp-fb-carousel-3.webp",
+          "type": "image",
+          "title": "Silog Bowls Carousel Page 3",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/fp-fb-carousel-3-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        },
+        {
+          "src": "/media/brand-marketing/bm-msmes/fp-fb-carousel-4.webp",
+          "type": "image",
+          "title": "Silog Bowls Carousel Page 4",
+          "service": "Brand Marketing",
+          "material": "Content",
+          "thumb": "/media/brand-marketing/bm-msmes/fp-fb-carousel-4-thumb.webp",
+          "width": 1080,
+          "height": 1080
+        }
+      ],
+      "services": [
+        "Branding",
+        "Social Media Content"
+      ],
+      "featured": true
+    },
+    {
+      "id": "bm-sunlife",
+      "title": "Insurance - Sun Life Grepa Financial Inc.",
+      "industry": "Insurance",
+      "client": "Sun Life Grepa Financial Inc.",
+      "category": "brand-marketing",
+      "description": "Content strategy, planning and execution for Sun Life Grepa Financial, Inc. and Sun Life Grepa Healthcare.",
+      "thumbnail": "",
+      "assets": [
+        {
+          "src": "",
+          "type": "case-study",
+          "title": "Content Strategy & Marketing",
+          "service": "Branding & Marketing",
+          "material": "Case Study",
+          "caseStudy": {
+            "title": "Content Strategy & Marketing",
+            "meta": [
+              {
+                "label": "Client",
+                "value": "Sun Life Grepa Financial, Inc. / Sun Life Grepa Healthcare"
+              },
+              {
+                "label": "Industry",
+                "value": "Insurance & Financial Services"
+              },
+              {
+                "label": "Service",
+                "value": "Branding & Marketing"
+              }
+            ],
+            "overview": "Developed and executed content strategies for Sun Life Grepa Financial, Inc. & Sun Life Grepa Healthcare, aligning content initiatives with brand messaging, marketing objectives, and audience engagement goals.",
+            "contributions": [
+              {
+                "title": "Content Strategy & Planning",
+                "body": "Developed content strategies and editorial plans tailored to brand priorities, communication objectives, and target audiences."
+              },
+              {
+                "title": "Content Execution",
+                "body": "Coordinated the execution of planned content initiatives, ensuring content aligned with the brand's messaging and marketing direction."
+              },
+              {
+                "title": "Brand Communication",
+                "body": "Supported consistent brand communication across content initiatives, translating marketing objectives into relevant and audience-focused messaging."
+              }
+            ],
+            "expertise": [
+              "Content Strategy & Planning",
+              "Content Calendar Development",
+              "Marketing Content Execution"
+            ],
+            "note": "Product details and work materials withheld due to confidentiality."
+          }
+        }
+      ],
+      "services": [
+        "Content Strategy",
+        "Content Marketing"
+      ],
+      "featured": true
     }
   ],
   "categories": [
     {
-      "id": "all",
-      "label": "All Projects"
-    },
-    {
-      "id": "events",
-      "label": "Events"
-    },
-    {
-      "id": "fnb",
-      "label": "F&B / Restaurant"
-    },
-    {
-      "id": "health",
-      "label": "Health & Fitness"
-    },
-    {
-      "id": "insurance",
-      "label": "Insurance"
-    },
-    {
-      "id": "realestate",
-      "label": "Real Estate"
-    },
-    {
       "id": "it",
-      "label": "IT Services"
+      "label": "IT & Digital Solutions"
+    },
+    {
+      "id": "photo-video",
+      "label": "Photo & Video Editing"
+    },
+    {
+      "id": "virtual-support",
+      "label": "Business & Virtual Support"
+    },
+    {
+      "id": "brand-marketing",
+      "label": "Brand & Content Marketing"
     }
   ],
   "services": [
-    "Video Production",
-    "Motion Graphics",
-    "Graphic Design",
-    "Branding",
-    "Photography",
-    "Photo Editing",
-    "Social Media Content",
-    "Event Coverage",
-    "Event Branding",
+    "Web Development",
+    "UI & UX Design",
+    "Content Management",
+    "Multi Site Ecosystem",
+    "Mobile App Development",
+    "AI",
+    "iOS",
+    "Custom Software & Systems",
+    "Real Time Dashboard",
+    "Process Automation",
+    "AI Integration",
+    "Scheduling",
+    "Small Business Tools",
+    "Video Editing",
     "Ad Creation",
-    "Content Creation",
-    "Testimonial Videos",
+    "Social Media Content",
+    "Color Grading",
+    "Graphic Design",
     "Educational Content",
-    "Real Estate Marketing"
+    "Photo Editing",
+    "Real Estate Marketing",
+    "Event Creatives",
+    "Motion Graphics",
+    "Community Management",
+    "Customer Support",
+    "Quality Assurance",
+    "Editorial Operations",
+    "Branding",
+    "Content Strategy",
+    "Content Marketing"
   ]
 }

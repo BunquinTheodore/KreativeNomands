@@ -8,11 +8,10 @@ import Button from '@/components/ui/Button';
 import { CONTACT_EMAIL } from './data';
 
 const SERVICE_PHRASES = [
-  'Content strategy',
-  'Graphic design',
-  'Photo post-production',
-  'Video post-production',
-  'IT services',
+  'IT & digital solutions',
+  'Creative & digital content',
+  'Business & virtual support',
+  'Branding & marketing',
 ] as const;
 
 /** "Book a Call" card: masked word-reveal heading, typewriter service line and a mailto button. */

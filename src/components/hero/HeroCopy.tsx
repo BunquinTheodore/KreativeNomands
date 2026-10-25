@@ -17,7 +17,7 @@ export default function HeroCopy() {
       <Reveal y={16}>
         <span className="glass inline-flex max-w-full items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary-300 sm:text-[0.8rem]">
           <Compass className="h-4 w-4 flex-none" aria-hidden="true" />
-          <SplitText text="Your Creative Virtual Assistant" variant="scramble" by="chars" className="hero-eyebrow" />
+          <SplitText text="Your Partner in Business Growth" variant="scramble" by="chars" className="hero-eyebrow" />
         </span>
       </Reveal>
 
@@ -45,8 +45,9 @@ export default function HeroCopy() {
 
       <Reveal y={18} delay={0.15}>
         <p className="measure mt-5 text-pretty text-base leading-relaxed text-[var(--ink-dim)] sm:text-lg sm:leading-[1.75]">
-          A creative agency of experienced freelancers providing fresh and compelling creative solutions to address
-          your marketing and communication challenges.
+          A multidisciplinary collective of experienced professionals delivering branding and marketing, IT and
+          digital solutions, creative content, and business support to help businesses grow, operate, and move their
+          businesses forward.
         </p>
       </Reveal>
 

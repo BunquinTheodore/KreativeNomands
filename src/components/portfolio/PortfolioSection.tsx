@@ -41,7 +41,6 @@ export default function PortfolioSection({ cards }: PortfolioSectionProps) {
               Explore Our <span className="kp-sweep" suppressHydrationWarning>Portfolio</span>
             </>
           }
-          subtitle="Pick a category and dive right in"
         />
 
         <Reveal delay={0.2} className="mx-auto mt-6 text-center">
@@ -51,8 +50,9 @@ export default function PortfolioSection({ cards }: PortfolioSectionProps) {
           </p>
         </Reveal>
 
-        <div className="relative mt-12 pl-6 sm:mt-16 lg:pl-0">
-          {/* Sideways connector between the two rows on desktop, vertical rail on mobile. */}
+        <div className="relative mx-auto mt-12 max-w-5xl pl-6 sm:mt-16 lg:pl-0">
+          {/* Four service cards, 2 x 2 from tablets up: a sideways connector between the two rows on
+              desktop, a vertical rail on mobile. */}
           <div className="pointer-events-none absolute inset-y-0 left-0 w-0.5 lg:hidden" aria-hidden="true">
             <DrawLine axis="y" />
           </div>
@@ -63,7 +63,7 @@ export default function PortfolioSection({ cards }: PortfolioSectionProps) {
             <DrawLine axis="x" />
           </div>
 
-          <ul className="relative z-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
+          <ul className="relative z-10 grid list-none grid-cols-1 gap-6 p-0 sm:grid-cols-2 lg:gap-x-8 lg:gap-y-14">
             {CATEGORIES.map((category, index) => {
               const data = byId.get(category.id);
               return (

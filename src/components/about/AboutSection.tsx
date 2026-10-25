@@ -32,17 +32,16 @@ export default function AboutSection() {
                 We Are <SplitText text="Kreativ Nomads" variant="mask" by="words" stagger={0.12} className="text-secondary-400" />
               </>
             }
-            subtitle="Freelancers guided by one North Star"
+            subtitle="Guiding Brands Toward Their North Star"
           />
 
           <div className="mt-12 grid items-center gap-12 lg:mt-16 lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)] lg:gap-16">
             <div className="min-w-0">
               <Reveal>
                 <p className="measure text-base leading-[1.8] text-cream-500/75 text-pretty sm:text-lg">
-                  Established in 2023, Kreativ Nomads is a creative agency comprised of{' '}
-                  <span className="text-cream-500">experienced freelancers</span> who are passionate about
-                  providing fresh and compelling creative assistance to address the marketing and
-                  communication challenges of our clients, wherever and whenever they arise.
+                  Established in 2023, Kreativ Nomads brings together{' '}
+                  <span className="text-cream-500">experienced talent</span> across creative, digital, and business
+                  disciplines to help businesses navigate challenges and reach their goals.
                 </p>
               </Reveal>
               <Reveal delay={0.1} className="mt-8 sm:mt-10">

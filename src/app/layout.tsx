@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     template: '%s | Kreativ Nomads',
   },
   description:
-    'Philippines creative agency of experienced freelancers: content strategy, graphic design, and photo and video post-production.',
+    'Philippines multidisciplinary collective: IT and digital solutions, creative and digital content, business and virtual support, and branding and marketing.',
   applicationName: 'Kreativ Nomads',
   category: 'business',
   keywords: [
@@ -80,9 +80,10 @@ export const metadata: Metadata = {
     'freelance',
     'digital marketing',
     'social media',
-    'photo post-production',
-    'video post-production',
-    'IT services',
+    'photo editing',
+    'IT and digital solutions',
+    'virtual assistant',
+    'business support',
     'Pasig',
     'Ortigas',
   ],
@@ -100,7 +101,7 @@ export const metadata: Metadata = {
     siteName: 'Kreativ Nomads',
     title: 'Kreativ Nomads | Creative Agency Philippines',
     description:
-      'Your creative virtual assistant. We provide fresh and compelling creative solutions for your marketing and communication challenges.',
+      'Your partner in business growth. A multidisciplinary collective delivering branding and marketing, IT and digital solutions, creative content, and business support.',
     images: [
       {
         url: '/og-image.jpg',
@@ -114,7 +115,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Kreativ Nomads | Creative Agency Philippines',
     description:
-      'Your creative virtual assistant. Fresh and compelling creative solutions for your marketing challenges.',
+      'Your partner in business growth: branding and marketing, IT and digital solutions, creative content, and business support.',
     images: ['/og-image.jpg'],
   },
   robots: {

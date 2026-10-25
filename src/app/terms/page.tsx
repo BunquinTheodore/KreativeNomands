@@ -32,7 +32,7 @@ const SECTIONS: readonly LegalSection[] = [
     id: 'services',
     heading: 'Our services',
     paragraphs: [
-      'Descriptions of our content strategy, design, photo and video post-production and IT services are for general information. The scope, timeline, fees and deliverables of any project are set out in a separate written proposal or agreement, which prevails over this page.',
+      'Descriptions of our IT and digital solutions, creative and digital content, business and virtual support, and branding and marketing services are for general information. The scope, timeline, fees and deliverables of any project are set out in a separate written proposal or agreement, which prevails over this page.',
     ],
   },
   {

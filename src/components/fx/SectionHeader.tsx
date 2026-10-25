@@ -9,8 +9,8 @@ interface SectionHeaderProps {
   eyebrow: string;
   /** Always rendered on a single line (fluid size, shrinks to fit). */
   title: ReactNode;
-  /** Single line, scaled so its width matches the title's width. */
-  subtitle: string;
+  /** Single line, scaled so its width matches the title's width. Omitted: the title stands alone. */
+  subtitle?: string;
   align?: 'left' | 'center';
   /** Applied to the <h2> (use with aria-labelledby on the section). */
   id?: string;
@@ -29,7 +29,7 @@ const SUBTITLE_HARD_MIN_PX = 8;
 const SUBTITLE_MAX_PX = 24;
 
 /**
- * Eyebrow + one-line heading + one-line subtitle whose width equals the
+ * Eyebrow + one-line heading + optional one-line subtitle whose width equals the
  * heading's. The subtitle is nowrap with a fluid clamp() before JS runs, then
  * is fitted to the title's final width in the same batched pass as the title.
  */
@@ -59,23 +59,29 @@ export default function SectionHeader({
             maxPx={TITLE_MAX_PX}
             minPx={TITLE_MIN_PX}
             fluid={TITLE_FLUID}
-            match={{
-              ref: subtitleRef,
-              minPx: SUBTITLE_MIN_PX,
-              maxPx: SUBTITLE_MAX_PX,
-              hardMinPx: SUBTITLE_HARD_MIN_PX,
-              fitWithin: subtitleWrapRef,
-            }}
+            match={
+              subtitle
+                ? {
+                    ref: subtitleRef,
+                    minPx: SUBTITLE_MIN_PX,
+                    maxPx: SUBTITLE_MAX_PX,
+                    hardMinPx: SUBTITLE_HARD_MIN_PX,
+                    fitWithin: subtitleWrapRef,
+                  }
+                : undefined
+            }
           >
             {title}
           </FitLine>
         </h2>
       </Reveal>
-      <Reveal delay={0.16} className="kn-section-header__subwrap">
-        <p ref={subtitleRef} className="kn-section-header__sub">
-          {subtitle}
-        </p>
-      </Reveal>
+      {subtitle ? (
+        <Reveal delay={0.16} className="kn-section-header__subwrap">
+          <p ref={subtitleRef} className="kn-section-header__sub">
+            {subtitle}
+          </p>
+        </Reveal>
+      ) : null}
     </header>
   );
 }

@@ -10,6 +10,8 @@
  * Output     : <out>/<categoryId>/<projectId>/<slug>.{webp,mp4}, <slug>-thumb.webp, <slug>-poster.webp
  *              <out>/hero/reel.mp4 + reel-poster.webp
  *              and a rewritten src/data/portfolio.json pointing at the new /media/... URLs.
+ * Pass-through: 'drive' assets (Google Drive videos: { driveId, width, height }) get their preview / thumbnail
+ *              URLs filled in; 'case-study' assets (text only: { caseStudy }) are copied as-is with an empty src.
  *
  * Idempotent: existing outputs are kept (use --force to rebuild the selected category).
  */
@@ -29,6 +31,11 @@ const IMAGE_BUDGET = 1_500_000;
 const HERO_SECONDS = 10;
 const HERO_BUDGET = 3_000_000;
 const HERO_BOUNDS = { width: 1280, height: 720 };
+const DRIVE_PREVIEW = (id) => `https://drive.google.com/file/d/${id}/preview`;
+// The stage facade shows the large still; strip / rail / card thumbs take a small one.
+const DRIVE_POSTER = (id) => `https://drive.google.com/thumbnail?id=${id}&sz=w1000`;
+const DRIVE_THUMB = (id) => `https://drive.google.com/thumbnail?id=${id}&sz=w320`;
+const PASS_THROUGH = new Set(['drive', 'case-study']);
 const HERO_CRF = 23;
 const IMAGE_LANES = 4;
 const VIDEO_LANES = 3;
@@ -47,6 +54,23 @@ const stripBom = (text) => text.replace(/^﻿/, '');
 const urlFor = (...parts) => [URL_BASE, ...parts].join('/');
 const isSelected = (category) => ONLY === null || ONLY === category;
 
+const isMedia = (asset) => !PASS_THROUGH.has(asset.type);
+
+/** Naming-convention fields (title / service / material) carried from the spec onto every entry. */
+const naming = ({ title, service, material }) => ({ title, service, material });
+
+/** Drive and case-study entries need no encoding, only their derived URLs. */
+function passThrough(asset) {
+  if (asset.type === 'drive') {
+    return {
+      src: DRIVE_PREVIEW(asset.driveId), type: 'drive', ...naming(asset),
+      poster: DRIVE_POSTER(asset.driveId), thumb: DRIVE_THUMB(asset.driveId),
+      width: asset.width, height: asset.height, driveId: asset.driveId,
+    };
+  }
+  return { src: '', type: 'case-study', ...naming(asset), caseStudy: asset.caseStudy };
+}
+
 async function allExist(files) {
   const sizes = await Promise.all(files.map(fileSize));
   return sizes.every((s) => s > 0);
@@ -55,7 +79,8 @@ async function allExist(files) {
 function buildJobs(spec) {
   const taken = new Map();
   return spec.projects.flatMap((project) =>
-    project.assets.map((asset, assetIndex) => {
+    project.assets.flatMap((asset, assetIndex) => {
+      if (!isMedia(asset)) return [];
       const key = `${project.category}/${project.id}`;
       const used = taken.get(key) ?? new Set();
       taken.set(key, used);
@@ -67,12 +92,12 @@ function buildJobs(spec) {
       used.add(slug).add(`${slug}-thumb`).add(`${slug}-poster`);
       const type = asset.type ?? (asset.src.toLowerCase().endsWith('.mp4') ? 'video' : 'image');
       const dir = path.join(OUT_DIR, project.category, project.id);
-      return {
+      return [{
         project, asset, assetIndex, type, slug, dir,
         category: project.category,
         srcFile: path.join(SRC_DIR, ...asset.src.split('/').filter(Boolean)),
         urlDir: [project.category, project.id],
-      };
+      }];
     }),
   );
 }
@@ -92,7 +117,7 @@ async function processImageJob(job) {
     entry: {
       src: urlFor(...job.urlDir, `${job.slug}.webp`),
       type: 'image',
-      title: job.asset.title,
+      ...naming(job.asset),
       thumb: urlFor(...job.urlDir, `${job.slug}-thumb.webp`),
       width, height,
     },
@@ -120,7 +145,7 @@ async function processVideoJob(job) {
     entry: {
       src: urlFor(...job.urlDir, `${job.slug}.mp4`),
       type: 'video',
-      title: job.asset.title,
+      ...naming(job.asset),
       poster: posterUrl, thumb: posterUrl,
       width, height,
     },
@@ -162,17 +187,20 @@ async function processHero(failures) {
 }
 
 function assemble(spec, jobs, results) {
-  const byProject = new Map();
+  const encoded = new Map();
   jobs.forEach((job, i) => {
     const res = results[i];
-    if (!res || res.missing) return;
-    const list = byProject.get(job.project.id) ?? [];
-    byProject.set(job.project.id, [...list, res.entry]);
+    if (res && !res.missing) encoded.set(`${job.project.id}#${job.assetIndex}`, res.entry);
   });
   const projects = spec.projects.map((project) => {
-    const assets = byProject.get(project.id) ?? [];
-    const first = assets[0];
-    return { ...project, thumbnail: first ? first.thumb : project.thumbnail, assets };
+    const assets = project.assets.flatMap((asset, i) => {
+      if (!isMedia(asset)) return [passThrough(asset)];
+      const entry = encoded.get(`${project.id}#${i}`);
+      return entry ? [entry] : [];
+    });
+    // Text-only tabs (case studies) have no still: an empty thumbnail.
+    const thumbnail = assets.find((asset) => asset.thumb)?.thumb ?? '';
+    return { ...project, thumbnail, assets };
   });
   return { ...spec, projects };
 }
@@ -180,18 +208,18 @@ function assemble(spec, jobs, results) {
 function printReport(stats, offenders, failures, hero) {
   const rows = Object.entries(stats);
   const pad = (s, n) => String(s).padEnd(n);
-  const lines = [pad('category', 12) + pad('files', 8) + pad('input MB', 12) + pad('output MB', 12)];
+  const lines = [pad('category', 16) + pad('files', 8) + pad('input MB', 12) + pad('output MB', 12)];
   let totalIn = 0;
   let totalOut = 0;
   for (const [category, s] of rows) {
-    lines.push(pad(category, 12) + pad(s.files, 8) + pad(formatMB(s.inBytes), 12) + pad(formatMB(s.outBytes), 12));
+    lines.push(pad(category, 16) + pad(s.files, 8) + pad(formatMB(s.inBytes), 12) + pad(formatMB(s.outBytes), 12));
     totalIn += s.inBytes;
     totalOut += s.outBytes;
   }
-  if (hero) lines.push(pad('hero', 12) + pad(1, 8) + pad(formatMB(hero.inBytes), 12) + pad(formatMB(hero.bytes), 12));
+  if (hero) lines.push(pad('hero', 16) + pad(1, 8) + pad(formatMB(hero.inBytes), 12) + pad(formatMB(hero.bytes), 12));
   const heroIn = hero?.inBytes ?? 0;
   const heroOut = hero?.bytes ?? 0;
-  lines.push(pad('TOTAL', 12) + pad('', 8) + pad(formatMB(totalIn + heroIn), 12) + pad(formatMB(totalOut + heroOut), 12));
+  lines.push(pad('TOTAL', 16) + pad('', 8) + pad(formatMB(totalIn + heroIn), 12) + pad(formatMB(totalOut + heroOut), 12));
   process.stdout.write(`${lines.join('\n')}\n`);
   process.stdout.write(`\nOver budget: ${offenders.length === 0 ? 'none' : ''}\n`);
   for (const o of offenders) process.stdout.write(`  ${formatMB(o.bytes)} > ${formatMB(o.budget)}  ${o.file}\n`);

@@ -15,14 +15,13 @@ const COMPANY_LINKS: readonly FooterNavLink[] = [
 ];
 
 const SERVICE_LINKS: readonly FooterNavLink[] = [
-  { label: 'Content Strategy', id: 'services-content-strategy' },
-  { label: 'Graphic Design', id: 'services-graphic-design' },
-  { label: 'Photo Post-Production', id: 'services-post-production' },
-  { label: 'Video Post-Production', id: 'services-post-production' },
-  { label: 'IT Services', id: 'services-it-services' },
+  { label: 'IT & Digital Solutions', id: 'services-it-digital' },
+  { label: 'Creative & Digital Content', id: 'services-creative-content' },
+  { label: 'Business & Virtual Support', id: 'services-virtual-support' },
+  { label: 'Branding & Marketing', id: 'services-branding-marketing' },
 ];
 
-const RAIL_WORDS = ['Strategy', 'Design', 'Photo', 'Video', 'IT', 'Branding'] as const;
+const RAIL_WORDS = ['Strategy', 'Design', 'Photo', 'Video', 'IT', 'Support', 'Branding'] as const;
 
 interface FooterSectionProps {
   /** Copyright year, decided on the server so the hydrated text always matches the server HTML. */
@@ -62,8 +61,8 @@ export default function FooterSection({ year }: FooterSectionProps) {
               </p>
             </div>
             <p className="mt-5 max-w-[34ch] text-sm leading-relaxed text-[color:var(--ink-dim)]">
-              Your creative virtual assistant, providing fresh and compelling creative solutions for
-              your marketing challenges.
+              Your partner in business growth: branding and marketing, IT and digital solutions,
+              creative content and business support.
             </p>
             <div className="mt-6">
               <SocialLinks />

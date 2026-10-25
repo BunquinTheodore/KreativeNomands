@@ -8,6 +8,12 @@ export interface NorthStar3DProps {
   className?: string
   /** Pixel number or any CSS length. Defaults to 420. */
   height?: number | string
+  /**
+   * Fetch the static fallback eagerly at high priority (above the fold, e.g. the hero). Pass false for
+   * a below-the-fold instance so its fallback loads lazily and never competes with the LCP.
+   * Defaults to true.
+   */
+  priority?: boolean
 }
 
 /**
@@ -30,8 +36,10 @@ const ARIA_LABEL = 'Interactive 3D Kreativ Nomads North Star. Drag to spin it, c
 /**
  * Draggable, hoverable 3D North Star. Shows the static logo until WebGL has actually
  * rendered a frame (and permanently on low-end / reduced-motion / Save-Data / no WebGL).
+ * Several instances may share a page: each boots only once near the viewport, its frame loop
+ * pauses while offscreen, and three / the stage / the scene are the same lazy chunks for all.
  */
-export default function NorthStar3D({ className, height = 420 }: NorthStar3DProps) {
+export default function NorthStar3D({ className, height = 420, priority = true }: NorthStar3DProps) {
   const stageRef = useRef<HTMLDivElement>(null)
   const handleRef = useRef<NorthStarHandle | null>(null)
   // The scene code is its own chunk: fetched together with three, and only when WebGL will really start.
@@ -68,8 +76,8 @@ export default function NorthStar3D({ className, height = 420 }: NorthStar3DProp
         height={FALLBACK_HEIGHT}
         alt=""
         decoding="async"
-        loading="eager"
-        fetchPriority="high"
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
         draggable={false}
         className="pointer-events-none absolute inset-0 h-full w-full object-contain transition-opacity duration-700"
         style={{ opacity: ready ? 0 : 1 }}

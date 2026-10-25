@@ -32,7 +32,7 @@ export default function ServiceDetail({ service, index, total, phase, onPrev, on
   const Icon = service.icon;
 
   return (
-    <GlassCard glow className="flex min-h-[27rem] flex-col p-6 sm:p-8 lg:p-10">
+    <GlassCard glow className="flex min-h-[29rem] flex-col p-6 sm:p-8 lg:p-10">
       <div className="svc-swap flex flex-1 flex-col" data-phase={phase}>
         <div key={service.id} className="svc-enter flex flex-1 flex-col">
           <div className="flex items-center justify-between gap-4">

@@ -12,7 +12,7 @@ export const STATS: readonly Stat[] = [
   { text: '2023', label: 'Established' },
   { to: 50, suffix: '+', label: 'Projects Delivered' },
   { to: 20, suffix: '+', label: 'Happy Clients' },
-  { to: 6, suffix: '+', label: 'Industries Served' },
+  { to: 8, suffix: '+', label: 'Industries Served' },
 ];
 
 export type DirectionId = 'vision' | 'mission' | 'values';
@@ -29,13 +29,13 @@ export const STATEMENTS: readonly Statement[] = [
     id: 'vision',
     label: 'Our Vision',
     icon: Target,
-    text: 'To become the foremost creative services provider for local and international businesses.',
+    text: 'To become a leading multidisciplinary partner for local and international businesses, recognized for the value we create and the talent we bring together.',
   },
   {
     id: 'mission',
     label: 'Our Mission',
     icon: Compass,
-    text: 'To go beyond mere ideas, elevating businesses and the quality of freelancers in the Philippines. We empower them all to continuously strive for their North Stars.',
+    text: 'To turn ideas into meaningful progress by bringing together creative, digital, and business expertise. We aim to help businesses reach their full potential while elevating the capabilities and opportunities of Filipino talent.',
   },
 ];
 

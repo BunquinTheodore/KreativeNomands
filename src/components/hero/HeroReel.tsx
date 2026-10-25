@@ -5,7 +5,7 @@ import ReelRows from './ReelRows';
 /**
  * Work reel: two glass-framed thumbnail rails drifting in opposite directions.
  * Built from the portfolio data on the server (only the few fields each frame needs cross over);
- * each frame links to its category page.
+ * each frame links to its client tab on the service page.
  */
 export default function HeroReel() {
   const { top, bottom } = getReelRows();

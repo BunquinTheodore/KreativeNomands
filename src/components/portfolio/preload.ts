@@ -11,7 +11,8 @@ const warmed = new Map<string, HTMLImageElement>();
 /**
  * Warms the browser cache with exactly the optimised candidate that the stage
  * <Image> will request (same srcset + sizes), so the next slide paints at once.
- * Images only; never videos.
+ * Images only: never videos, Google Drive players (click-to-load; their
+ * thumbnail is all a neighbour shows) or text-only case studies.
  */
 export function preloadStageImage(asset: ShowcaseAsset | undefined, sizes: string): void {
   if (!asset || asset.kind !== 'image' || typeof window === 'undefined') return;

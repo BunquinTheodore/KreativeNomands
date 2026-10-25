@@ -120,9 +120,9 @@ export default function DirectionTabs() {
                   text={statement.text}
                   variant="blur"
                   by="words"
-                  stagger={0.07}
+                  stagger={0.045}
                   once={false}
-                  className="mt-4 block max-w-[40ch] font-display text-[1.4rem] font-medium leading-snug text-balance text-cream-500 sm:text-3xl lg:text-[2.1rem]"
+                  className="mt-4 block max-w-[46ch] font-display text-[1.2rem] font-medium leading-snug text-balance text-cream-500 sm:text-2xl lg:text-[1.75rem]"
                 />
               </div>
             </div>

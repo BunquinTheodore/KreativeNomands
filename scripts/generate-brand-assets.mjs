@@ -87,7 +87,7 @@ async function renderOg() {
     `<svg xmlns="http://www.w3.org/2000/svg" width="${OG.width}" height="${OG.height}">` +
       `<text x="${textLeft}" y="${taglineY}" fill="${CREAM}" fill-opacity="0.86" ` +
       `font-family="Inter, Poppins, Segoe UI, Arial, Helvetica, sans-serif" font-size="34" ` +
-      `letter-spacing="1.5">Your Creative Virtual Assistant</text></svg>`,
+      `letter-spacing="1.5">Your Partner in Business Growth</text></svg>`,
   );
 
   const out = await sharp(glow)

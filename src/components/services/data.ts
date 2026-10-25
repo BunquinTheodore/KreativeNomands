@@ -1,6 +1,6 @@
-import { BarChart3, Monitor, Palette, Video, type LucideIcon } from 'lucide-react';
+import { BriefcaseBusiness, Clapperboard, Megaphone, Monitor, type LucideIcon } from 'lucide-react';
 
-export type ServiceId = 'content-strategy' | 'graphic-design' | 'post-production' | 'it-services';
+export type ServiceId = 'it-digital' | 'creative-content' | 'virtual-support' | 'branding-marketing';
 
 export interface Service {
   readonly id: ServiceId;
@@ -11,61 +11,16 @@ export interface Service {
   readonly title: string;
   readonly description: string;
   readonly features: readonly string[];
-  /** Portfolio category route this service links to. */
+  /** Portfolio service route this service links to. */
   readonly portfolioHref: string;
 }
 
 export const SERVICES: readonly Service[] = [
   {
-    id: 'content-strategy',
-    icon: BarChart3,
-    label: 'Content Strategy',
-    title: 'Content Strategy',
-    description:
-      "Driving your brand's success with content strategies that captivate based on your current business goals.",
-    features: [
-      'Brand messaging & positioning',
-      'Content calendar planning',
-      'Campaign strategy',
-      'Social media management',
-    ],
-    portfolioHref: '/portfolio/fnb',
-  },
-  {
-    id: 'graphic-design',
-    icon: Palette,
-    label: 'Graphic Design',
-    title: 'Graphic Design',
-    description:
-      'Transforming your vision into stunning visual experiences that leave a lasting impression.',
-    features: [
-      'Brand identity design',
-      'Social media graphics',
-      'Marketing collaterals',
-      'Presentation design',
-    ],
-    portfolioHref: '/portfolio/insurance',
-  },
-  {
-    id: 'post-production',
-    icon: Video,
-    label: 'Photo & Video Post-Production',
-    title: 'Photo & Video Post-Production',
-    description:
-      'Elevating your visuals with meticulous post-production to create captivating imagery and engaging videos.',
-    features: [
-      'Video editing & color grading',
-      'Photo retouching & enhancement',
-      'Motion graphics',
-      'Real estate photo editing',
-    ],
-    portfolioHref: '/portfolio/health',
-  },
-  {
-    id: 'it-services',
+    id: 'it-digital',
     icon: Monitor,
-    label: 'IT Services',
-    title: 'IT Services',
+    label: 'IT & Digital Solutions',
+    title: 'IT & Digital Solutions',
     description:
       'Comprehensive technology solutions to power your digital transformation and drive innovation.',
     features: [
@@ -75,6 +30,51 @@ export const SERVICES: readonly Service[] = [
       'IT consulting & support',
     ],
     portfolioHref: '/portfolio/it',
+  },
+  {
+    id: 'creative-content',
+    icon: Clapperboard,
+    label: 'Creative & Digital Content',
+    title: 'Creative & Digital Content',
+    description:
+      'Transforming ideas into compelling visual experiences through thoughtful design, photo and video editing, and polished digital content.',
+    features: [
+      'Graphic Design & Visual Assets',
+      'Video Editing & Color Grading',
+      'Photo Editing & Retouching',
+      'Motion Graphics & Animation',
+    ],
+    portfolioHref: '/portfolio/photo-video',
+  },
+  {
+    id: 'virtual-support',
+    icon: BriefcaseBusiness,
+    label: 'Business & Virtual Support',
+    title: 'Business & Virtual Support',
+    description:
+      'Reliable operational and virtual support that keeps your business organized, efficient, and focused on what matters most.',
+    features: [
+      'Virtual Assistance & Administration',
+      'Project & Operations Support',
+      'Quality Assurance & Software Testing',
+      'Data Management & Research',
+    ],
+    portfolioHref: '/portfolio/virtual-support',
+  },
+  {
+    id: 'branding-marketing',
+    icon: Megaphone,
+    label: 'Branding & Marketing',
+    title: 'Branding & Marketing',
+    description:
+      'Building distinctive brands and meaningful connections through strategic marketing that strengthens visibility and drives engagement.',
+    features: [
+      'Brand Strategy & Positioning',
+      'Content Strategy & Planning',
+      'Digital Marketing Campaigns',
+      'Social Media Marketing & Management',
+    ],
+    portfolioHref: '/portfolio/brand-marketing',
   },
 ];
 
