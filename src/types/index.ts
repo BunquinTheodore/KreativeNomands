@@ -36,7 +36,9 @@ export interface PortfolioAsset {
   /** Naming convention line 2, right of the dot (e.g. 'Content'). */
   material?: string;
   poster?: string; // Optional poster image for video assets
-  thumb?: string; // 640px WebP thumbnail (images) or the poster (videos, remote for Drive)
+  thumb?: string; // 640px WebP thumbnail (images and local videos; remote for Drive)
+  duration?: number; // Seconds, rounded to 0.1 (local videos only)
+  hasAudio?: boolean; // The encoded clip carries an audio track (local videos only)
   width?: number; // Intrinsic pixel width of `src`
   height?: number; // Intrinsic pixel height of `src`
   driveId?: string; // Google Drive file id ('drive' only)

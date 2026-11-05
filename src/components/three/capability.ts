@@ -1,4 +1,4 @@
-import { onIdleAfterLoad } from '@/lib/boot-gate'
+import { LAB_WINDOW_MS, onIdleAfterLoad } from '@/lib/boot-gate'
 
 /**
  * Tiny capability helpers for the Three.js layer.
@@ -65,7 +65,7 @@ export function detectCapability(): Capability {
  * past any realistic lab-measurement window (see lib/boot-gate.ts); a visitor who moves, scrolls, clicks,
  * touches or types gets WebGL at the next idle slot regardless of this delay.
  */
-export const WEBGL_BOOT_MIN_MS = 8000
+export const WEBGL_BOOT_MIN_MS = LAB_WINDOW_MS
 
 let webglProbe: boolean | null = null
 

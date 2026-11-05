@@ -432,7 +432,7 @@
       "industry": "Health & Wellness",
       "client": "Xendurance",
       "category": "photo-video",
-      "description": "Lifestyle sizzles, product promos, athlete testimonials and event highlight reels for Xendurance, a performance supplement brand.",
+      "description": "Lifestyle sizzles, product promos and event highlight reels for Xendurance, a performance supplement brand.",
       "thumbnail": "",
       "assets": [
         {
@@ -506,13 +506,6 @@
           "material": "Content"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/lifestyle/250804_August_Sizzle_1_9x16.mp4",
-          "type": "video",
-          "title": "August Sizzle",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
           "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_1.mp4",
           "type": "video",
           "title": "Deep Sleep Promo 1",
@@ -541,93 +534,9 @@
           "material": "Ad"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_LAST_3.mp4",
-          "type": "video",
-          "title": "Deep Sleep Promo 5",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep__20__Off_Star_3.mp4",
-          "type": "video",
-          "title": "Deep Sleep Promo 6",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/deep-sleep/220809_Deep_Sleep_20__Off_Start_4.mp4",
-          "type": "video",
-          "title": "Deep Sleep Promo 7",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
           "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Start.mp4",
           "type": "video",
-          "title": "Labor Day Promo 1",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/220820_Pack_Promo_Last_Day.mp4",
-          "type": "video",
-          "title": "Labor Day Promo 2",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack.mp4",
-          "type": "video",
-          "title": "Performance Pack Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Performance_Pack_LAST_DAY.mp4",
-          "type": "video",
-          "title": "Performance Pack Last Day Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack.mp4",
-          "type": "video",
-          "title": "Victory Pack Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Victory_Pack_LAST_DAY.mp4",
-          "type": "video",
-          "title": "Victory Pack Last Day Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack.mp4",
-          "type": "video",
-          "title": "Weight Management Pack Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Weight_Management_Pack_LAST_DAY.mp4",
-          "type": "video",
-          "title": "Weight Management Pack Last Day Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack.mp4",
-          "type": "video",
-          "title": "Wellness Pack Promo",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Ads/packs/Wellness_Pack_LAST_DAY.mp4",
-          "type": "video",
-          "title": "Wellness Pack Last Day Promo",
+          "title": "Labor Day Promo",
           "service": "Video Editing",
           "material": "Ad"
         },
@@ -646,81 +555,11 @@
           "material": "Ad"
         },
         {
-          "src": "/portfolio/health-fitness/xendurance/Ads/probiotic/220827_Probiotic_+_Prebiotic_LAST_DAY_25__Off_2.mp4",
-          "type": "video",
-          "title": "Probiotic + Prebiotic Promo 3",
-          "service": "Video Editing",
-          "material": "Ad"
-        },
-        {
           "src": "/portfolio/health-fitness/xendurance/Testimonials/240513_Danielle_Brandon_Ad_9x16.mp4",
           "type": "video",
           "title": "Danielle Brandon Ad",
           "service": "Video Editing",
           "material": "Ad"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/220817_Testimonial_Mashup_Fat_and_Weight_Loss_IG_REEL.mp4",
-          "type": "video",
-          "title": "Weight Loss Testimonials",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/250329_Hyrox_Houston_Cindy_&_Nicki.mp4",
-          "type": "video",
-          "title": "HYROX Houston - Cindy & Nicki",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/250611_Hyrox_NYC_Pavelchak_x_Crowley.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Pavelchak & Crowley",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/250613_Hyrox_NYC_Rodriguez_x_Porter.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Rodriguez & Porter",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/250614_Hyrox_NYC_Williams_x_Swartzendruber.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Williams & Swartzendruber",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/250620_Hyrox_NYC_Palmer.mp4",
-          "type": "video",
-          "title": "HYROX NYC - Palmer",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/251003_HYROX_BOSTON_Matt_&_Breezy.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Matt & Breezy",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/251004_HYROX_BOSTON_Crystal_&_Brian.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Crystal & Brian",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/health-fitness/xendurance/Testimonials/251008_HYROX_BOSTON_Bobby_&_Sharon.mp4",
-          "type": "video",
-          "title": "HYROX Boston - Bobby & Sharon",
-          "service": "Video Editing",
-          "material": "Content"
         },
         {
           "type": "drive",
@@ -984,9 +823,9 @@
     },
     {
       "id": "pv-tone-media",
-      "title": "Wedding - Tone Media Collaboration",
+      "title": "Wedding - Tone Media",
       "industry": "Wedding",
-      "client": "Tone Media Collaboration",
+      "client": "Tone Media",
       "category": "photo-video",
       "description": "Cinematic wedding teasers and highlight films edited in collaboration with Tone Media.",
       "thumbnail": "",
@@ -1070,15 +909,6 @@
         },
         {
           "type": "drive",
-          "driveId": "1qYiq9UHd7GVYnJLzwmNL4UwE7Zvzf-5z",
-          "title": "Achieve Your Goals",
-          "service": "Video Editing",
-          "material": "Content",
-          "width": 1000,
-          "height": 1778
-        },
-        {
-          "type": "drive",
           "driveId": "19881K4RgVqlj6x4phKBv3qvEpHJIjnez",
           "title": "All-in-One Package",
           "service": "Video Editing",
@@ -1087,240 +917,58 @@
           "height": 1778
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/19_-_SLGFI240002.png",
+          "src": "/portfolio/collages/sunlife/msme-mybiz-carousel-1.png",
           "type": "image",
-          "title": "What Made You Buy Life Insurance?",
+          "title": "MSME MyBiz Carousel 1",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/21_-_SLGFI240002.png",
+          "src": "/portfolio/collages/sunlife/msme-mybiz-carousel-2.png",
           "type": "image",
-          "title": "Insure Your Future Dreams",
+          "title": "MSME MyBiz Carousel 2",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P1_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "src": "/portfolio/collages/sunlife/accident-prosafe-carousel.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 1 Page 1",
+          "title": "Accident Prosafe Carousel",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P2_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "src": "/portfolio/collages/sunlife/smart-care-plus-carousel.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 1 Page 2",
+          "title": "Smart Care Plus Carousel",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P3_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "src": "/portfolio/collages/sunlife/company-edge-carousel.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 1 Page 3",
+          "title": "Company Edge Carousel",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 1/5_-_P4_SLGHC_BRANDING_&_CONTENT_110423_FINAL.png",
+          "src": "/portfolio/collages/sunlife/financial-tips-carousel-1.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 1 Page 4",
+          "title": "Financial Tips Carousel 1",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P1_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+          "src": "/portfolio/collages/sunlife/financial-tips-carousel-2.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 2 Page 1",
+          "title": "Financial Tips Carousel 2",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P2_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
+          "src": "/portfolio/collages/sunlife/financial-tips-carousel-3.png",
           "type": "image",
-          "title": "MSME MyBiz Carousel 2 Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 2/11_-_P3_SLGHC_BRANDING_&_CONTENT_111323_Rev4.png",
-          "type": "image",
-          "title": "MSME MyBiz Carousel 2 Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P1_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
-          "type": "image",
-          "title": "MSME MyBiz Hipster Carousel Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 5/21_-_P4_SLGHC_BRANDING_&_CONTENT_112723_Rev1.png",
-          "type": "image",
-          "title": "MSME MyBiz Hipster Carousel Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P1_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
-          "type": "image",
-          "title": "Accident Prosafe Carousel Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P2_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
-          "type": "image",
-          "title": "Accident Prosafe Carousel Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P3_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
-          "type": "image",
-          "title": "Accident Prosafe Carousel Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 3/16_-_P4_SLGHC_BRANDING_&_CONTENT_112023_Rev3.png",
-          "type": "image",
-          "title": "Accident Prosafe Carousel Page 4",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P1_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
-          "type": "image",
-          "title": "Smart Care Plus Carousel Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P2_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
-          "type": "image",
-          "title": "Smart Care Plus Carousel Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P3_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
-          "type": "image",
-          "title": "Smart Care Plus Carousel Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 4/19_-_P4_SLGHC_BRANDING_&_CONTENT_112423_SLGHC_BRANDING_&_CONTENT_112423_Rev1.png",
-          "type": "image",
-          "title": "Smart Care Plus Carousel Page 4",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P1_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
-          "type": "image",
-          "title": "Company Edge Carousel Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P2_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
-          "type": "image",
-          "title": "Company Edge Carousel Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P3_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
-          "type": "image",
-          "title": "Company Edge Carousel Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P4_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
-          "type": "image",
-          "title": "Company Edge Carousel Page 4",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 6/27_-_P5_SLGHC_BRANDING_&_CONTENT_120623_Rev1.png",
-          "type": "image",
-          "title": "Company Edge Carousel Page 5",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P1.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 1 Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P2.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 1 Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 7/6_-_SLGFI240002_P5.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 1 Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P1.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 2 Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 8/13_-_SLGFI240002_P2.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 2 Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P1.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 3 Page 1",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P2.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 3 Page 2",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P3.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 3 Page 3",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P4.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 3 Page 4",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/Insurance/sunlife/graphics/Carousel 9/14_-_SLGFI240002_P5.png",
-          "type": "image",
-          "title": "Financial Tips Carousel 3 Page 5",
+          "title": "Financial Tips Carousel 3",
           "service": "Graphic Design",
           "material": "Content"
         }
@@ -1492,23 +1140,9 @@
       "thumbnail": "",
       "assets": [
         {
-          "src": "/portfolio/fnb/monza/Events/1_-_MONZA_Monza_Mckinley_Hill_Event_Announcement_Reel.mp4",
-          "type": "video",
-          "title": "Mckinley Hill Event Announcement",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
           "src": "/portfolio/fnb/monza/Events/4_-_MONZA_British_GP_Live_Viewing_Highlights_Reel.mp4",
           "type": "video",
           "title": "British GP Highlights",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/5_-_MONZA_Monza_Mckinley_Hill_Adding_Fun_Reel.mp4",
-          "type": "video",
-          "title": "Mckinley Hill Adding Fun",
           "service": "Video Editing",
           "material": "Content"
         },
@@ -1527,23 +1161,9 @@
           "material": "Content"
         },
         {
-          "src": "/portfolio/fnb/monza/Events/7-8_-_MONZA_Estancia_Roadshow_Event_Teaser_Reel.mp4",
-          "type": "video",
-          "title": "Estancia Roadshow Teaser",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
           "src": "/portfolio/fnb/monza/Events/9_-_MONZA__Featuring_Cocktails_Reel.mp4",
           "type": "video",
           "title": "Monza Cocktails",
-          "service": "Video Editing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/14_-_MONZA_Monza_Eastwood_Day_1_Post_doc_Slideshow_Reel.mp4",
-          "type": "video",
-          "title": "Eastwood Day 1 Slideshow",
           "service": "Video Editing",
           "material": "Content"
         },
@@ -1583,130 +1203,25 @@
           "material": "Content"
         },
         {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P1_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
+          "src": "/portfolio/collages/monza/estancia-roadshow-carousel.png",
           "type": "image",
-          "title": "Eastwood Roadshow Page 1",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P2_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
-          "type": "image",
-          "title": "Eastwood Roadshow Page 2",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P3_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
-          "type": "image",
-          "title": "Eastwood Roadshow Page 3",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Monza-Eastwood-Event/8_-_P4_MONZA_Monza_Eastwood_Event_Carousel_Graphic_Design.png",
-          "type": "image",
-          "title": "Eastwood Roadshow Page 4",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P1_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
-          "type": "image",
-          "title": "Mapua Winners Page 1",
+          "title": "Estancia Roadshow Carousel",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P2_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "src": "/portfolio/collages/monza/mapua-winners-recap-carousel.png",
           "type": "image",
-          "title": "Mapua Winners Page 2",
+          "title": "Mapua Winners Recap Carousel",
           "service": "Graphic Design",
           "material": "Content"
         },
         {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P3_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
+          "src": "/portfolio/collages/monza/monza-eastwood-event-carousel.png",
           "type": "image",
-          "title": "Mapua Winners Page 3",
+          "title": "Monza Eastwood Event Carousel",
           "service": "Graphic Design",
           "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P4_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
-          "type": "image",
-          "title": "Mapua Winners Page 4",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P5_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
-          "type": "image",
-          "title": "Mapua Winners Page 5",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Winners-Mapua/3_-_P6_MONZA_Monza_Mapua_Winners_Graphic_Design.png",
-          "type": "image",
-          "title": "Mapua Winners Page 6",
-          "service": "Graphic Design",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P1_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
-          "type": "image",
-          "title": "Estancia Roadshow Page 1",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P2_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
-          "type": "image",
-          "title": "Estancia Roadshow Page 2",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P3_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
-          "type": "image",
-          "title": "Estancia Roadshow Page 3",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel-Estancia-Roadshow/9_-_P4_MONZA_Estancia_Roadshow_Event_Carousel_Graphic_Design.jpg",
-          "type": "image",
-          "title": "Estancia Roadshow Page 4",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P1.jpg",
-          "type": "image",
-          "title": "Driving Trial Mechanics Page 1",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P2.jpg",
-          "type": "image",
-          "title": "Driving Trial Mechanics Page 2",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P3.jpg",
-          "type": "image",
-          "title": "Driving Trial Mechanics Page 3",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
-        },
-        {
-          "src": "/portfolio/fnb/monza/Events/Carousel---Driving-Trial-Mechanics/3_-_MONZA_Monza_Mckinley_Hill_Driving_Trial_Graphic_Design_P4.jpg",
-          "type": "image",
-          "title": "Driving Trial Mechanics Page 4",
-          "service": "Graphic Design",
-          "material": "Event Creatives"
         }
       ],
       "services": [
@@ -1955,7 +1470,7 @@
       "industry": "F&B",
       "client": "MSMEs",
       "category": "brand-marketing",
-      "description": "Brand identities, social posts and carousels for food and beverage small businesses.",
+      "description": "Brand collaboration and positioning for food and beverage small businesses.",
       "thumbnail": "",
       "assets": [
         {
@@ -1964,55 +1479,6 @@
           "title": "MSME Collaboration",
           "service": "Brand Marketing",
           "material": "Brand Assets & Positioning"
-        },
-        {
-          "src": "/portfolio/fnb/msme/branding/274477883_112539261359770_2611542943264539624_n.jpg",
-          "type": "image",
-          "title": "Lee's Kitchen Brand Identity",
-          "service": "Brand Marketing",
-          "material": "Brand Assets & Positioning"
-        },
-        {
-          "src": "/portfolio/fnb/msme/branding/5.png",
-          "type": "image",
-          "title": "Lee's Kitchen Social Post 1",
-          "service": "Brand Marketing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/msme/branding/6.png",
-          "type": "image",
-          "title": "Lee's Kitchen Social Post 2",
-          "service": "Brand Marketing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_IG_Carousel_1.png",
-          "type": "image",
-          "title": "Silog Bowls Carousel Page 1",
-          "service": "Brand Marketing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_2.png",
-          "type": "image",
-          "title": "Silog Bowls Carousel Page 2",
-          "service": "Brand Marketing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_3.png",
-          "type": "image",
-          "title": "Silog Bowls Carousel Page 3",
-          "service": "Brand Marketing",
-          "material": "Content"
-        },
-        {
-          "src": "/portfolio/fnb/msme/Carousel/Carousel 1/FP_FB_Carousel_4.png",
-          "type": "image",
-          "title": "Silog Bowls Carousel Page 4",
-          "service": "Brand Marketing",
-          "material": "Content"
         }
       ],
       "services": [

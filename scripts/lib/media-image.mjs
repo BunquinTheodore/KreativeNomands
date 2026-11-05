@@ -29,6 +29,14 @@ export async function encodeImage(srcFile, mainOut, thumbOut) {
   return { width: main.info.width, height: main.info.height };
 }
 
+/** Small WebP thumb (<= THUMB_MAX_EDGE) from an existing still, e.g. a video poster. */
+export async function encodeThumbFromFile(srcFile, thumbOut) {
+  const thumb = await pipeline(srcFile, THUMB_MAX_EDGE)
+    .webp({ quality: THUMB_QUALITY, effort: WEBP_EFFORT })
+    .toBuffer();
+  await writeFileAtomic(thumbOut, thumb);
+}
+
 export async function imageSize(file) {
   const meta = await sharp(file).metadata();
   return { width: meta.width ?? 0, height: meta.height ?? 0 };

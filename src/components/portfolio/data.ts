@@ -13,6 +13,8 @@ export interface ShowcaseAsset {
   subtitle?: string;
   poster?: string;
   thumb?: string;
+  /** Local video with an audio track: only then is the sound toggle offered. */
+  hasAudio?: boolean;
   width: number;
   height: number;
   driveId?: string;
@@ -77,6 +79,7 @@ function toAsset(asset: PortfolioAsset, project: Project, index: number): Showca
     subtitle: subtitleOf(asset),
     poster: asset.poster,
     thumb: asset.thumb ?? asset.poster,
+    hasAudio: kind === 'video' ? asset.hasAudio === true : undefined,
     width: asset.width && asset.width > 0 ? asset.width : FALLBACK_WIDTH,
     height: asset.height && asset.height > 0 ? asset.height : FALLBACK_HEIGHT,
     driveId: kind === 'drive' ? asset.driveId : undefined,

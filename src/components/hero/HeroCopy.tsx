@@ -7,13 +7,16 @@ import Button from '@/components/ui/Button';
 import { SERVICE_PHRASES } from './heroData';
 
 /**
- * Hero copy block. The h1 is a single fitted line (container-relative size
- * before JS, shrink-to-fit after); "We Are" masks in, "Kreativ Nomads" rises
- * with a travelling gradient sweep, the services typewrite, the paragraph fades up.
+ * Hero copy block, one wide column. The h1 is a single fitted line whose CSS (container-relative)
+ * size already fits before JS, so the shrink-to-fit pass is a no-op on the usual path (no CLS).
+ * The line measures about 11.67em in Poppins Bold with tight tracking, so 8.4cqw fills ~98%;
+ * keep the fluid term at or below 8.5cqw.
+ * "We Are" masks in, "Kreativ Nomads" rises with a travelling gradient sweep, the services
+ * typewrite, then the paragraph and the CTAs share one row on large screens and stack on phones.
  */
 export default function HeroCopy() {
   return (
-    <div className="hero-copy min-w-0">
+    <div className="hero-copy w-full min-w-0">
       <Reveal y={16}>
         <span className="glass inline-flex max-w-full items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-secondary-300 sm:text-[0.8rem]">
           <Compass className="h-4 w-4 flex-none" aria-hidden="true" />
@@ -24,10 +27,10 @@ export default function HeroCopy() {
       <h1 id="hero-title" className="mt-6">
         <FitLine
           as="span"
-          maxPx={92}
+          maxPx={100}
           minPx={22}
           fluid="8.4cqw"
-          className="font-display font-bold leading-[1.12] tracking-tight text-cream-500"
+          className="font-display font-bold leading-[1.05] tracking-tight text-cream-500"
         >
           <SplitText text="We Are" variant="mask" by="chars" stagger={0.05} />{' '}
           <SplitText text="Kreativ Nomads" variant="rise" by="chars" stagger={0.045} className="hero-sweep" />
@@ -35,44 +38,46 @@ export default function HeroCopy() {
       </h1>
 
       <p
-        className="mt-5 flex min-h-[2.2em] items-center gap-2.5 whitespace-nowrap font-display font-medium text-cream-500/90"
-        style={{ fontSize: 'clamp(1.02rem, 4.6vw, 1.55rem)' }}
+        className="mt-6 flex min-h-[2.2em] items-center gap-2.5 whitespace-nowrap font-display font-medium text-cream-500/90"
+        style={{ fontSize: 'clamp(1.05rem, 4.6vw, 1.875rem)' }}
       >
         <Sparkles className="h-[1.1em] w-[1.1em] flex-none text-secondary-400" aria-hidden="true" />
         <span className="hidden text-[var(--ink-dim)] sm:inline">Nomads for</span>
         <Typewriter phrases={SERVICE_PHRASES} className="text-secondary-400" />
       </p>
 
-      <Reveal y={18} delay={0.15}>
-        <p className="measure mt-5 text-pretty text-base leading-relaxed text-[var(--ink-dim)] sm:text-lg sm:leading-[1.75]">
-          A multidisciplinary collective of experienced professionals delivering branding and marketing, IT and
-          digital solutions, creative content, and business support to help businesses grow, operate, and move their
-          businesses forward.
-        </p>
-      </Reveal>
+      <div className="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end lg:gap-16">
+        <Reveal y={18} delay={0.15} className="min-w-0">
+          <p className="max-w-[44rem] text-pretty text-base leading-relaxed text-[var(--ink-dim)] sm:text-lg sm:leading-[1.75] lg:text-xl lg:leading-[1.7]">
+            A multidisciplinary collective of experienced professionals delivering branding and marketing, IT and
+            digital solutions, creative content, and business support to help businesses grow, operate, and move
+            their businesses forward.
+          </p>
+        </Reveal>
 
-      <Reveal y={18} delay={0.28}>
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-          <Button
-            href="#contact"
-            magnetic
-            icon={<Sparkles className="h-5 w-5" aria-hidden="true" />}
-            className="px-8 py-4 text-base"
-          >
-            Inquire Today
-          </Button>
-          <Button
-            href="#portfolio"
-            variant="glass"
-            magnetic
-            icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
-            iconPosition="right"
-            className="px-8 py-4 text-base"
-          >
-            View Our Work
-          </Button>
-        </div>
-      </Reveal>
+        <Reveal y={18} delay={0.28}>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4 lg:flex-col lg:items-stretch xl:flex-row xl:items-center">
+            <Button
+              href="#contact"
+              magnetic
+              icon={<Sparkles className="h-5 w-5" aria-hidden="true" />}
+              className="w-full px-8 py-4 text-base sm:w-auto lg:w-full xl:w-auto"
+            >
+              Inquire Today
+            </Button>
+            <Button
+              href="#portfolio"
+              variant="glass"
+              magnetic
+              icon={<ArrowRight className="h-5 w-5" aria-hidden="true" />}
+              iconPosition="right"
+              className="w-full px-8 py-4 text-base sm:w-auto lg:w-full xl:w-auto"
+            >
+              View Our Work
+            </Button>
+          </div>
+        </Reveal>
+      </div>
     </div>
   );
 }

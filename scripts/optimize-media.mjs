@@ -3,30 +3,35 @@
  * Media optimisation pipeline (sharp + ffmpeg).
  *
  *   node scripts/optimize-media.mjs --src <publicDirWithOriginals> [--out public/media]
- *                                   [--only <categoryId|hero>] [--force] [--data src/data/portfolio.json]
+ *                                   [--only <categoryId|hero>] [--force] [--force-videos]
+ *                                   [--data src/data/portfolio.json]
  *
  * Input spec : scripts/portfolio.source.json  (original portfolio data, original /portfolio/... paths)
  * Originals  : <src>/portfolio/**  and  <src>/videos/landing-page-background.mp4
  * Output     : <out>/<categoryId>/<projectId>/<slug>.{webp,mp4}, <slug>-thumb.webp, <slug>-poster.webp
- *              <out>/hero/reel.mp4 + reel-poster.webp
+ *              Portfolio videos are full length with AAC stereo audio, sized by a per-clip budget
+ *              (scripts/lib/media-budget.mjs); their 640px thumb is cut from the poster.
+ *              <out>/hero/reel.mp4 + reel-poster.webp (silent, 10s)
  *              and a rewritten src/data/portfolio.json pointing at the new /media/... URLs.
  * Pass-through: 'drive' assets (Google Drive videos: { driveId, width, height }) get their preview / thumbnail
  *              URLs filled in; 'case-study' assets (text only: { caseStudy }) are copied as-is with an empty src.
  *
- * Idempotent: existing outputs are kept (use --force to rebuild the selected category).
+ * Idempotent: existing outputs are kept (use --force to rebuild the selected category). A portfolio mp4
+ *             whose duration differs from its source, or that lost the source's audio, is stale and is
+ *             re-encoded anyway. --force-videos re-encodes every selected portfolio video (never images
+ *             or the hero), for when the originals of some images are not at hand.
  */
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
-import { encodeImage, imageSize } from './lib/media-image.mjs';
-import { encodeVideo, extractPoster, probeVideo } from './lib/media-video.mjs';
+import { videoBudgetBytes } from './lib/media-budget.mjs';
+import { encodeImage, encodeThumbFromFile, imageSize } from './lib/media-image.mjs';
+import { encodeVideo, extractPoster, probeAudio, probeVideo, targetSize } from './lib/media-video.mjs';
 import { ensureDir, fileSize, formatMB, parseArgs, runPool, slugify } from './lib/media-util.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const URL_BASE = '/media';
-const VIDEO_SECONDS = 12;
-const VIDEO_BUDGET = 1_500_000;
 const IMAGE_BUDGET = 1_500_000;
 const HERO_SECONDS = 10;
 const HERO_BUDGET = 3_000_000;
@@ -39,6 +44,8 @@ const PASS_THROUGH = new Set(['drive', 'case-study']);
 const HERO_CRF = 23;
 const IMAGE_LANES = 4;
 const VIDEO_LANES = 3;
+/** Seconds an encoded clip may differ from its source before it counts as a stale (truncated) preview. */
+const DURATION_TOLERANCE = 0.5;
 
 sharp.concurrency(IMAGE_LANES);
 
@@ -49,6 +56,7 @@ const DATA_FILE = path.resolve(String(args.data ?? path.join(ROOT, 'src', 'data'
 const SPEC_FILE = path.join(ROOT, 'scripts', 'portfolio.source.json');
 const ONLY = typeof args.only === 'string' ? args.only : null;
 const FORCE = args.force === true;
+const FORCE_VIDEOS = args['force-videos'] === true;
 
 const stripBom = (text) => text.replace(/^﻿/, '');
 const urlFor = (...parts) => [URL_BASE, ...parts].join('/');
@@ -125,32 +133,65 @@ async function processImageJob(job) {
   };
 }
 
+/** An existing clip is stale when its length differs from the source's, or it dropped the source's audio. */
+async function isStaleVideo(srcFile, main) {
+  if ((await fileSize(srcFile)) === 0) return false;
+  const src = await probeVideo(srcFile);
+  let out;
+  try {
+    out = await probeVideo(main);
+  } catch {
+    return true; // A truncated or corrupt clip from an interrupted run: re-encode it.
+  }
+  if (Math.abs(out.duration - src.duration) > DURATION_TOLERANCE) return true;
+  const [srcAudio, outAudio] = await Promise.all([probeAudio(srcFile), probeAudio(main).catch(() => false)]);
+  return srcAudio && !outAudio;
+}
+
+/** Full-length encode with sound, budgeted from the source duration at the output frame size. */
+async function encodePortfolioVideo(srcFile, main) {
+  const src = await probeVideo(srcFile);
+  const size = targetSize(src.width, src.height);
+  const budgetBytes = videoBudgetBytes(src.duration, size.width, size.height);
+  const result = await encodeVideo({ src: srcFile, out: main, maxSeconds: null, budgetBytes, audio: true });
+  return result.attempts;
+}
+
 async function processVideoJob(job) {
   const main = path.join(job.dir, `${job.slug}.mp4`);
   const poster = path.join(job.dir, `${job.slug}-poster.webp`);
-  const exists = !(FORCE && isSelected(job.category)) && (await allExist([main, poster]));
+  const thumb = path.join(job.dir, `${job.slug}-thumb.webp`);
+  const selected = isSelected(job.category);
+  const hasMain = await allExist([main]);
+  if (!hasMain && !selected) return { missing: true };
+  const reencode = selected && (FORCE || FORCE_VIDEOS || !hasMain || (await isStaleVideo(job.srcFile, main)));
   let attemptsUsed = 0;
-  if (!exists) {
-    if (!isSelected(job.category)) return { missing: true };
+  if (reencode) {
     await ensureDir(job.dir);
-    const result = await encodeVideo({
-      src: job.srcFile, out: main, maxSeconds: VIDEO_SECONDS, budgetBytes: VIDEO_BUDGET,
-    });
-    attemptsUsed = result.attempts;
-    await extractPoster(main, poster);
+    attemptsUsed = await encodePortfolioVideo(job.srcFile, main);
   }
-  const { width, height } = await probeVideo(main);
-  const posterUrl = urlFor(...job.urlDir, `${job.slug}-poster.webp`);
+  for (const [file, make] of [[poster, () => extractPoster(main, poster)], [thumb, () => encodeThumbFromFile(poster, thumb)]]) {
+    if (!reencode && (await allExist([file]))) continue;
+    if (!selected) return { missing: true };
+    await make();
+  }
+  const { width, height, duration } = await probeVideo(main);
+  const hasAudio = await probeAudio(main);
+  const mainBytes = await fileSize(main);
   return {
     entry: {
       src: urlFor(...job.urlDir, `${job.slug}.mp4`),
       type: 'video',
       ...naming(job.asset),
-      poster: posterUrl, thumb: posterUrl,
+      poster: urlFor(...job.urlDir, `${job.slug}-poster.webp`),
+      thumb: urlFor(...job.urlDir, `${job.slug}-thumb.webp`),
       width, height,
+      duration: Math.round(duration * 10) / 10,
+      hasAudio,
     },
-    bytes: (await fileSize(main)) + (await fileSize(poster)),
-    mainBytes: await fileSize(main), budget: VIDEO_BUDGET, files: [main], attemptsUsed,
+    bytes: mainBytes + (await fileSize(poster)) + (await fileSize(thumb)),
+    mainBytes, budget: videoBudgetBytes(duration, width, height), files: [main], attemptsUsed,
+    silent: !hasAudio,
   };
 }
 
@@ -205,7 +246,7 @@ function assemble(spec, jobs, results) {
   return { ...spec, projects };
 }
 
-function printReport(stats, offenders, failures, hero) {
+function printReport(stats, offenders, failures, hero, silent) {
   const rows = Object.entries(stats);
   const pad = (s, n) => String(s).padEnd(n);
   const lines = [pad('category', 16) + pad('files', 8) + pad('input MB', 12) + pad('output MB', 12)];
@@ -223,6 +264,8 @@ function printReport(stats, offenders, failures, hero) {
   process.stdout.write(`${lines.join('\n')}\n`);
   process.stdout.write(`\nOver budget: ${offenders.length === 0 ? 'none' : ''}\n`);
   for (const o of offenders) process.stdout.write(`  ${formatMB(o.bytes)} > ${formatMB(o.budget)}  ${o.file}\n`);
+  process.stdout.write(`Videos without audio: ${silent.length === 0 ? 'none' : ''}\n`);
+  for (const file of silent) process.stdout.write(`  ${file}\n`);
   process.stdout.write(`Failures: ${failures.length === 0 ? 'none' : ''}\n`);
   for (const f of failures) process.stdout.write(`  ${f.file}: ${f.reason}\n`);
 }
@@ -281,7 +324,8 @@ async function main() {
     process.stdout.write('\nportfolio.json NOT rewritten (partial run, --only, or failures).\n');
   }
 
-  printReport(stats, offenders, failures, hero);
+  const silent = results.flatMap((r) => (r && !r.missing && r.silent ? [path.relative(ROOT, r.files[0])] : []));
+  printReport(stats, offenders, failures, hero, silent);
   process.stdout.write(`\nDone in ${((Date.now() - started) / 1000).toFixed(0)}s\n`);
   if (failures.length > 0) process.exitCode = 1;
 }

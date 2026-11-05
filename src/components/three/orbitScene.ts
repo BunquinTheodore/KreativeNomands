@@ -1,6 +1,7 @@
 import type * as T from 'three'
 import { emitSfx } from './capability'
-import { angleDelta, buildStarGeometry, createSoftDotTexture, damp } from './geometry'
+import { buildStarGeometry, createSoftDotTexture, damp } from './geometry'
+import { clockwiseDelta, orbAngle, targetRing } from './orbitMath'
 import { PALETTE } from './palette'
 import type { SceneController, SceneFactory, ThreeModule } from './ThreeCanvas'
 
@@ -258,19 +259,20 @@ export function createOrbitFactory(
         const count = orbs.length
         const activeIndex = state.items.findIndex((item) => item.id === state.activeId)
         if (count > 0 && activeIndex >= 0) {
-          const target = FRONT_ANGLE - (activeIndex / count) * Math.PI * 2
+          // Next raises the target, so the orbit turns clockwise (see orbitMath).
+          const target = targetRing(activeIndex, count, FRONT_ANGLE)
           if (!ringPrimed) {
             ring = target
             ringPrimed = true
           }
-          ring += angleDelta(ring, target) * damp(4, dt)
+          ring += clockwiseDelta(ring, target) * damp(4, dt)
         } else {
           ring += dt * IDLE_RING_SPEED
         }
 
         for (let i = 0; i < count; i += 1) {
           const orb = orbs[i]
-          const angle = (i / count) * Math.PI * 2 + ring
+          const angle = orbAngle(i, count, ring)
           const depth = (Math.sin(angle) + 1) / 2
           orb.group.position.set(
             Math.cos(angle) * RING_RADIUS,

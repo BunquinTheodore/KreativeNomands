@@ -33,12 +33,19 @@
   }
 }
 
-.hero-eyebrow {
-  min-width: 0;
+/* High contrast drops background images, so the clipped gradient text would vanish: use system text. */
+@media (forced-colors: active) {
+  .hero-sweep .kn-split__ch {
+    color: CanvasText;
+    background: none;
+    -webkit-background-clip: border-box;
+    background-clip: border-box;
+    animation: none;
+  }
 }
 
-.hero-star-hint {
-  letter-spacing: 0.18em;
+.hero-eyebrow {
+  min-width: 0;
 }
 
 /* Reel frames ------------------------------------------------------------ */

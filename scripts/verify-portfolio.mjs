@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Verifies src/data/portfolio.json against public/: every referenced path exists,
- * asset types match file extensions, thumbnails are images, sizes stay within budget.
+ * asset types match file extensions, thumbnails are images, sizes stay within budget
+ * (portfolio videos: a per-clip budget from duration and size, see scripts/lib/media-budget.mjs).
  * Google Drive assets must point at drive.google.com (preview + small thumb + large poster); text-only
  * case studies must carry a complete caseStudy object and no file. Category ids in categories.ts and the
  * hard-coded ?p= deep links (hero chips, legacy redirects, services) must match the data.
@@ -11,6 +12,10 @@
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { VIDEO_HARD_MAX, videoBudgetBytes } from './lib/media-budget.mjs';
+
+/** Headroom over a clip's encode target before verify fails it (never past VIDEO_HARD_MAX). */
+const VERIFY_TOLERANCE = 1.25;
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const PUBLIC_DIR = path.join(ROOT, 'public');
@@ -96,6 +101,8 @@ async function checkAsset(project, asset, index) {
     if (asset.poster) fail(`${ctx}: image must not have a poster`);
   } else if (asset.type === 'video' || asset.type === 'drive') {
     if (asset.type === 'video' && !VIDEO_EXT.has(extOf(asset.src))) fail(`${ctx}: type video but src is ${extOf(asset.src)}`);
+    if (asset.type === 'video' && !(Number(asset.duration) > 0)) fail(`${ctx}: video needs a positive duration`);
+    if (asset.type === 'video' && typeof asset.hasAudio !== 'boolean') fail(`${ctx}: video needs a boolean hasAudio`);
     if (!asset.poster) fail(`${ctx}: video is missing poster`);
     if (!asset.thumb) fail(`${ctx}: video is missing thumb`);
     if (asset.poster && asset.type === 'video') await requireFile(asset.poster, `${ctx}.poster`);
@@ -162,11 +169,21 @@ async function walk(dir) {
   return nested.flat();
 }
 
-async function checkBudgets() {
+/** Full-length portfolio clips get a duration-based budget; the hero reel and every still a flat one. */
+function budgetFor(rel, assetsByUrl) {
+  if (rel === 'media/hero/reel.mp4') return HERO_MAX_BYTES;
+  const asset = rel.endsWith('.mp4') ? assetsByUrl.get(`/${rel}`) : undefined;
+  if (!asset) return MAX_FILE_BYTES;
+  // The encoder may land a little over its target (rounded durations, final fit rung), up to the hard max.
+  const target = videoBudgetBytes(asset.duration, asset.width, asset.height);
+  return Math.min(Math.ceil(target * VERIFY_TOLERANCE), VIDEO_HARD_MAX);
+}
+
+async function checkBudgets(assetsByUrl) {
   const files = await walk(path.join(PUBLIC_DIR, 'media'));
   for (const file of files) {
     const rel = path.relative(PUBLIC_DIR, file).split(path.sep).join('/');
-    const limit = rel === 'media/hero/reel.mp4' ? HERO_MAX_BYTES : MAX_FILE_BYTES;
+    const limit = budgetFor(rel, assetsByUrl);
     const { size } = await fs.stat(file);
     if (size > limit) fail(`${rel}: ${size} bytes exceeds ${limit}`);
   }
@@ -198,7 +215,8 @@ async function main() {
   await checkCategoryIds(data);
   await checkDeepLinks(data);
   for (const hero of HERO_FILES) await requireFile(`/${hero}`, 'hero');
-  const files = await checkBudgets();
+  const assetsByUrl = new Map(data.projects.flatMap((p) => p.assets.map((a) => [a.src, a])));
+  const files = await checkBudgets(assetsByUrl);
   checkOrphans(data, files);
 
   const perCategory = data.projects.reduce(

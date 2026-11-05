@@ -112,15 +112,6 @@ export function createSoftDotTexture(THREE: ThreeModule, size = 64): T.CanvasTex
   return texture
 }
 
-/** Shortest signed angular difference from `from` to `to`, in (-PI, PI]. */
-export function angleDelta(from: number, to: number): number {
-  const twoPi = Math.PI * 2
-  let d = (to - from) % twoPi
-  if (d > Math.PI) d -= twoPi
-  if (d <= -Math.PI) d += twoPi
-  return d
-}
-
 /** Framerate-independent smoothing factor for exponential lerps. */
 export function damp(rate: number, dt: number): number {
   return 1 - Math.exp(-rate * dt)

@@ -1,8 +1,9 @@
-// Video pipeline: ffprobe + H.264 re-encode with an automatic size-budget retry loop.
+// Video pipeline: ffprobe + H.264 (+ optional AAC audio) re-encode with an automatic size-budget retry loop.
 import { execFile } from 'node:child_process';
 import { promises as fs } from 'node:fs';
 import { promisify } from 'node:util';
 import { encodePoster, meanLuma } from './media-image.mjs';
+import { AUDIO_KBPS, videoCapKbps } from './media-budget.mjs';
 import { fileSize, resolveBin } from './media-util.mjs';
 
 const execFileAsync = promisify(execFile);
@@ -19,6 +20,9 @@ export const BOUNDS = {
 export const POSTER_CANDIDATES = [1.0, 2.5, 4.0, 6.0];
 const DARK_FRAME_LUMA = 12;
 export const DEFAULT_CRF = 29;
+/** Share of the byte budget the last (bitrate) rung aims for, leaving room for the container. */
+const FIT_HEADROOM = 0.92;
+const MIN_FIT_KBPS = 300;
 
 export async function probeVideo(file) {
   const { stdout } = await execFileAsync(
@@ -43,6 +47,16 @@ export async function probeVideo(file) {
   };
 }
 
+/** True when `file` carries at least one audio stream. */
+export async function probeAudio(file) {
+  const { stdout } = await execFileAsync(
+    FFPROBE,
+    ['-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=codec_name,channels,sample_rate', '-of', 'json', file],
+    { maxBuffer: MAX_BUFFER },
+  );
+  return (JSON.parse(stdout).streams ?? []).length > 0;
+}
+
 const even = (n) => Math.max(2, Math.round(n / 2) * 2);
 
 /** Target frame size: fit inside orientation bounds, never upscale, even dimensions. */
@@ -53,8 +67,8 @@ export function targetSize(width, height, bounds = null) {
   return { width: even(width * scale), height: even(height * scale) };
 }
 
-/** Encode attempts, from best quality to a hard bitrate cap. */
-function attempts(budgetBytes, clipSeconds, baseCrf) {
+/** Silent (hero) attempts, from best quality to a hard bitrate cap. */
+function silentAttempts(budgetBytes, clipSeconds, baseCrf) {
   const capKbps = Math.floor((budgetBytes * 8 * 0.85) / Math.max(clipSeconds, 1) / 1000);
   return [
     { crf: baseCrf, fpsCap: 30 },
@@ -63,19 +77,47 @@ function attempts(budgetBytes, clipSeconds, baseCrf) {
   ];
 }
 
-function buildArgs({ src, out, seconds, size, srcFps, attempt }) {
+/**
+ * Attempts for full-length clips with sound: capped CRF first, then a bitrate that fits the budget
+ * (long clips only reach the last rung).
+ */
+function audioAttempts(budgetBytes, clipSeconds, size) {
+  const cap = videoCapKbps(size.width, size.height);
+  const fitKbps = Math.max(
+    MIN_FIT_KBPS,
+    Math.floor((budgetBytes * 8 * FIT_HEADROOM) / Math.max(clipSeconds, 1) / 1000) - AUDIO_KBPS,
+  );
+  return [
+    { crf: 26, fpsCap: 30, maxrate: cap },
+    { crf: 29, fpsCap: 30, maxrate: Math.round(cap * 0.85) },
+    { crf: 32, fpsCap: 24, maxrate: Math.round(cap * 0.7) },
+    { fpsCap: 24, kbps: Math.min(fitKbps, Math.round(cap * 0.7)), fit: true },
+  ];
+}
+
+function rateArgs(attempt) {
+  if (attempt.kbps && attempt.fit) {
+    return ['-b:v', `${attempt.kbps}k`, '-maxrate', `${attempt.kbps}k`, '-bufsize', `${attempt.kbps * 2}k`];
+  }
+  if (attempt.kbps) {
+    return ['-b:v', `${attempt.kbps}k`, '-maxrate', `${Math.round(attempt.kbps * 1.2)}k`, '-bufsize', `${attempt.kbps * 2}k`];
+  }
+  const capped = attempt.maxrate ? ['-maxrate', `${attempt.maxrate}k`, '-bufsize', `${attempt.maxrate * 2}k`] : [];
+  return ['-crf', String(attempt.crf), ...capped];
+}
+
+const AUDIO_ARGS = ['-map', '0:a:0?', '-c:a', 'aac', '-b:a', `${AUDIO_KBPS}k`, '-ac', '2', '-ar', '48000'];
+
+function buildArgs({ src, out, seconds, size, srcFps, attempt, audio }) {
   const filters = [];
   if (srcFps > attempt.fpsCap + 0.5) filters.push(`fps=${attempt.fpsCap}`);
   filters.push(`scale=${size.width}:${size.height}:flags=lanczos`, 'setsar=1');
-  const rate = attempt.kbps
-    ? ['-b:v', `${attempt.kbps}k`, '-maxrate', `${Math.round(attempt.kbps * 1.2)}k`, '-bufsize', `${attempt.kbps * 2}k`]
-    : ['-crf', String(attempt.crf)];
   return [
     '-y', '-hide_banner', '-loglevel', 'error',
-    '-t', String(seconds), '-i', src,
-    '-map', '0:v:0', '-an', '-sn', '-dn',
+    ...(seconds ? ['-t', String(seconds)] : []), '-i', src,
+    '-map', '0:v:0', ...(audio ? AUDIO_ARGS : ['-an']), '-sn', '-dn', '-map_metadata', '-1',
     '-vf', filters.join(','),
-    '-c:v', 'libx264', '-preset', 'slow', ...rate,
+    '-c:v', 'libx264', '-preset', 'slow', '-profile:v', 'high', ...rateArgs(attempt),
     '-pix_fmt', 'yuv420p', '-movflags', '+faststart',
     '-f', 'mp4', out,
   ];
@@ -83,27 +125,36 @@ function buildArgs({ src, out, seconds, size, srcFps, attempt }) {
 
 /**
  * Encode `src` -> `out`, retrying with stronger compression until it fits `budgetBytes`.
+ * `maxSeconds` null keeps the full duration; `audio` true carries the first audio track as AAC stereo.
  * Returns { bytes, attempts, overBudget }.
  */
-export async function encodeVideo({ src, out, maxSeconds, budgetBytes, bounds = null, crf = DEFAULT_CRF }) {
+export async function encodeVideo({
+  src, out, maxSeconds = null, budgetBytes, bounds = null, crf = DEFAULT_CRF, audio = false,
+}) {
   const info = await probeVideo(src);
-  const seconds = info.duration > 0 ? Math.min(info.duration, maxSeconds) : maxSeconds;
+  const seconds = maxSeconds === null ? null : info.duration > 0 ? Math.min(info.duration, maxSeconds) : maxSeconds;
+  const clipSeconds = seconds ?? info.duration;
   const size = targetSize(info.width, info.height, bounds);
+  const ladder = audio ? audioAttempts(budgetBytes, clipSeconds, size) : silentAttempts(budgetBytes, clipSeconds, crf);
   const tmp = `${out}.tmp`;
   let bytes = 0;
   let used = 0;
-  for (const attempt of attempts(budgetBytes, seconds, crf)) {
-    used += 1;
-    await execFileAsync(
-      FFMPEG,
-      buildArgs({ src, out: tmp, seconds: maxSeconds, size, srcFps: info.fps, attempt }),
-      { maxBuffer: MAX_BUFFER },
-    );
-    bytes = await fileSize(tmp);
-    if (bytes > 0 && bytes <= budgetBytes) break;
+  try {
+    for (const attempt of ladder) {
+      used += 1;
+      await execFileAsync(
+        FFMPEG,
+        buildArgs({ src, out: tmp, seconds, size, srcFps: info.fps, attempt, audio }),
+        { maxBuffer: MAX_BUFFER },
+      );
+      bytes = await fileSize(tmp);
+      if (bytes > 0 && bytes <= budgetBytes) break;
+    }
+    if (bytes === 0) throw new Error('ffmpeg produced no output');
+    await fs.rename(tmp, out);
+  } finally {
+    await fs.rm(tmp, { force: true });
   }
-  if (bytes === 0) throw new Error('ffmpeg produced no output');
-  await fs.rename(tmp, out);
   return { bytes, attempts: used, overBudget: bytes > budgetBytes };
 }
 

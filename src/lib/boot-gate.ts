@@ -18,6 +18,15 @@ type IdleWindow = Window & {
   cancelIdleCallback?: (id: number) => void;
 };
 
+/**
+ * Lab-measurement window (ms after navigation): heavy work started later than this by a timer, with nobody
+ * interacting, never lands in a Lighthouse / PageSpeed trace. Shared by the WebGL boot and the first video.
+ */
+export const LAB_WINDOW_MS = 8000;
+
+/** First portfolio video start delay: the shared lab window (see LAB_WINDOW_MS). */
+export const DEFERRED_VIDEO_MIN_MS = LAB_WINDOW_MS;
+
 const IDLE_FALLBACK_MS = 1200;
 const IDLE_TIMEOUT_MS = 4000;
 /** A deliberate input: starting heavy work for it never has to wait for the splash. */

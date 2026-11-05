@@ -32,7 +32,10 @@ export default function ServiceDetail({ service, index, total, phase, onPrev, on
   const Icon = service.icon;
 
   return (
-    <GlassCard glow className="flex min-h-[29rem] flex-col p-6 sm:p-8 lg:p-10">
+    // Phone min-height tracks the tallest service (IT, six bullets, measured 834px at 360,
+    // 808px at 390, 749px at 414) so switching services does not jump; it falls back to
+    // 29rem from roughly 610px wide up.
+    <GlassCard glow className="flex min-h-[max(29rem,calc(1420px-157vw))] flex-col p-6 sm:p-8 lg:p-10">
       <div className="svc-swap flex flex-1 flex-col" data-phase={phase}>
         <div key={service.id} className="svc-enter flex flex-1 flex-col">
           <div className="flex items-center justify-between gap-4">

@@ -1,7 +1,7 @@
 'use client';
 
-import type { ReactNode } from 'react';
-import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Pause, Play } from 'lucide-react';
+import { useEffect, useState, type ReactNode } from 'react';
+import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 
 interface NavButtonProps {
   side: 'prev' | 'next';
@@ -56,6 +56,51 @@ function ToggleButton({ pressed, onClick, label, children }: ToggleButtonProps) 
   );
 }
 
+export interface SoundControl {
+  muted: boolean;
+  onToggle: () => void;
+  /** The viewer has not chosen yet: show the small "Tap for sound" nudge under the button row. */
+  showHint: boolean;
+}
+
+const SOUND_LABEL = 'Video sound';
+/** How long the "Tap for sound" nudge stays up before it gets out of the way. */
+const SOUND_HINT_MS = 6000;
+
+/** Mute / unmute for the stage video (aria-pressed = sound on; label and tooltip stay the same). */
+function SoundButton({ muted, onToggle }: SoundControl) {
+  return (
+    <button
+      type="button"
+      data-noswipe=""
+      onClick={onToggle}
+      aria-label={SOUND_LABEL}
+      aria-pressed={!muted}
+      title={SOUND_LABEL}
+      className="kp-ctl glass shine"
+    >
+      <span className="relative z-10 inline-flex">
+        {muted ? <VolumeX className="h-4 w-4" aria-hidden="true" /> : <Volume2 className="h-4 w-4" aria-hidden="true" />}
+      </span>
+    </button>
+  );
+}
+
+/** Small nudge under the button row; hides itself after SOUND_HINT_MS. */
+function SoundHint() {
+  const [visible, setVisible] = useState(true);
+  useEffect(() => {
+    const timer = window.setTimeout(() => setVisible(false), SOUND_HINT_MS);
+    return () => window.clearTimeout(timer);
+  }, []);
+  if (!visible) return null;
+  return (
+    <span className="kp-sound-hint glass" aria-hidden="true">
+      Tap for sound
+    </span>
+  );
+}
+
 interface TopControlsProps {
   counter: string;
   counterLabel: string;
@@ -64,9 +109,11 @@ interface TopControlsProps {
   onToggleSlideshow: () => void;
   fullscreen: boolean;
   onToggleFullscreen: () => void;
+  /** Local video slides only. */
+  sound?: SoundControl;
 }
 
-/** Counter pill (top-left) and slideshow / fullscreen toggles (top-right). */
+/** Counter pill (top-left) and slideshow / sound / fullscreen toggles (top-right). */
 export function TopControls({
   counter,
   counterLabel,
@@ -75,6 +122,7 @@ export function TopControls({
   onToggleSlideshow,
   fullscreen,
   onToggleFullscreen,
+  sound,
 }: TopControlsProps) {
   return (
     <>
@@ -92,6 +140,7 @@ export function TopControls({
             {slideshowOn ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 translate-x-px" />}
           </ToggleButton>
         ) : null}
+        {sound ? <SoundButton {...sound} /> : null}
         <ToggleButton
           pressed={fullscreen}
           onClick={onToggleFullscreen}
@@ -99,6 +148,7 @@ export function TopControls({
         >
           {fullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
         </ToggleButton>
+        {sound?.showHint ? <SoundHint /> : null}
       </div>
     </>
   );

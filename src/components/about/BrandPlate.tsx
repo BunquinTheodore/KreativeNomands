@@ -26,8 +26,8 @@ function Mark({ mark }: { mark: BrandMark }) {
  * The interactive 3D North Star presented as a glass-framed plate. Three rows of North-Star
  * marks drift sideways behind it (CSS transform loops, decorative only).
  * The square stage has the same size before and after WebGL, so nothing shifts when it boots. The
- * star is the page's second WebGL instance: it only boots once scrolled near (the hero's stays
- * paused meanwhile), and shows the static mark on low-end / reduced-motion / Save-Data / no WebGL.
+ * star is the site's only NorthStar3D instance: it only boots once scrolled near, loads its
+ * fallback lazily, and shows the static mark on low-end / reduced-motion / Save-Data / no WebGL.
  */
 export default function BrandPlate() {
   return (
@@ -56,7 +56,7 @@ export default function BrandPlate() {
       <div className="glass-strong shine relative rounded-[1.75rem] p-3 sm:p-4" data-sfx-hover="" suppressHydrationWarning>
         <div className="relative aspect-square rounded-[1.25rem] bg-[radial-gradient(closest-side,rgba(245,158,11,0.14),transparent_75%)] ring-1 ring-cream-500/10">
           <div className="absolute inset-0">
-            <NorthStar3D height="100%" priority={false} />
+            <NorthStar3D height="100%" />
           </div>
           <div
             aria-hidden="true"

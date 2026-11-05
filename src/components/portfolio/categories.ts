@@ -32,7 +32,7 @@ export const CATEGORIES: readonly CategoryMeta[] = [
     id: 'it',
     label: 'IT & Digital Solutions',
     description:
-      'Websites, mobile apps, custom systems and workflow automations built for businesses across food and beverage, finance, fitness, education and more.',
+      'AI automations and chatbots, websites, mobile apps and custom systems built for businesses across food and beverage, finance, fitness, education and more.',
     industries: [
       'F&B',
       'Finance',

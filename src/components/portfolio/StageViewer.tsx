@@ -9,6 +9,7 @@ import {
   type CSSProperties,
   type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
+  type MutableRefObject,
   type ReactNode,
   type RefObject,
 } from 'react';
@@ -26,7 +27,8 @@ import { emitSfx, type Direction } from './navigation';
 import { BROWSER_SIZES, preloadStageImage, STAGE_SIZES } from './preload';
 import { NavButton, TopControls } from './StageControls';
 import { usePageVisible, useSaveData, useSlideTimer } from './useStageHooks';
-import VideoSlide from './VideoSlide';
+import { setVideoMuted, useVideoSound } from './videoSound';
+import VideoSlide, { type SoundController } from './VideoSlide';
 
 const SLIDESHOW_MS = 5000;
 const SWIPE_PX = 48;
@@ -78,6 +80,9 @@ interface SlideContext {
   progressRef: RefObject<HTMLSpanElement>;
   driveActive: boolean;
   onActivateDrive: () => void;
+  soundCtlRef: MutableRefObject<SoundController | null>;
+  onMutedChange: (muted: boolean) => void;
+  onVideoFailed: () => void;
 }
 
 /** The slide body for each asset kind (exhaustive: a new kind fails to compile here). */
@@ -90,6 +95,9 @@ function renderSlide({
   progressRef,
   driveActive,
   onActivateDrive,
+  soundCtlRef,
+  onMutedChange,
+  onVideoFailed,
 }: SlideContext): ReactNode {
   const label = `${assetLabel(asset)}: ${project.title}`;
   switch (asset.kind) {
@@ -100,7 +108,18 @@ function renderSlide({
         <ImageSlide asset={asset} alt={label} priority={priority} />
       );
     case 'video':
-      return <VideoSlide asset={asset} label={label} canPlay={canPlay} progressRef={progressRef} />;
+      return (
+        <VideoSlide
+          asset={asset}
+          label={label}
+          canPlay={canPlay}
+          progressRef={progressRef}
+          priority={priority}
+          soundCtlRef={soundCtlRef}
+          onMutedChange={onMutedChange}
+          onFailed={onVideoFailed}
+        />
+      );
     case 'drive':
       return (
         <DriveSlide
@@ -155,6 +174,20 @@ export default function StageViewer({
     setDriveSlideKey(null);
   }
   const driveActive = asset?.kind === 'drive' && driveSlideKey === slideKey;
+
+  // Video sound: the session preference, and what the mounted <video> actually does (unmuted autoplay
+  // can be refused, which mutes that element only). The toggle acts on the element inside the gesture.
+  const sound = useVideoSound();
+  const soundCtlRef = useRef<SoundController | null>(null);
+  const [effectiveMuted, setEffectiveMuted] = useState(true);
+  // The slide whose <video> failed to load: no sound control there (toggling it would do nothing).
+  const [failedVideoKey, setFailedVideoKey] = useState<string | null>(null);
+  const showSound = asset?.kind === 'video' && asset.hasAudio === true && failedVideoKey !== slideKey;
+  const toggleSound = useCallback(() => {
+    const nextMuted = !effectiveMuted;
+    soundCtlRef.current?.(nextMuted);
+    setVideoMuted(nextMuted, true);
+  }, [effectiveMuted]);
 
   // Slideshow: image / Drive-facade projects with more than one asset, on unless reduced motion.
   const slideshowAvailable = Boolean(
@@ -332,6 +365,9 @@ export default function StageViewer({
               progressRef,
               driveActive,
               onActivateDrive: () => setDriveSlideKey(slideKey),
+              soundCtlRef,
+              onMutedChange: setEffectiveMuted,
+              onVideoFailed: () => setFailedVideoKey(slideKey),
             })}
             {showCaption ? (
               <>
@@ -370,6 +406,11 @@ export default function StageViewer({
             onToggleSlideshow={() => setSlideshowOn((value) => !value)}
             fullscreen={fullscreen}
             onToggleFullscreen={toggleFullscreen}
+            sound={
+              showSound
+                ? { muted: effectiveMuted, onToggle: toggleSound, showHint: effectiveMuted && !sound.explicit }
+                : undefined
+            }
           />
           {canNavigate ? (
             <>
